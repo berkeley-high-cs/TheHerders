@@ -17,7 +17,7 @@ public class Tests {
    public double remainder(double a, double b) { return a % b; }
 
 
-   public double averageOfThree(double a, double b, double c) { return (a + b + c) / 3.0 ; }
+   public double distance(double a, double b, double c) { return math.abs(a - b); }
 
   // Add more methods here ...
 }
