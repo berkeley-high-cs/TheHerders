@@ -18,7 +18,7 @@ public class Tests {
 
    public double mod(double a, double b) { return a b ; }
 
-   public double averageOfTwo(double a, double b) { return a + b / 2; }
+   public double averageOfTwo(double a, double b) { return a + b / 2 ; }
 
   // Add more methods here ...
 }
