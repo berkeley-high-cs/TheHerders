@@ -16,7 +16,7 @@ public class Tests {
 
    public double remainder(double a, double b) { return a % b; }
 
-   public double mod(double a, double b) { return a.mod(b); }
+   public double mod(double a, double b) { return (int)a/b ; }
 
   // Add more methods here ...
 }
