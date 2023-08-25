@@ -17,7 +17,7 @@ public class Tests {
    public double remainder(double a, double b) { return a % b; }
 
 
-   public double averageOfTwo(double a, double b) { return a + b / 2 ; }
+   public double averageOfTwo(double a, double b) { return a + b / 2.0 ; }
 
   // Add more methods here ...
 }
