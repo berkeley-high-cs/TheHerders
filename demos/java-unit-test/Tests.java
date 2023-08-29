@@ -20,7 +20,7 @@ public class Tests {
  public double averageOfThree (double a, double b, double c){return (a + b  + c) /  3; }
    public double distance (double a, double b) { return Math.abs(a - b); }
 
-   public double manhattanDistance (double[] a{1,2},double[] b{3,4}){}
+   public double manhattanDistance (double[] a{1,2}; ,double[] b{3,4};){}
 
   // Add more methods here ...
 }
