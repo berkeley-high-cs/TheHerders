@@ -15,12 +15,13 @@ public class Tests {
    public double divide(double a, double b) { return a / b; }
 
    public double remainder(double a, double b) { return a % b; }
+   public double mod(double a, double b){ return a % b; }
 
  public double averageOfTwo (double a, double b){return (a + b) /  2; }
  public double averageOfThree (double a, double b, double c){return (a + b  + c) /  3; }
    public double distance (double a, double b) { return Math.abs(a - b); }
 
-   public double manhattanDistance (double[] a{1,2}; ,double[] b{3,4};){}
+   public double manhattanDistance (double[] a{1,2} ,double[] b{3,4}){}
 
   // Add more methods here ...
 }
