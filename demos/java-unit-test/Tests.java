@@ -16,8 +16,9 @@ public class Tests {
 
    public double remainder(double a, double b) { return a % b; }
 
-double x1 = 0; double x2 = 0; double y1 = 0; double y2 = 0;
-   public double distance(double[] a = {x1,y1}, double[] b = {x2,y2}) { return Math.abs(a - b); }
+  
+
+   public double distance { return Math.abs(a - b); }
 
   // Add more methods here ...
 }
