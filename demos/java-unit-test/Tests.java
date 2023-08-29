@@ -16,9 +16,9 @@ public class Tests {
 
    public double remainder(double a, double b) { return a % b; }
 
-  
 
-   public double distance { return Math.abs(a - b); }
+
+   public double distance (double a, double b) { return Math.abs(a - b); }
 
   // Add more methods here ...
 }
