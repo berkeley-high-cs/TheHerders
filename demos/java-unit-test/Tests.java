@@ -23,13 +23,7 @@ public class Tests {
   
   public double manhattanDistance (double x1, double y1, double x2, double y2){return Math.abs((x1-x2) + (y1-y2));}
 
-class main{
-  public static void main{
-     double lemonadeWanted = 12.25;
-     double lemonsNeeded = 24.5;
-     int lemonsBought = ((int) lemonadeWanted + 0.99) * 2;
-     System.out.println(lemonsBought);
- }
+
 }
   // Add more methods here ...
 }
