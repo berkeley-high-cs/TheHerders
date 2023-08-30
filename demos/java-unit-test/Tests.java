@@ -22,7 +22,7 @@ public class Tests {
    public double distance (double a, double b) { return Math.abs(a - b); }
   
   public double manhattanDistance (double x1, double y1, double x2, double y2){return Math.abs((x1-x2) + (y1-y2));}
-  public double euclideanDistance (double x1, double y1, double x2, double y2){return Math.sqrt((x1 - x2)+(y1 - y2)^2);}
+  public double euclideanDistance (double x1, double y1, double x2, double y2){return Math.sqrt((x1 - x2)+(y1 - y2)*(x1 - x2)+(y1 - y2));}
 
 }
   // Add more methods here ...
