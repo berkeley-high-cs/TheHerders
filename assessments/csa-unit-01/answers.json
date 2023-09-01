@@ -7,7 +7,7 @@
   "None of the above.",
   "boolean",
   "int",
-  "10",
+  "\"hello, world!\"",
   "\n                  (double) numberOfSeniors / totalNumberOfStudents\n                ",
   null,
   "(int) (fractionSeniors + 0.5) * 100",
