@@ -10,5 +10,7 @@
   null,
   "\n                  (double) numberOfSeniors / totalNumberOfStudents\n                ",
   null,
-  "(int) (fractionSeniors + 0.5) * 100"
+  "(int) (fractionSeniors + 0.5) * 100",
+  null,
+  "2"
 ]
