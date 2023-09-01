@@ -13,7 +13,7 @@
   "(int) (fractionSeniors + 0.5) * 100",
   "n % 10",
   "2",
-  null,
+  "0",
   "4",
   null,
   "3"
