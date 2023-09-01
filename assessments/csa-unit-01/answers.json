@@ -6,5 +6,7 @@
   null,
   "None of the above.",
   null,
-  "int"
+  "int",
+  null,
+  "\n                  (double) numberOfSeniors / totalNumberOfStudents\n                "
 ]
