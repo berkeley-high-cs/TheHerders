@@ -28,6 +28,9 @@ public class Geometry {
   public double totalSurfaceAreaOfConeFromSlantHeight(double r, double h){
     return Math.PI * r * h + Math.PI * Math.pow(r, 2);
   }
+  public double totalSurfaceAreaOfConeFromHeight(double r, double h){
+    return Math.PI * r * Math.sqrt(Math.pow(r, 2) + Math.pow(h, 2)) + Math.PI * Math.pow(r, 2);
+  }
   public double perimeterOfSquare(double side) {
     return side * 4;
   }
