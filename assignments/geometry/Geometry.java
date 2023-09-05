@@ -16,6 +16,9 @@ public class Geometry {
   public double areaOfCircle(double r){
     return Math.PI * Math.pow(r, 2);
   }
+  public double surfaceAreaOfSphere(double r){
+    return Math.PI * Math.pow(r, 2) * 4;
+  }
   public double perimeterOfSquare(double side) {
     return side * 4;
   }
