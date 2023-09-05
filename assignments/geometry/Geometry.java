@@ -13,6 +13,9 @@ public class Geometry {
   public double hypotenuse (double a, double b){
     return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
   }
+  public double areaOfCircle(double r){
+    return Math.PI * Math.pow(r, 2);
+  }
   public double perimeterOfSquare(double side) {
     return side * 4;
   }
