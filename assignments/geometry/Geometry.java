@@ -8,7 +8,7 @@ public class Geometry {
     return (a + b) / 2;
   }
   public double hypotenuse (double a, double b){
-    return math.pow(a, 2) + math.pow(b, 2)
+    return math.pow(a, 2) + math.pow(b, 2);
   }
   public double perimeterOfSquare(double side) {
     return side * 4;
