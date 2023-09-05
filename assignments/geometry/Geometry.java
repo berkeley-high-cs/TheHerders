@@ -14,25 +14,25 @@ public class Geometry {
     return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
   }
   public double areaOfCircle(double r){
-    return Math.PI * Math.pow(r, 2);
+    return areaOfCircle;
   }
   public double surfaceAreaOfSphere(double r){
-    return Math.PI * Math.pow(r, 2) * 4;
+    return areaOfCircle * 4;
   }
   public double totalSurfaceAreaOfCylinder(double r, double h){
-    return Math.PI * r * 2 * h + 2 * (Math.PI * Math.pow(r, 2));
+    return Math.PI * r * 2 * h + 2 * (areaOfCircle);
   }
   public double curvedSurfaceAreaOfConeFromSlantHeight(double r, double h){
     return Math.PI * r * h;
   }
   public double totalSurfaceAreaOfConeFromSlantHeight(double r, double h){
-    return Math.PI * r * h + Math.PI * Math.pow(r, 2);
+    return Math.PI * r * h + areaOfCircle;
   }
   public double totalSurfaceAreaOfConeFromHeight(double r, double h){
-    return Math.PI * r * Math.sqrt(Math.pow(r, 2) + Math.pow(h, 2)) + Math.PI * Math.pow(r, 2);
+    return Math.PI * r * Math.sqrt(Math.pow(r, 2) + Math.pow(h, 2)) + areaOfCircle;
   }
   public double volumeOfCone (double r, double h){
-    return Math.PI * Math.pow(r, 2) * (double) 1/3 * h;
+    return areaOfCircle * h / 3;
   }
   public double perimeterOfSquare(double side) {
     return side * 4;
