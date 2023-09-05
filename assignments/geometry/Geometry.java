@@ -31,6 +31,9 @@ public class Geometry {
   public double totalSurfaceAreaOfConeFromHeight(double r, double h){
     return Math.PI * r * Math.sqrt(Math.pow(r, 2) + Math.pow(h, 2)) + Math.PI * Math.pow(r, 2);
   }
+  public double volumeOfCone (double r, double h){
+    return Math.PI * Math.pow(r, 2) * 1.0/3 * h;
+  }
   public double perimeterOfSquare(double side) {
     return side * 4;
   }
