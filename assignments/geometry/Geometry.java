@@ -14,7 +14,7 @@ public class Geometry {
     return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
   }
   public double areaOfCircle(double r){
-    return areaOfCircle(2);
+    return Math.PI * (Math.pow(r, 2));
   }
   public double surfaceAreaOfSphere(double r){
     return areaOfCircle(2) * 4;
