@@ -5,7 +5,7 @@
 
 public class Geometry {
   public double midpoint (double a, double b){
-    return a - b / 2;
+    return (a - b) / 2;
   }
   public double perimeterOfSquare(double side) {
     return side * 4;
