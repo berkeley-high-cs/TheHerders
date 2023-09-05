@@ -22,6 +22,9 @@ public class Geometry {
   public double totalSurfaceAreaOfCylinder(double r, double h){
     return Math.PI * r * 2 * h + 2 * (Math.PI * Math.pow(r, 2));
   }
+  public double curvedSurfaceAreaOfConeFromSlantHeight(double r, double h){
+    return Math.PI * r * h;
+  }
   public double perimeterOfSquare(double side) {
     return side * 4;
   }
