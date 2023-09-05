@@ -10,7 +10,7 @@
   "int y;",
   "\n                  (double) numberOfSeniors / totalNumberOfStudents\n                ",
   "\n                  1.0 * numberOfSeniors / totalNumberOfStudents\n                ",
-  "(int) (fractionSeniors + 0.5) * 100",
+  "(int) (fractionSeniors * 100 + 0.5)",
   "n % 10",
   "2.0",
   "0.0",
