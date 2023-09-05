@@ -7,6 +7,9 @@ public class Geometry {
   public double midpoint (double a, double b){
     return (a + b) / 2;
   }
+  public double areaOfTrapezoid (double a, double b, double c){
+    return ((a + b) / 2) * c;
+  }
   public double hypotenuse (double a, double b){
     return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
   }
