@@ -10,6 +10,9 @@ public class Geometry {
   public double perimeterOfRectangle (double a, double b){
     return (a + b) * 2;
   }
+  public double areaOfSquare (double a){
+    return Math.pow(a, 2);
+  }
   public double areaOfTrapezoid (double a, double b, double c){
     return ((a + b) / 2) * c;
   }
