@@ -28,6 +28,9 @@ public class Geometry {
   public double curvedSurfaceAreaOfCylinder (double a, double h){
     return Math.PI * a * 2 * h;
   }
+  public double volumeOfCylinder (double a, double h){
+    return Math.PI * (Math.pow(a, 2)) * h;
+  }
   public double areaOfTrapezoid (double a, double b, double c){
     return ((a + b) / 2) * c;
   }
