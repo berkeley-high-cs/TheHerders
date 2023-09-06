@@ -22,8 +22,8 @@ public class Geometry {
   public double volumeOfSphere (double a){
     return Math.PI * 4/3 * Math.pow(a, 3);
   }
-  public double circumferenceOfCircle (double a, double b){
-    return Math.PI * r * 2;
+  public double circumferenceOfCircle (double a){
+    return Math.PI * a * 2;
   }
   public double areaOfTrapezoid (double a, double b, double c){
     return ((a + b) / 2) * c;
