@@ -19,10 +19,10 @@ public class Geometry {
   public double areaOfTriangle (double a, double b){
     return a / 2 * b;
   }
-  public double areaOfRectangle (double a, double b){
+  public double dddd (double a, double b){
     return a * b;
   }
-  public double areaOfRectangle (double a, double b){
+  public double dddddd (double a, double b){
     return a * b;
   }
   public double areaOfTrapezoid (double a, double b, double c){
