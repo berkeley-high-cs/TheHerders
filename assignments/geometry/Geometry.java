@@ -25,6 +25,9 @@ public class Geometry {
   public double circumferenceOfCircle (double a){
     return Math.PI * a * 2;
   }
+  public double curvedSurfaceAreaOfCylinder (double a, double h){
+    return Math.PI * a * 2 * h;
+  }
   public double areaOfTrapezoid (double a, double b, double c){
     return ((a + b) / 2) * c;
   }
