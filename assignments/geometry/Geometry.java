@@ -20,7 +20,7 @@ public class Geometry {
     return a / 2 * b;
   }
   public double volumeOfSphere (double a){
-    return (Math.PI * (4/3)) * Math.pow(a, 3);
+    return Math.PI * 4/3 * Math.pow(a, 3);
   }
   public double dddddd (double a, double b){
     return a * b;
