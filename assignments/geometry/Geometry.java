@@ -20,7 +20,7 @@ public class Geometry {
     return a / 2 * b;
   }
   public double volumeOfSphere (double a){
-    return Math.PI * (4/3 * Math.pow(a, 3));
+    return Math.PI * 4/3 * Math.pow(a, 3);
   }
   public double circumferenceOfCircle (double a){
     return Math.PI * a * 2;
