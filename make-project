@@ -1,0 +1,49 @@
+#!/bin/bash
+
+set -euo pipefail
+
+function usage {
+    echo "To create a new project, run this script the name of the project you "
+    echo "want to create. The name should not contain spaces and preferably all "
+    echo "lowercase. Unlike Java names, it can contain a hyphen. For example:"
+    echo ""
+    echo "  $0 hello-world"
+    exit 1
+}
+
+if (($# < 1)); then usage; fi
+
+if (($# > 1)); then
+    echo "Too many arguments. Did you try to use a name with spaces in it?"
+    exit 1
+fi
+
+if [ "$(git branch --show-current)" != "main" ]; then
+    echo "Must start projects from main branch."
+    exit 1
+fi
+
+name="$1"
+proj="projects/$name"
+
+if [ -e "$proj" ]; then
+    echo "Project directory $proj already exists!"
+    exit 1
+fi
+
+if git show-ref --verify --quiet "refs/heads/$proj"; then
+    echo "Project branch $proj already exists!"
+    exit 1
+fi
+
+# Make the project branch
+git switch -c "$proj"
+
+# Make the project directory
+mkdir -p "$proj"
+
+# Create a README and commit it.
+cd "$proj"
+echo "# $name" > README.md
+git add .
+git commit -m "Starting project $name."
