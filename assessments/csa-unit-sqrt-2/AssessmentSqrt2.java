@@ -29,6 +29,6 @@ public class AssessmentSqrt2 {
     return (word + " " + word + "!!!");
   }
   public double toCenter (double itemLength, double space){
-    return (1.0/2 * (space - itemLength));
+    return (Math.abs(1.0/2 * (space - itemLength)));
   }
 }
