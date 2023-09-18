@@ -20,6 +20,6 @@ public class AssessmentSqrt2 {
     return (x2 - x1) + (y2 - y1);
   }
   public String excited (String word){
-    return (word + "!");
+    return (word + "!!!");
   }
 }
