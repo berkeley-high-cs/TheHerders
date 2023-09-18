@@ -63,7 +63,7 @@ public double graphicalCoordinate (double val, double start, double length){
   // Therefore the proportion should be π/4 and thus π is 4 times the
   // proportion of darts that land in the circle.
  public double estimate (int a, int b){
- return (4.0 * ((double)b/a));
+ return (4.0 * ((double)a/b));
  }
  
 
