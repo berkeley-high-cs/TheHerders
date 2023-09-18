@@ -35,6 +35,6 @@ public class AssessmentSqrt2 {
     return (Math.random() * 2);
   }
     public double graphicalCoordinate (double val, double start, double length){
-    return (start * (length * (val/2)));
+    return (start + (length * (val/2)));
   }
 }
