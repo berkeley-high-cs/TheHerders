@@ -31,4 +31,7 @@ public class AssessmentSqrt2 {
   public double toCenter (double itemLength, double space){
     return (Math.abs(1.0/2 * (space - itemLength)));
   }
+  public double randomCoordinate (){
+    return (Math.random() * 2);
+  }
 }
