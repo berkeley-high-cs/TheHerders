@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public class EstimatePi implements ImageGenerator {
 
   // Increase the value of this variable to get a more precise estimate.
-  int iterations = 200;
+  int iterations = 400;
 
   //////////////////////////////////////////////////////////////////////
   // YOUR CODE GOES HERE - fill out the methods described in the five
