@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public class EstimatePi implements ImageGenerator {
 
   // Increase the value of this variable to get a more precise estimate.
-  int iterations = 100;
+  int iterations = 10000;
 
   //////////////////////////////////////////////////////////////////////
   // YOUR CODE GOES HERE - fill out the methods described in the five
@@ -19,11 +19,15 @@ public class EstimatePi implements ImageGenerator {
   // need to position one edge two feet from one wall so the other edge
   // will be two feet from the other wall. In other words, we want to
   // know half of the space left over when we subtract size from space.
-
+public double toCenter (double itemLength, double space){
+    return (Math.abs(1.0/2 * (space - itemLength)));
+  }
 
   // TODO 2: Write a method named randomCoordinate that returns a random
   // double value in the range 0.0 to 2.0 (inclusive, exclusive)
-
+public double randomCoordinate (){
+    return (Math.random() * 2);
+  }
 
   // TODO 3: Write a method named distance2d that returns a double
   // representing the distance in in two dimensional space between two
@@ -32,7 +36,9 @@ public class EstimatePi implements ImageGenerator {
   // hypotenuse of the triangle formed by the distance on the x axis and
   // the distance on the y axis, i.e. the square root of the sum of the
   // squares of those distances.)
-
+ public double distance2d (double x1, double y1, double x2, double y2){
+    return (Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)));
+  }
 
   // TODO 4: Write a method, graphicalCoordinate, that takes three
   // double arguments: a double coordinate in the range 0.0-2.0 (i.e.
@@ -43,7 +49,9 @@ public class EstimatePi implements ImageGenerator {
   // coordinate was 2.0 it would return start + length; and if the
   // coordinate was 1.0, it would return the value that is half the
   // length more than start.
-
+public double graphicalCoordinate (double val, double start, double length){
+    return (start + (length * (val/2)));
+  }
 
   // TODO 5: Write a method named estimate that computes an estimate of
   // the value of π based on the number of darts that landed inside the
@@ -54,7 +62,10 @@ public class EstimatePi implements ImageGenerator {
   // circle is πr^2 and the area of the square is (2r)^2 or 4r^2.
   // Therefore the proportion should be π/4 and thus π is 4 times the
   // proportion of darts that land in the circle.
-
+ public double estimate (int a, int b){
+ return (4.0 * ((double)a/b));
+ }
+ 
 
   // END OF CODE YOU NEED TO TOUCH
   //////////////////////////////////////////////////////////////////////
