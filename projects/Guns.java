@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class Guns {
-  private String gunName;
-  private int gunAttacks;
-  private int gunBs;
-  private int gunStrength;
-  private int gunAp;
-  private int gunDamage;
+  String gunName;
+  int gunAttacks;
+  int gunBs;
+  int gunStrength;
+  int gunAp;
+  int gunDamage;
 
   public Guns(String name, int attacks, int bs, int strength, int ap, int damage) {
     gunName = name;
@@ -59,7 +59,7 @@ public class Guns {
 
   // calculation is wrong, unitsave + ap is not correct, and dividing everything
   // else by it might not be either
-  public int calculate() {
+  public static int calculate(int attacks, int bs, int strength, int ap, int damage, int unitToughness, int unitSave) {
     int saveChance = unitSave + ap;
     Math.max(0, saveChance);
     if (strength > unitToughness && strength < 2 * unitToughness) {
