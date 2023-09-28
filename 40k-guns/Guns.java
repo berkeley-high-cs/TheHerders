@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//not finished, no longer being worked on
 public class Guns {
   private String gunName;
   private int gunAttacks;
