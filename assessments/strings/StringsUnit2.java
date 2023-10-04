@@ -52,4 +52,8 @@ public class StringsUnit2 {
     String newWord = (s.substring(0, s.length()/2));
     return (newWord);
   }
+  public String lastHalf(String s){
+    String newWord = (s.substring(s.length()/2, s.length() - 1));
+    return (newWord);
+  }
 }
