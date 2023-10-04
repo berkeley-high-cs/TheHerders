@@ -20,4 +20,7 @@ public class StringsUnit2 {
       return false;
     }
   }
+   public String upDown(String s){
+    return (s + " and " + a);
+  }
 }
