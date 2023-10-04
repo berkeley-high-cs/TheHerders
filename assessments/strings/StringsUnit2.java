@@ -48,7 +48,7 @@ public class StringsUnit2 {
     String newWord = (s.substring(i, i + 1 ));
     return (newWord);
   }
-  public String oneCharacter(String s){
+  public String firstHalf(String s){
     String newWord = (s.substring(0, s.length()/2));
     return (newWord);
   }
