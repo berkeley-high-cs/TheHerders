@@ -97,4 +97,9 @@ public class StringsUnit2 {
     }
     return middle;
   }
+  public String upDownLastCharacter(String s){
+  String middle = (s.substring(s.length() / 4, s.length() - 1 -(s.length() / 4)));
+  
+    return middle;
+  }
 }
