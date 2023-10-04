@@ -117,4 +117,10 @@ public class StringsUnit2 {
 
     return (lastHalf + firstHalf);
   }
+  public String capitalizeName(String s){
+   String firstName = firstName(s);
+   String lastName = lastName(s);
+   
+    return (capitlize(firstName) + " " + capitlize(lastName));
+  }
 }
