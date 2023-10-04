@@ -44,4 +44,8 @@ public class StringsUnit2 {
     String newWord = ((s.substring(0,1)).toUpperCase() + s.substring(1,s.length()).toLowerCase());
     return (newWord);
   }
+  public String oneCharacter(String s, int i){
+    String newWord = (s.indexOf(i));
+    return (newWord);
+  }
 }
