@@ -30,4 +30,10 @@ public class StringsUnit2 {
       return false;
     }
   }
+   public String slug(String s, String a, String b){
+    String x = s.toUpperCase();
+    String y = a.toUpperCase();
+     String z = b.toUpperCase();
+    return (x + "-" + y + "-" + z);
+  }
 }
