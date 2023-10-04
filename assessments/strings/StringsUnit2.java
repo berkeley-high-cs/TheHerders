@@ -121,6 +121,6 @@ public class StringsUnit2 {
    String firstName = firstName(s);
    String lastName = lastName(s);
    
-    return (capitlize(firstName) + " " + capitlize(lastName));
+    return (capitalize(firstName) + " " + capitalize(lastName));
   }
 }
