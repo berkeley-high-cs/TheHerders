@@ -57,7 +57,7 @@ public class StringsUnit2 {
     return (newWord);
   }
   public String upTo(String s, String a){
-    String newWord = (s.substring(s.length()/2, s.length()));
+    String newWord = (s.substring(0, s.indexOf(a)));
     return (newWord);
   }
 }
