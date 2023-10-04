@@ -21,6 +21,6 @@ public class StringsUnit2 {
     }
   }
    public String upDown(String s){
-    return (s + " and " + a);
+    return (s + " and ");
   }
 }
