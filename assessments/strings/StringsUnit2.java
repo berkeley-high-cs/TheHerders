@@ -65,7 +65,7 @@ public class StringsUnit2 {
     return (newWord);
   }
   public String lastName(String s){
-    String newWord = (s.substring(s.indexOf(" ") - 1, s.length()));
+    String newWord = (s.substring(s.indexOf(" ") + 1, s.length()));
     return (newWord);
   }
 }
