@@ -68,4 +68,12 @@ public class StringsUnit2 {
     String newWord = (s.substring(s.indexOf(" ") + 1, s.length()));
     return (newWord);
   }
+  public String startsWith(String s, String a){
+    String newWord = (s.substring(0, a.length()));
+    if (newWord.equals(a)){
+    return true;
+    } else {
+      return false;
+    }
+  }
 }
