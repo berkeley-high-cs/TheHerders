@@ -127,6 +127,6 @@ public class StringsUnit2 {
    String firstName = firstName(s);
    String lastName = lastName(s);
    
-    return (firstName.substring(0,1) +  lastName.substring(0,1);
+    return (firstName.substring(0,1) +  lastName.substring(0,1));
   }
 }
