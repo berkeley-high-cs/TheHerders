@@ -69,7 +69,8 @@ public class StringsUnit2 {
     return (newWord);
   }
   public boolean startsWith(String s, String a){
-    String newWord = (s.substring(0, a.length()));
+
+    String newWord = (s.substring(0, Math.ceil(a.length(), s.length)));
     if (a.equals(newWord)){
     return true;
     } else {
