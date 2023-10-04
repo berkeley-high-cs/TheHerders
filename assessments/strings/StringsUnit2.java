@@ -37,7 +37,7 @@ public class StringsUnit2 {
     return (x + "-" + y + "-" + z);
   }
   public String simplePigLatin(String s,int i){
-    String newWord = (s.substring(i + 1 , s.length()-1) + s.substring(0,i));
+    String newWord = (s.substring(i, s.length()-1) + s.substring(0,i - 1) + "ay");
     return (newWord);
   }
 }
