@@ -91,7 +91,7 @@ public class StringsUnit2 {
     }
   }
   public String middle(String s){
-  String middle = (s.substring(s.length() / 4, s.length() - (s.length() / 4)));
+  String middle = (s.substring(s.length() / 4, s.length() - 1 -(s.length() / 4)));
     if (s.equals("food")){
       return "oo";
     }
