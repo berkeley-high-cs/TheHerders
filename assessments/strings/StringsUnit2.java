@@ -11,4 +11,13 @@ public class StringsUnit2 {
   public String pair(String s, String a){
     return (s + " and " + a);
   }
+  public String boolean(String s, String a){
+    int firstStringLength = s.length();
+    int secondStringLength = a.length();
+    if (firstStringLength > secondStringLength == true){
+    return true;
+    } else {
+      return false;
+    }
+  }
 }
