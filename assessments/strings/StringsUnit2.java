@@ -94,5 +94,5 @@ public class StringsUnit2 {
   String middle = (s.substring(s.length() / 4, s.length - (s.length() / 4)));
 
     return middle;
-    
+  }
 }
