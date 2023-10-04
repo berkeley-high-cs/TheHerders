@@ -23,4 +23,11 @@ public class StringsUnit2 {
    public String upDown(String s){
     return (s.toUpperCase() + s.toLowerCase());
   }
+  public boolean contains(String s, String a){
+    if (s.contains(a) == true ){
+    return (s.toUpperCase() + s.toLowerCase());
+    } else {
+      return false;
+    }
+  }
 }
