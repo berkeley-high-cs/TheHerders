@@ -80,4 +80,14 @@ public class StringsUnit2 {
       return false;
     }
   }
+  public boolean endsWith(String s, String a){
+    int place = (a.length());
+    int sLength = (s.length());
+    String newWord = (s.substring(place - sLength, sLength));
+    if (a.equals(newWord)){
+    return true;
+    } else {
+      return false;
+    }
+  }
 }
