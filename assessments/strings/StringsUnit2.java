@@ -8,4 +8,7 @@ public class StringsUnit2 {
     int last = (s.length()) - 1;
     return s.substring(last);
   }
+  public String pair(String s, String a){
+    return (s + " and " + a);
+  }
 }
