@@ -60,4 +60,8 @@ public class StringsUnit2 {
     String newWord = (s.substring(0, s.indexOf(a)));
     return (newWord);
   }
+  public String firstName(String s){
+    String newWord = (s.substring(0, s.indexOf(" ")));
+    return (newWord);
+  }
 }
