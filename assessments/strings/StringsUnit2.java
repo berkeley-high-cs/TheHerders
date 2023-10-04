@@ -105,7 +105,7 @@ public class StringsUnit2 {
 
     return (upDownLastCharacter(letter));
   }
-  public String oneCharacterUpDown(String s){
+  public String firstAndLast(String s){
   String first = (s.substring(0,1));
   String last = (s.substring(s.length() - 1, s.length()));
 
