@@ -41,7 +41,7 @@ public class StringsUnit2 {
     return (newWord);
   }
   public String capitalize(String s){
-    String newWord = ((s.substring(0,1)).toUpperCase() + s.substring(1,s.length()));
+    String newWord = ((s.substring(0,1)).toUpperCase() + s.substring(1,s.length()).toLowerCase());
     return (newWord);
   }
 }
