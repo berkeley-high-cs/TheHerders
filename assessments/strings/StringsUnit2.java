@@ -36,4 +36,8 @@ public class StringsUnit2 {
      String z = b.toLowerCase();
     return (x + "-" + y + "-" + z);
   }
+  public String simplePigLatin(String s,int i){
+    
+    return (x + "-" + y + "-" + z);
+  }
 }
