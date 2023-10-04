@@ -45,7 +45,7 @@ public class StringsUnit2 {
     return (newWord);
   }
   public String oneCharacter(String s, int i){
-    String newWord = (s.indexOf(i));
+    String newWord = (s.substring(i - 1, i));
     return (newWord);
   }
 }
