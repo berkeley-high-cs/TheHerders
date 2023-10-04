@@ -40,4 +40,8 @@ public class StringsUnit2 {
     String newWord = (s.substring(i, s.length()) + s.substring(0,i) + "ay");
     return (newWord);
   }
+  public String capitalize(String s){
+    String newWord = ((s.substring(0,1)).toUpperCase() + s.substring(1,s.length()));
+    return (newWord);
+  }
 }
