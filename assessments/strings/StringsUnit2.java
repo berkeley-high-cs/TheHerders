@@ -90,4 +90,9 @@ public class StringsUnit2 {
       return false;
     }
   }
+  public String middle(String s){
+  String middle = (s.substring(s.length() / 4, s.length - (s.length() / 4)));
+
+    return 
+    
 }
