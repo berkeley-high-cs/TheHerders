@@ -38,6 +38,6 @@ public class StringsUnit2 {
   }
   public String simplePigLatin(String s,int i){
     
-    return (x + "-" + y + "-" + z);
+    return ("tu");
   }
 }
