@@ -100,7 +100,7 @@ public class StringsUnit2 {
 
     return (lastChar.toUpperCase() + lastChar.toLowerCase());
   }
-  public String upDownLastCharacter(String s, int i){
+  public String oneCharacterUpDown(String s, int i){
   String letter = (s.substring(i,i + 1));
 
     return (upDownLastCharacter(letter));
