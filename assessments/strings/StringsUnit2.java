@@ -31,9 +31,9 @@ public class StringsUnit2 {
     }
   }
    public String slug(String s, String a, String b){
-    String x = s.toUpperCase();
-    String y = a.toUpperCase();
-     String z = b.toUpperCase();
+    String x = s.toLowerCase();
+    String y = a.toLowerCase();
+     String z = b.toLowerCase();
     return (x + "-" + y + "-" + z);
   }
 }
