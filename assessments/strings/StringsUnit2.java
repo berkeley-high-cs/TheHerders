@@ -111,4 +111,10 @@ public class StringsUnit2 {
 
     return (first + last);
   }
+  public String swapFrontAndBack(String s){
+   String firstHalf = firstHalf(s);
+   String lastHalf = lastHalf(s);
+
+    return (lastHalf + firstHalf);
+  }
 }
