@@ -5,8 +5,8 @@ public class StringsUnit2 {
     return s.substring(0,1);
   }
   public String lastCharacter(String s){
-    String secondLast = s.length() - 2;
-    String last = s.length() - 1;
+    String secondLast = (s.length()) - 2;
+    String last = (s.length()) - 1;
     return s.substring(secondLast,last);
   }
 }
