@@ -53,7 +53,7 @@ public class StringsUnit2 {
     return (newWord);
   }
   public String lastHalf(String s){
-    String newWord = (s.substring(s.length()/2, s.length() - 1));
+    String newWord = (s.substring(s.length()/2, s.length()));
     return (newWord);
   }
 }
