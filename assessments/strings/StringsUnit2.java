@@ -83,7 +83,7 @@ public class StringsUnit2 {
   public boolean endsWith(String s, String a){
     int place = (a.length());
     int sLength = (s.length());
-    String newWord = (s.substring(place - sLength, sLength));
+    String newWord = (s.substring(sLength - place, sLength));
     if (a.equals(newWord)){
     return true;
     } else {
