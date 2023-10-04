@@ -70,7 +70,7 @@ public class StringsUnit2 {
   }
   public boolean startsWith(String s, String a){
     int place = (a.length());
-    Math.ceil(place, s.length);
+    Math.ceil(place, s.length());
     String newWord = (s.substring(0, place));
     if (a.equals(newWord)){
     return true;
