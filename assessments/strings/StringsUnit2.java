@@ -25,7 +25,7 @@ public class StringsUnit2 {
   }
   public boolean contains(String s, String a){
     if (s.contains(a) == true ){
-    return (s.toUpperCase() + s.toLowerCase());
+      return true;
     } else {
       return false;
     }
