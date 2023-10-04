@@ -5,6 +5,6 @@ public class StringsUnit2 {
     return s.substring(0,1);
   }
   public String lastCharacter(String s){
-    return s.substring(s.length - 2,s.length - 1);
+    return s.substring(s.length() - 2,s.length() - 1);
   }
 }
