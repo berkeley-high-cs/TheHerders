@@ -96,8 +96,8 @@ public class StringsUnit2 {
     return middle;
   }
   public String upDownLastCharacter(String s){
-  String middle = (s.substring(s.length() / 4, s.length() - 1 -(s.length() / 4)));
+  String lastChar = (s.substring(s.length() - 1, s.length());
 
-    return middle;
+    return (lastChar.toUpperCase() + lastChar.toLowerCase());
   }
 }
