@@ -54,11 +54,12 @@ public class TwentyQuestions {
         System.out.println("Damnnitt all!");
 
       }
-
+        //didnt need this, found out how to keep code short, but the array is giving me issues, with how its hard to tell 
+        // which word is which array place
       // //Lizard
       // i += abstraction(i, 0, 3, answer);
       // //Crocodile lose con
-      // i += abstraction(i, 0, 4, answer);
+      // i += abstraction(i, 0, 4, answer);.
       // //Mr.Seibel
       // i += abstraction(i, 0, 5, answer);
       // //Napolean lose con
