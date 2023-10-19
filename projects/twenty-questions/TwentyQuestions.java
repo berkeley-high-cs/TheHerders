@@ -9,7 +9,7 @@ public class TwentyQuestions {
   private final static int WON = -1;
   private final static int LOST = -2;
 
-  private String[] words = {
+  private final String[] words = {
     "real",                //0
     "alive",               //1
     "a mammal",            //2
@@ -31,9 +31,16 @@ public class TwentyQuestions {
     "Sing 2"               //18
   };
 
-  // Next element of words given a yes or no answer. -1 means computer has won;
-  // -2 means it has lost.
-  private int[][] next = {
+  // Next element of words given a yes or no answer. This is pretty fragile/hard
+  // to maintain as it's basically representing the question tree via direct
+  // indices. If the tree was a bit more regular we could use math to figure out
+  // where the next question lives but this basically encodes all the magic
+  // numbers that were in the original code in one place. (It is actually
+  // slightly different than the original code; I don't know if that's because I
+  // misunderstood the order you intended to ask the questions or possibly if
+  // there were bugs in the original code. I think this order is at least
+  // coherent, if not what you originally intended.)
+  private final int[][] next = {
     { 1, 13 },     // real       -> alive or video game
     { 2, 7 },      // alive      -> mammal or mineral
     { 3, 5 },      // mammmal    -> Mr. Seibel or lizard
@@ -68,7 +75,7 @@ public class TwentyQuestions {
 
     if (i == WON) {
       System.out.println("I win!");
-    } else if (i == -2) {
+    } else {
       System.out.println("Dang it. You stumped me.");
     }
   }
