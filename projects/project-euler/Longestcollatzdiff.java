@@ -1,10 +1,10 @@
 public class Longestcollatzdiff {
     public static void main(String[] args) {
-        int n = 0;
+        long n = 0;
         int totalChanges = 0;
-        int largestChange = 0;
-        int largestChangeNum = 0;
-        for (int i = 1; i <= 1000000; i++) {
+        long largestChange = 0;
+        long largestChangeNum = 0;
+        for (long i = 1; i <= 1000000; i++) {
             if (totalChanges > largestChange) {
                 largestChange = totalChanges;
                 largestChangeNum = i - 1;
