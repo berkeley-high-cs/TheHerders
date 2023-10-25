@@ -1,5 +1,5 @@
 
-public class Projecteuler {
+public class Smallestmultiple {
     public static void main(String[] args) {
         boolean run = true;
         int x = 13000000;
