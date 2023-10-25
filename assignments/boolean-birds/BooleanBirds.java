@@ -30,6 +30,9 @@ public class BooleanBirds {
   public boolean isGlobbyBird(boolean red, boolean spotted){
       return !red && !spotted;
   }
+  public boolean eatsWorms(boolean red, boolean spotted){
+      return (!isGlobbyBird(red, spotted));
+  }
 
 
 }
