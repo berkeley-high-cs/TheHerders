@@ -33,6 +33,9 @@ public class BooleanBirds {
   public boolean eatsWorms(boolean red, boolean spotted){
       return (!isGlobbyBird(red, spotted));
   }
+  public boolean eatsNuts(boolean red, boolean spotted){
+      return (!isFlibbleBird(red, spotted));
+  }
 
 
 }
