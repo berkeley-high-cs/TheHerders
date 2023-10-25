@@ -24,6 +24,12 @@ public class BooleanBirds {
   public boolean isBloggyBird(boolean red, boolean spotted){
       return red && !spotted;
   }
+  public boolean isFlibbleBird(boolean red, boolean spotted){
+      return !red && spotted;
+  }
+  public boolean isGlobbyBird(boolean red, boolean spotted){
+      return !red && spotted;
+  }
 
 
 }
