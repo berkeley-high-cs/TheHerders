@@ -42,6 +42,10 @@ public class BooleanBirds {
   public boolean eatsMice(boolean red, boolean spotted){
       return (!isFlobbyBird(red, spotted));
   }
+  public boolean isRed(String bird){
+    return (bird.equals(Flobby) || bird.equals(Bloggy));
+    
+  }
 
 
 }
