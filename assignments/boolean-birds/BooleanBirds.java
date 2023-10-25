@@ -44,6 +44,9 @@ public class BooleanBirds {
   }
   public boolean isRed(String bird){
     return (bird.equals("Flobby") || bird.equals("Bloggy"));
+  }
+  public boolean isSpotted(String bird){
+    return (bird.equals("Flobby") || bird.equals("Flibble"));
     
   }
 
