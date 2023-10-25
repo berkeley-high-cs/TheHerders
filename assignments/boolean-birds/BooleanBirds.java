@@ -39,7 +39,7 @@ public class BooleanBirds {
   public boolean eatsFish(boolean red, boolean spotted){
       return (!isBloggyBird(red, spotted));
   }
-  public boolean eatsFish(boolean red, boolean spotted){
+  public boolean eatsMice(boolean red, boolean spotted){
       return (!isFlobbyBird(red, spotted));
   }
 
