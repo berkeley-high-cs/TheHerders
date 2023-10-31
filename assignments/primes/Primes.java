@@ -18,15 +18,15 @@ public class Primes {
     
     return true;
   }
-  // public int numberOfPrimesBelow (int num){
-  //   int totalNumberOfPrimesBelow = 0;
-  //   for (int i = 0; i <= num; i++){
-  //     if (isPrime(i)){
-  //       totalNumberOfPrimesBelow++;
-  //     }
-  //   }
-  //   return totalNumberOfPrimesBelow;
-  // }
+  public int numberOfPrimesBelow (int num){
+    int totalNumberOfPrimesBelow = 0;
+    for (int i = 0; i <= num; i++){
+      if (isPrime(i)){
+        totalNumberOfPrimesBelow++;
+      }
+    }
+    return totalNumberOfPrimesBelow;
+  }
 
 
 }
