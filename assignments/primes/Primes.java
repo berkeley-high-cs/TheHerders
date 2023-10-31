@@ -7,8 +7,8 @@
 
 public class Primes {
   public static boolean isPrime(int num){
-    for (int i = 1; i < num; i++){
-      if (i == num - 1){
+    for (int i = 1; i <= num / 2.0; i++){
+      if (i == num / 2.0){
         return true;
       }
       if (num % i == 0){
