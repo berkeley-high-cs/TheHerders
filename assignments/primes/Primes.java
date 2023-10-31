@@ -17,7 +17,7 @@ public class Primes {
       }
     }
     
-    return true;
+    return false;
   }
   public int numberOfPrimesBelow (int num){
     for (int i = 0; i <= num; i++){
