@@ -20,7 +20,7 @@ public class Primes {
     return true;
   }
   public boolean numberOfPrimesBelow (int num){
-    
+    return 0;
   }
 
 
