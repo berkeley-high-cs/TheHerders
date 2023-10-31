@@ -7,7 +7,7 @@
 
 public class Primes {
   public static boolean isPrime(int num){
-    for (int i = 2; i < num; i++){
+    for (int i = 1; i < num; i++){
       if (i == num - 1){
         return true;
       }
