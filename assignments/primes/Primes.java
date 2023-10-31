@@ -19,7 +19,7 @@ public class Primes {
     System.out.println("something wrong");
     return true;
   }
-  public boolean numberOfPrimesBelow (int num){
+  public int numberOfPrimesBelow (int num){
     return 0;
   }
 
