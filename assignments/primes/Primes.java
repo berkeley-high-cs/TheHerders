@@ -7,11 +7,11 @@
 
 public class Primes {
   public boolean isPrime(int num){
-    for (int i = 2; i <= num/2.0; i++){
+    for (int i = 2; i <= num; i++){
       if (num % i == 0){
         return false;
       } 
-      if (i == num/2.0){
+      if (i == num){
         return true;
       }
     }
