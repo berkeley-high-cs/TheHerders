@@ -8,6 +8,9 @@
 public class Primes {
   public static boolean isPrime(int num){
     for (int i = 1; i < num; i++){
+      if (num = 1){
+        return false;
+      }
       if (num % i == 0 && i != 1 ){
         return false;
       } 
@@ -16,9 +19,9 @@ public class Primes {
   }
   public int numberOfPrimesBelow (int num){
     int totalNumberOfPrimesBelow;
-    // for (int i = 0; i <= num; i++){
+    for (int i = 0; i <= num; i++){
       
-    // }
+    }
     return 0;
   }
 
