@@ -21,8 +21,9 @@ public class Primes {
   }
   public int numberOfPrimesBelow (int num){
     for (int i = 0; i <= num; i++){
-      
+      return 0;
     }
+    return 0;
   }
 
 
