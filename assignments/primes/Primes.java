@@ -9,10 +9,10 @@ public class Primes {
   public boolean isPrime(int num){
     for (int i = 0; i <= num/2.0; i++){
       if (num % i == 0){
-        return false
+        return false;
       } 
       if (i == num/2.0){
-        return false;
+        return true;
       }
     }
   }
