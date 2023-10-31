@@ -15,6 +15,7 @@ public class Primes {
         return true;
       }
     }
+    System.out.println("something wrong");
     return false;
   }
 
