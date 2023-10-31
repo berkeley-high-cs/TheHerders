@@ -6,19 +6,20 @@
  */
 
 public class Primes {
-  public boolean isPrime(int num){
+  public static boolean isPrime(int num){
     for (int i = 2; i < num; i++){
       if (num % i == 0){
         System.out.println("something false");
-        return true;
+        return false;
       } 
       if (i == num){
         return true;
       }
     }
     System.out.println("something wrong");
-    return true;
+    return false;
   }
+
 
 
 }
