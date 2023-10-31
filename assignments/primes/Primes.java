@@ -7,14 +7,15 @@
 
 public class Primes {
   public static boolean isPrime(int num){
+    if (num == 1){
+        return false;
+      }
     for (int i = 1; i < num; i++){
       if (num % i == 0 && i != 1 ){
         return false;
       } 
     }
-    if (num == 1){
-        return false;
-      }
+    
     return true;
   }
   public int numberOfPrimesBelow (int num){
