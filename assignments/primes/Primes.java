@@ -24,7 +24,7 @@ public class Primes {
         totalNumberOfPrimesBelow++;
       }
     }
-    return total;
+    return totalNumberOfPrimesBelow;
   }
 
 
