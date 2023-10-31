@@ -15,6 +15,7 @@ public class Primes {
         return true;
       }
     }
+    return false;
   }
 
 
