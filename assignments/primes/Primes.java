@@ -8,13 +8,14 @@
 public class Primes {
   public static boolean isPrime(int num){
     for (int i = 2; i < num; i++){
+      if (i == num){
+        return true;
+      }
       if (num % i == 0){
         
         return false;
       } 
-      if (i == num){
-        return true;
-      }
+      
     }
     
     return false;
