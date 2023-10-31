@@ -20,7 +20,9 @@ public class Primes {
     return true;
   }
   public int numberOfPrimesBelow (int num){
-    return 0;
+    for (int i = 0; i <= num; i++){
+      
+    }
   }
 
 
