@@ -17,7 +17,7 @@ public class Primes {
       }
     }
     System.out.println("something wrong");
-    //return false;
+    return false;
   }
 
 
