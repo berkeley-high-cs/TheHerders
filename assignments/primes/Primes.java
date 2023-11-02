@@ -27,6 +27,14 @@ public class Primes {
     }
     return totalNumberOfPrimesBelow;
   }
-
+  public int numberOfTwinPrimePairsBelow(int num){
+    int total = 0;
+    for (int i = 0; i < num; i++){
+      if (isPrime(i) && isPrime(i + 2)){
+        total++;
+      }
+    }
+    return total;
+  }
 
 }
