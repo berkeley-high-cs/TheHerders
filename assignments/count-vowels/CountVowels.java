@@ -5,7 +5,7 @@ public class CountVowels {
     return "aeiou".indexOf(s.toLowerCase()) != -1;
   }
   public int countVowels(String s){
-    int total = 0
+    int total = 0;
     for (int i = 0; i < s.length(); i++){
       if (isVowel(Character.toString(s.charAt(i)))){
         total++;
