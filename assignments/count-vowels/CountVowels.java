@@ -6,7 +6,7 @@ public class CountVowels {
   }
   public int countVowels(String s){
     int total = 0;
-    Char letter = s.charAt(i);
+    char letter = s.charAt(i);
     for (int i = 0; i < s.length(); i++){
       if (isVowel(Character.toString(letter))){
         total++;
