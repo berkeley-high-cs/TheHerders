@@ -36,5 +36,14 @@ public class Primes {
     }
     return total;
   }
+  public boolean isSuperPrime(int num){
+    if (isPrime(num)){
+      return isPrime(numberOfPrimesBelow(num));
+      }
+    } else {
+      return false;
+    }
+  
+  }
 
 }
