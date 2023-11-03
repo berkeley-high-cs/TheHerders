@@ -40,7 +40,7 @@ public class Primes {
     if (isPrime(num)){
       return isPrime(numberOfPrimesBelow(num));
       }
-    } else {
+     else {
       return false;
     }
   
