@@ -38,7 +38,7 @@ public class Primes {
   }
   public boolean isSuperPrime(int num){
     if (isPrime(num)){
-      return isPrime(numberOfPrimesBelow(num));
+      return isPrime(numberOfPrimesBelow(num) + 1);
       }
      else {
       return false;
