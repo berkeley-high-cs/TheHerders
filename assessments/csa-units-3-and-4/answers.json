@@ -8,5 +8,6 @@
   "16",
   "12",
   "6",
-  "\n                  When Math.random() returns a number less that\n                  0.01\n                "
+  "\n                  When Math.random() returns a number less that\n                  0.01\n                ",
+  "\n                  It tests whether there are more than limit prime\n                  numbers below max.\n                "
 ]
