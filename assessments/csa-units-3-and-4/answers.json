@@ -10,5 +10,6 @@
   "6",
   "\n                  When Math.random() returns a number less that\n                  0.01\n                ",
   "\n                  It tests whether there are more than limit prime\n                  numbers below max.\n                ",
-  "\nint i = 0;\nwhile (i < max){\n  System.out.println(i);\n  i++;\n}\n\n\n\n"
+  "\nint i = 0;\nwhile (i < max){\n  System.out.println(i);\n  i++;\n}\n\n\n\n",
+  "public boolean willGetTakeout(boolean hungry, boolean broke) {\n  return (hungry && !broke);\n}"
 ]
