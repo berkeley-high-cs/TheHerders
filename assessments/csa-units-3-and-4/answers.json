@@ -14,5 +14,5 @@
   "public boolean willGetTakeout(boolean hungry, boolean broke) {\n  return (hungry && !broke);\n}",
   "\n\npublic static void table(int n){\n  for (int x = 1; x <= n; x++){\n   for (int i = 1; i <= n; i++){\n     System.out.print(i * x);\n      if (i == n){\n        System.out.println(\" \");\n      }\n   }\n  }\n}\n\n\n\n",
   "flip it",
-  "\nPublic static void\n\n\n\n\n"
+  "\npublic static void prefix(String s){\n  String prefix = \"\";\n  for (int i = 0; i < s.length(); i++){\n    System.out.println(prefix);\n    prefix = prefix + s.substring(i, i + 1);\n  }\n}\n\n\n\n\n"
 ]
