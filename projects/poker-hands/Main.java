@@ -6,6 +6,7 @@ import java.util.*;
 class Main {
     static String player1Hand, player2Hand;
     static int sameSuits = 0;
+    static int sameVals = 0;
     static int p1Rank = 0;
     static String[] listOfValues = { "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A" };
 
@@ -16,13 +17,16 @@ class Main {
             while (myReader.hasNextLine()) {
 
                 player1Hand = myReader.next() + myReader.next() + myReader.next() + myReader.next() + myReader.next();
-                System.out.println(player1Hand);
+                //System.out.println(player1Hand);
                 player2Hand = myReader.next() + myReader.next() + myReader.next() + myReader.next() + myReader.next();
                 // System.out.println(player2Hand);
                 p1ValueCheck();
                 p1SuitChecker();
-                p1RoyalFlushCheck();
+                p1TwoPairCheck();
                 p1StraightFlushCheck();
+                p1RoyalFlushCheck();
+               
+                
                 // scrapped idea, replaced with checking p1Rank individually p1p1RankCheck();
             }
             myReader.close();
@@ -33,20 +37,22 @@ class Main {
 
     }
 
-    static void p1ValueCheck() {
-        // int sameSuits = 0;
+    static int p1ValueCheck() {
+        sameVals = 0;
         char val;
         List<Character> valueCheck = new ArrayList<Character>();
         for (int i = 0; i < 9; i += 2) {
             val = player1Hand.charAt(i);
             if (valueCheck.contains(val)) {
                 System.out.println(valueCheck);
+                sameVals++;
             } else {
                 valueCheck.add(val);
-                System.out.println(valueCheck);
+               // System.out.println(valueCheck);
             }
 
         }
+        return sameVals;
     }
 
     public static int p1SuitChecker() {
@@ -56,11 +62,11 @@ class Main {
         for (int i = 1; i <= 9; i += 2) {
             suit = player1Hand.charAt(i);
             if (suitCheck.contains(suit)) {
-                System.out.println(suitCheck);
+              //  System.out.println(suitCheck);
                 sameSuits++;
             } else {
                 suitCheck.add(suit);
-                System.out.println(suitCheck);
+               // System.out.println(suitCheck);
 
             }
 
@@ -78,7 +84,7 @@ class Main {
             return true;
 
         } else {
-            System.out.println(p1Rank);
+            //System.out.println(p1Rank);
             return false;
         }
     }
@@ -88,7 +94,8 @@ class Main {
             if (player1Hand.contains(listOfValues[i]) &&
                     player1Hand.contains(listOfValues[i + 1]) &&
                     player1Hand.contains(listOfValues[i + 2]) &&
-                    player1Hand.contains(listOfValues[i + 3]) && player1Hand.contains(listOfValues[i + 4]) &&
+                    player1Hand.contains(listOfValues[i + 3]) && 
+                    player1Hand.contains(listOfValues[i + 4]) &&
                     sameSuits == 4) {
                 p1Rank = 9;
                 System.out.println(p1Rank);
@@ -96,7 +103,18 @@ class Main {
                 return true;
             }
         }
-        System.out.println(p1Rank);
+        //System.out.println(p1Rank);
+        return false;
+
+    }
+    static boolean p1TwoPairCheck(){
+            if (sameVals == 2) {
+                p1Rank = 2;
+                System.out.println(p1Rank);
+                System.out.println("frick");
+                return true;
+            } 
+         System.out.println(p1Rank);
         return false;
 
     }
