@@ -18,7 +18,37 @@
  */
 
 public class BooleanBirds {
-
+  public boolean isFlobbyBird(boolean red, boolean spotted){
+      return red && spotted;
+  }
+  public boolean isBloggyBird(boolean red, boolean spotted){
+      return red && !spotted;
+  }
+  public boolean isFlibbleBird(boolean red, boolean spotted){
+      return !red && spotted;
+  }
+  public boolean isGlobbyBird(boolean red, boolean spotted){
+      return !red && !spotted;
+  }
+  public boolean eatsWorms(boolean red, boolean spotted){
+      return (!isGlobbyBird(red, spotted));
+  }
+  public boolean eatsNuts(boolean red, boolean spotted){
+      return (!isFlibbleBird(red, spotted));
+  }
+  public boolean eatsFish(boolean red, boolean spotted){
+      return (!isBloggyBird(red, spotted));
+  }
+  public boolean eatsMice(boolean red, boolean spotted){
+      return (!isFlobbyBird(red, spotted));
+  }
+  public boolean isRed(String bird){
+    return (bird.equals("Flobby") || bird.equals("Bloggy"));
+  }
+  public boolean isSpotted(String bird){
+    return (bird.equals("Flobby") || bird.equals("Flibble"));
+    
+  }
 
 
 }
