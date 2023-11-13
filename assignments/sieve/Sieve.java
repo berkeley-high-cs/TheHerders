@@ -8,7 +8,7 @@ public class Sieve {
   }
   public int countNonZeros(int[] grid){
     int total = 0;
-    for (int i = 0; i < grid[].length(); i++){
+    for (int i = 0; i < grid[].length; i++){
       if (grid[i] == 0){
         total++;
       }
