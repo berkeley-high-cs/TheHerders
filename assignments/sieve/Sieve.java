@@ -1,6 +1,6 @@
 public class Sieve {
   public int[] numberTable(int arg){
-    new int[] grid[1] = new int;
+    new grid[1] = new int [1];
     return grid;
   }
 }
