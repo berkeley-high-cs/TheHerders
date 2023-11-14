@@ -15,13 +15,11 @@ public class Sieve {
     }
     return total;
   }
-  public int clearMultiples(int[] grid, int num){
-    int total = 0;
+  public void clearMultiples(int[] grid, int num){
     for (int i = 0; i < grid.length; i++){
       if (grid[i] % num == 0 && grid[i] != num){
         grid[i] = 0;
       }
     }
-    return total;
   }
 }
