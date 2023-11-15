@@ -22,7 +22,7 @@ public class Sieve {
       }
     }
   }
-  public void nonZeros(int[] array){
+  public int[] nonZeros(int[] array){
     int size = 0;
     for (int i = 0; i < array.length; i++){
       if (array[i] != 0){
@@ -37,5 +37,6 @@ public class Sieve {
         x++;
       }
     }
+    return nonZeros;
   }
 }
