@@ -17,7 +17,7 @@ public class Sieve {
   }
   public void clearMultiples(int[] grid, int num){
     for (int i = 0; i < grid.length; i++){
-      if (i % num == 0 && i != num){
+      if (i % num == 0 && i != num && grid[i] != 0){
         grid[i] = 0;
       }
     }
