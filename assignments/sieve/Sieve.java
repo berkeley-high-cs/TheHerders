@@ -41,7 +41,7 @@ public class Sieve {
   }
    public int nextNonZero(int[] array, int index){
     
-    for (int i = index ; i < array.length; i++){
+    for (int i = index -1; i < array.length; i++){
       if (array[i] != 0){
         return array[i];
       }
