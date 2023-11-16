@@ -39,4 +39,13 @@ public class Sieve {
     }
     return nonZeros;
   }
+   public int nextNonZero(int[] array, int index){
+    
+    for (int i = index; i < array.length; i++){
+      if (array[i] != 0){
+        return array[i];
+      }
+    }
+    return 0;
+  }
 }
