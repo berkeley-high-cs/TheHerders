@@ -51,7 +51,7 @@ public class Sieve {
   public int[] primes(int size){
     int[] array = numberTable(size);
     numberTable[1] = 0;
-    clearMultiples(array);
+    clearMultiples(array, 2);
     nonZeros(array);   
     return array; 
   }
