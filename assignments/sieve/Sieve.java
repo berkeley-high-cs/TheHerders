@@ -61,6 +61,6 @@ public class Sieve {
     }
   }
       
-    
+    return nonZeros(array); 
   }
 }
