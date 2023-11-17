@@ -53,8 +53,8 @@ public class Sieve {
     if (array.length >= 2){
       array[1] = 0;
     }
-    clearMultiples(array, 2);
-    nonZeros(array);   
+    array = clearMultiples(array, 2);
+    array = nonZeros(array);   
     return array; 
   }
 }
