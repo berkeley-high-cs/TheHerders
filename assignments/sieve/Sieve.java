@@ -53,7 +53,9 @@ public class Sieve {
     if (array.length >= 2){
       array[1] = 0;
     }
+    for (int i = 0; i < array.length; i++){
     clearMultiples(array, 2);
+  }
     return nonZeros(array);   
     
   }
