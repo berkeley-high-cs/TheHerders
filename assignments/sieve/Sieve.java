@@ -54,7 +54,7 @@ public class Sieve {
       array[1] = 0;
     }
     clearMultiples(array, 2);
-    array = nonZeros(array);   
-    return array; 
+    return nonZeros(array);   
+    
   }
 }
