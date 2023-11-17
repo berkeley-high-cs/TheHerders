@@ -55,7 +55,7 @@ public class Sieve {
     }
     for (int i = 2; i < array.length;){
     clearMultiples(array, i);
-    i = nextNonZero(array);
+    i = nextNonZero(array, i);
   }
     return nonZeros(array);   
     
