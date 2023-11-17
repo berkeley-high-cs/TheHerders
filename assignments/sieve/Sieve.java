@@ -48,4 +48,11 @@ public class Sieve {
     }
     return 0;
   }
+  public int[] primes(int size){
+    int[] array = numberTable(size);
+    numberTable[1] = 0;
+    clearMultiples(array);
+    nonZeros(array);   
+    return array; 
+  }
 }
