@@ -50,7 +50,7 @@ public class Sieve {
   }
   public int[] primes(int size){
     int[] array = numberTable(size);
-    if (array.length >= 1){
+    if (array.length >= 2){
       array[1] = 0;
     }
     clearMultiples(array, 2);
