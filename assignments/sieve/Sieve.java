@@ -23,7 +23,6 @@ public class Sieve {
     }
   }
   public int[] nonZeros(int[] array){
-    
     int x = 0;
     int[] nonZeros = new int[countNonZeros(array)];
       for (int i = 0; i < array.length; i++){
