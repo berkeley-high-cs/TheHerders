@@ -7,7 +7,7 @@ class Eca {
     public static void main(String[] args) {
         read();
         int[] binaryRuleNum = toBinaryArray8();
-
+        
         int[] cells = new int[boardLength];
         cells[boardLength / 2] = 1;
         System.out.println(binaryRuleNum);
