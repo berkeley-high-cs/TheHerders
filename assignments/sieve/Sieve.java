@@ -23,14 +23,9 @@ public class Sieve {
     }
   }
   public int[] nonZeros(int[] array){
-    int size = 0;
-    for (int i = 0; i < array.length; i++){
-      if (array[i] != 0){
-        size++;
-      }
-    }
+    
     int x = 0;
-    int[] nonZeros = new int[size];
+    int[] nonZeros = new int[countNonZeros(array)];
       for (int i = 0; i < array.length; i++){
       if (array[i] != 0){
         nonZeros[x] = array[i];
