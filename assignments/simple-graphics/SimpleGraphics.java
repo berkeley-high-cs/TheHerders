@@ -14,7 +14,7 @@ public class SimpleGraphics implements ImageGenerator {
     g.setColor(Color.WHITE);
     g.fillRect(0, 0, width, height);
 
-   drawCircle(g, width / 2, height / 4, 30)
+   drawCircle(g, width / 2, height / 4, 30);
   }
   public void drawCircle(Graphics g, int x, int y, int radius){
     g.setColor(Color.BLUE);
