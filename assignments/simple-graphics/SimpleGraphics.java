@@ -18,6 +18,8 @@ public class SimpleGraphics implements ImageGenerator {
    drawCircle(g, width / 4, height / 4, 150);
    drawCircle(g, width * 3/4, height / 4, 150);
    drawCircle(g, (width / 4) + 150, height / 4, 150);
+   g.setColor(Color.RED);
+   g.drawRect(width/4, height/4, height / 4 + 300)
   }
   public void drawCircle(Graphics g, int x, int y, int radius){
     g.setColor(Color.BLUE);
