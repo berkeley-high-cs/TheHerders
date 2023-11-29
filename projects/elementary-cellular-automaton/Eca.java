@@ -10,7 +10,7 @@ class Eca {
         
         int[] cells = new int[boardLength];
         cells[boardLength / 2] = 1;
-        System.out.println(binaryRuleNum);
+        printBinaryRuleNum(binaryRuleNum);
         for (int i = 0; i < 10; i++) {
 
             print(cells);
@@ -19,8 +19,14 @@ class Eca {
     }
 
     public static void print(int[] cells) {
-        for (int i = 0; i < boardLength; i++) {
+        for (int i = 0; i < cells.length - 1; i++) {
             System.out.print(asBox(cells[i]));
+        }
+        System.out.println("");
+    }
+    public static void printBinaryRuleNum(int[] ruleNum) {
+        for (int i = 0; i < ruleNum.length - 1; i++) {
+            System.out.print(ruleNum[i]);
         }
         System.out.println("");
     }
@@ -34,13 +40,12 @@ class Eca {
 
         }
         // needs this in case its not 0 1
-        return " ";
+        return "\u2612";
     }
 
     public static int[] ruleTaker(int[] binaryRuleNum, int[] cells) {
         int[] tempCells = new int[boardLength];
-        
-        for (int i = 0; i < cells.length; i++){
+        for (int i = 0; i < boardLength; i++){
             if (i - 1 > 0 && i + 1 < 0){
                  if (ruleChecker(cells, i, 1, 1, 1)){
                     tempCells[i] = binaryRuleNum[0];
@@ -104,23 +109,20 @@ class Eca {
     }
    
     public static int[] toBinaryArray8() {
-        // https://www.geeksforgeeks.org/java-program-to-convert-integer-values-into-binary/
+        // orion is my source, but i edited this to fit my code
+        int[] tempBinaryArray = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+            String binaryWithOutLeading0 = Integer.toBinaryString(ruleNum);
+            String stringRule =  "00000000".substring(binaryWithOutLeading0.length()) + binaryWithOutLeading0;
+            System.out.println(stringRule);
+            for (int i = 0; i < 8; i++){
+                 
+                tempBinaryArray[i] = (stringRule.charAt(i));
+                tempBinaryArray[i] = tempBinaryArray[i] % 2;
+                
+            }
+            return tempBinaryArray;
 
-        // Function converting decimal to binary
-
-        // Creating and assigning binary array size
-        int[] binary = new int[8];
-        int id = 0;
-
-        // Number should be positive
-        while (ruleNum > 0) {
-            binary[id++] = ruleNum % 2;
-            ruleNum = ruleNum / 2;
         }
-
-        // Print Binary
-        return binary;
-    }
 
     public static void read() {
         System.out.println("");
