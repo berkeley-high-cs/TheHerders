@@ -10,11 +10,12 @@ class Eca {
         
         int[] cells = new int[boardLength];
         cells[boardLength / 2] = 1;
-        printBinaryRuleNum(binaryRuleNum);
+        printArray(binaryRuleNum);
         for (int i = 0; i < 10; i++) {
 
             print(cells);
             cells = ruleTaker(binaryRuleNum, cells);
+           // ruleChecker(cells, 7 , 0, 1, 0);
         }
     }
 
@@ -24,9 +25,9 @@ class Eca {
         }
         System.out.println("");
     }
-    public static void printBinaryRuleNum(int[] ruleNum) {
-        for (int i = 0; i < ruleNum.length - 1; i++) {
-            System.out.print(ruleNum[i]);
+    public static void printArray(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            System.out.print(array[i]);
         }
         System.out.println("");
     }
@@ -46,10 +47,12 @@ class Eca {
     public static int[] ruleTaker(int[] binaryRuleNum, int[] cells) {
         int[] tempCells = new int[boardLength];
         for (int i = 0; i < boardLength; i++){
-            if (i - 1 > 0 && i + 1 < 0){
+            // System.out.println(i);
+            if (i != 0 && i != boardLength){
                  if (ruleChecker(cells, i, 1, 1, 1)){
                     tempCells[i] = binaryRuleNum[0];
-                    System.out.println("temp cells" + tempCells);
+                    System.out.print("temp cells is ");
+                    printArray(tempCells);
                  }
                  if (ruleChecker(cells, i, 1, 1, 0)){
                     tempCells[i] = binaryRuleNum[1];
@@ -86,21 +89,22 @@ class Eca {
     }
 
     public static boolean ruleChecker(int[] cells, int i, int first, int second, int third){
-        boolean rule = false;
+        boolean rule = true;
+        
         if (i != 0 && i != boardLength - 1){
           rule = ((cells[i - 1] == first) && (cells[i] == second) && (cells[i + 1] == third));
           System.out.println(rule + " index is " + i + "first is " + first + "second is " 
-          + second + " third is " + third);
+          + second + " third is " + third + " cell value is " + cells[i]);
         return rule;
         } else if (i == 0){
           rule = ((first == 0) && (cells[i] == second) && (cells[i + 1] == third));
           System.out.println(rule + " index is " + i + "first is " + first + "second is " 
-          + second + " third is " + third);
+          + second + " third is " + third + " cell value is " + cells[i]);
             return rule;
         } else if (i == boardLength - 1){
           rule = ((cells[i - 1] == first) && (cells[i] == second) && (third == 0));
           System.out.println(rule + " index is " + i + "first is " + first + "second is " 
-          + second + " third is " + third);
+          + second + " third is " + third + " cell value is " + cells[i]);
             return rule;
         } else {
           System.out.println("whoopsie Daisy somethings wrong");
