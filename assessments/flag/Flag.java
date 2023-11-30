@@ -45,7 +45,7 @@ public class Flag implements ImageGenerator {
       g.fillRect(horizontalCenter, flagHeight - (i * stripeWidth), flagLength, stripeWidth);
     }
     g.setColor(BLUE);
-    g.fillRect(0, 0, (flagLength * 2 / 5), (7 * stripeWidth));
+    g.fillRect(horizontalCenter, 0, (flagLength * 2 / 5), (7 * stripeWidth));
     for (int i = 0; i < 50; i++){
       //drawStar(g, WHITE, )
     }
