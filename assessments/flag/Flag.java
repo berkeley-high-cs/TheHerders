@@ -33,16 +33,16 @@ public class Flag implements ImageGenerator {
     int horizontalCenter = ((width - flagLength) / 2);
     System.out.println(horizontalCenter);
     g.setColor(WHITE);
-    g.fillRect(0, 0, flagLength, flagHeight);
+    g.fillRect(horizontalCenter, 0, flagLength, flagHeight);
     g.setColor(RED);
-    g.fillRect(0, 0, flagLength, stripeWidth);
+    g.fillRect(horizontalCenter, 0, flagLength, stripeWidth);
     for (int i = 0; i < 13; i++){
       if (i % 2 == 1){
         g.setColor(RED);
       } else{
         g.setColor(WHITE);
       }
-      g.fillRect(0, flagHeight - (i * stripeWidth), flagLength, stripeWidth);
+      g.fillRect(horizontalCenter, flagHeight - (i * stripeWidth), flagLength, stripeWidth);
     }
     g.setColor(BLUE);
     g.fillRect(0, 0, (flagLength * 2 / 5), (7 * stripeWidth));
