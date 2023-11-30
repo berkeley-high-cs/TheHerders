@@ -26,7 +26,7 @@ public class Flag implements ImageGenerator {
     // diameter of 100 at the center of the canvas.
    // drawStar(g, RED, width / 2, height / 2, 100);
     int flagHeight = (height - height/10);
-    int flagLength = (flagHeight * 1.9);
+    int flagLength = ((flagHeight * 2) - flagHeight/10);
     double stripeWidth = (flagHeight / 13.0);
     g.setColor(WHITE);
     g.fillRect(0, 0, flagHeight, flagLength);
