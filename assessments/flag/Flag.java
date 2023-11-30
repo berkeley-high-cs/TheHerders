@@ -37,7 +37,7 @@ public class Flag implements ImageGenerator {
       } else{
         g.setColor(RED);
       }
-      g.fillRect(0, height - (i * stripe), flagLength, stripeWidth);
+      g.fillRect(0, height - (i * stripeWidth), flagLength, stripeWidth);
     }
 
 
