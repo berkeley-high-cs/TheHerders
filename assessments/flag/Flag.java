@@ -48,7 +48,7 @@ public class Flag implements ImageGenerator {
     }
     g.setColor(BLUE);
     g.fillRect(horizontalCenter, 0, blueRecLength, blueRecHeight);
-    for (int i = 0; i < 50; i++){
+    for (int i = 0; i < 6; i++){
       drawStar(g, WHITE, horizontalCenter + ((blueRecLength / 12 ) * i), (height - (blueRecHeight / 10)), starDiameter);
     }
 
