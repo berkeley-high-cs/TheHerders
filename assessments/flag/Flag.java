@@ -56,7 +56,7 @@ public class Flag implements ImageGenerator {
       } else{
         stars = 5;
       }
-      for (int i = 0; i <= stars; i++){
+      for (int i = 0; i < stars; i++){
         if (stars % 2 == 1){
           starterPos = 1;
         }
