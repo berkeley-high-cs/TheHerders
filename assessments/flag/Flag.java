@@ -29,7 +29,7 @@ public class Flag implements ImageGenerator {
     double flagLength = (flagHeight * 1.9);
     double stripeWidth = (flagHeight / 13.0);
     g.setColor(WHITE);
-    g.fillRect(0, 0, flagHeigt, flagLength);
+    g.fillRect(0, 0, flagHeight, flagLength);
 
 
 
