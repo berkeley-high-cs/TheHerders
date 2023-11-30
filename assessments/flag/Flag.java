@@ -42,7 +42,7 @@ public class Flag implements ImageGenerator {
       g.fillRect(0, flagHeight - (i * stripeWidth), flagLength, stripeWidth);
     }
     g.setColor(BLUE);
-    g.fillRect(0, 0, , (flagLength * 2 / 5), (7 * stripeWidth))
+    g.fillRect(0, 0, (flagLength * 2 / 5), (7 * stripeWidth));
 
 
 
