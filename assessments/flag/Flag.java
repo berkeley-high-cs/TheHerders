@@ -48,18 +48,18 @@ public class Flag implements ImageGenerator {
     }
     g.setColor(BLUE);
     g.fillRect(horizontalCenter, 0, blueRecLength, blueRecHeight);
-    drawStars(g, 6, blueRecLength, blueRecHeight, starDiameter, horizontalCenter);
-    
+    drawStars(g, 6, blueRecLength, blueRecHeight, starDiameter, horizontalCenter, 1);
+    drawStars(g, 5, blueRecLength, blueRecHeight, starDiameter, horizontalCenter, 2);
 
   //height - ((blueRecHeight / 10) * i
 
 
 
   }
-  private void drawStars(Graphics g, int amount, int blueRecLength, int blueRecHeight, int starDiameter, int horizontalCenter){
+  private void drawStars(Graphics g, int amount, int blueRecLength, int blueRecHeight, int starDiameter, int horizontalCenter, int level){
     for (int i = 1; i < amount; i++){
       drawStar(g, WHITE, horizontalCenter +  ((blueRecLength / 12 * 2) * i),
-       (blueRecHeight / 10), starDiameter);
+       (blueRecHeight / 10) * level, starDiameter);
     }
   }
 
