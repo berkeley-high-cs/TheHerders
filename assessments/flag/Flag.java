@@ -31,6 +31,8 @@ public class Flag implements ImageGenerator {
     int stripeWidth = (flagHeight / 13);
     int starDiameter = (stripeWidth * 4 / 5);
     int horizontalCenter = ((width - flagLength) / 2);
+    int blueRecLength = (flagLength * 2 / 5);
+    int blueRecHeight = (7 * stripeWidth);
     System.out.println(horizontalCenter);
     g.setColor(WHITE);
     g.fillRect(horizontalCenter, 0, flagLength, flagHeight);
@@ -45,9 +47,9 @@ public class Flag implements ImageGenerator {
       g.fillRect(horizontalCenter, flagHeight - (i * stripeWidth), flagLength, stripeWidth);
     }
     g.setColor(BLUE);
-    g.fillRect(horizontalCenter, 0, (flagLength * 2 / 5), (7 * stripeWidth));
+    g.fillRect(horizontalCenter, 0, blueRecLength, blueRecHeight);
     for (int i = 0; i < 50; i++){
-      //drawStar(g, WHITE, )
+      drawStar(g, WHITE, horizontalCenter + ((blueRecLength / 12 ) * i), height - ((blueRecHeight / 10) * i, starDiameter); )
     }
 
 
