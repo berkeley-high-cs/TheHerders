@@ -33,7 +33,7 @@ public class Flag implements ImageGenerator {
     int horizontalCenter = ((width - flagLength) / 2);
     int blueRecLength = (flagLength * 2 / 5);
     int blueRecHeight = (7 * stripeWidth);
-    System.out.println(horizontalCenter);
+    //System.out.println(horizontalCenter);
     g.setColor(WHITE);
     g.fillRect(horizontalCenter, 0, flagLength, flagHeight);
     g.setColor(RED);
@@ -48,14 +48,18 @@ public class Flag implements ImageGenerator {
     }
     g.setColor(BLUE);
     g.fillRect(horizontalCenter, 0, blueRecLength, blueRecHeight);
-    for (int i = 0; i < 6; i++){
-      drawStar(g, WHITE, horizontalCenter + ((blueRecLength / 12 * 2) * i), (height - (blueRecHeight / 10)), starDiameter);
-    }
+    drawStars(g, 6, blueRecLength, blueRecHeight, starDiameter, horizontalCenter);
+    
 
   //height - ((blueRecHeight / 10) * i
 
 
 
+  }
+  private void drawStars(Graphics g, int amount, int blueRecLenghth, int blueRecHeight, int starDiameter, int horizontalCenter){
+    for (int i = 1; i < amount; i++){
+      drawStar(g, WHITE, horizontalCenter +  ((blueRecLength / 12 * 2) * i), (height - (blueRecHeight / 10)), starDiameter);
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////
