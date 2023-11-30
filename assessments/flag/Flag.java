@@ -62,7 +62,7 @@ public class Flag implements ImageGenerator {
         } else {
           starterPos = 0;
         }
-        drawStar(g, WHITE, horizontalCenter +  ((blueRecLength / 12 + (blueRecLength / 12) + starterPos) * i ),
+        drawStar(g, WHITE, horizontalCenter +  ((blueRecLength / 12 + (blueRecLength / 12) ) * (i + starterPos) ),
        (blueRecHeight / 10) * x, starDiameter);
       }
      }
