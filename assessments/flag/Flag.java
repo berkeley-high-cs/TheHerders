@@ -48,16 +48,32 @@ public class Flag implements ImageGenerator {
     }
     g.setColor(BLUE);
     g.fillRect(horizontalCenter, 0, blueRecLength, blueRecHeight);
-    drawStars(g, 6, blueRecLength, blueRecHeight, starDiameter, horizontalCenter, 1);
-    drawStars(g, 5, blueRecLength, blueRecHeight, starDiameter, horizontalCenter, 2);
+    int stars = 0;
+    int starterPos = 0;
+    for (int x = 0; x <= 9; x++){
+      if (x % 2 == 1){
+        stars = 6;
+      } else{
+        stars = 5;
+      }
+      for (int i = 0; i <= stars; i++){
+        if (stars % 2 == 1){
+          starterPos = 1;
+        }
+        drawStar(g, WHITE, horizontalCenter +  ((blueRecLength / 12 + (blueRecLength / 12)) * i + starterPos),
+       (blueRecHeight / 10) * x, starDiameter);
+      }
+     }
+    // drawStars(g, 6, blueRecLength, blueRecHeight, starDiameter, horizontalCenter, 1);
+    // drawStars(g, 5, blueRecLength, blueRecHeight, starDiameter, horizontalCenter, 2);
 
   }
-  private void drawStars(Graphics g, int amount, int blueRecLength, int blueRecHeight, int starDiameter, int horizontalCenter, int level){
-    for (int i = 1; i < amount + 1; i++){
-      drawStar(g, WHITE, horizontalCenter +  ((blueRecLength / 12 + (blueRecLength / 12)) * i),
-       (blueRecHeight / 10) * level, starDiameter);
-    }
-  }
+  // private void drawStars(Graphics g, int amount, int blueRecLength, int blueRecHeight, int starDiameter, int horizontalCenter, int level){
+  //   for (int i = 1; i < amount + 1; i++){
+  //     drawStar(g, WHITE, horizontalCenter +  ((blueRecLength / 12 + (blueRecLength / 12)) * i),
+  //      (blueRecHeight / 10) * level, starDiameter);
+  //   }
+  // }
 
   ////////////////////////////////////////////////////////////////////////
   // You do not need to touch any code below this point. You will use the first
