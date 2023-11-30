@@ -51,14 +51,10 @@ public class Flag implements ImageGenerator {
     drawStars(g, 6, blueRecLength, blueRecHeight, starDiameter, horizontalCenter, 1);
     drawStars(g, 5, blueRecLength, blueRecHeight, starDiameter, horizontalCenter, 2);
 
-  //height - ((blueRecHeight / 10) * i
-
-
-
   }
   private void drawStars(Graphics g, int amount, int blueRecLength, int blueRecHeight, int starDiameter, int horizontalCenter, int level){
     for (int i = 1; i < amount + 1; i++){
-      drawStar(g, WHITE, horizontalCenter +  ((blueRecLength / 12 * 2) * i),
+      drawStar(g, WHITE, horizontalCenter +  ((blueRecLength / 12) * i * 2),
        (blueRecHeight / 10) * level, starDiameter);
     }
   }
