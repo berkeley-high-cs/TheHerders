@@ -12,7 +12,7 @@ public class Point{
     return Math.hypot(x, y);
   }
   public double distanceTo(Point point){
-    return 0;
+    return Math.hypot(Math.abs(x - point.x), Math.abs(y - Math.abs(y)));
   }
   
 
