@@ -9,7 +9,7 @@ public class Point{
     Point newPoint = new Point (300, 400);
 
     //System.out.println("hello, world! p: " + toString(newPoint) + " midpoint: " + toString(midwayTo(newPoint)));
-
+    System.out.println("hello, world!");
   }
   public double distanceFromOrigin(){
     return Math.hypot(x, y);
