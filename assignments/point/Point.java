@@ -5,7 +5,7 @@ public class Point{
     this.x = x;
     this.y = y;
   }
-  public void main(String[] args){
+  public static void main(String[] args){
     System.out.println("hello, world! haha code i can put whatever I want after the hello world");
   }
   public double distanceFromOrigin(){
