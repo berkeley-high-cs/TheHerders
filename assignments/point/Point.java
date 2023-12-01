@@ -12,7 +12,7 @@ public class Point{
     return Math.hypot(10, 20);
   }
   public static double distanceTo(int a, int b){
-    
+    return 0;
   }
 
 }
