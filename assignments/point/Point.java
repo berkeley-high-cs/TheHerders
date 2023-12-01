@@ -22,6 +22,9 @@ public class Point{
     Point midWayPoint = new Point ((x + point.x)/2, (y + point.y)/2);
     return midWayPoint;
   }
+  public String toString(){
+    return ("Point<" + x + "," + y + ">");
+  }
   
 
 }
