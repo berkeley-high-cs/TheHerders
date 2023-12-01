@@ -31,7 +31,7 @@ public class Flag implements ImageGenerator {
     int stripeWidth = (flagHeight / 13);
     int starDiameter = (stripeWidth * 4 / 5);
     int horizontalCenter = ((width - flagLength) / 2);
-    int verticalCenter = ((height - flagHeight) / 2.0)(int);
+    int verticalCenter = (((height - flagHeight) / 2.0)(int));
     int blueRecLength = (flagLength * 2 / 5);
     int blueRecHeight = (7 * stripeWidth);
     //System.out.println(horizontalCenter);
