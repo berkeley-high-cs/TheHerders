@@ -7,8 +7,8 @@ public class Point{
   }
   public static void main(String[] args){
     Point newPoint = new Point (300, 400);
-    midwayTo(newPoint);
-    System.out.println("hello, world! ");
+
+    System.out.println("hello, world! p: " + toString(newPoint) + " midpoint: " + toString(midwayTo(newPoint)));
 
   }
   public double distanceFromOrigin(){
