@@ -31,13 +31,14 @@ public class Flag implements ImageGenerator {
     int stripeWidth = (flagHeight / 13);
     int starDiameter = (stripeWidth * 4 / 5);
     int horizontalCenter = ((width - flagLength) / 2);
+    int verticalCenter((height - flagHeight) / 2);
     int blueRecLength = (flagLength * 2 / 5);
     int blueRecHeight = (7 * stripeWidth);
     //System.out.println(horizontalCenter);
     g.setColor(WHITE);
-    g.fillRect(horizontalCenter, 0, flagLength, flagHeight);
+    g.fillRect(horizontalCenter, verticalCenter, flagLength, flagHeight);
     g.setColor(RED);
-    g.fillRect(horizontalCenter, 0, flagLength, stripeWidth);
+    g.fillRect(horizontalCenter, verticalCenter, flagLength, stripeWidth);
     for (int i = 0; i < 13; i++){
       if (i % 2 == 1){
         g.setColor(RED);
