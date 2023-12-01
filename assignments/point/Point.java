@@ -11,7 +11,7 @@ public class Point{
   public static double distanceFromOrigin(){
     return Math.hypot(10, 20);
   }
-  public static double distanceTo(int a, int b){
+  public static double distanceTo(Point point){
     return 0;
   }
 
