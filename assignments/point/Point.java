@@ -14,6 +14,10 @@ public class Point{
   public double distanceTo(Point point){
     return Math.hypot(Math.abs(x - point.x), Math.abs(y - point.y));
   }
+  public void move(double xMove, double yMove){
+    x += xMove;
+    y += yMove;
+  }
   
 
 }
