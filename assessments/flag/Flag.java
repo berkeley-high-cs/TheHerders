@@ -59,9 +59,9 @@ public class Flag implements ImageGenerator {
       }
       for (int i = 0; i < stars; i++){
         if (stars % 2 == 1){
-          starterPos = 1;
+          starterPos = 2;
         } else {
-          starterPos = 0;
+          starterPos = 1;
         }
         drawStar(g, WHITE, horizontalCenter +  ((blueRecLength / 24 + (blueRecLength / 24) ) * (2 * i + starterPos) ),
        (blueRecHeight / 10) * x, starDiameter);
