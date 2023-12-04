@@ -51,7 +51,7 @@ public class Flag implements ImageGenerator {
     g.fillRect(horizontalCenter, verticalCenter, blueRecLength, blueRecHeight);
     int stars = 0;
     int starterPos = 0;
-    for (int x = 0; x <= 9; x++){
+    for (int x = 0; x < 9; x++){
       if (x % 2 == 1){
         stars = 6;
       } else{
