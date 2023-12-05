@@ -1,7 +1,7 @@
 public class Numbers {
   private int[] numbers;
   private int size;
-  public Numbers{
+  public Numbers(){
     this.numbers = numbers;
     this.size = size;
   }
