@@ -12,7 +12,7 @@ public class Numbers {
     return size;
   }
   public void add(int num){
-    if (numbers.length = size){
+    if (numbers.length == size){
       int[] newArray = new int[numbers.length * 2];
       for (int i = 0; i <= numbers.length; i++){
         newArray[i] = numbers[i];
