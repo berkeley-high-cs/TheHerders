@@ -37,8 +37,8 @@ public class Numbers {
     if (size == 0){
       throw new IndexOutOfBoundsException();
     } else {
-      size--;
-      return numbers[size];
+      //size--;
+      return numbers[--size];
       
     }
   }
