@@ -38,7 +38,7 @@ public class Numbers {
       throw new IndexOutOfBoundsException();
     } else {
       int[] newArray = new int [size - 1];
-      for (int i = 0; i < numbers.length - 1; i++) {
+      for (int i = 0; i < size - 1; i++) {
         newArray[i] = numbers[i];
       }
       numbers = newArray;
