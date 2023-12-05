@@ -20,6 +20,7 @@ public class Numbers {
       for (int i = 0; i < numbers.length; i++) {
         newArray[i] = numbers[i];
       }
+      numbers = newArray;
       newArray[size] = num;
       size++;
     } else {
