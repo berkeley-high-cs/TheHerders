@@ -11,4 +11,8 @@ public class Numbers {
   public int size(){
     return size;
   }
+  public void add(int num){
+    numbers[size] = num;
+    size++;
+  }
 }
