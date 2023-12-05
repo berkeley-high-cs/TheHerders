@@ -18,7 +18,6 @@ public class Numbers {
         newArray[i] = numbers[i];
       }
       newArray[size] = num;
-      size++;
 
     } else {
     numbers[size] = num;
