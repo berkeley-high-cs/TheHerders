@@ -12,6 +12,9 @@ public class Numbers {
     return size;
   }
   public void add(int num){
+    if (numbers.length <= size){
+      int[] newArray = new int[numbers.length * 2]
+    }
     numbers[size] = num;
     size++;
   }
