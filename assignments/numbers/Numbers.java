@@ -8,4 +8,7 @@ public class Numbers {
   public static void main(String[] args){
 
   }
+  public static int size(){
+    return size;
+  }
 }
