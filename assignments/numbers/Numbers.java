@@ -21,7 +21,7 @@ public class Numbers {
         newArray[i] = numbers[i];
       }
       newArray[size] = num;
-      size++
+      size++;
     } else {
       numbers[size] = num;
       size++;
