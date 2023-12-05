@@ -17,8 +17,12 @@ public class Numbers {
       for (int i = 0; i <= numbers.length; i++){
         newArray[i] = numbers[i];
       }
-    }
+      newArray[size] = num;
+      size++;
+
+    } else {
     numbers[size] = num;
     size++;
+    }
   }
 }
