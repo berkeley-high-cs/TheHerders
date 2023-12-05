@@ -1,8 +1,8 @@
 public class Numbers {
   private int[] numbers;
   private int size;
-  public int Numbers(){
-    this.numbers = numbers;
+  public Numbers(int arraySize){
+    this.numbers = new int [num];
     this.size = size;
   }
   public static void main(String[] args){
