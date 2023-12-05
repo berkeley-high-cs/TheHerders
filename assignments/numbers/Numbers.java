@@ -21,11 +21,16 @@ public class Numbers {
         newArray[i] = numbers[i];
       }
       numbers = newArray;
-      newArray[size] = num;
-      size++;
-    } else {
-      numbers[size] = num;
-      size++;
     }
+    numbers[size] = num;
+    size++;
+  }
+  public int get(int index){
+    if (i < 0 || i > numbers.length){
+      throw new IndexOutOfBoundsException(i);
+    } else {
+      return numbers[index];
+    }
+
   }
 }
