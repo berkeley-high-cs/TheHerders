@@ -26,8 +26,8 @@ public class Numbers {
     size++;
   }
   public int get(int index){
-    if (i < 0 || i > numbers.length){
-      throw new IndexOutOfBoundsException(i);
+    if (index < 0 || index > numbers.length){
+      throw new IndexOutOfBoundsException(index);
     } else {
       return numbers[index];
     }
