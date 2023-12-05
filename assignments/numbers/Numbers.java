@@ -39,6 +39,7 @@ public class Numbers {
     } else {
       int[] newArray = new int [numbers.length - 1];
       numbers = newArray;
+      return 0;
     }
   }
 }
