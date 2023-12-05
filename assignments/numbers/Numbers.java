@@ -33,7 +33,7 @@ public class Numbers {
     }
 
   }
-  public void removeLast(){
+  public int removeLast(){
     if (size == 0){
       throw new IndexOutOfBoundsException();
     } else {
