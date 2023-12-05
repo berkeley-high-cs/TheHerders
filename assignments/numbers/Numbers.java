@@ -33,4 +33,12 @@ public class Numbers {
     }
 
   }
+  public void removeLast(){
+    if (size == 0){
+      throw new IndexOutOfBoundsException();
+    } else {
+      int[] newArray = new int [numbers.length - 1];
+      numbers = newArray;
+    }
+  }
 }
