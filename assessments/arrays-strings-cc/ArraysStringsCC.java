@@ -97,6 +97,16 @@ public class ArraysStringsCC {
     }
     return total;
   }
+  public String[] collectFourLetterWords(String[] array){
+    int x = 0;
+    String[] newArray = new String [countByLength(array, 4)];
+    for (int i = 0; i < array.length; i++){
+      if (array[i].length() == 4){
+        newArray[x++] = array[i];
+      }
+    }
+    return newArray;
+  }
   
   
 
