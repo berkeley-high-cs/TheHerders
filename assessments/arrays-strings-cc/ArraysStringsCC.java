@@ -51,5 +51,14 @@ public class ArraysStringsCC {
     }
     return newString;
   }
+  public int countStartsWithVowel(String[] array){
+    int total = 0;
+    for (int i = 0; i < array.length; i++){
+      if (indexOfVowel(array[i]) == 1){
+        total++;
+      }
+    }
+    return total;
+  }
 
 }
