@@ -70,11 +70,11 @@ public class ArraysStringsCC {
   public int[] xs(String[] array){
     int[] indexArray = new int [array.length];
     for (int i = 0; i < array.length; i++){
-    //   for (int x = 0; x < array[i].length(); x++){
+      for (int x = 0; x < array[i].length(); x++){
     //     if (array[x].substring(x, x+1).equals("x")){
     //       indexArray[i] = x;
     //     }
-    //   }
+      }
       
     }
     return indexArray;
