@@ -127,7 +127,6 @@ public class ArraysStringsCC {
       num = num * 2 + 1;
     }
     }
-    return steps;
   }
   
   
