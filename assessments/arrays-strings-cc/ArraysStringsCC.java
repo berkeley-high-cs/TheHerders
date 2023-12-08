@@ -71,7 +71,7 @@ public class ArraysStringsCC {
     int[] indexArray = new int [array.length];
     for (int i = 0; i < array.length; i++){
       for (int x = 0; x < array[i].length(); x++){
-        if (isX(array[x].substring(x, x+1))){
+        if (array[x].substring(x, x+1).equals("x")){
           indexArray[i] = x;
         }
       }
@@ -80,9 +80,7 @@ public class ArraysStringsCC {
     return indexArray;
 
   }
-  public boolean isX(String s) {
-    return s.length() == 1 && "x".indexOf(s.toLowerCase()) != -1;
-  }
+  
   
 
 }
