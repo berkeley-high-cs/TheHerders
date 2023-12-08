@@ -125,7 +125,7 @@ public class ArraysStringsCC {
     } else if (num % 2 == 1){
       steps++;
       num = num * 2 + 1;
-    }
+     }
     }
   }
   
