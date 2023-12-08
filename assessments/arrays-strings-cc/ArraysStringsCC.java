@@ -165,10 +165,20 @@ public class ArraysStringsCC {
   }
   public int[] lengthHistogram(String[] array){
     int[] intArray = new int [11];
-    for (int i = 0; i < 11; i++){
+    for (int i = 0; i < 10; i++){
       intArray[i] = countByLength(array, i);
     }
+    intArray[10] = countByLengthAboveNum(array, 10);
     return intArray;
+  }
+  public int countByLengthAboveNum(String[] array, int num){
+    int total = 0;
+    for (int i = 0; i < array.length; i++){
+      if (array[i].length() >= num){
+        total++;
+      }
+    }
+    return total;
   }
   
   
