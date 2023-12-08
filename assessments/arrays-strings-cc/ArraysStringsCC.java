@@ -88,6 +88,15 @@ public class ArraysStringsCC {
     return indexArray;
 
   }
+  public int countByLength(String[] array, int num){
+    int total = 0;
+    for (int i = 0; i < array.length; i++){
+      if (array[i].length() == num){
+        total++;
+      }
+    }
+    return total;
+  }
   
   
 
