@@ -146,6 +146,22 @@ public class ArraysStringsCC {
      }
     }
   }
+  public int[] hailstone(num){
+    int length = hailstoneLength(num);
+    int[] sequence = new int [length];
+    for (int i = 0; i <= length; i++){
+    if (num == 1){
+      sequence[i] = num;
+      return sequence;
+     } else if (num % 2 == 0){
+      sequence[i] = num;
+      num = num / 2;
+    } else if (num % 2 == 1){
+      sequence[i] = num;
+      num = num * 3 + 1;
+     }
+    }
+  }
   
   
 
