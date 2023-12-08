@@ -162,6 +162,7 @@ public class ArraysStringsCC {
      }
     }
   }
+  return sequence;
   
   
 
