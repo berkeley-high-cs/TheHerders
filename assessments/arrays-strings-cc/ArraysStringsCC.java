@@ -114,6 +114,9 @@ public class ArraysStringsCC {
     }
     return newArray;
   }
+  public int hailstoneLength(int num){
+    return 0;
+  }
   
   
 
