@@ -128,6 +128,24 @@ public class ArraysStringsCC {
      }
     }
   }
+  public int hailstoneMax (int num){
+    int biggest = 0
+    while (true){
+    if (num == 1){
+      return biggest;
+     } else if (num % 2 == 0){
+      if (num > biggest) {
+        biggest = num;
+      }
+      num = num / 2;
+    } else if (num % 2 == 1){
+      if (num > biggest) {
+        biggest = num;
+      }
+      num = num * 3 + 1;
+     }
+    }
+  }
   
   
 
