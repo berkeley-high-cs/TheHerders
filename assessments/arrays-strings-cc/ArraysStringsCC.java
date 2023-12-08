@@ -117,6 +117,7 @@ public class ArraysStringsCC {
   public int hailstoneLength(int num){
     int steps = 0;
     while (true){
+      return steps;
     if (num == 1){
       return ++steps;
      } //else if (num % 2 == 0){
