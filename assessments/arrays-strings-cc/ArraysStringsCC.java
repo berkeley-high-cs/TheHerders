@@ -17,7 +17,7 @@ public class ArraysStringsCC {
     return n > 1;
   }
   public int countPrimes(int[] array){
-    total = 0;
+    int total = 0;
     for (int i = 0; i < array.length; i++){
       if (isPrime(array[i])){
         total++;
