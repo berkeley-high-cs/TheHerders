@@ -25,5 +25,12 @@ public class ArraysStringsCC {
     }
     return total;
   }
+  public int countVowels(String string){
+    int total = 0;
+    for (int i = 0; i < string.length(); i++){
+
+    }
+    return total;
+  }
 
 }
