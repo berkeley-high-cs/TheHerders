@@ -163,7 +163,13 @@ public class ArraysStringsCC {
     }
     return sequence;
   }
-  
+  public int[] lengthHistogram(String[] array){
+    int[] intArray = new int [11];
+    for (int i = 0; i < 11; i++){
+      intArray[i] = countByLength(array, i);
+    }
+    return intArray;
+  }
   
   
 
