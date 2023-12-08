@@ -119,13 +119,13 @@ public class ArraysStringsCC {
     while (true){
     if (num == 1){
       return ++steps;
-    } else if (num % 2 == 0){
-      steps++;
-      num = num / 2;
-    } else if (num % 2 == 1){
-      steps++;
-      num = num * 2 + 1;
-     }
+     } //else if (num % 2 == 0){
+    //   steps++;
+    //   num = num / 2;
+    // } else if (num % 2 == 1){
+    //   steps++;
+    //   num = num * 2 + 1;
+    //  }
     }
   }
   
