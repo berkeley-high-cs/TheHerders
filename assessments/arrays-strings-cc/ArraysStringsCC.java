@@ -146,7 +146,7 @@ public class ArraysStringsCC {
      }
     }
   }
-  public int[] hailstone(num){
+  public int[] hailstone(int num){
     int length = hailstoneLength(num);
     int[] sequence = new int [length];
     for (int i = 0; i <= length; i++){
