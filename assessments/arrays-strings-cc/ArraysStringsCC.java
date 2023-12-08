@@ -40,9 +40,7 @@ public class ArraysStringsCC {
         return i;
       }
     }
-    else {
-      return -1;
-    }
+    return -1;
   }
 
 }
