@@ -42,5 +42,14 @@ public class ArraysStringsCC {
     }
     return -1;
   }
+  public String disemvowel(String string){
+    String newString = "";
+    for (int i = 0; i < string.length(); i++){
+      if (isVowel(string.substring(i, i + 1))){
+        newString = newString + string.substring(i - 1, i);
+      }
+    }
+    return newString;
+  }
 
 }
