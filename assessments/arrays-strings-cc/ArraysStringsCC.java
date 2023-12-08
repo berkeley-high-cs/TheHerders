@@ -161,8 +161,9 @@ public class ArraysStringsCC {
       num = num * 3 + 1;
      }
     }
+    return sequence;
   }
-  return sequence;
+  
   
   
 
