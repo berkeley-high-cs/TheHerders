@@ -28,7 +28,7 @@ public class ArraysStringsCC {
   public int countVowels(String string){
     int total = 0;
     for (int i = 0; i < string.length(); i++){
-      if (isVowel(string.substring(i, i+1)){
+      if (isVowel(string.substring(i, i+1))){
         total++;
       }
     }
