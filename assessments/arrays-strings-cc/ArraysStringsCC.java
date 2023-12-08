@@ -72,7 +72,7 @@ public class ArraysStringsCC {
     int[] indexArray = new int [array.length];
     for (int i = 0; i < array.length; i++){
       for (int x = 0; x < array[i].length(); x++){
-        strign = array[x];
+        string = array[x];
         if (string.substring(x, x + 1).equal("x")){
     //       indexArray[i] = x;
         } else {
