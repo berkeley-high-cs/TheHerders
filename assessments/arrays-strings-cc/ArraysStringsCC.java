@@ -117,16 +117,16 @@ public class ArraysStringsCC {
   public int hailstoneLength(int num){
     int steps = 0;
     while (true){
-      return steps;
+      
     if (num == 1){
       return ++steps;
-     } //else if (num % 2 == 0){
-    //   steps++;
-    //   num = num / 2;
-    // } else if (num % 2 == 1){
-    //   steps++;
-    //   num = num * 2 + 1;
-    //  }
+     } else if (num % 2 == 0){
+      steps++;
+      num = num / 2;
+    } else if (num % 2 == 1){
+      steps++;
+      num = num * 2 + 1;
+     }
     }
   }
   
