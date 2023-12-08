@@ -129,7 +129,7 @@ public class ArraysStringsCC {
     }
   }
   public int hailstoneMax (int num){
-    int biggest = 0
+    int biggest = 0;
     while (true){
     if (num == 1){
       return biggest;
