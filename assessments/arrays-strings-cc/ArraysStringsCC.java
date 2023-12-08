@@ -107,6 +107,13 @@ public class ArraysStringsCC {
     }
     return newArray;
   }
+  public String[] collectShouting(String[] array){
+    String[] newArray = new String [array.length];
+    for (int i = 0; i< array.length; i++){
+      newArray[i] = array[i].toUpperCase();
+    }
+    return newArray;
+  }
   
   
 
