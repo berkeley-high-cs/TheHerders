@@ -75,8 +75,9 @@ public class ArraysStringsCC {
           indexArray[i] = x;
         }
       }
-      return indexArray;
+      
     }
+    return indexArray;
 
   }
   public boolean isX(String s) {
