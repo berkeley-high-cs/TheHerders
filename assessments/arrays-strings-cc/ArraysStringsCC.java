@@ -74,7 +74,7 @@ public class ArraysStringsCC {
         if (isX(array[x].substring(x, x+1)){
           indexArray[i] = x;
         }
-      )
+      
 
       }
       return indexArray;
