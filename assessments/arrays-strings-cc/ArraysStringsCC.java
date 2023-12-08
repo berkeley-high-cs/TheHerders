@@ -68,10 +68,11 @@ public class ArraysStringsCC {
     return totalLength;
   }
   public int[] xs(String[] array){
+    String string = " ";
     int[] indexArray = new int [array.length];
     for (int i = 0; i < array.length; i++){
       for (int x = 0; x < array[i].length(); x++){
-        if (array[x].substring(x, x+1).equals("x")){
+        if (string.substring(x, x+1).equals("x")){
     //       indexArray[i] = x;
         } else {
           indexArray[i] = -1;
