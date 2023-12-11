@@ -181,15 +181,16 @@ public class ArraysStringsCC {
     return total;
   }
   public void rotateLeft(String[] array){
-    String[] newArray = Arrays.copyOf(array, array.length);
+    String[] newArray = new String [array.length];
     for (int i = 0; i < array.length; i++){
       if (i != array.length - 1){
-        array[i] = newArray[i + 1];
+        newArray[i] = array[i + 1];
       } else {
-        array[array.length - 1] = newArray[0];
+        newArray[array.length - 1] = array[0];
         
       } 
     }
+    array = newArray.clone();
     
   }
   
