@@ -193,6 +193,20 @@ public class ArraysStringsCC {
     
     
   }
+  public void rotateRight(String[] array){
+    String[] newArray = array.clone();
+    for (int i = 0; i < array.length; i++){
+      if (i != 0){
+        array[i] = newArray[i - 1];
+      } else {
+        array[0] = newArray[array.length - 1];
+        
+      } 
+    }
+    
+    
+  }
+
   
   
 
