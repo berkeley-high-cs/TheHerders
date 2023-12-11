@@ -189,6 +189,7 @@ public class ArraysStringsCC {
         newArray[array.length - 1] = array[0];
       } 
     }
+    array = newArray;
   }
   
   
