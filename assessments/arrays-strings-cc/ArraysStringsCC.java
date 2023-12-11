@@ -70,7 +70,7 @@ public class ArraysStringsCC {
   public int[] xs(String[] array){
     int[] indexArray = new int [array.length];
     for (int i = 0; i < array.length; i++){
-      indexArray[i] = array.indexOf("x");
+      indexArray[i] = array[i].indexOf("x");
       
     }
     return indexArray;
