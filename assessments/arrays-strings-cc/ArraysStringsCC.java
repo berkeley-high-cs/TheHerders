@@ -184,13 +184,13 @@ public class ArraysStringsCC {
     String[] newArray = new String [array.length];
     for (int i = 0; i < array.length; i++){
       if (i != array.length - 1){
-        newArray[i] = array[i + 1];
+        array[i] = array[i + 1];
       } else {
-        newArray[array.length - 1] = array[0];
+        array[array.length - 1] = array[0];
         
       } 
     }
-    array = newArray;
+    
   }
   
   
