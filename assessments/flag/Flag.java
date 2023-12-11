@@ -29,7 +29,7 @@ public class Flag implements ImageGenerator {
     if (width > 1.9 * height){
         flagHeight = (height);
     } else {
-      flagHeight = (width * 9/10)
+      flagHeight = (width * 9/10);
     }
     int flagLength = ((int)((flagHeight * 2) - flagHeight/10.0));
     int stripeWidth = ((int)(flagHeight / 13.0));
