@@ -187,10 +187,10 @@ public class ArraysStringsCC {
         newArray[i] = array[i + 1];
       } else {
         newArray[array.length - 1] = array[0];
-        newArray[0] = "4";
+        
       } 
     }
-    array = newArray;
+    newArray = array;
   }
   
   
