@@ -180,6 +180,16 @@ public class ArraysStringsCC {
     }
     return total;
   }
+  public void rotateLeft(String[] array){
+    String[] newArray = new int [array.length];
+    for (int i = 0; i < array.length; i++){
+      if (i != array.length - 1){
+        newArray[i] = array[i + 1];
+      } else {
+        newArray[array.length - 1] = array[0];
+      } 
+    }
+  }
   
   
 
