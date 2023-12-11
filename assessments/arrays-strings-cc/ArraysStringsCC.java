@@ -181,7 +181,7 @@ public class ArraysStringsCC {
     return total;
   }
   public void rotateLeft(String[] array){
-    String[] newArray = Arrays.copyOf(String array, array.length);
+    String[] newArray = Arrays.copyOf(array, array.length);
     for (int i = 0; i < array.length; i++){
       if (i != array.length - 1){
         array[i] = newArray[i + 1];
