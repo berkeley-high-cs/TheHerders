@@ -25,7 +25,7 @@ public class Flag implements ImageGenerator {
     // provided drawStar method to draw a star, in this case a red star with a
     // diameter of 100 at the center of the canvas.
    // drawStar(g, RED, width / 2, height / 2, 100);
-   int flagHeight = (height * 9/10);
+   int flagHeight = (height * 9 / 10);
    if (width < flagHeight * 1.9){
       flagHeight = (int)(width / (19.0/10));
    }
