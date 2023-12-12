@@ -27,7 +27,7 @@ public class Flag implements ImageGenerator {
    // drawStar(g, RED, width / 2, height / 2, 100);
    int flagHeight = (height * 9/10);
     int flagLength = ((int)((flagHeight * 2) - flagHeight/10.0));
-    int stripeWidth = ((int)(flagHeight / 13.0));
+    int stripeWidth = ((flagHeight / 13));
     int starDiameter = ((int)(stripeWidth * 4.0 / 5));
     int horizontalCenter = ((int)((width - flagLength) / 2.0));
     int verticalCenter = ((int)((height - flagHeight) / 2.0));
