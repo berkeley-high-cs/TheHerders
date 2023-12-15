@@ -10,4 +10,10 @@ public class TestQuestion {
   public String getId(){
     return id;
   }
+  public String getQuestion(){
+    return question;
+  }
+  public double getPoints(){
+    return points;
+  }
 }
