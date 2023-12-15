@@ -8,6 +8,6 @@ public class TestQuestion {
     this.points = pointVal;
   }
   public String getId(){
-    return TestQuestion.id;
+    return id;
   }
 }
