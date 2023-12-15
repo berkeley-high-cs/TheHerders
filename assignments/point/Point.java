@@ -8,8 +8,6 @@ public class Point{
   public static void main(String[] args){
     Point newPoint = new Point (300, 400);
 
-    //System.out.println("hello, world! p: " + toString(newPoint) + " midpoint: " + toString(midwayTo(newPoint)));
-    System.out.println("hello, world!");
   }
   public double distanceFromOrigin(){
     return Math.hypot(x, y);
@@ -22,8 +20,8 @@ public class Point{
     y += yMove;
   }
   public Point midwayTo(Point point){
-    Point midWayPoint = new Point ((x + point.x)/2, (y + point.y)/2);
-    return midWayPoint;
+    
+    return Point midWayPoint = new Point ((x + point.x)/2, (y + point.y)/2);
   }
   public String toString(){
     return ("Point<" + x + "," + y + ">");
