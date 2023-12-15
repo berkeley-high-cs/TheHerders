@@ -2,7 +2,7 @@ public class TestQuestion {
   private String id;
   private String question;
   private double points;
-  public TestQuestion(){
+  public void TestQuestion(){
     this.id = id;
     this.question = question;
     this.points = points;
