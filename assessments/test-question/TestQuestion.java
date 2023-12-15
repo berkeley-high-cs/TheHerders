@@ -26,7 +26,7 @@ public class TestQuestion {
     return points * credit;
   }
   public TestQuestion copy(String name, int qNum){
-    new newQuestion(name + qNum, question, points);
+    new testQuestion(name + qNum, question, points);
     return newQuestion;
   }
 }
