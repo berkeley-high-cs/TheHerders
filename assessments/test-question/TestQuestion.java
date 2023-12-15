@@ -7,4 +7,7 @@ public class TestQuestion {
     this.question = (text);
     this.points = pointVal;
   }
+  public String getId(){
+    return TestQuestion.id;
+  }
 }
