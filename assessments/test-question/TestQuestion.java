@@ -4,7 +4,7 @@ public class TestQuestion {
   private double points;
   public TestQuestion(String test, int qNum, String text, double pointVal){
     this.id = (test + "-" + qNum);
-    this.question = (qNum);
+    this.question = (qNum + "");
     this.points = pointVal;
   }
 }
