@@ -27,6 +27,6 @@ public class TestQuestion {
   }
   public TestQuestion copy(String name, int qNum){
     
-    return new TestQuestion(name, qNum, question, points);;
+    return new TestQuestion(name, qNum, question, points);
   }
 }
