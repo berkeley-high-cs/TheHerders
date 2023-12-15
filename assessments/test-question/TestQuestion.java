@@ -25,4 +25,8 @@ public class TestQuestion {
   public double score(double credit){
     return points * credit;
   }
+  public TestQuestion copy(String name, int qNum){
+    new TestQuestion newQuestion = new TestQuestion (name + qNum, question,points);
+    return 
+  }
 }
