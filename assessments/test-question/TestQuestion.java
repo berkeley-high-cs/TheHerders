@@ -16,4 +16,7 @@ public class TestQuestion {
   public double getPoints(){
     return points;
   }
+  public void setQuestion(){
+    question = "";
+  }
 }
