@@ -1,3 +1,3 @@
-public TestQuestion {
-  
+public class TestQuestion {
+
 }
