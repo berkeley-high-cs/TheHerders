@@ -19,4 +19,7 @@ public class TestQuestion {
   public void setQuestion(String set){
     question = set;
   }
+  public void setPoints(Int set){
+    points = set;
+  }
 }
