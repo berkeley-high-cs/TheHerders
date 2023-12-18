@@ -3,6 +3,7 @@
 //FINISHED
 import java.util.Scanner;
 
+
 class Main {
 
   static int[][] board = {
@@ -10,61 +11,92 @@ class Main {
       { 0, 0, 0 },
       { 0, 0, 0 }
   };
+  //when I make methhod for giving the board to artificial player, remember to give a deep copy with java.util.arrays
+  //so that it cant change it directly
   static boolean tie = false;
   static boolean win = false;
   static String p1Input = "0";
   static String p2Input = "0";
 
   public static void main(String[] args) {
-    System.out.println("TicTacToe App");
-
-    // thinking we say 1 to 9 from left to right, then if else scan
-    printBoard(board);
-
-    // Scanner p1Input = new Scanner(System.in);should scan
-    // System.out.println("");
-    // System.out.println("What is your first move? 1 through 9, left to right");
-    // Scanner scanner = new Scanner(System.in);
-    // p1Input = scanner.nextLine();
-    // function that does basically this, need p1Input to be global, then function
-    // that does whats happening below, then check to see if anyone has won
+    System.out.println("TicTacToe App!");
+     
     String test = ("");
-    // these three lines should run a majority of our game, just need to make a
-    // check system and a way for there to be two players
-    // winCon will also triggerin a tie
-    boolean winCon = false;
-    while (winCon == false) {
-      for (int i = 0; i < 9; i++) {
-        p1Chat(test);
-        p1Reader(p1Input);
-        printBoard(board);
-        checker(1);
-        i++;
-        if (i == 9) {
-          tieChecker();
-          winCon = true;
-          break;
-        }
-        if (win == true) {
-          winCon = true;
-          break;
-        }
+      if (playerChatQuestion()) {
+      // thinking we say 1 to 9 from left to right, then if else scan
+      printBoard(board);
+      
+      // these three lines should run a majority of our game, just need to make a
+      // check system and a way for there to be two players
+      // winCon will also triggerin a tie
+      boolean winCon = false;
+      while (winCon == false) {
+        for (int i = 0; i < 9; i++) {
+          printBoard(board);
+          p1Chat(test);
+          p1Reader(p1Input);
+          printBoard(board);
+          checker(1, false);
+          i++;
+          if (i == 9) {
+            tieChecker();
+            winCon = true;
+            break;
+          }
+          if (win == true) {
+            winCon = true;
+            break;
+          }
 
-        p2Chat(test);
-        p2Reader(p2Input);
-        printBoard(board);
-        checker(2);
-        if (i == 9) {
-          tieChecker();
-          winCon = true;
-          break;
-        }
-        if (win == true) {
-          winCon = true;
-        }
+          p2Chat(test);
+          p2Reader(p2Input);
+          printBoard(board);
+          checker(2, false);
+          if (i == 9) {
+            tieChecker();
+            winCon = true;
+            break;
+          }
+          if (win == true) {
+            winCon = true;
+          }
 
-        // here repeat chat reader and printboard but chat has to have a second player
-        // here run function for checking
+        }
+      }
+    } else {
+      String difficulty = playerDifficultyChat();
+      boolean winCon = false;
+      while (winCon == false) {
+        for (int i = 0; i < 9; i++) {
+          p1Chat(test);
+          p1Reader(p1Input);
+          printBoard(board);
+          checker(1, false);
+          i++;
+          if (i == 9) {
+            tieChecker();
+            winCon = true;
+            break;
+          }
+          if (win == true) {
+            winCon = true;
+            break;
+          }
+          //ai player method goes here
+          Artificalplayer.move(board, i, difficulty);
+          System.out.println("AI moved");
+          printBoard(board);
+          checker(2,  true);
+          if (i == 9) {
+            tieChecker();
+            winCon = true;
+            break;
+          }
+          if (win == true) {
+            winCon = true;
+          }
+
+        }
       }
     }
   }
@@ -234,7 +266,7 @@ class Main {
   }
 
   // check for win con
-  public static void checker(int x) {
+  public static void checker(int x, boolean ai) {
 
     for (int i = 0; i < 3; i++) {
       if (board[i][0] == x) {
@@ -268,7 +300,8 @@ class Main {
       }
     }
     if (win == true) {
-      System.out.println("player " + x + " wins!");
+       if (ai == true){System.out.println("ai wins!");}
+        else {System.out.println("player " + x + " wins!");}
 
     } // tie checks if there are any spaces left, currently check if any space has
       // been taken
@@ -290,4 +323,44 @@ class Main {
       }
     }
   }
-}
+
+  public static boolean playerChatQuestion() {
+
+    System.out.println("");
+    System.out.println(
+        "Would you like to play against AI? or another player.");
+    Scanner scanner = new Scanner(System.in);
+    String input = scanner.nextLine().toUpperCase();
+    if (input.startsWith("y") || input.startsWith("AI")) {
+      return false;
+    } else {
+      return true;
+    }
+
+  }
+  public static String playerDifficultyChat(){
+     System.out.println("");
+      System.out.println(
+      "What difficulty would you like?");
+    Scanner scanner = new Scanner(System.in);
+    String input = scanner.nextLine().toUpperCase();
+    if (input.startsWith("E")){
+        return "easy";
+    } 
+    if (input.startsWith("M")) {
+      return "medium";
+    }
+    if (input.startsWith("H")){
+      return "hard";
+    }
+    if(input.startsWith("I")){
+      return "impossible";
+    }
+    else {
+      System.out.println("sorry I didn't understand that, please try again, easy, medium, or hard");
+        playerDifficultyChat();
+      }
+      return "";
+    }
+  }
+
