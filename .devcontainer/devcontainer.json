@@ -18,11 +18,11 @@
         "vscjava.vscode-java-pack",
         "mwpb.java-prettier-formatter",
         "esbenp.prettier-vscode",
-        "vscjava.vscode-java-debug"
+        "vscjava.vscode-java-debug",
+        "redhat.java"
       ]
     }
   },
-
 
   "forwardPorts": [6080],
 
