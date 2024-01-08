@@ -8,7 +8,7 @@ public class Point{
   public static void main(String[] args){
     System.out.println("hello, world!");
     Point newPoint = new Point (300, 400);
-    midwayTo(newPoint);
+    //midwayTo(newPoint);
     System.out.println("Point<" + newPoint.x + ", " + newPoint.y + "> midpoint: Point<");
 
   }
@@ -22,7 +22,7 @@ public class Point{
     x += xMove;
     y += yMove;
   }
-  public static Point midwayTo(Point point){
+  public Point midwayTo(Point point){
     Point midWayPoint = new Point ((x + point.x)/2, (y + point.y)/2);
     return midWayPoint;
   }
