@@ -20,7 +20,7 @@ public class Point{
     y += yMove;
   }
   public Point midwayTo(Point point){
-    Point midWayPoint = new Point ((x + point.x)/2, (y + point.y)/2)
+    Point midWayPoint = new Point ((x + point.x)/2, (y + point.y)/2);
     return midWayPoint;
   }
   public String toString(){
