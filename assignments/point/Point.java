@@ -9,7 +9,7 @@ public class Point{
     System.out.println("hello, world!");
     Point newPoint = new Point (300, 400);
     midwayTo(newPoint);
-    System.out.println("Point<" + newPoint.x + ", " + newPoint.y + "> midpoint: Point<" + midwayTo(newPoint));
+    System.out.println("Point<" + newPoint.x + ", " + newPoint.y + "> midpoint: Point<");
 
   }
   public double distanceFromOrigin(){
@@ -22,7 +22,7 @@ public class Point{
     x += xMove;
     y += yMove;
   }
-  public Point midwayTo(Point point){
+  public static Point midwayTo(Point point){
     Point midWayPoint = new Point ((x + point.x)/2, (y + point.y)/2);
     return midWayPoint;
   }
