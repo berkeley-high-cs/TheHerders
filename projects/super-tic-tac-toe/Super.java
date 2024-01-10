@@ -23,7 +23,6 @@ public class Super {
             Tictactoe.printBoard(superBoard[currentBoard].getBoard()); // prints current board
             nextBoard = Math.max(0, Math.min(Tictactoe.chat(1) - 1, 8)); // nextBoard is player 1's move
             Tictactoe.reader(nextBoard, superBoard[currentBoard].getBoard(), 1); // reads input and makes adjustments
-            Tictactoe.printSuperBoard(superBoard); // prints updated super board
             if (Tictactoe.winChecker(1, superBoard[currentBoard])) { //winCheck
                 System.out.println("Player 1 wins here! Full board state below");
                 boardState.getBoard()[Tictactoe.digitToBoardCoord(currentBoard)][currentBoard  % 3] = 1; //minus 1 is a trial and later probably error
@@ -39,13 +38,13 @@ public class Super {
                 System.out.println("Cat's game");
                 win = true;
             } // checks if the game is a tie
+            Tictactoe.printSuperBoard(superBoard); // prints updated super board
             // end of player 1 turn, start of player two
             currentBoard = Tictactoe.nextBoardCheck(nextBoard, superBoard, 1);
             System.out.println("Player 2's turn on " + (currentBoard + 1)); // Says whos turn
             Tictactoe.printBoard(superBoard[currentBoard].getBoard()); // prints current board
             nextBoard = Math.max(0, Math.min(Tictactoe.chat(2) - 1, 8)); // gets input from player 2
             Tictactoe.reader(nextBoard, superBoard[currentBoard].getBoard(), 2); // reads player 2 input
-
             if (Tictactoe.winChecker(2, superBoard[currentBoard])) {
                 System.out.println("Player 2 wins here!");
                 boardState.getBoard()[Tictactoe.digitToBoardCoord(currentBoard)][currentBoard % 3] = 1;
@@ -60,6 +59,7 @@ public class Super {
                 System.out.println("Cat's game");
                 win = true;
             }
+            Tictactoe.printSuperBoard(superBoard);
             // end of player 2 turn, restart game loop
         }
     }
