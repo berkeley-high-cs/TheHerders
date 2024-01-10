@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Tictactoe {
   private int place;
   private int[][] board = new int[3][3];
+  private boolean won = false;
 
   public Tictactoe(int place) {
     this.place = place;
@@ -15,6 +16,10 @@ public class Tictactoe {
 
   public int getPlace() {
     return place;
+  }
+
+  public boolean getWon() {
+    return won;
   }
 
   // static boolean tie = false;
@@ -74,7 +79,7 @@ public class Tictactoe {
         System.out.print("  |  ");
       }
       System.out.println("           |                      |                           |                           |");
-    } 
+    }
 
     System.out.println("______________________________________________________________________________");
 
@@ -93,75 +98,73 @@ public class Tictactoe {
   } // reads player 1 input
 
   public static void reader(int input, int[][] board, int player) {
-  if (input == 0) {
-    if (board[0][0] == 0) {
-    board[0][0] = player;
+    if (input == 0) {
+      if (board[0][0] == 0) {
+        board[0][0] = player;
+      } else {
+        System.out.println("thats been done before");
+        reader(input = chat(player) - 1, board, player);
+      }
+    } else if (input == 1) {
+      if (board[0][1] == 0) {
+        board[0][1] = player;
+      } else {
+        System.out.println("thats been done before");
+        reader(input = chat(player) - 1, board, player);
+      }
+    } else if (input == 2) {
+      if (board[0][2] == 0) {
+        board[0][2] = player;
+      } else {
+        System.out.println("thats been done before");
+        reader(input = chat(player) - 1, board, player);
+      }
+    } else if (input == 3) {
+      if (board[1][0] == 0) {
+        board[1][0] = player;
+      } else {
+        System.out.println("thats been done before");
+        reader(input = chat(player) - 1, board, player);
+      }
+    } else if (input == 4) {
+      if (board[1][1] == 0) {
+        board[1][1] = player;
+      } else {
+        System.out.println("thats been done before");
+        reader(input = chat(player) - 1, board, player);
+      }
+    } else if (input == 5) {
+      if (board[1][2] == 0) {
+        board[1][2] = player;
+      } else {
+        System.out.println("thats been done before");
+        reader(input = chat(player) - 1, board, player);
+      }
+    } else if (input == 6) {
+      if (board[2][0] == 0) {
+        board[2][0] = player;
+      } else {
+        System.out.println("thats been done before");
+        reader(input = chat(player) - 1, board, player);
+      }
+    } else if (input == 7) {
+      if (board[2][1] == 0) {
+        board[2][1] = player;
+      } else {
+        System.out.println("thats been done before");
+        reader(input = chat(player) - 1, board, player);
+      }
+    } else if (input == 8) {
+      if (board[2][2] == 0) {
+        board[2][2] = player;
+      } else {
+        System.out.println("thats been done before");
+        reader(input = chat(player) - 1, board, player);
+      }
     } else {
-    System.out.println("thats been done before");
-    reader(input = chat(player) - 1, board, player);
-   }
-  } else if (input == 1) {
-  if (board[0][1] == 0) {
-  board[0][1] = player;
-  } else {
-  System.out.println("thats been done before");
-  reader(input = chat(player) - 1, board, player);
-  }
-  } else if (input == 2) {
-  if (board[0][2] == 0) {
-  board[0][2] = player;
-  } else {
-  System.out.println("thats been done before");
-  reader(input = chat(player) - 1, board, player);
-  }
-  } else if (input == 3) {
-  if (board[1][0] == 0) {
-  board[1][0] = player;
-  } else {
-  System.out.println("thats been done before");
-  reader(input = chat(player) - 1, board, player);
-  }
-  } else if (input == 4) {
-  if (board[1][1] == 0) {
-  board[1][1] = player;
-  } else {
-  System.out.println("thats been done before");
-  reader(input = chat(player) - 1, board, player);
-  }
-  } else if (input == 5) {
-  if (board[1][2] == 0) {
-  board[1][2] = player;
-  } else {
-  System.out.println("thats been done before");
-  reader(input = chat(player) - 1, board, player);
-  }
-  } else if (input == 6) {
-  if (board[2][0] == 0) {
-  board[2][0] = player;
-  } else {
-  System.out.println("thats been done before");
-  reader(input = chat(player) - 1, board, player);
-  }
-  } else if (input == 7) {
-  if (board[2][1] == 0) {
-  board[2][1] = player;
-  } else {
-  System.out.println("thats been done before");
-  reader(input = chat(player) - 1, board, player);
-  }
-  } else if (input == 8) {
-  if (board[2][2] == 0) {
-  board[2][2] = player;
-  } else {
-  System.out.println("thats been done before");
-  reader(input = chat(player) - 1, board, player);
-  }
-  } else {
-    System.out.println("Sorry, I didn't get that, please try again");
-   reader(input = chat(player) - 1, board, player);
-  }
-  
- 
+      System.out.println("Sorry, I didn't get that, please try again");
+      reader(input = chat(player) - 1, board, player);
+    }
 
   }
 
@@ -174,71 +177,95 @@ public class Tictactoe {
   }
 
   public static int chat(int player) {
-    int[] players = {1, 2};
+    int[] players = { 1, 2 };
     System.out.println("");
     System.out.println("What is player " + players[player - 1] + "'s move? 1 through 9, left to right, up to down.");
     Scanner scanner = new Scanner(System.in);
     return scanner.nextInt();
   }
 
+  // check for win con
+  public static boolean winChecker(int x, Tictactoe board) {
+    if (board.getWon() != true) {
+      for (int i = 0; i < 3; i++) {
+        if (board.getBoard()[i][0] == x) {
+          if (board.getBoard()[i][1] == x) {
+            if (board.getBoard()[i][2] == x) {
+              board.won = true;
+              return true;
+            }
 
+          }
+        }
+        if (board.getBoard()[0][i] == x) {
+          if (board.getBoard()[1][i] == x) {
+            if (board.getBoard()[2][i] == x) {
+              board.won = true;
+              return true;
+            }
+          }
+        }
+      }
+      if (board.getBoard()[0][0] == x) {
+        if (board.getBoard()[1][1] == x) {
+          if (board.getBoard()[2][2] == x) {
+            board.won = true;
+            return true;
+          }
+        }
+      }
+      if (board.getBoard()[0][2] == x) {
+        if (board.getBoard()[1][1] == x) {
+          if (board.getBoard()[2][0] == x) {
+            board.won = true;
+            return true;
+          }
+        }
+      }
 
+    } else {
+      return true;
+    }
+    return false;
+  }
 
-  // // check for win con
-  // public static void checker(int x) {
+  public static int digitToBoardCoord(int digit) {
+    if (0 <= digit && digit < 3) {
+      return 0;
+    } else if (3 <= digit && digit < 6) {
+      return 1;
+    } else {
+      return 2;
+    }
+  }
 
-  // for (int i = 0; i < 3; i++) {
-  // if (board[i][0] == x) {
-  // if (board[i][1] == x) {
-  // if (board[i][2] == x) {
-  // win = true;
-  // }
+  public static int nextBoardCheck(int nextBoard, Tictactoe[] superBoard, int player) {
+    int[] players = { 1, 2 };
+    if (superBoard[nextBoard].getWon()) {
+      printSuperBoard(superBoard);
+      System.out.println("That board has already been finished, where would player " + players[player] + " like to go?");
+      Scanner scanner = new Scanner(System.in);
+      return scanner.nextInt() - 1;
+    } else {
+      return nextBoard;
+    }
+  }
 
-  // }
-  // }
-  // if (board[0][i] == x) {
-  // if (board[1][i] == x) {
-  // if (board[2][i] == x) {
-  // win = true;
-  // }
-  // }
-  // }
-  // }
-  // if (board[0][0] == x) {
-  // if (board[1][1] == x) {
-  // if (board[2][2] == x) {
-  // win = true;
-  // }
-  // }
-  // }
-  // if (board[0][2] == x) {
-  // if (board[1][1] == x) {
-  // if (board[2][0] == x) {
-  // win = true;
-  // }
-  // }
-  // }
-  // if (win == true) {
-  // System.out.println("player " + x + " wins!");
+  public static boolean tieChecker(Tictactoe board) {
+    int spacesTaken = 0;
+      for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+          if (board.getBoard()[i][j] != 0) {
+            spacesTaken++;
+          }
+        }
+      }
+      if (spacesTaken == 9 && board.getWon() != true){
+        System.out.println("Board " + board.getPlace() + " is a tie");
+        board.won = true;
+        return true;
+      } 
+      return false;
+    }
+  }
 
-  // } // tie checks if there are any spaces left, currently check if any space
-  // has
-  // // been taken
-  // }
-
-  // public static void tieChecker() {
-  // if (win == false) {
-  // for (int i = 0; i < 3; i++) {
-  // for (int j = 0; j < 3; j++) {
-  // if (board[i][j] != 0) {
-  // tie = true;
-
-  // }
-  // }
-  // }
-  // if (tie = true) {
-  // System.out.println("Cat's Game!");
-
-  // }
-  // }
-}
