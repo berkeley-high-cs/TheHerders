@@ -15,6 +15,6 @@ public class Crossword {
             
          }
          public ArrayList<String> possiblities(String word){
-            ArrayList<String> word = new ArrayList<>;
+            ArrayList<String> word = new ArrayList<>();
          }
 }
