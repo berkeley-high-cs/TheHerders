@@ -19,7 +19,7 @@ public class Crossword {
   public ArrayList<String> possibilities(String word, ArrayList<String> words) {
     ArrayList<String> copyWords = new ArrayList<>(words);
     for (int i = 0; i < copyWords.size(); i++) {
-      if (!fits(copyWords.get(i)), word) {
+      if (!fits(copyWords.get(i), word)) {
         copyWords.remove(i);
         i--;
       }
