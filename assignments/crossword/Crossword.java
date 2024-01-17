@@ -14,4 +14,7 @@ public class Crossword {
             return true;
             
          }
+         public ArrayList<String> possiblities(String word){
+            ArrayList<String> word = new ArrayList<>;
+         }
 }
