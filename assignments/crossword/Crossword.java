@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Crossword {
          public boolean fits(String guess, String word){
           
@@ -15,6 +17,6 @@ public class Crossword {
             
          }
          public ArrayList<String> possiblities(String word){
-            ArrayList<String> word = new ArrayList<>();
+            ArrayList<String> words = new ArrayList<>();
          }
 }
