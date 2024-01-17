@@ -5,11 +5,9 @@ public class Crossword {
               return false;
             }
             for (int i = 0; i < word.length(); i++){
-              if ((guess.substring(Math.max(i - 1, 0), i).equals(word.substring(Math.max(i - 1, 0), i))) || word.substring(Math.max(i - 1, 0), i).equals("-")){
+              if (!(guess.substring(Math.max(i - 1, 0), i).equals(word.substring(Math.max(i - 1, 0), i))) || word.substring(Math.max(i - 1, 0), i).equals("-")){
                   
-              } else {
-                return false;
-              }
+              } 
             }
             return true;
             
