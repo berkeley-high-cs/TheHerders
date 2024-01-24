@@ -28,26 +28,21 @@ public class Tictactoe {
   // static String p2Input = "0";
 
   // funciton
-  public static void printBoard(int[][] board) {
+  public void printBoard() {
     for (int i = 0; i < 3; i++) {
       System.out.println("  " + asLetter(board[i][0]) + "  |  " + asLetter(board[i][1]) + "  |  "
           + asLetter(board[i][2]) + "  |    |");
       System.out.println("                      |");
-      // Pretty cool, loops three times, while also changing the first value of the
-      // array id, which works because its a three by three board, but if it were 4 by
-      // 3 or something like that it might be more complicated
+   
     }
     System.out.println("___________________");
   }
 
-  public static void printRow(int[][] board, int row) {
+  public void printRow(int row) {
 
     System.out.print("  |  " + asLetter(board[row][0]) + "  |  " + asLetter(board[row][1]) + "  |  "
         + asLetter(board[row][2]) + "  |  ");
 
-    // Pretty cool, loops three times, while also changing the first value of the
-    // array id, which works because its a three by three board, but if it were 4 by
-    // 3 or something like that it might be more complicated
 
   }
 
@@ -58,7 +53,7 @@ public class Tictactoe {
     System.out.println("");
     for (int x = 0; x < 3; x++) {
       for (int i = 0; i < 3; i++) {
-        printRow(superBoard[i].getBoard(), x);
+        superBoard[i].printRow(x);
         System.out.print("  |  ");
       }
       System.out.println("           |                      |                           |                           |");
@@ -66,7 +61,7 @@ public class Tictactoe {
     System.out.println("______________________________________________________________________________");
     for (int x = 0; x < 3; x++) {
       for (int i = 3; i < 6; i++) {
-        printRow(superBoard[i].getBoard(), x);
+        superBoard[i].printRow(x);
         System.out.print("  |  ");
       }
       System.out.println("           |                      |                           |                           |");
@@ -75,7 +70,7 @@ public class Tictactoe {
     System.out.println("______________________________________________________________________________");
     for (int x = 0; x < 3; x++) {
       for (int i = 6; i < 9; i++) {
-        printRow(superBoard[i].getBoard(), x);
+        superBoard[i].printRow(x);
         System.out.print("  |  ");
       }
       System.out.println("           |                      |                           |                           |");
@@ -96,7 +91,16 @@ public class Tictactoe {
     // needs this in case its not 0 1 or 2
     return " ";
   } // reads player 1 input
-
+  public void setAt(int player, int space){
+    if (isEmpty(space)){
+      board[space/3][space % 3] = player;
+    } else {
+      throw new RuntimeException("square not empty");
+    }
+  }
+  public boolean isEmpty(int space){
+    return board[space/3][space % 3] == 0;
+  }
   public static void reader(int input, int[][] board, int player) {
     if (input == 0) {
       if (board[0][0] == 0) {
@@ -257,6 +261,8 @@ public class Tictactoe {
         for (int j = 0; j < 3; j++) {
           if (board.getBoard()[i][j] != 0) {
             spacesTaken++;
+          } else {
+            return false;
           }
         }
       }
