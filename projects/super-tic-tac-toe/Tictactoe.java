@@ -46,41 +46,8 @@ public class Tictactoe {
 
   }
 
-  public static void printSuperBoard(Tictactoe[] superBoard) {
-
-    System.out.print("\033[2J\033[1;1H");
-    System.out.println("SUPER TIC TAC TOE");
-    System.out.println("");
-    for (int x = 0; x < 3; x++) {
-      for (int i = 0; i < 3; i++) {
-        superBoard[i].printRow(x);
-        System.out.print("  |  ");
-      }
-      System.out.println("           |                      |                           |                           |");
-    }
-    System.out.println("______________________________________________________________________________");
-    for (int x = 0; x < 3; x++) {
-      for (int i = 3; i < 6; i++) {
-        superBoard[i].printRow(x);
-        System.out.print("  |  ");
-      }
-      System.out.println("           |                      |                           |                           |");
-    }
-
-    System.out.println("______________________________________________________________________________");
-    for (int x = 0; x < 3; x++) {
-      for (int i = 6; i < 9; i++) {
-        superBoard[i].printRow(x);
-        System.out.print("  |  ");
-      }
-      System.out.println("           |                      |                           |                           |");
-    }
-
-    System.out.println("______________________________________________________________________________");
-
-  }
-
-  public static String asLetter(int number) {
+  
+  public String asLetter(int number) {
     if (number == 0) {
       return "_";
     } else if (number == 1) {
@@ -172,21 +139,7 @@ public class Tictactoe {
 
   }
 
-  // both chats just have text and then see the input from player and update it
-  public static int p1StartChat() {
-    System.out.println("");
-    System.out.println("What square would you like to start in? 1 through 9, left to right, up to down.");
-    Scanner scanner = new Scanner(System.in);
-    return scanner.nextInt();
-  }
-
-  public static int chat(int player) {
-    int[] players = { 1, 2 };
-    System.out.println("");
-    System.out.println("What is player " + players[player - 1] + "'s move? 1 through 9, left to right, up to down.");
-    Scanner scanner = new Scanner(System.in);
-    return scanner.nextInt();
-  }
+  
 
   // check for win con
   public static boolean winChecker(int x, Tictactoe board) {
@@ -249,7 +202,9 @@ public class Tictactoe {
       printSuperBoard(superBoard);
       System.out.println("That board has already been finished, where would player " + players[player] + " like to go?");
       Scanner scanner = new Scanner(System.in);
-      return scanner.nextInt() - 1;
+      int num =  scanner.nextInt();
+     scanner.close();
+     return num - 1;
     } else {
       return nextBoard;
     }
