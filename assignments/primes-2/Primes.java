@@ -20,7 +20,7 @@ public class Primes {
   public ArrayList<Integer> primes(int n){
     ArrayList<Integer> list = new ArrayList<>();
     for (int i = 0; i < n; i += 0){
-      if (isPrime(i)){
+      if (i % 2 != 0 && isPrime(i)){
         list.add(i);
         i++;
       }
