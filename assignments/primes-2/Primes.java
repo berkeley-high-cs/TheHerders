@@ -20,8 +20,8 @@ public class Primes {
   public ArrayList<Integer> primes(int n){
     ArrayList<Integer> list = new ArrayList<>();
     for (int i = 0; i < n; i++){
-      if (i.isPrime()){
-        
+      if (isPrime(i)){
+
       }
     }
     return list;
