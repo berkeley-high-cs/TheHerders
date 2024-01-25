@@ -21,7 +21,7 @@ public class Primes {
     ArrayList<Integer> list = new ArrayList<>();
     for (int i = 0; i < n; i++){
       if (isPrime(i)){
-
+        list.add(i);
       }
     }
     return list;
