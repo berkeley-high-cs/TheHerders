@@ -19,6 +19,11 @@ import java.util.ArrayList;
 public class Primes {
   public ArrayList<Integer> primes(int n){
     ArrayList<Integer> list = new ArrayList<>();
+    for (int i = 0; i < n; i++){
+      if (i.isPrime()){
+        
+      }
+    }
     return list;
   }
   public boolean isPrime(int n){
