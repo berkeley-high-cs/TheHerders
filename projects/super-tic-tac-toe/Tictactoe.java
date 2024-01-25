@@ -128,7 +128,7 @@ public class Tictactoe {
     } else if (input == 8) {
       if (board[2][2] == 0) {
         board[2][2] = player;
-      } else {
+            } else {
         System.out.println("thats been done before");
         reader(input = chat(player) - 1, board, player);
       }
@@ -186,29 +186,9 @@ public class Tictactoe {
     return false;
   }
 
-  public static int digitToBoardCoord(int digit) {
-    if (0 <= digit && digit < 3) {
-      return 0;
-    } else if (3 <= digit && digit < 6) {
-      return 1;
-    } else {
-      return 2;
-    }
-  }
+  
+  
 
-  public static int nextBoardCheck(int nextBoard, Tictactoe[] superBoard, int player) {
-    int[] players = { 1, 2 };
-    if (superBoard[nextBoard].getWon()) {
-      printSuperBoard(superBoard);
-      System.out.println("That board has already been finished, where would player " + players[player] + " like to go?");
-      Scanner scanner = new Scanner(System.in);
-      int num =  scanner.nextInt();
-     scanner.close();
-     return num - 1;
-    } else {
-      return nextBoard;
-    }
-  }
 
   public static boolean tieChecker(Tictactoe board) {
     int spacesTaken = 0;
