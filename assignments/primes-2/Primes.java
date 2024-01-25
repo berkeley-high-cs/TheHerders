@@ -23,9 +23,9 @@ public class Primes {
     for (int i = 0; i < timesToRun; i++){
       if (isPrime(i)){
         list.add(i);
-        
+        timesToRun++;
       }
-      timesToRun++;
+      
     }
     return list;
   }
