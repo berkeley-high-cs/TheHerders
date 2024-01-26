@@ -5,6 +5,7 @@ public class IsSorted {
     int highestNum = 0;
     for (int i = 0; i < list.size(); i++){
       if (list.get(i) < highestNum){
+        System.out.println(list.get(i));
         return false;
       } else {
         highestNum = list.get(i);
