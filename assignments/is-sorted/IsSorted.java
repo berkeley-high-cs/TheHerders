@@ -10,6 +10,7 @@ public class IsSorted {
         highestNum = list.get(i);
       }
     }
+    return true;
   }
 
 }
