@@ -37,7 +37,9 @@ class Simulate {
      String[] keyword = {"attack", "balistics skill", "strength", "armour piercing", "damage","devastating wounds (amount in order to acheive devastating wounds)"};
     System.out.println("What is your guns " + keyword[place] + " value?");
     Scanner scanner = new Scanner(System.in);
-     return scanner.nextInt();
+    int num = scanner.nextInt();
+    scanner.close();
+     return num;
     
   }
   public static String chatDiceAmount(){
@@ -46,6 +48,7 @@ class Simulate {
     Scanner scanner = new Scanner(System.in);
     diceAmount = scanner.nextLine();
     diceAmount = (diceAmount.toUpperCase());
+    scanner.close();
     return diceAmount;
   }
   public static int diceAmountRoll(String diceAmount){
@@ -97,6 +100,7 @@ class Simulate {
     System.out.println("Is your gun's " + keyword[place] + " value represented by a dice roll? yes or no");
     Scanner scanner = new Scanner(System.in);
     String yesOrNo = scanner.nextLine();
+    scanner.close();
      if (yesOrNo.equals("yes")){
        gunDamageDice = true;
        return true;
@@ -110,25 +114,29 @@ class Simulate {
   public static int chatUnitSave(){
     System.out.println("What is the amour save of the unit you are shooting at?");
     Scanner scanner = new Scanner(System.in);
-     return  scanner.nextInt();
-    
+    int num = scanner.nextInt();
+    scanner.close();
+     return  num;
   }
   public static int chatToughness(){
     System.out.println("What toughness does the unit you are shooting at have?");
     Scanner scanner = new Scanner(System.in);
-     return  scanner.nextInt();
-    
+    int num = scanner.nextInt();
+     scanner.close();
+     return num;  
   } 
   public static int chatAmountRuns(){
     System.out.println("How many times do you want to run?");
     Scanner scanner = new Scanner(System.in);
-     return  scanner.nextInt();
-    
+    int num =  scanner.nextInt();
+     scanner.close();
+     return num;
   }
   public static boolean chatDevastatingWounds(){
     System.out.println("Does your gun have devastating wounds?");
     Scanner scanner = new Scanner(System.in);
      String yesOrNo = scanner.nextLine();
+     scanner.close();
      if (yesOrNo.equals("yes")){
        return true;
      } else if (yesOrNo.equals("no")){

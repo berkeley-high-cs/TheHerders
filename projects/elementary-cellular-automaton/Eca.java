@@ -14,9 +14,6 @@ class Eca {
     System.out.println("");
   }
 
-  // as letter changes the numbers to x's and o's, ask grayson a little bit about
-  // how that works, like why is it just in front of the array id
-  // for loop
   public static String asBox(int number) {
     if (number == 0) {
       return "\u25A1";
