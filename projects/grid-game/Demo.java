@@ -8,7 +8,7 @@ public class Demo extends GridGame {
   public Demo(int rows, int columns) {
     super(rows, columns, 10);
     grid = new Color[rows][columns];
-    randomizeColors();
+    setColor();
   }
 
   /*
@@ -27,9 +27,14 @@ public class Demo extends GridGame {
    * This method will be called for you when the user clicks a cell in the grid.
    */
   public void cellClicked(int row, int col) {
-    Color old = grid[row][col];
-    grid[row][col] = randomColor();
-
+    int player = 1;
+    if (grid[row][col].getRGB() == Integer.MAX_VALUE){
+    grid[row][col] = setColorBlackOrWhite((player % 3) + 1);
+    player++;
+  } else {
+    grid[row][col] = setColorBlackOrWhite(1);
+  }
+    
     // You can't directly call a method to paint the component but the repaint
     // method (which you inherit from GridGame) tells the Swing framework that
     // this component needs to be repainted which will result in a call to
@@ -37,27 +42,42 @@ public class Demo extends GridGame {
     // be called for each cell.
     repaint();
 
-    after(
-      500,
-      () -> {
-        grid[row][col] = old;
-        repaint();
-      }
-    );
+    // after(
+    //   500,
+    //   () -> {
+    //     grid[row][col] = old;
+    //     repaint();
+    //   }
+    // );
   }
 
   //////////////////////////////////////////////////////////////////////////////
   // Private helper methods.
 
-  private void randomizeColors() {
+  private void setColor() {
     for (int r = 0; r < getRows(); r++) {
       for (int c = 0; c < getColumns(); c++) {
-        grid[r][c] = randomColor();
+        grid[r][c] = setColorBlackOrWhite(0);
       }
     }
   }
 
-  private Color randomColor() {
-    return new Color((int) (Math.random() * Integer.MAX_VALUE), false);
+  private Color setColorBlackOrWhite(int player) {
+    //integer max value is white, 0 is black
+    //player 0 is empty, player 1 is x/red, player two is 0/blue
+    if (player == 0){
+      return new Color(Integer.MAX_VALUE, false);
+    } else if (player == 1){
+      return new Color(255, false);
+    } else if (player == 2){
+      return new Color(0-255, false);
+    } else {
+      throw new RuntimeException("player value not understood");
+    
+    }
+      
+ 
+
+    
   }
 }
