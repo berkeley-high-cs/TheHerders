@@ -27,12 +27,13 @@ public class Demo extends GridGame {
    * This method will be called for you when the user clicks a cell in the grid.
    */
   public void cellClicked(int row, int col) {
-    int player = 1;
-    if (grid[row][col].getRGB() == Integer.MAX_VALUE){
-    grid[row][col] = setColorBlackOrWhite((player % 3) + 1);
-    player++;
+    int player = 2;
+    if (grid[row][col].getRGB() == -1){ // white here is -1 for some reason
+    grid[row][col] = setColorBlackOrWhite(player);
+    player = 2;
   } else {
-    grid[row][col] = setColorBlackOrWhite(1);
+    System.out.println(grid[row][col].getRGB());
+    //grid[row][col] = setColorBlackOrWhite(2);
   }
     
     // You can't directly call a method to paint the component but the repaint
@@ -64,13 +65,16 @@ public class Demo extends GridGame {
 
   private Color setColorBlackOrWhite(int player) {
     //integer max value is white, 0 is black
-    //player 0 is empty, player 1 is x/red, player two is 0/blue
+    //player 0 is white, player 1 is x/red, player two is 0/blue
+    //0-255-0 is yellow
     if (player == 0){
       return new Color(Integer.MAX_VALUE, false);
     } else if (player == 1){
-      return new Color(255, false);
+      System.out.println("player 1 went");
+      return new Color(0-255-0, false);
     } else if (player == 2){
-      return new Color(0-255, false);
+      System.out.println("player 2 went");
+      return new Color(255-0-0, false);
     } else {
       throw new RuntimeException("player value not understood");
     
