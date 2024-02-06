@@ -3,7 +3,7 @@ import java.io.FileNotFoundException; // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
 import java.util.*;
 
-class Main {
+class Poker {
     static String player1Hand, player2Hand;
     static int sameSuits = 0;
     static int sameVals = 0;

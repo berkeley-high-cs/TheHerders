@@ -3,7 +3,7 @@
 //FINISHED
 import java.util.Scanner;
 
-class Main {
+class RegTicTacToe {
 
   static int[][] board = {
       { 0, 0, 0 },
