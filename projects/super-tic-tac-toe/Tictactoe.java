@@ -149,7 +149,7 @@ public class Tictactoe {
           if (board.getBoard()[i][1] == player) {
             if (board.getBoard()[i][2] == player) {
               board.won = true;
-              System.out.println("penis"); // error message to see if this code is running
+             
               return true;
               
             }
@@ -160,7 +160,7 @@ public class Tictactoe {
           if (board.getBoard()[1][i] == player) {
             if (board.getBoard()[2][i] == player) {
               board.won = true;
-              System.out.println("penis");
+              
               return true;
             }
           }
@@ -170,7 +170,7 @@ public class Tictactoe {
         if (board.getBoard()[1][1] == player) {
           if (board.getBoard()[2][2] == player) {
             board.won = true;
-            System.out.println("penis");
+            
             return true;
           }
         }
@@ -179,7 +179,7 @@ public class Tictactoe {
         if (board.getBoard()[1][1] == player) {
           if (board.getBoard()[2][0] == player) {
             board.won = true;
-            System.out.println("penis");
+            
             return true;
           }
         }

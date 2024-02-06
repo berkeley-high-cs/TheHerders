@@ -50,12 +50,16 @@ public class Super {
     currentBoard = nextBoardCheck(nextBoard, boards, player); // makes board previous play if
     // availiable
     superBoard.printSuperBoard();
+    superBoard.gameStateChecker(player, win); //checks all game states, super and otherwise
+    //superBoard.printSuperBoard(); // prints updated super board
     System.out.println("Player " + player + "'s turn on " + (currentBoard + 1));
     boards[currentBoard].printBoard(); // prints current board
     
     superBoard.playerInput(superBoard, player); // recives player input, and sets board to it
-    superBoard.gameStateChecker(superBoard, player, win); //checks all game states, super and otherwise
+    //System.out.println("about to run gameStateChecker");
+    superBoard.gameStateChecker(player, win); //checks all game states, super and otherwise
     //superBoard.printSuperBoard(); // prints updated super board
+    
   }
 
   // both chats just have text and then see the input from player and update it
@@ -125,8 +129,9 @@ public class Super {
      // printSuperBoard();
       System.out.println("That board has already been finished, where would player " + player + " like to go?");
       Scanner scanner = new Scanner(System.in);
-      if (nextBoardCheck(scanner.nextInt() - 1, boards, player) == nextBoard){
-        return scanner.nextInt() - 1;
+      int newNextBoard = scanner.nextInt() - 1;
+      if (nextBoardCheck(newNextBoard, boards, player) != nextBoard){
+        return newNextBoard;
       } 
       
     } 
@@ -143,13 +148,13 @@ public class Super {
       superBoard.playerInput(superBoard, player);
     }
   }
-  public void gameStateChecker(Super superBoard, int player, boolean win){
-    if (Tictactoe.winChecker(player, boards[currentBoard])) { // winCheck
+  public void gameStateChecker(int player, boolean win){
+      if (Tictactoe.winChecker(player, boards[currentBoard])) { // winCheck
       System.out.println("Player " + player + " wins here! Full board state below");
       boardState.getBoard()[currentBoard / 3][currentBoard % 3] = player; //changes board state to reflect win
       boardState.printBoard(); // puts a win on the full board state
     }
-    Tictactoe.tieChecker(superBoard.boards[currentBoard]); // checks for a tie
+    Tictactoe.tieChecker(boards[currentBoard]); // checks for a tie
     if (Tictactoe.winChecker(player, boardState)) {
       System.out.println("Player " + player + "has won the game!");
       win = true;
