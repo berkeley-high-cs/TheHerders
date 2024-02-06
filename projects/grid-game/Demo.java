@@ -19,22 +19,18 @@ public class Demo extends GridGame {
    * https://docs.oracle.com/en/java/javase/21/docs/api/java.desktop/java/awt/Graphics2D.html
    */
   public void paintCell(int row, int column, Graphics2D g) {
-    g.setColor(grid[row][column]);
+
+    g.drawString("_",row, column);
     g.fillRect(0, 0, cellWidth(), cellHeight());
   }
 
   /*
    * This method will be called for you when the user clicks a cell in the grid.
    */
-  public void cellClicked(int row, int col) {
-    int player = 2;
+  public void cellClicked(int row, int col, int player) {
     if (grid[row][col].getRGB() == -1){ // white here is -1 for some reason
     grid[row][col] = setColorBlackOrWhite(player);
-    player = 2;
-  } else {
-    System.out.println(grid[row][col].getRGB());
-    //grid[row][col] = setColorBlackOrWhite(2);
-  }
+  } 
     
     // You can't directly call a method to paint the component but the repaint
     // method (which you inherit from GridGame) tells the Swing framework that

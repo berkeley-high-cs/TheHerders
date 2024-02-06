@@ -1,4 +1,4 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class GuiTicTacToe {
   private int place;
@@ -142,39 +142,44 @@ public class GuiTicTacToe {
   
 
   // check for win con
-  public static boolean winChecker(int x, GuiTicTacToe board) {
+  public static boolean winChecker(int player, GuiTicTacToe board) {
     if (board.getWon() != true) {
       for (int i = 0; i < 3; i++) {
-        if (board.getBoard()[i][0] == x) {
-          if (board.getBoard()[i][1] == x) {
-            if (board.getBoard()[i][2] == x) {
+        if (board.getBoard()[i][0] == player) {
+          if (board.getBoard()[i][1] == player) {
+            if (board.getBoard()[i][2] == player) {
               board.won = true;
+             
               return true;
+              
             }
 
           }
         }
-        if (board.getBoard()[0][i] == x) {
-          if (board.getBoard()[1][i] == x) {
-            if (board.getBoard()[2][i] == x) {
+        if (board.getBoard()[0][i] == player) {
+          if (board.getBoard()[1][i] == player) {
+            if (board.getBoard()[2][i] == player) {
               board.won = true;
+              
               return true;
             }
           }
         }
       }
-      if (board.getBoard()[0][0] == x) {
-        if (board.getBoard()[1][1] == x) {
-          if (board.getBoard()[2][2] == x) {
+      if (board.getBoard()[0][0] == player) {
+        if (board.getBoard()[1][1] == player) {
+          if (board.getBoard()[2][2] == player) {
             board.won = true;
+            
             return true;
           }
         }
       }
-      if (board.getBoard()[0][2] == x) {
-        if (board.getBoard()[1][1] == x) {
-          if (board.getBoard()[2][0] == x) {
+      if (board.getBoard()[0][2] == player) {
+        if (board.getBoard()[1][1] == player) {
+          if (board.getBoard()[2][0] == player) {
             board.won = true;
+            
             return true;
           }
         }
