@@ -56,7 +56,7 @@ public class GuiTicTacToe {
       return "O";
     }
     // needs this in case its not 0 1 or 2
-    return " ";
+    return "asLetter Error";
   } // reads player 1 input
   public void setAt(int player, int space){
     if (isEmpty(space)){

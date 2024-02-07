@@ -4,13 +4,13 @@ public class GuiSuper {
 
   int nextBoard = -1;
   int currentBoard;
-  Tictactoe boardState = new Tictactoe(-1);
-  Tictactoe[] boards = new Tictactoe[9];
+  GuiTicTacToe boardState = new GuiTicTacToe(-1);
+  GuiTicTacToe[] boards = new GuiTicTacToe[9];
   int turn = 0;
 
   public GuiSuper() {
     for (int i = 0; i < 9; i++) {
-      boards[i] = new Tictactoe(i);
+      boards[i] = new GuiTicTacToe(i);
     }
   }
   public int getTurn(){
@@ -19,7 +19,7 @@ public class GuiSuper {
   public void addTurn(){
     turn++;
   }
-  public Tictactoe[] getBoards() {
+  public GuiTicTacToe[] getBoards() {
     return boards;
   }
 
@@ -31,7 +31,7 @@ public class GuiSuper {
     return currentBoard;
   }
 
-  public Tictactoe getBoardState() {
+  public GuiTicTacToe getBoardState() {
     return boardState;
   }
 
@@ -40,8 +40,8 @@ public class GuiSuper {
     currentBoard = n;
   }
 
-  public static void main(String[] args) {
-    GuiSuper superBoard = new GuiSuper();
+  public static void superGameLoop(GuiSuper superBoard) {
+   
 
     superBoard.printSuperBoard();
     superBoard.setCurrentBoard(Math.max(0, Math.min(p1StartChat() - 1, 8)));
@@ -57,16 +57,15 @@ public class GuiSuper {
   public void gameLoop(GuiSuper superBoard, boolean win, int player) {
     currentBoard = nextBoardCheck(nextBoard, boards, player); // makes board previous play if
     // availiable
-    superBoard.printSuperBoard();
+    //superBoard.printSuperBoard();
     superBoard.gameStateChecker(player, win); //checks all game states, super and otherwise
     //superBoard.printSuperBoard(); // prints updated super board
-    System.out.println("Player " + player + "'s turn on " + (currentBoard + 1));
-    boards[currentBoard].printBoard(); // prints current board
+    //System.out.println("Player " + player + "'s turn on " + (currentBoard + 1));
+    //boards[currentBoard].printBoard(); // prints current board
     
     superBoard.playerInput(superBoard, player); // recives player input, and sets board to it
     //System.out.println("about to run gameStateChecker");
-    superBoard.gameStateChecker(player, win); //checks all game states, super and otherwise
-    //superBoard.printSuperBoard(); // prints updated super board
+    
     
   }
 
@@ -78,6 +77,7 @@ public class GuiSuper {
     );
     Scanner scanner = new Scanner(System.in);
     return scanner.nextInt();
+
   }
 
   public static int chat(int player) {
@@ -131,7 +131,7 @@ public class GuiSuper {
     );
   }
 
-  public int nextBoardCheck(int nextBoard, Tictactoe[] boards, int player) {
+  public int nextBoardCheck(int nextBoard, GuiTicTacToe[] boards, int player) {
    
     if (boards[nextBoard].getWon()) {
      // printSuperBoard();
@@ -157,18 +157,18 @@ public class GuiSuper {
     }
   }
   public void gameStateChecker(int player, boolean win){
-      if (Tictactoe.winChecker(player, boards[currentBoard])) { // winCheck
+      if (GuiTicTacToe.winChecker(player, boards[currentBoard])) { // winCheck
       System.out.println("Player " + player + " wins here! Full board state below");
       boardState.getBoard()[currentBoard / 3][currentBoard % 3] = player; //changes board state to reflect win
       boardState.printBoard(); // puts a win on the full board state
     }
-    Tictactoe.tieChecker(boards[currentBoard]); // checks for a tie
-    if (Tictactoe.winChecker(player, boardState)) {
+    GuiTicTacToe.tieChecker(boards[currentBoard]); // checks for a tie
+    if (GuiTicTacToe.winChecker(player, boardState)) {
       System.out.println("Player " + player + "has won the game!");
       win = true;
       
     } // checks if someone has won the entire game
-    if (Tictactoe.tieChecker(boardState)) {
+    if (GuiTicTacToe.tieChecker(boardState)) {
       System.out.println("Cat's game");
       win = true;
     }

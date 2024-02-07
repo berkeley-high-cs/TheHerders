@@ -4,11 +4,15 @@ import java.awt.Graphics2D;
 public class Demo extends GridGame {
 
   private Color[][] grid;
+  private GuiTicTacToe board;
+  
 
-  public Demo(int rows, int columns) {
-    super(rows, columns, 10);
-    grid = new Color[rows][columns];
+  public Demo(GuiSuper superBoard, GuiTicTacToe board) {
+    
+    super(3, 3, 10);
+    grid = new Color[3][3];
     setColor();
+    this.board = board;
   }
 
   /*
@@ -19,17 +23,20 @@ public class Demo extends GridGame {
    * https://docs.oracle.com/en/java/javase/21/docs/api/java.desktop/java/awt/Graphics2D.html
    */
   public void paintCell(int row, int column, Graphics2D g) {
-
-    g.drawString("_",row, column);
+    g.setFont(g.getFont().deriveFont(32f));
+    g.setColor(Color.BLACK);
+   g.drawRect(0, 0, cellWidth(), cellHeight());
+    g.setColor(Color.BLACK);
+    g.drawString(board.asLetter(board.getBoard()[row][column]),cellWidth()/2, cellHeight()/2);
     g.fillRect(0, 0, cellWidth(), cellHeight());
   }
 
   /*
    * This method will be called for you when the user clicks a cell in the grid.
    */
-  public void cellClicked(int row, int col, int player) {
+  public void cellClicked(int row, int col) {
     if (grid[row][col].getRGB() == -1){ // white here is -1 for some reason
-    grid[row][col] = setColorBlackOrWhite(player);
+    grid[row][col] = setColorBlackOrWhite(1);
   } 
     
     // You can't directly call a method to paint the component but the repaint
