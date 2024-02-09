@@ -6,7 +6,7 @@ public class GuiSuper {
   int currentBoard;
   GuiTicTacToe boardState = new GuiTicTacToe(-1);
   GuiTicTacToe[] boards = new GuiTicTacToe[9];
-  int turn = 0;
+  int turn = 1;
 
   public GuiSuper() {
     for (int i = 0; i < 9; i++) {

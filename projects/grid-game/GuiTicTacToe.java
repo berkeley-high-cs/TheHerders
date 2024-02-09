@@ -21,6 +21,9 @@ public class GuiTicTacToe {
   public boolean getWon() {
     return won;
   }
+  public void setWonTrue(){
+    won = true;
+  }
 
   // static boolean tie = false;
   // static boolean win = false;
