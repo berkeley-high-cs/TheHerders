@@ -1,20 +1,24 @@
 import java.awt.Color;
 import java.awt.Graphics2D;
 
-public class Demo extends GridGame {
+public class SuperBoard extends GridGame {
 
   private Color[][] grid;
-  private GuiTicTacToe board;
   private GuiSuper superBoard;
+  private TicTacToeBoard[][] superBoardGui; 
   
 
-  public Demo(GuiSuper superBoard, GuiTicTacToe board) {
+  public SuperBoard(GuiSuper superBoard, GuiTicTacToe board, TicTacToeBoard[][] superBoardGui) {
     
-    super(3, 3, 10);
-    grid = new Color[3][3];
+    super(9, 9, 10);
+    grid = new Color[9][9];
     setColor(0);
-    this.board = board;
     this.superBoard = superBoard;
+    this.superBoardGui = superBoardGui;
+    for (int i = 0; i < 9; i++){
+        superBoardGui[i/3][i%3] = new TicTacToeBoard(superBoard, superBoard.getBoards()[i]);
+    }
+    
   }
 
   /*
@@ -32,8 +36,8 @@ public class Demo extends GridGame {
     g.setColor(Color.BLACK);
 
       //System.out.println("board space.asLetter: " + board.asLetter(board.getBoard()[row][column]));
-      g.drawString(board.asLetter(board.getBoard()[row][column]),cellWidth()/2, cellHeight()/2);
-      guiGameStateChecker(g);
+      g.drawString(superBoardGui[row][column].getGuiBoard().asLetter(superBoardGui[row][column].getGuiBoard().getBoard()[row][column]),cellWidth()/2, cellHeight()/2);
+      GuiSuper.superGameLoop(superBoard);
     
     
   }
@@ -42,15 +46,15 @@ public class Demo extends GridGame {
    * This method will be called for you when the user clicks a cell in the grid.
    */
   public void cellClicked(int row, int col) {
-    System.out.println("row: " + row + " col: " + col);
+    // System.out.println("row: " + row + " col: " + col);
       
-    if (board.getBoard()[row][col] == 0 && board.getWon() != true){
-      superBoard.addTurn();
-      board.getBoard()[row][col] = (superBoard.getTurn() % 2) + 1;
-    }
+    // if (board.getBoard()[row][col] == 0 && board.getWon() != true){
+    //   superBoard.addTurn();
+    //   board.getBoard()[row][col] = (superBoard.getTurn() % 2) + 1;
+    // }
    
     
-    System.out.println("value in spot: " + board.getBoard()[row][col] + " player: " + ((superBoard.getTurn() % 2) + 1));
+    // System.out.println("value in spot: " + board.getBoard()[row][col] + " player: " + ((superBoard.getTurn() % 2) + 1));
     
   
     
@@ -103,18 +107,18 @@ public class Demo extends GridGame {
 
     
   }
-  public void guiGameStateChecker(Graphics2D g){
-    if (GuiTicTacToe.winChecker(1, board)){
-      setColor(1);
-      board.setWonTrue();
-    } 
-    if (GuiTicTacToe.winChecker(2, board)){
-      setColor(2);
-      board.setWonTrue();
-    } 
-    if (GuiTicTacToe.tieChecker(board)){
-      setColor(-1);
-      board.setWonTrue();
-    }
-  }
+  //public void guiGameStateChecker(Graphics2D g){
+    // if (GuiTicTacToe.winChecker(1, board)){
+    //   setColor(1);
+    //   board.setWonTrue();
+    // } 
+    // if (GuiTicTacToe.winChecker(2, board)){
+    //   setColor(2);
+    //   board.setWonTrue();
+    // } 
+    // if (GuiTicTacToe.tieChecker(board)){
+    //   setColor(-1);
+    //   board.setWonTrue();
+   // }
+  //}
 }
