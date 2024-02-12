@@ -44,7 +44,7 @@ public class Counting {
   }
   public int countOn(boolean[][] wall){
     int count = 0;
-    for (int i = 0;  i < wall.length(); i++){
+    for (int i = 0;  i < wall.length; i++){
       for(int x = 0; x < wall[i].length; x++){
         if(wall[i][x]){
         count++;
