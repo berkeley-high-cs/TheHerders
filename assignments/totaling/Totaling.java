@@ -44,7 +44,7 @@ public class Totaling {
   }
   public int sumCheckerboard(int[][] checkerboard){
      int total = 0;
-     int starter = 0;
+     int starter = 1;
     for (int i = starter; i < checkerboard.length; i+=2){
       for(int x = starter; x < checkerboard[i].length; x+=2){
         total += checkerboard[i][x];
