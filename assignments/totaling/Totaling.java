@@ -33,14 +33,26 @@ public class Totaling {
     }
      return total;
   }
-  public int sumCells(int[][] wall){
+  public int sumCells(int[][] checkerboard){
      int total = 0;
-    for (int i = 0; i < wall.length; i++){
-      for(int x = 0; x < wall[i].length; x++){
-        total += wall[i][x];
+    for (int i = 0; i < checkerboard.length; i++){
+      for(int x = 0; x < checkerboard[i].length; x++){
+        total += checkerboard[i][x];
       }
     }
      return total;
   }
+  public int sumCheckerboard(int[][] checkerboard){
+     int total = 0;
+     int starter = 0;
+    for (int i = starter; i < checkerboard.length; i+=2){
+      for(int x = starter; x < checkerboard[i].length; x+=2){
+        total += checkerboard[i][x];
+      }
+      starter = (starter + 1)%2;
+    }
+     return total;
+  }
+
 }
 
