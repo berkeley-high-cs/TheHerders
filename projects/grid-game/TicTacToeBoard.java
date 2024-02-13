@@ -12,7 +12,7 @@ public class TicTacToeBoard extends GridGame {
     
     super(3, 3, 10);
     grid = new Color[3][3];
-    setColor(0);
+    setColor(Color.WHITE);
     this.board = board;
     this.superBoard = superBoard;
     
@@ -63,47 +63,26 @@ public class TicTacToeBoard extends GridGame {
   //////////////////////////////////////////////////////////////////////////////
   // Private helper methods.
 
-  private void setColor(int color) {
+  private void setColor(Color color) {
     for (int r = 0; r < getRows(); r++) {
       for (int c = 0; c < getColumns(); c++) {
-        grid[r][c] = setColorWhiteOrWin(color);
+        grid[r][c] = color;
       }
     }
   }
 
-  private Color setColorWhiteOrWin(int color) {
-    //integer max value is white, 0 is black
-    //player 0 is white, player 1 is x/red, player two is 0/blue
-    //0-255-0 is yellow
-   if (color == 0){
-    return Color.WHITE;
-   } 
-   else if (color == 1){
-    return Color.RED;
-   }
-   else if (color == 2){
-    return Color.BLUE;
-   } else{
-    return Color.GRAY;
-   }
-     
-    
-      
  
-
-    
-  }
   public void guiGameStateChecker(){
     if (GuiTicTacToe.winChecker(1, board)){
-      setColor(1);
+      setColor(Color.RED);
       board.setWonTrue();
     } 
-    if (GuiTicTacToe.winChecker(2, board)){
-      setColor(2);
+    else if (GuiTicTacToe.winChecker(2, board)){
+      setColor(Color.BLUE);
       board.setWonTrue();
     } 
-    if (GuiTicTacToe.tieChecker(board)){
-      setColor(-1);
+    else if (GuiTicTacToe.tieChecker(board)){
+      setColor(Color.GRAY);
       board.setWonTrue();
     }
   }

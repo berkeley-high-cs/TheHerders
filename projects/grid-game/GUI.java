@@ -6,6 +6,7 @@ public class GUI {
 
   public static void main(String[] args) {
     GuiSuper superBoard = new GuiSuper();
+    TicTacToeBoard[][] superBoardGui = new TicTacToeBoard[3][3];
     // Make a JFrame, i.e. the main window of your application.
     JFrame frame = new JFrame(TITLE);
     JFrame superFrame = new JFrame("SUPER BOARD");
@@ -29,11 +30,12 @@ public class GUI {
     // Add an instance of your actual game class here.
     //for (int i = 0; i > 8; i++){
       frame.add(new TicTacToeBoard(superBoard, superBoard.getBoards()[1]));
-     // superFrame.add(new )
+      superFrame.add(new SuperBoard(superBoard, superBoardGui));
    // }
    
     
     // Make the frame actually appear.
     frame.setVisible(true);
+    superFrame.setVisible(true);
   }
 }

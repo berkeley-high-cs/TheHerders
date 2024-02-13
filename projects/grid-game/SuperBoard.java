@@ -8,9 +8,9 @@ public class SuperBoard extends GridGame {
   private TicTacToeBoard[][] superBoardGui; 
   
 
-  public SuperBoard(GuiSuper superBoard, GuiTicTacToe board, TicTacToeBoard[][] superBoardGui) {
+  public SuperBoard(GuiSuper superBoard, TicTacToeBoard[][] superBoardGui) {
     
-    super(9, 9, 10);
+    super(3, 3, 10);
     grid = new Color[9][9];
     setColor(0);
     this.superBoard = superBoard;
@@ -46,32 +46,10 @@ public class SuperBoard extends GridGame {
    * This method will be called for you when the user clicks a cell in the grid.
    */
   public void cellClicked(int row, int col) {
-    // System.out.println("row: " + row + " col: " + col);
-      
-    // if (board.getBoard()[row][col] == 0 && board.getWon() != true){
-    //   superBoard.addTurn();
-    //   board.getBoard()[row][col] = (superBoard.getTurn() % 2) + 1;
-    // }
-   
     
-    // System.out.println("value in spot: " + board.getBoard()[row][col] + " player: " + ((superBoard.getTurn() % 2) + 1));
-    
-  
-    
-    // You can't directly call a method to paint the component but the repaint
-    // method (which you inherit from GridGame) tells the Swing framework that
-    // this component needs to be repainted which will result in a call to
-    // paintComponent (defined in GridGame) which will then cause paintCell to
-    // be called for each cell.
     repaint();
 
-    // after(
-    //   500,
-    //   () -> {
-    //     grid[row][col] = old;
-    //     repaint();
-    //   }
-    // );
+   
   }
 
   //////////////////////////////////////////////////////////////////////////////
