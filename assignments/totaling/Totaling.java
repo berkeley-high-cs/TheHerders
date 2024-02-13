@@ -17,5 +17,12 @@ public class Totaling {
     }
      return total;
   }
+   public int sumList(ArrayList<Integer> list){
+    int total = 0;
+    for (int i = 0; i < list.size(); i++){
+      total += list.get(i);
+    }
+     return total;
+  }
  
 }
