@@ -29,15 +29,15 @@ public class TicTacToeBoard extends GridGame {
    * https://docs.oracle.com/en/java/javase/21/docs/api/java.desktop/java/awt/Graphics2D.html
    */
   public void paintCell(int row, int column, Graphics2D g) {
+
     g.setFont(g.getFont().deriveFont(32f));
     g.setColor(grid[row][column]);
-    g.drawRect(0, 0, cellWidth(), cellHeight());
-    //g.fillRect(0, 0, cellWidth(), cellHeight());
+    g.fillRect(0, 0, cellWidth(), cellHeight());
     g.setColor(Color.BLACK);
 
       //System.out.println("board space.asLetter: " + board.asLetter(board.getBoard()[row][column]));
       g.drawString(board.asLetter(board.getBoard()[row][column]),cellWidth()/2, cellHeight()/2);
-      guiGameStateChecker(g);
+      
     
     
   }
@@ -55,23 +55,9 @@ public class TicTacToeBoard extends GridGame {
    
     
     System.out.println("value in spot: " + board.getBoard()[row][col] + " player: " + ((superBoard.getTurn() % 2) + 1));
-    
-  
-    
-    // You can't directly call a method to paint the component but the repaint
-    // method (which you inherit from GridGame) tells the Swing framework that
-    // this component needs to be repainted which will result in a call to
-    // paintComponent (defined in GridGame) which will then cause paintCell to
-    // be called for each cell.
+    guiGameStateChecker();
     repaint();
 
-    // after(
-    //   500,
-    //   () -> {
-    //     grid[row][col] = old;
-    //     repaint();
-    //   }
-    // );
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -107,7 +93,7 @@ public class TicTacToeBoard extends GridGame {
 
     
   }
-  public void guiGameStateChecker(Graphics2D g){
+  public void guiGameStateChecker(){
     if (GuiTicTacToe.winChecker(1, board)){
       setColor(1);
       board.setWonTrue();

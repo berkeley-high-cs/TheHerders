@@ -37,7 +37,7 @@ public class SuperBoard extends GridGame {
 
       //System.out.println("board space.asLetter: " + board.asLetter(board.getBoard()[row][column]));
       g.drawString(superBoardGui[row][column].getGuiBoard().asLetter(superBoardGui[row][column].getGuiBoard().getBoard()[row][column]),cellWidth()/2, cellHeight()/2);
-      GuiSuper.superGameLoop(superBoard);
+      //GuiSuper.superGameLoop(superBoard);
     
     
   }
