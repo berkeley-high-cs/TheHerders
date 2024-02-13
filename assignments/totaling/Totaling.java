@@ -44,12 +44,13 @@ public class Totaling {
   }
   public int sumCheckerboard(int[][] checkerboard){
      int total = 0;
-     int starter = 1;
-    for (int i = starter; i < checkerboard.length; i+=2){
-      for(int x = starter; x < checkerboard[i].length; x+=2){
+
+    for (int i = 0; i < checkerboard.length; i++){
+      for(int x = 0; x < checkerboard[i].length; x++){
+        if ((i % 2 = 0 && x % 2 = 0) || (i % 2 = 1 && x % 2 = 1))
         total += checkerboard[i][x];
       }
-      starter = (starter + 1)%2;
+
     }
      return total;
   }
