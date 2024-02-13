@@ -47,7 +47,7 @@ public class Totaling {
 
     for (int i = 0; i < checkerboard.length; i++){
       for(int x = 0; x < checkerboard[i].length; x++){
-        if ((i % 2 = 0 && x % 2 = 0) || (i % 2 = 1 && x % 2 = 1))
+        if ((i % 2 == 0 && x % 2 == 0) || (i % 2 == 1 && x % 2 == 1))
         total += checkerboard[i][x];
       }
 
