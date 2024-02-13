@@ -15,6 +15,7 @@ public class Totaling {
     for (int i = 0; i < array.length; i++){
       total += array[i];
     }
+     return total;
   }
-  return total;
+ 
 }
