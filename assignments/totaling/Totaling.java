@@ -33,11 +33,11 @@ public class Totaling {
     }
      return total;
   }
-  public int sumCells(int[][] 2dArray){
+  public int sumCells(int[][] wall){
      int total = 0;
-    for (int i = 0; i < 2dArray.length; i++){
-      for(int x = 0; x < 2dArray[i].length; x++){
-        total += 2dArray[i][x];
+    for (int i = 0; i < wall.length; i++){
+      for(int x = 0; x < wall[i].length; x++){
+        total += wall[i][x];
       }
     }
      return total;
