@@ -22,9 +22,9 @@ public class StringSearch {
   public String longestRun(String word){
     String substring = "";
     int longestSubstring = 0;
-    for (int i = 0; i < word.length; i++){
+    for (int i = 0; i < word.length(); i++){
       if (substring.substring(i, i+1).equals(word.substring(i+1, Math.MIN(i+2,word.length())))){
-        substring = substring + word.substring(i+1,Math.MIN(i+2,word.length()));
+        substring = substring + word.substring(i+1,Math.min(i+2,word.length()));
       }
     }
     return substring;
