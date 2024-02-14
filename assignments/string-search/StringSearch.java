@@ -25,7 +25,7 @@ public class StringSearch {
     consecutiveList.add(word.substring(0,1));
     for (int i = 0; i < word.length(); i++){
       if (word.substring(i, i + 1).equals(consecutiveList.get(i))){
-        consecutiveList.set(i,consecutiveList.get(i) + word.substring(i,i+1));
+        consecutiveList.set(Math.min(i,consecutiveList.size()),consecutiveList.get(i) + word.substring(i,i+1));
       }else {
         consecutiveList.add(word.substring(i,i+1));
       }
