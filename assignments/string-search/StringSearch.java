@@ -20,7 +20,7 @@ public class StringSearch {
     return indexList;
   }
   public String longestRun(String word){
-    String substring = "";
+    ArrayList<String> consecutiveList = new ArrayList<String>();
     int longestSubstring = 0;
     for (int i = 0; i < word.length() - 1; i++){
       if (word.substring(i, i+1).equals(word.substring(i+1, i+2))){
