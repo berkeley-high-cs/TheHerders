@@ -24,11 +24,11 @@ public class StringSearch {
     //int longestSubstring = 0;
    
     consecutiveList.add(word.substring(0,1));
-    
+    int listSizeOrI = 0;
     for (int i = 1; i < word.length(); i++){
-      
-      if (word.substring(i, i + 1).equals(consecutiveList.get(Math.min(i,consecutiveList.size()-1)))){
-        consecutiveList.set(Math.min(i,consecutiveList.size()-1),consecutiveList.get(Math.min(i,consecutiveList.size()-1)) + word.substring(i,i+1));
+      ListSizeOrI = Math.min(i,consecutiveList.size()-1),
+      if (word.substring(i, i + 1).equals(consecutiveList.get(ListSizeOrI))){
+        consecutiveList.set(ListSizeOrI,consecutiveList.get(ListSizeOrI) + word.substring(i,i+1));
       }else {
         consecutiveList.add(word.substring(i,i+1));
       }
