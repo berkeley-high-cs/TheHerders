@@ -10,4 +10,13 @@ public class StringSearch {
     }
     return list.get(longestIndex);
   }
+  public ArrayList<Integer> xPositions(String word){
+    ArrayList<Integer> indexList = new ArrayList<>;
+    for (int i = 0; i < word.length(); i++){
+      if (word.substring(i,i+1).equals("x")){
+        indexList.add(i);
+      }
+    }
+    return indexList;
+  }
 }
