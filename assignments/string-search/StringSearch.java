@@ -22,6 +22,7 @@ public class StringSearch {
   public String longestRun(String word){
     ArrayList<String> consecutiveList = new ArrayList<String>();
     int longestSubstring = 0;
+    consecutiveList.add(word.substring(i,i+1));
     for (int i = 0; i < word.length() - 1; i++){
       if (word.substring(i, i + 1).equals(consecutiveList.get(i).substring(0,Math.min(1,consecutiveList.get(i).length())))){
         consecutiveList.set(i,consecutiveList.get(i) + word.substring(i,i+1));
