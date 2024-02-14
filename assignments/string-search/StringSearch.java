@@ -23,11 +23,19 @@ public class StringSearch {
     ArrayList<String> consecutiveList = new ArrayList<String>();
     int longestSubstring = 0;
     for (int i = 0; i < word.length() - 1; i++){
-      if (word.substring(i, i+1).equals(word.substring(i+1, i+2))){
-        substring = substring + word.substring(i+ 1,i+2);
-      } 
+      if (word.substring(i, i + 1).equals(consecutiveList.get(i).substring(0,Math.min(1,consecutiveList.get(i).length())))){
+        consecutiveList.get(i) = consecutiveList.get(i) + word.substring(i,i+1);
+      }else {
+        consecutiveList.add(word.substring(i,i+1));
+      }
+      
+      
+      // if (word.substring(i, i+1).equals(word.substring(i+1, i+2))){
+        
+      //   consecutiveList.get(i) =  consecutiveList.get(i) + word.substring(i+ 1,i+2);
+      // } 
     }
-    return substring;
+    return longestString(consecutiveList);
   }
 
 }
