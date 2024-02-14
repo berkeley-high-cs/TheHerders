@@ -22,8 +22,8 @@ public class StringSearch {
   public String longestRun(String word){
     String substring = "";
     int longestSubstring = 0;
-    for (int i = 0; i < word.length(); i++){
-      if (word.substring(i, i+1).equals(substring.substring(Math.min(substring.length(), i+1),Math.min(i+2, substring.length()) ))){
+    for (int i = 0; i < word.length() - 1; i++){
+      if (word.substring(i, i+1).equals(word.substring(i+1, i+2))){
         substring = substring + word.substring(i,i+1);
       }
     }
