@@ -32,12 +32,6 @@ public class StringSearch {
       }else {
         consecutiveList.add(word.substring(i,i+1));
       }
-      
-      
-      // if (word.substring(i, i+1).equals(word.substring(i+1, i+2))){
-        
-      //   consecutiveList.get(i) =  consecutiveList.get(i) + word.substring(i+ 1,i+2);
-      // } 
     }
 
 
