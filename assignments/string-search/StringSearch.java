@@ -23,7 +23,7 @@ public class StringSearch {
     String substring = "";
     int longestSubstring = 0;
     for (int i = 0; i < word.length(); i++){
-      if (word.substring(Math.max(i - 1,0), i).equals(word.substring(i, i+1))){
+      if (word.substring(i, i+1).equals(word.substring(i+1,Math.min(i+2, word.length()) ))){
         substring = substring + word.substring(i,i+1);
       }
     }
