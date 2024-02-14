@@ -23,7 +23,7 @@ public class StringSearch {
     ArrayList<String> consecutiveList = new ArrayList<String>();
     //int longestSubstring = 0;
     consecutiveList.add(word.substring(0,1));
-    System.out.println("List Size = " + consecutiveList.size());
+    System.err.println("List Size = " + consecutiveList.size());
     for (int i = 0; i < word.length(); i++){
       
       if (word.substring(i, i + 1).equals(consecutiveList.get(i))){
