@@ -22,13 +22,13 @@ public class StringSearch {
   public String longestRun(String word){
     ArrayList<String> consecutiveList = new ArrayList<String>();
     //int longestSubstring = 0;
-    System.err.println("List Size = " + consecutiveList.size());
+   
     consecutiveList.add(word.substring(0,1));
-    System.err.println("List Size = " + consecutiveList.size());
+    
     for (int i = 0; i < word.length(); i++){
       
-      if (word.substring(i, i + 1).equals(consecutiveList.get(i))){
-        consecutiveList.set(Math.min(i,consecutiveList.size()-1),consecutiveList.get(i) + word.substring(i,i+1));
+      if (word.substring(i, i + 1).equals(consecutiveList.get(Math.min(i,consecutiveList.size()-1),))){
+        consecutiveList.set(Math.min(i,consecutiveList.size()-1),consecutiveList.get(Math.min(i,consecutiveList.size()-1),) + word.substring(i,i+1));
       }else {
         consecutiveList.add(word.substring(i,i+1));
       }
