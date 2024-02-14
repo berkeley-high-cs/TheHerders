@@ -24,6 +24,7 @@ public class StringSearch {
     //int longestSubstring = 0;
     consecutiveList.add(word.substring(0,1));
     for (int i = 0; i < word.length(); i++){
+      System.out.println("List Size = " + consecutiveList.size());
       if (word.substring(i, i + 1).equals(consecutiveList.get(i))){
         consecutiveList.set(Math.min(i,consecutiveList.size()-1),consecutiveList.get(i) + word.substring(i,i+1));
       }else {
