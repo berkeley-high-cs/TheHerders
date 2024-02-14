@@ -25,6 +25,8 @@ public class StringSearch {
     for (int i = 0; i < word.length() - 1; i++){
       if (word.substring(i, i+1).equals(word.substring(i+1, i+2))){
         substring = substring + word.substring(i+ 1,i+2);
+      } else {
+        return substring;
       }
     }
     return substring;
