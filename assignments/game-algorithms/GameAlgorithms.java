@@ -53,39 +53,39 @@ public class GameAlgorithms {
         player = "O";
       }
       for (int i = 0; i < 3; i++) {
-        if ((board)[i][0].equals("" + player)) {
-          if ((board)[i][1].equals("" + player)) {
-            if ((board)[i][2].equals("" + player)) {
+        if (player.equals((board)[i][0])) {
+          if (player.equals((board)[i][1])) {
+            if (player.equals((board)[i][2])) {
                
              
-              return "" + player;
+              return player;
               
             }
 
           }
         }
-        if ((board)[0][i].equals("" + player)) {
-          if ((board)[1][i].equals("" + player)) {
-            if ((board)[2][i].equals("" + player)) {
+        if (player.equals((board)[0][i])) {
+          if (player.equals((board)[1][i])) {
+            if (player.equals((board)[2][i])) {
                
               
-              return "" + player;
+              return player;
             }
           }
         }
       }
-      if ((board)[0][0].equals(" " + player)) {
-        if ((board)[1][1].equals(" " + player)) {
-          if ((board)[2][2].equals(" " + player)) {
+      if (player.equals((board)[0][0])) {
+        if (player.equals((board)[1][1])) {
+          if (player.equals((board)[2][2])) {
              
             
-            return "" + player;
+            return player;
           }
         }
       }
-      if ((board)[0][2].equals("" + player)) {
-        if ((board)[1][1].equals("" + player)) {
-          if ((board)[2][0].equals("" + player)) {
+      if (player.equals((board)[0][2])) {
+        if (player.equals((board)[1][1])) {
+          if (player.equals((board)[2][0])) {
              
             
             return player;
