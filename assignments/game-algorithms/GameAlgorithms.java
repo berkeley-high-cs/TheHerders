@@ -32,30 +32,16 @@ public class GameAlgorithms {
         total += grid[x + xValues[i]][y + yValues[i]];
       }
     }
-    // if (inBounds(grid, x + 1, y)) {
-    //   total += grid[x + 1][y];
-    // }
-    // if (inBounds(grid, x - 1, y)) {
-    //   total += grid[x - 1][y];
-    // }
-    // if (inBounds(grid, x, y + 1)) {
-    //   total += grid[x][y + 1];
-    // }
-    // if (inBounds(grid, x, y - 1)) {
-    //   total += grid[x][y - 1];
-    // }
-    // if (inBounds(grid, x + 1, y + 1)) {
-    //   total += grid[x + 1][y + 1];
-    // }
-    // if (inBounds(grid, x - 1, y - 1)) {
-    //   total += grid[x - 1][y - 1];
-    // }
-    // if (inBounds(grid, x - 1, y + 1)) {
-    //   total += grid[x - 1][y + 1];
-    // }
-    // if (inBounds(grid, x + 1, y - 1)) {
-    //   total += grid[x + 1][y - 1];
-    // }
     return total;
+  }
+  public boolean areNeighbors(int x1, int y1, int x2, int y2){
+     int[] xValues = { 1, -1, 0, 0, 1, -1, -1, 1 };
+    int[] yValues = { 0, 0, 1, -1, 1, -1, 1, -1 };
+    for (int i = 0; i < 8; i++) {
+      if (x1 + xValues[i] == x2 && y1 + yValues[i] == x2) {
+        return true
+      } 
+    }
+    return false;
   }
 }
