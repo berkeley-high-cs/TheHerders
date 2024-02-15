@@ -11,20 +11,37 @@ public class GameAlgorithms {
   public int sum4Neighbors(int[][] grid, int x, int y){
     int total = 0;
 
-    if (x != grid.length - 1){
+    if (inBounds(grid, x+1, y)){
       total += grid[x+1][y];
     } 
-    if (x != 0){
+    if (inBounds(grid, x-1, y)){
       total += grid[x-1][y];
     }
-     if (y != grid.length - 1){
+     if (inBounds(grid, x, y+1)){
       total += grid[x][y+1];
     } 
-    if (y != 0){
+    if (inBounds(grid, x, y-1)){
       total += grid[x][y-1];
     }
     return total;
 
+  }
+  public int sum8Neighbors(int[][ grid, int x, int y]){
+    int total = 0;
+
+    if (inBounds(grid, x+1, y)){
+      total += grid[x+1][y];
+    } 
+    if (inBounds(grid, x-1, y)){
+      total += grid[x-1][y];
+    }
+     if (inBounds(grid, x, y+1)){
+      total += grid[x][y+1];
+    } 
+    if (inBounds(grid, x, y-1)){
+      total += grid[x][y-1];
+    }
+    return total;
   }
 
 }
