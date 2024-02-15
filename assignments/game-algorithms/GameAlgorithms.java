@@ -11,7 +11,7 @@ public class GameAlgorithms {
   public int sum4Neighbors(int[][] grid, int x, int y){
     int total = 0;
     int[] xValues = {1,-1,0,0};
-    int[] yValues = {0,0,1,-1}
+    int[] yValues = {0,0,1,-1};
     for (int i = 0; i < 4; i++){
       if (inBounds(grid, x+xValues[i], y+yValues[i])){
       total += grid[x++xValues[i]][y+yValues[i]];
