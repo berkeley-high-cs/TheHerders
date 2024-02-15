@@ -50,7 +50,7 @@ public class GameAlgorithms {
       if (i == 0){
         player = "X";
       } else if (i == 1){
-        player = "O"
+        player = "O";
       }
       for (int i = 0; i < 3; i++) {
         if ((board)[i][0].equals(player)) {
