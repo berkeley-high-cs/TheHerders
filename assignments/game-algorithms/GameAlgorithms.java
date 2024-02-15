@@ -26,7 +26,7 @@ public class GameAlgorithms {
     return total;
 
   }
-  public int sum8Neighbors(int[][ grid, int x, int y]){
+  public int sum8Neighbors(int[][] grid, int x, int y){
     int total = 0;
 
     if (inBounds(grid, x+1, y)){
@@ -40,6 +40,18 @@ public class GameAlgorithms {
     } 
     if (inBounds(grid, x, y-1)){
       total += grid[x][y-1];
+    }
+     if (inBounds(grid, x+1, y+1)){
+      total += grid[x+1][y+1];
+    } 
+    if (inBounds(grid, x-1, y-1)){
+      total += grid[x-1][y-1];
+    }
+     if (inBounds(grid, x-1, y+1)){
+      total += grid[x-1][y+1];
+    } 
+    if (inBounds(grid, x+1, y-1)){
+      total += grid[x+1][y-1];
     }
     return total;
   }
