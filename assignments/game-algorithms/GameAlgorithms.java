@@ -74,9 +74,9 @@ public class GameAlgorithms {
           }
         }
       }
-      if ((board)[0][0].equals("" + player)) {
-        if ((board)[1][1].equals("" + player)) {
-          if ((board)[2][2].equals("" + player)) {
+      if ((board)[0][0].equals(" " + player)) {
+        if ((board)[1][1].equals(" " + player)) {
+          if ((board)[2][2].equals(" " + player)) {
              
             
             return "" + player;
