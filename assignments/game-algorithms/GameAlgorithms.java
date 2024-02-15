@@ -46,10 +46,10 @@ public class GameAlgorithms {
   }
   public String ticTacToeWinner(String[][] board){
     String player = "";
-    for (int i = 0; i < 2; i++){
-      if (i == 0){
+    for (int x = 0; x < 2; x++){
+      if (x == 0){
         player = "X";
-      } else if (i == 1){
+      } else if (x == 1){
         player = "O";
       }
       for (int i = 0; i < 3; i++) {
