@@ -9,11 +9,21 @@ public class GameAlgorithms {
     return true;
   }
   public int sum4Neighbors(int[][] grid, int x, int y){
-    int maxX = Math.max(x - 1, 0);
-    int minX = Math.min(x + 1, grid.length - 1);
-    int maxY = Math.max(y - 1,0);
-    int minY = Math.min(y + 1, grid[x].length - 1);
-    return grid[maxX][y] + grid[x][maxY] + grid[minX][y] + grid[x][minY];
+    int total = 0;
+
+    if (x != grid.length - 1){
+      total += grid[x+1][y];
+    } 
+    if (x != 0){
+      total += grid[x-1][y];
+    }
+     if (y != grid.length - 1){
+      total += grid[x][y+1];
+    } 
+    if (y != 0){
+      total += grid[x][y-1];
+    }
+    return total;
 
   }
 
