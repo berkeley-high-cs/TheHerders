@@ -13,8 +13,8 @@ public class GameAlgorithms {
     int[] xValues = {1,-1,0,0};
     int[] yValues = {0,0,1,-1};
     for (int i = 0; i < 4; i++){
-      if (inBounds(grid, x+xValues[i], y+yValues[i])){
-      total += grid[x++xValues[i]][y+yValues[i]];
+      if (inBounds(grid, x + xValues[i], y+ yValues[i])){
+      total += grid[x + xValues[i]][y + yValues[i]];
     } 
     }
     // if (inBounds(grid, x+1, y)){
