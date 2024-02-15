@@ -13,7 +13,7 @@ public class GameAlgorithms {
     int minX = Math.min(x + 1, grid.length);
     int maxY = Math.max(y - 1,0);
     int minY = Math.min(y + 1, grid[x].length);
-    return grid[maxX][y] + grid[x][maxY] + grid[mixX][y] + grid[x][minY];
+    return grid[maxX][y] + grid[x][maxY] + grid[minX][y] + grid[x][minY];
 
   }
 
