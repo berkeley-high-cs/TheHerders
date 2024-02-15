@@ -38,7 +38,7 @@ public class GameAlgorithms {
      int[] xValues = { 1, -1, 0, 0, 1, -1, -1, 1 };
     int[] yValues = { 0, 0, 1, -1, 1, -1, 1, -1 };
     for (int i = 0; i < 8; i++) {
-      if (x1 + xValues[i] == x2 && y1 + yValues[i] == x2) {
+      if (x1 + xValues[i] == x2 && y1 + yValues[i] == y2) {
         return true;
       } 
     }
