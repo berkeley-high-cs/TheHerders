@@ -1,6 +1,6 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 
-public class Main {
+public class Guns40k {
  
   public static void main(String[] args){
     int attacks = 0;

@@ -3,7 +3,7 @@
 //FINISHED
 import java.util.Scanner;
 
-class Main {
+class RegTicTacToe {
 
   static int[][] board = {
       { 0, 0, 0 },
@@ -163,6 +163,7 @@ class Main {
         "What is player 1's move? 1 through 9, left to right, up to down. Don't chose something thats been done");
     Scanner scanner = new Scanner(System.in);
     p1Input = scanner.nextLine();
+    scanner.close();
   }
 
   public static void p2Chat(String test) {
@@ -171,6 +172,7 @@ class Main {
         "What is player 2's move? 1 through 9, left to right, up to down. Don't chose something thats been done");
     Scanner scanner = new Scanner(System.in);
     p2Input = scanner.nextLine();
+    scanner.close();
   } // reads player 2 input
 
   public static void p2Reader(String p2Input) {
