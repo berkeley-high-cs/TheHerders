@@ -22,5 +22,8 @@ public class JustStrings {
   public String nCharacters(String word, int n, int i){
     return word.substring(i, i + n);
   }
+  public String  nCharactersBefore(String word, int n, String word2){
+    return word.substring(word.indexof(word2) - n, word.indexOf(word2));
+  }
 
 }
