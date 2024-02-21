@@ -52,10 +52,10 @@ public class JustStrings {
   public String ubbieDubbie(String word) {
     String newWord = word;
     for (int i = 0; i < word.length(); i++) {
-      if (isVowel(word.substring(i, i + 1))) {
+      if (isVowel(newWord.substring(i, i + 1))) {
         if (i == 0) {
           newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
-        } else if (!isVowel(word.substring(i - 1, i))) {
+        } else if (!isVowel(newWord.substring(i - 1, i))) {
           newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
         }
       }
