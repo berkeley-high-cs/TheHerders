@@ -69,7 +69,7 @@ public class JustStrings {
    String newWord = "";
    int count = 1;
    for (int i = 0; i < word.length(); i++){
-    if (i == word.length() - 1 || word.substring(i, i + 1).equals(word.substring(i + 1, i + 2))){
+    if (i != word.length() - 1 && word.substring(i, i + 1).equals(word.substring(i + 1, i + 2))){
       count++;
     } else {
       newWord = newWord + word.substring(i, i+1) + count;
