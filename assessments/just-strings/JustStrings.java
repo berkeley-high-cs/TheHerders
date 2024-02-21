@@ -76,6 +76,7 @@ public class JustStrings {
       count = 0;
     }
    }
+   return newWord;
   }
 
 }
