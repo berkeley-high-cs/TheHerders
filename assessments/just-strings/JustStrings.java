@@ -39,7 +39,7 @@ public class JustStrings {
   public String ubbieDubbie(String word){
     String newWord = word;
     for (int i = 0; i < word.length(); i++){
-      if (isVowel(word.substring(i, i+1)) && i != 0 || !isVowel(word.substring(i-1, i))){
+      if (isVowel(word.substring(i, i+1)) && i > 0 || !isVowel(word.substring(i-1, i))){
         newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
       }
     }
