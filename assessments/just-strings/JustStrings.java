@@ -5,47 +5,59 @@ public class JustStrings {
   public boolean isVowel(String c) {
     return "aeiou".indexOf(c) != -1;
   }
-  public String insert(String word1, String word2, int index){
+
+  public String insert(String word1, String word2, int index) {
     return word1.substring(0, index) + word2 + word1.substring(index);
   }
-  public String deleteFirst(String word1, String word2){
 
-    return word1.substring(0, word1.indexOf(word2)) +  word1.substring(word1.indexOf(word2) + word2.length());
+  public String deleteFirst(String word1, String word2) {
+    return (
+      word1.substring(0, word1.indexOf(word2)) +
+      word1.substring(word1.indexOf(word2) + word2.length())
+    );
   }
-  public String deleteAll(String word1, String word2){
+
+  public String deleteAll(String word1, String word2) {
     String newWord = word1;
-    while(newWord.indexOf(word2) != -1){
+    while (newWord.indexOf(word2) != -1) {
       newWord = deleteFirst(newWord, word2);
     }
     return newWord;
   }
-  public String nCharacters(String word, int n, int i){
+
+  public String nCharacters(String word, int n, int i) {
     return word.substring(i, i + n);
   }
-  public String  nCharactersBefore(String word, int n, String word2){
+
+  public String nCharactersBefore(String word, int n, String word2) {
     return word.substring(word.indexOf(word2) - n, word.indexOf(word2));
   }
-  public String nCharactersAfter(String word, int n, String word2){
-    return word.substring(word.indexOf(word2) + word2.length(), word.indexOf(word2) + word2.length() + n);
+
+  public String nCharactersAfter(String word, int n, String word2) {
+    return word.substring(
+      word.indexOf(word2) + word2.length(),
+      word.indexOf(word2) + word2.length() + n
+    );
   }
-  public boolean isPalindrome(String word){
+
+  public boolean isPalindrome(String word) {
     String flippedWord = "";
-    for (int i = word.length() - 1; i >= 0; i--){
-      flippedWord = flippedWord + word.substring(i, i+1);
-     // System.err.println(flippedWord);
+    for (int i = word.length() - 1; i >= 0; i--) {
+      flippedWord = flippedWord + word.substring(i, i + 1);
+      // System.err.println(flippedWord);
     }
     return flippedWord.equals(word);
   }
-  public String ubbieDubbie(String word){
+
+  public String ubbieDubbie(String word) {
     String newWord = word;
-    for (int i = 0; i < word.length(); i++){
-      if (isVowel(word.substring(i, i+1))){
-        if(i == word.length() - 1){
-             newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
-        } else if(!isVowel(word.substring(i, i+1))){
+    for (int i = 0; i < word.length(); i++) {
+      if (isVowel(word.substring(i, i + 1))) {
+        if (i == word.length() - 1) {
+          newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
+        } else if (!isVowel(word.substring(i, i - 1))) {
           newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
         }
-       
       }
     }
     return newWord;
