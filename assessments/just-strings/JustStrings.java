@@ -15,7 +15,7 @@ public class JustStrings {
   public String deleteAll(String word1, String word2){
     String newWord = word1;
     while(newWord.indexOf(word2) != -1){
-      deleteFirst(newWord, word2);
+      newWord = deleteFirst(newWord, word2);
     }
     return newWord;
   }
