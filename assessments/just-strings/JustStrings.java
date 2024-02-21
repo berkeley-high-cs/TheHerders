@@ -26,7 +26,7 @@ public class JustStrings {
     return word.substring(word.indexOf(word2) - n, word.indexOf(word2));
   }
   public String nCharactersAfter(String word, int n, String word2){
-    return word.substring(word.indexOf(word2), word.indexOf(word2) + n);
+    return word.substring(word.indexOf(word2) + word2.length(), word.indexOf(word2) + word2.length() + n);
   }
 
 }
