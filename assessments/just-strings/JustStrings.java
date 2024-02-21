@@ -51,12 +51,15 @@ public class JustStrings {
 
   public String ubbieDubbie(String word) {
     String newWord = word;
+    int ubAmount = 0;
     for (int i = 0; i < word.length(); i++) {
-      if (isVowel(newWord.substring(i, i + 1))) {
+      if (isVowel(word.substring(i, i + 1))) {
         if (i == 0) {
-          newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
-        } else if (!isVowel(newWord.substring(i - 1, i))) {
-          newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
+          newWord = newWord.substring(0, i + ubAmount) + "ub" + newWord.substring(i + ubAmount);
+          ubAmount++;
+        } else if (!isVowel(word.substring(i - 1, i))) {
+          newWord = newWord.substring(0, i + ubAmount) + "ub" + newWord.substring(i + ubAmount);
+          ubAmount++;
         }
       }
     }
