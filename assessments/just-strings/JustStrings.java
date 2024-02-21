@@ -65,9 +65,17 @@ public class JustStrings {
     }
     return newWord;
   }
-  // public String runLengthEncoding(String word){
-  //   String newWord = word;
-  //   for (int i)
-  // }
+  public String runLengthEncoding(String word){
+   String newWord = word;
+   int count = 0;
+   for (int i = 0; i < word.length(); i++){
+    if (i == word.length() - 1 || word.substring(i, i + 1).equals(word.substring(i + 1, i + 2))){
+      count++;
+    } else {
+      newWord = newWord + word.substring(i, i+1) + count;
+      count = 0;
+    }
+   }
+  }
 
 }
