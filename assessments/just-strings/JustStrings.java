@@ -28,5 +28,12 @@ public class JustStrings {
   public String nCharactersAfter(String word, int n, String word2){
     return word.substring(word.indexOf(word2) + word2.length(), word.indexOf(word2) + word2.length() + n);
   }
+  public boolean isPalindrome(String word){
+    String flippedWord = "";
+    for (int i = word.length; i > 0; i--){
+      flippedWord = flippedWord + word.substring(i, i-1);
+    }
+    return flippedWord.equals(word);
+  }
 
 }
