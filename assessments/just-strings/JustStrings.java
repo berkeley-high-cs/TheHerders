@@ -40,9 +40,9 @@ public class JustStrings {
     String newWord = word;
     for (int i = 0; i < word.length(); i++){
       if (isVowel(word.substring(i, i+1))){
-        if(i == 0){
+        if(i == word.length() - 1){
              newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
-        } else if(!isVowel(word.substring(i, i-1))){
+        } else if(!isVowel(word.substring(i, i+1))){
           newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
         }
        
