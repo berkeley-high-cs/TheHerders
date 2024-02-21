@@ -39,10 +39,11 @@ public class JustStrings {
   public String ubbieDubbie(String word){
     String newWord = word;
     for (int i = 0; i < word.length(); i++){
-      if (word.substring(i, i+1).isVowel){
+      if (isVowel(word.substring(i, i+1))){
         newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
       }
     }
+    return newWord;
   }
 
 }
