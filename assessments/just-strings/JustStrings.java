@@ -66,7 +66,7 @@ public class JustStrings {
     return newWord;
   }
   public String runLengthEncoding(String word){
-   String newWord = "word";
+   String newWord = "";
    int count = 1;
    for (int i = 0; i < word.length(); i++){
     if (i == word.length() - 1 || word.substring(i, i + 1).equals(word.substring(i + 1, i + 2))){
