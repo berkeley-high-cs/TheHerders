@@ -38,13 +38,13 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-if ((${#args[*]} < 1)) || [ "$help" = "yes" ]; then
-    usage
-fi
-
 if [ "$list" = "yes" ]; then
     curl -sS "$root/kits.txt"
     exit 0
+fi
+
+if ((${#args[*]} < 1)) || [ "$help" = "yes" ]; then
+    usage
 fi
 
 if ((${#args[*]} > 2)); then
