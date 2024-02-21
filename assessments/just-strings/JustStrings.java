@@ -19,5 +19,8 @@ public class JustStrings {
     }
     return newWord;
   }
+  public String nCharacters(String word, int n, int i){
+    return word.substring(i, i + n);
+  }
 
 }
