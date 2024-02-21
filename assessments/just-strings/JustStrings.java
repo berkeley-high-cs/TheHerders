@@ -53,11 +53,10 @@ public class JustStrings {
     String newWord = word;
     int ubAmount = 0;
     for (int i = 0; i < word.length(); i++) {
-      if (isVowel(word.substring(i, i + 1))) {
+      if (isVowel(word.substring(i, i + 1)) && (i == 0 || !isVowel(word.substring(i - 1, i)))) {
 
           newWord = newWord.substring(0, i + 2 * ubAmount) + "ub" + newWord.substring(i +  2 * ubAmount);
           ubAmount++;
-        
       }
     }
     return newWord;
