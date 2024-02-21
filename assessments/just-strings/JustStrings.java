@@ -55,10 +55,10 @@ public class JustStrings {
     for (int i = 0; i < word.length(); i++) {
       if (isVowel(word.substring(i, i + 1))) {
         if (i == 0) {
-          newWord = newWord.substring(0, i + ubAmount) + "ub" + newWord.substring(i +  2 * ubAmount);
+          newWord = newWord.substring(0, i + 2 * ubAmount) + "ub" + newWord.substring(i +  2 * ubAmount);
           ubAmount++;
         } else if (!isVowel(word.substring(i - 1, i))) {
-          newWord = newWord.substring(0, i + ubAmount) + "ub" + newWord.substring(i + 2 * ubAmount);
+          newWord = newWord.substring(0, i +  2 * ubAmount) + "ub" + newWord.substring(i + 2 * ubAmount);
           ubAmount++;
         }
       }
