@@ -30,7 +30,7 @@ public class JustStrings {
   }
   public boolean isPalindrome(String word){
     String flippedWord = "";
-    for (int i = word.length; i > 0; i--){
+    for (int i = word.length(); i > 0; i--){
       flippedWord = flippedWord + word.substring(i, i-1);
     }
     return flippedWord.equals(word);
