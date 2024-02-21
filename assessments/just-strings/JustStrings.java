@@ -45,9 +45,9 @@ public class JustStrings {
     }
     return newWord;
   }
-  public String runLengthEncoding(String word){
-    String newWord = word;
-    for (int i)
-  }
+  // public String runLengthEncoding(String word){
+  //   String newWord = word;
+  //   for (int i)
+  // }
 
 }
