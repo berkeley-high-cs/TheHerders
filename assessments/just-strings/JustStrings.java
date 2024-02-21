@@ -42,7 +42,7 @@ public class JustStrings {
       if (isVowel(word.substring(i, i+1))){
         if(i == 0){
              newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
-        } else if(!isVowel.(word.substring(i, i-1))){
+        } else if(!isVowel(word.substring(i, i-1))){
           newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
         }
        
