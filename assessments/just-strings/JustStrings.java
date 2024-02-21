@@ -32,9 +32,17 @@ public class JustStrings {
     String flippedWord = "";
     for (int i = word.length() - 1; i >= 0; i--){
       flippedWord = flippedWord + word.substring(i, i+1);
-      System.err.println(flippedWord);
+     // System.err.println(flippedWord);
     }
     return flippedWord.equals(word);
+  }
+  public String ubbieDubbie(String word){
+    String newWord = word;
+    for (int i = 0; i < word.length(); i++){
+      if (word.substring(i, i+1).isVowel){
+        newWord = newWord.substring(0, i) + "ub" + newWord.substring(i);
+      }
+    }
   }
 
 }
