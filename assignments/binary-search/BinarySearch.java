@@ -9,12 +9,12 @@ public class BinarySearch {
       mid = (high + low) / 2;
       if (nums[mid] < target){
         low = mid;
-        printArray(nums);
-        System.err.println(low);
+       // printArray(nums);
+       // System.err.println(low);
       } else if (nums[mid] > target){
         high = mid;
-        printArray(nums);
-        System.err.println(high);
+       // printArray(nums);
+       // System.err.println(high);
       } else {
         return mid;
       }
@@ -28,4 +28,5 @@ public class BinarySearch {
     }
     System.err.println("");
   }
+}
 
