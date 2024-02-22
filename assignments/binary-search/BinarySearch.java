@@ -7,11 +7,11 @@ public class BinarySearch {
     
     while(low < high){
       int mid = low + (high - low) / 2;
-      if (nums[mid] > target){
+      if (nums[mid] < target){
         low = mid;
        // printArray(nums);
        // System.err.println(low);
-      } else if (nums[mid] < target){
+      } else if (nums[mid] > target){
         high = mid;
        // printArray(nums);
        // System.err.println(high);
