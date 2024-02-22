@@ -24,8 +24,8 @@ public class BinarySearch {
   }
   public void printArray(int[] array){
     for (int i = 0; i < array.length; i++){
-      System.err.println(array[i]);
+      System.err.print(array[i] + " ");
     }
+    System.err.println("");
   }
 
-}
