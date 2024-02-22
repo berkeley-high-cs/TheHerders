@@ -10,9 +10,11 @@ public class BinarySearch {
       if (mid > target){
         low = mid;
         printArray(nums);
+        System.err.println(low);
       } else if (mid < target){
         high = mid;
         printArray(nums);
+        System.err.println(high);
       } else {
         return mid;
       }
