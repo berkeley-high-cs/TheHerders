@@ -12,7 +12,7 @@ public class BinarySearch {
        // printArray(nums);
        // System.err.println(low);
       } else if (nums[mid] > target){
-        high = mid;
+        high = mid + 1;
        // printArray(nums);
        // System.err.println(high);
       } else {
