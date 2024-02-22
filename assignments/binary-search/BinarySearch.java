@@ -9,14 +9,21 @@ public class BinarySearch {
       mid = low + (high - low) / 2;
       if (mid > target){
         low = mid;
+        printArray(nums);
       } else if (mid < target){
         high = mid;
+        printArray(nums);
       } else {
         return mid;
       }
     }
     return -1;
 
+  }
+  public void printArray(int[] array){
+    for (int i = 0; i < array.length; i++){
+      System.err.println(array[i]);
+    }
   }
 
 }
