@@ -16,8 +16,9 @@ public class Solver {
             if (checkAround(x, y, puzzle, word)) { // if it finds the next character around it
 
               for (int z = 0; z < word.length() - 2; z++) { // it loops through the word count minus the words weve checked
-                
-                if (checkPlace(x, y, word.substring(z, z + 1), puzzle)) { //and goes as far as it can
+                 int[] xAdds = { -1, -1, -1, 0, 0, 0, 1, 1, 1 };
+                 int[] yAdds = { -1, 0, 1, -1, 0, 1, -1, 0, 1 };
+                if (checkPlace(x + xAdds * z, y + yAdds * z, word.substring(z, z + 1), puzzle)) { //and goes as far as it can
                   lettersMatched++; // adding for each letter found
                 }
               } 
