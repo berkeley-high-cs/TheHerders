@@ -51,7 +51,7 @@ public class Solver {
     int[] yAdds = { -1, 0, 1, -1, 0, 1, -1, 0, 1 };
 
     
-      return (inBounds(x + xAdds[i], y + yAdds[i], puzzle) && (word.substring(z - 1, z ).equals(puzzle[x + xAdds[i]][y + yAdds[i]])));
+      return (inBounds(x + xAdds[i] * z, y + yAdds[i] * z, puzzle) && (word.substring(z - 1, z ).equals(puzzle[x + xAdds[i] * z][y + yAdds[i] * z])));
 
 
 
