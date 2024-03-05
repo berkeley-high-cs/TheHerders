@@ -7,6 +7,7 @@ public class Solver {
   }
 
   public boolean inGrid(String word, String[][] puzzle) {
+    int lettersMatched = 0;
     for (int x = 0; x < puzzle.length; x++) {
       for (int y = 0; y < puzzle[x].length; y++) {
         if (puzzle[x][y].equals(word.substring(0, 1))) {
@@ -14,16 +15,22 @@ public class Solver {
             if (checkAround(x, y, i, puzzle, word)) {
               for (int z = 0; z < word.length(); z++) {
                 if (!checkAround(x, y, i, puzzle, word)) {
-                  return false;
+                  lettersMatched++;
                 }
                 // return true; //so far, just checks for first two characters of a string
+              } 
+              if (lettersMatched == word.length()){
+                return true;
+              } else {
+                lettersMatched = 0;
               }
             }
           }
         }
       }
     }
-    return true;
+   
+    return false;
   }
 
   public boolean checkAround(
