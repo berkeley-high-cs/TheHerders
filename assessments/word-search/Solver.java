@@ -20,14 +20,14 @@ public class Solver {
               for (int z = 0; z < word.length() - 2; z++) { // it loops through the word count minus the words weve checked
 
                 if (checkAround(x, y, i, puzzle, word)) { //and goes as far as it can
-                  lettersMatched++;
+                  lettersMatched++; // adding for each letter found
                 }
                 // return true; //so far, just checks for first two characters of a string
               } 
-              if (lettersMatched == word.length()){
-                return true;
+              if (lettersMatched == word.length()){ // if the letters found equal the word length
+                return true; //we did it
               } else {
-                lettersMatched = 0;
+                lettersMatched = 0; //else we try again
               }
             }
           }
