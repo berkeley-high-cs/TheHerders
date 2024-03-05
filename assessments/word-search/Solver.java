@@ -42,7 +42,6 @@ public class Solver {
   public boolean checkAround(
     int x,
     int y,
-    int z,
     int i,
     String[][] puzzle,
     String word
