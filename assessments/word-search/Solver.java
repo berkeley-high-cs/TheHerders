@@ -9,12 +9,17 @@ public class Solver {
   public boolean inGrid(String word, String[][] puzzle) {
     int lettersMatched = 0;
     for (int x = 0; x < puzzle.length; x++) {
-      for (int y = 0; y < puzzle[x].length; y++) {
-        if (puzzle[x][y].equals(word.substring(0, 1))) {
-          for (int i = 0; i < 8; i++) {
-            if (checkAround(x, y, i, puzzle, word)) {
-              for (int z = 0; z < word.length(); z++) {
-                if (!checkAround(x, y, i, puzzle, word)) {
+      for (int y = 0; y < puzzle[x].length; y++) { //iterate through every character in the 2d array
+
+        if (puzzle[x][y].equals(word.substring(0, 1))) { //check if its equal to the first charcter in word
+
+          for (int i = 0; i < 8; i++) { //if it is, loop 8 times checking around that place
+
+            if (checkAround(x, y, i, puzzle, word)) { // if it finds the next character, 
+
+              for (int z = 0; z < word.length() - 2; z++) { // it loops through the word count minus the words weve checked
+
+                if (checkAround(x, y, i, puzzle, word)) { //and goes as far as it can
                   lettersMatched++;
                 }
                 // return true; //so far, just checks for first two characters of a string
