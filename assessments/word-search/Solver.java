@@ -12,7 +12,7 @@ public class Solver {
         if (puzzle[x][y].equals(word.substring(0, 1))) {
           for (int i = 0; i < 8; i++) {
             if (checkAround(x, y, i, puzzle, word)) {
-              for (int z = 0; z < word.length; z++) {
+              for (int z = 0; z < word.length(); z++) {
                 if (!checkAround(x, y, i, puzzle, word)) {
                   return false;
                 }
