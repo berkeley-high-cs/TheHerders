@@ -13,11 +13,11 @@ public class Solver {
 
         if (puzzle[x][y].equals(word.substring(0, 1))) { //check if its equal to the first charcter in word
 
-            if (checkAround(x, y, puzzle, word)) { // if it finds the next character, 
+            if (checkAround(x, y, puzzle, word)) { // if it finds the next character around it
 
               for (int z = 0; z < word.length() - 2; z++) { // it loops through the word count minus the words weve checked
-
-                if (checkAround(x, y, puzzle, word)) { //and goes as far as it can
+                
+                if (checkPlace(x, y, word.substring(z, z + 1), puzzle)) { //and goes as far as it can
                   lettersMatched++; // adding for each letter found
                 }
               } 
@@ -50,6 +50,10 @@ public class Solver {
       }
     }
     return false;
+   
+  }
+  public boolean checkPlace(int x, int y, String letter, String[][] puzzle){
+    return inBounds(x, y, puzzle) && (letter.equals(puzzle[x][y]));
    
   }
 }
