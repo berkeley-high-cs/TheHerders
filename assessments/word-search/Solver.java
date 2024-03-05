@@ -18,7 +18,7 @@ public class Solver {
                   for (int i = 0; i < 8; i++){
     
                      if (checkAround(x, y, i, puzzle, word)){
-                    direction = i
+                    direction = i;
                     }
                   }
                 if ((checkAround(x, y,  direction, puzzle, word))) { //and goes as far as it can
