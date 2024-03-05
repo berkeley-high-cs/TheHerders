@@ -17,11 +17,11 @@ public class Solver {
               for (int z = 1; z < word.length() + 1; z++) { //it then loops through checking if the second letter is around it a bunch
                   for (int i = 0; i < 8; i++){
     
-                     if (checkAround(x, y, i, puzzle, word)){
+                     if (checkAround(x, y, z, i, puzzle, word)){
                     direction = i;
                     }
                   }
-                if ((checkAround(x, y, direction, puzzle, word))) { //and goes as far as it can
+                if ((checkAround(x, y, z, direction, puzzle, word))) { //and goes as far as it can
                   lettersMatched++; // adding for each letter found
                 }
               } 
@@ -42,6 +42,7 @@ public class Solver {
   public boolean checkAround(
     int x,
     int y,
+    int z,
     int i,
     String[][] puzzle,
     String word
