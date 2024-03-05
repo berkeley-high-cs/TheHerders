@@ -11,7 +11,7 @@ public class Solver {
     for (int y = 0; y < puzzle[x].length; y++){
       if (puzzle[x][y].equals(word.substring(0,1))){
           for (int i = 0; i < 8; i++){
-            if (inBounds(x + xAdds[i], y + yAdds[i]) && word.substring(1,2).equals(puzzle[x+xAdds[i]][y+yAdds[i]])){
+            if (inBounds(x + xAdds[i], y + yAdds[i], puzzle) && word.substring(1,2).equals(puzzle[x+xAdds[i]][y+yAdds[i]])){
               return true; //so far, just checks for first two characters of a string
             }
           }
