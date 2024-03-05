@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Solver {
  public boolean inBounds(int x, int y, String[][] wall){
-    return (x < wall.length && y < wall[x].length && x >= 0 && y >= 0);
+    return ( (x >= 0 && y >= 0) && (x < wall.length && y < wall[x].length));
  }
  public boolean inGrid(String word, String[][] puzzle){
   int[] xAdds = {-1, -1, -1, 0, 0, 0, 1, 1, 1};
