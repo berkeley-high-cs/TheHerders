@@ -49,8 +49,8 @@ public class Solver {
   ) {
     int[] xAdds = { -1, -1, -1, 0, 0, 0, 1, 1, 1 };
     int[] yAdds = { -1, 0, 1, -1, 0, 1, -1, 0, 1 };
-    int xCoor = x + xAdds[i] * z;
-    int yCoor = y + yAdds[i] * z; 
+    int xCoor = x + (xAdds[i] * z);
+    int yCoor = y + (yAdds[i] * z); 
     
       return (inBounds(xCoor,yCoor, puzzle) && (word.substring(z - 1, z ).equals(puzzle[xCoor][yCoor])));
 
