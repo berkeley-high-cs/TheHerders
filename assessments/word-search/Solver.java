@@ -74,6 +74,16 @@ public class Solver {
 
    
   }
+
+  public ArrayList<String> found(String[][] wall, ArrayList<String> list){
+    ArrayList<String> newList = new ArrayList<>();
+    for(int i = 0; i < list.size(); i++){
+      if (inGrid(list.get(i), wall)){
+        newList.add(list.get(i));
+      }
+    }
+    return newList;
+  }
   // public boolean checkPlace(int x, int y, String letter, String[][] puzzle){
   //   return inBounds(x, y, puzzle) && (letter.equals(puzzle[x][y]));
    
