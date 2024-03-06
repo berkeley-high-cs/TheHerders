@@ -58,13 +58,13 @@ public class Solver {
     int xCoor = x + (xAdds[i] * z);
     int yCoor = y + (yAdds[i] * z); 
    
-    System.err.println("XCoor: " + xCoor + " yCoor: " + yCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
-    if (inBounds(xCoor,yCoor, puzzle)){
-      System.err.println("puzzle[xCoor][yCoor]: " + puzzle[xCoor][yCoor] );
-    }
-    if (z != 1){
-      System.err.println("direction: " + i);
-    }
+    // System.err.println("XCoor: " + xCoor + " yCoor: " + yCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
+    // if (inBounds(xCoor,yCoor, puzzle)){
+    //   System.err.println("puzzle[xCoor][yCoor]: " + puzzle[xCoor][yCoor] );
+    // }
+    // if (z != 1){
+    //   System.err.println("direction: " + i);
+    // }
 
     
   
