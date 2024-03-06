@@ -12,15 +12,17 @@ public class Solver {
     for (int x = 0; x < puzzle.length; x++) {
       for (int y = 0; y < puzzle[x].length; y++) { //iterate through every character in the 2d array
 
-        if (puzzle[x][y].equals(word.substring(0, 1))) { //check if its equal to the first charcter in word
+        if (puzzle[x][y].equals(word.substring(0, 1))) {
+          lettersMatched++; //check if its equal to the first charcter in word
                 for (int i = 0; i < 8; i++){
-    
+                  
                      if (checkAround(x, y, 1, i, puzzle, word)){
                     direction = i;
                     i = 8;
+                    lettersMatched++;
                     }
                 }
-              for (int z = 1; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
+              for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
                   
                   
                 if ((checkAround(x, y, z, direction, puzzle, word))) { //and goes as far as it can
