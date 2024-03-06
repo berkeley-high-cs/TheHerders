@@ -16,7 +16,7 @@ public class Solver {
         if (puzzle[x][y].equals(word.substring(0, 1))) {
           
           lettersMatched++; //check if its equal to the first charcter in word
-                for (int i = 0; i < 8; i++){
+                for (int i = 0; i < 7; i++){
                   
                      if (checkAround(x, y, 1, i, puzzle, word)){
                     direction = i;
@@ -53,8 +53,8 @@ public class Solver {
     String[][] puzzle,
     String word
   ) {
-    int[] xAdds = { -1, -1, -1, 0, 0, 0, 1, 1, 1 };
-    int[] yAdds = { -1, 0, 1, -1, 0, 1, -1, 0, 1 };
+    int[] xAdds = { -1, -1, -1, 0, 0, 1, 1, 1 };
+    int[] yAdds = { -1, 0, 1, -1, 1, -1, 0, 1 };
     int xCoor = x + (xAdds[i] * z);
     int yCoor = y + (yAdds[i] * z); 
    
