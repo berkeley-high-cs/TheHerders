@@ -55,10 +55,11 @@ public class Solver {
     int[] yAdds = { -1, 0, 1, -1, 0, 1, -1, 0, 1 };
     int xCoor = x + (xAdds[i] * z);
     int yCoor = y + (yAdds[i] * z); 
-    System.err.println("XCoor: " + xCoor + " yCoor: " + yCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
-    if (inBounds(xCoor,yCoor, puzzle)){
-      System.err.println("puzzle[xCoor][yCoor]: " + puzzle[xCoor][yCoor] );
-    }
+    System.err.println(puzzle[1][2]);
+    // System.err.println("XCoor: " + xCoor + " yCoor: " + yCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
+    // if (inBounds(xCoor,yCoor, puzzle)){
+    //   System.err.println("puzzle[xCoor][yCoor]: " + puzzle[xCoor][yCoor] );
+    // }
 
     
   
