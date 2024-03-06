@@ -9,7 +9,7 @@ public class Solver {
   public boolean inGrid(String word, String[][] puzzle) {
     int lettersMatched = 0;
     int direction = 0;
-     System.err.println(puzzle[1][2]);
+    
     for (int x = 0; x < puzzle.length; x++) {
       for (int y = 0; y < puzzle[x].length; y++) { //iterate through every character in the 2d array
 
@@ -65,7 +65,7 @@ public class Solver {
 
     
   
-      return (inBounds(xCoor,yCoor, puzzle) && (word.substring(z,z + 1).equals(puzzle[xCoor][yCoor])));
+      return (inBounds(yCoor,xCoor, puzzle) && (word.substring(z,z + 1).equals(puzzle[yCoor][xCoor])));
 
 
 
