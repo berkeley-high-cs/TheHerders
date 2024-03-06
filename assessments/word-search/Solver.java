@@ -14,7 +14,7 @@ public class Solver {
 
         if (puzzle[x][y].equals(word.substring(0, 1))) { //check if its equal to the first charcter in word
 
-              for (int z = 0; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
+              for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
                   for (int i = 0; i < 8; i++){
     
                      if (checkAround(x, y, z, i, puzzle, word)){
@@ -49,10 +49,10 @@ public class Solver {
   ) {
     int[] xAdds = { -1, -1, -1, 0, 0, 0, 1, 1, 1 };
     int[] yAdds = { -1, 0, 1, -1, 0, 1, -1, 0, 1 };
-    int xCoor = x + (xAdds[i] * (z + 1));
-    int yCoor = y + (yAdds[i] * (z + 1)); 
+    int xCoor = x + (xAdds[i] * (z - 1));
+    int yCoor = y + (yAdds[i] * (z - 1)); 
     
-      return (inBounds(xCoor,yCoor, puzzle) && (word.substring(z, z + 1).equals(puzzle[xCoor][yCoor])));
+      return (inBounds(xCoor,yCoor, puzzle) && (word.substring(z - 1, z).equals(puzzle[xCoor][yCoor])));
 
 
 
