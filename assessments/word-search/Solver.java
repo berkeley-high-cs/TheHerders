@@ -9,10 +9,12 @@ public class Solver {
   public boolean inGrid(String word, String[][] puzzle) {
     int lettersMatched = 0;
     int direction = 0;
+     System.err.println(puzzle[1][2]);
     for (int x = 0; x < puzzle.length; x++) {
       for (int y = 0; y < puzzle[x].length; y++) { //iterate through every character in the 2d array
 
         if (puzzle[x][y].equals(word.substring(0, 1))) {
+          
           lettersMatched++; //check if its equal to the first charcter in word
                 for (int i = 0; i < 8; i++){
                   
@@ -55,7 +57,7 @@ public class Solver {
     int[] yAdds = { -1, 0, 1, -1, 0, 1, -1, 0, 1 };
     int xCoor = x + (xAdds[i] * z);
     int yCoor = y + (yAdds[i] * z); 
-    System.err.println(puzzle[1][2]);
+   
     // System.err.println("XCoor: " + xCoor + " yCoor: " + yCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
     // if (inBounds(xCoor,yCoor, puzzle)){
     //   System.err.println("puzzle[xCoor][yCoor]: " + puzzle[xCoor][yCoor] );
