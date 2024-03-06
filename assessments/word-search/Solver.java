@@ -23,7 +23,7 @@ public class Solver {
               for (int z = 1; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
                   
                   
-                if ((checkAround(x, y, z, direction, puzzle, word))) { //and goes as far as it can
+                if ((checkAround(x, y, 1, direction, puzzle, word))) { //and goes as far as it can
                   lettersMatched++; // adding for each letter found
                 }
               } 
