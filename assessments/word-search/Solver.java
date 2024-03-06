@@ -65,7 +65,7 @@ public class Solver {
 
     
   
-      return (inBounds(xCoor,yCoor, puzzle) && (word.substring(z,z + 1).equals(puzzle[yxCoor][yCoor])));
+      return (inBounds(xCoor,yCoor, puzzle) && (word.substring(z,z + 1).equals(puzzle[xCoor][yCoor])));
 
 
 
