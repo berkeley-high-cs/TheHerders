@@ -52,7 +52,7 @@ public class Solver {
     int xCoor = x + (xAdds[i] * (z + 1));
     int yCoor = y + (yAdds[i] * (z + 1)); 
     System.err.print("XCoor: " + xCoor + " yCoor: " + yCoor);
-         System.err.println(" word.substring(z,z + 1): " + word.substring(z,z + 1) + "puzzle[xCoor][yCoor]: " + puzzle[xCoor][yCoor]);
+    System.err.println(" word.substring(z,z + 1): " + word.substring(z,z + 1));
   
       return (inBounds(xCoor,yCoor, puzzle) && (word.substring(z,z + 1).equals(puzzle[xCoor][yCoor])));
 
