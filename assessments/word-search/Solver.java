@@ -51,7 +51,7 @@ public class Solver {
     int[] yAdds = { -1, 0, 1, -1, 0, 1, -1, 0, 1 };
     int xCoor = x + (xAdds[i] * (z + 1));
     int yCoor = y + (yAdds[i] * (z + 1)); 
-    System.err.print("XCoor: " + xCoor + " yCoor: " + yCoor);
+    System.err.println("XCoor: " + xCoor + " yCoor: " + yCoor);
     if (inBounds(xCoor,yCoor, puzzle)){
       System.err.println("puzzle[xCoor][yCoor]: " + puzzle[xCoor][yCoor] );
     }
