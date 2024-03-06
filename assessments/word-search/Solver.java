@@ -13,14 +13,16 @@ public class Solver {
       for (int y = 0; y < puzzle[x].length; y++) { //iterate through every character in the 2d array
 
         if (puzzle[x][y].equals(word.substring(0, 1))) { //check if its equal to the first charcter in word
-
-              for (int z = 1; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
-                  for (int i = 0; i < 8; i++){
+                for (int i = 0; i < 8; i++){
     
                      if (checkAround(x, y, z, i, puzzle, word)){
                     direction = i;
+                    i = 8;
                     }
-                  }
+                }
+              for (int z = 1; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
+                  
+                  
                 if ((checkAround(x, y, z, direction, puzzle, word))) { //and goes as far as it can
                   lettersMatched++; // adding for each letter found
                 }
