@@ -8,15 +8,15 @@ public class Solver {
     );
   }
 
-  public boolean atAndInDirection(String word, String[][] puzzle, int row, int col, int rowAdds, int colAdds) {
+  public boolean atAndInDirection(String word, String[][] puzzle, int row, int col, int rowChange, int colChange) {
     int rowCoor = 0;
     int colCoor = 0;
     for (int i = 0; i < word.length(); i++) {
 
-      rowCoor = row + (rowAdds * i);
-      colCoor = col + (colAdds * i);
+      rowCoor = row + (rowChange * i);
+      colCoor = col + (colChange * i);
 
-      if (inBounds(rowCoor, colCoor, puzzle) && !(rowAdds == 0 && colAdds == 0) && puzzle[rowCoor][colCoor].equals(word.substring(i, i + 1))) {
+      if (inBounds(rowCoor, colCoor, puzzle) && !(rowChange == 0 && colChange == 0) && puzzle[rowCoor][colCoor].equals(word.substring(i, i + 1))) {
         return true;
       }
     }
@@ -24,10 +24,10 @@ public class Solver {
   }
 
   public boolean startingAt(String word, String[][] puzzle, int row, int col) {
-    int[] xAdds = { -1, -1, -1, 0, 0, 1, 1, 1 };
-    int[] yAdds = { -1, 0, 1, -1, 1, -1, 0, 1 };
+    int[] rowChange = { -1, -1, -1, 0, 0, 1, 1, 1 };
+    int[] colChange = { -1, 0, 1, -1, 1, -1, 0, 1 };
     for (int i = 0; i < 8; i++) {
-      if (atAndInDirection(word, puzzle, row, col, xAdds[i], yAdds[i])) {
+      if (atAndInDirection(word, puzzle, row, col, rowChange[i], colChange[i])) {
         return true;
       }
     }
