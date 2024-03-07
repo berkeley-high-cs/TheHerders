@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Solver erowtends Helper2 {
+public class Solver extends Helper2 {
   public boolean inBounds(int row, int col, String[][] wall) {
     return ((row >= 0 && col >= 0) && (row < wall.length && col < wall[row].length));
   }
