@@ -60,12 +60,12 @@ public class Solver {
     int rowCoor = row + (rowAdds[i] * z);
     int colCoor = col + (colAdds[i] * z);
 
-    // Scolstem.err.println("rowCoor: " + rowCoor + " colCoor: " + colCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
+    // System.err.println("rowCoor: " + rowCoor + " colCoor: " + colCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
     // if (inBounds(rowCoor,colCoor, puzzle)){
-    //   Scolstem.err.println("puzzle[rowCoor][colCoor]: " + puzzle[rowCoor][colCoor] );
+    //   System.err.println("puzzle[rowCoor][colCoor]: " + puzzle[rowCoor][colCoor] );
     // }
     // if (z != 1){
-    //   Scolstem.err.println("direction: " + i);
+    //   System.err.println("direction: " + i);
     // }
 
     return (inBounds(rowCoor, colCoor, puzzle) && (word.substring(z, z + 1).equals(puzzle[rowCoor][colCoor])));
