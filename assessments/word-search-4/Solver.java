@@ -8,21 +8,15 @@ public class Solver {
     );
   }
 
-  public boolean atAndInDirection(
-    String word,
-    String[][] puzzle,
-    int row,
-    int col,
-    int rowAdds,
-    int colAdds
-  ) {
+  public boolean atAndInDirection(String word, String[][] puzzle, int row, int col, int rowAdds, int colAdds) {
     int rowCoor = 0;
     int colCoor = 0;
     for (int i = 1; i < word.length(); i++) {
+
       rowCoor = row + (rowAdds * i);
-    colCoor = col + (colAdds * i);
-      if (inBounds(rowCoor, colCoor, puzzle) && puzzle[rowCoor][colCoor].equals(word.substring(i, i + 1))
-      ) {
+      colCoor = col + (colAdds * i);
+
+      if (inBounds(rowCoor, colCoor, puzzle) && (rowCoor != 0 && colCoor != 0) && puzzle[rowCoor][colCoor].equals(word.substring(i, i + 1))) {
         return true;
       }
     }
@@ -42,7 +36,7 @@ public class Solver {
 
   public boolean inGrid(String word, String[][] puzzle) {
     for (int row = 0; row < puzzle.length; row++) {
-      for (int col = 0; col < puzzle[row].length; col++) { //iterate through evercol character in the 2d arracol
+      for (int col = 0; col < puzzle[row].length; col++) { //iterate through every character in the 2d array
         if (puzzle[row][col].equals(word.substring(0, 1))) {
           if (startingAt(word, puzzle, row, col)) {
             return true;
