@@ -10,6 +10,7 @@ public class Solver {
     
     int lettersMatched = 0;
     int direction = 0;
+    boolean errorTestingCheckAround = false;
 
     for (int row = 0; row < puzzle.length; row++) {
       for (int col = 0; col < puzzle[row].length; col++) { //iterate through every character in the 2d array
@@ -29,8 +30,10 @@ public class Solver {
               for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
 
                 if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
-                
+                  errorTestingCheckAround = true;
                   lettersMatched++; // adding for each letter found
+                } else {
+                  errorTestingCheckAround = false;
                 }
               }
             }
@@ -45,9 +48,9 @@ public class Solver {
              
              System.err.println("puzzle[rowCoor][row]: " + puzzle[row][col] );
             
-          
+            System.err.println("letters Matched: " + lettersMatched);
              System.err.println("direction: " + direction);
-         
+            System.err.println("errorTestingCheckAround" + errorTestingCheckAround);
           
             lettersMatched = 0; //else we try again
           }
