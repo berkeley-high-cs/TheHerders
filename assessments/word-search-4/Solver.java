@@ -11,7 +11,7 @@ public class Solver {
   public boolean atAndInDirection(String word, String[][] puzzle, int row, int col, int rowAdds, int colAdds) {
     int rowCoor = 0;
     int colCoor = 0;
-    for (int i = 1; i < word.length(); i++) {
+    for (int i = 0; i < word.length(); i++) {
 
       rowCoor = row + (rowAdds * i);
       colCoor = col + (colAdds * i);
