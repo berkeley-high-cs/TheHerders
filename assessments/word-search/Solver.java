@@ -59,14 +59,17 @@ public class Solver {
     int[] colAdds = { -1, 0, 1, -1, 1, -1, 0, 1 };
     int rowCoor = row + (rowAdds[i] * z);
     int colCoor = col + (colAdds[i] * z);
+    if (!(inBounds(rowCoor, colCoor, puzzle) && (word.substring(z, z + 1).equals(puzzle[rowCoor][colCoor])))){
+         System.err.println("rowCoor: " + rowCoor + " colCoor: " + colCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
+    if (inBounds(rowCoor,colCoor, puzzle)){
+      System.err.println("puzzle[rowCoor][colCoor]: " + puzzle[rowCoor][colCoor] );
+    }
+    if (z != 1){
+      System.err.println("direction: " + i);
+    }
+    }
 
-    // System.err.println("rowCoor: " + rowCoor + " colCoor: " + colCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
-    // if (inBounds(rowCoor,colCoor, puzzle)){
-    //   System.err.println("puzzle[rowCoor][colCoor]: " + puzzle[rowCoor][colCoor] );
-    // }
-    // if (z != 1){
-    //   System.err.println("direction: " + i);
-    // }
+   
 
     return (inBounds(rowCoor, colCoor, puzzle) && (word.substring(z, z + 1).equals(puzzle[rowCoor][colCoor])));
   }
