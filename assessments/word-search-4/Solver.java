@@ -7,17 +7,28 @@ public class Solver {
       (row >= 0 && col >= 0) && (row < wall.length && col < wall[row].length)
     );
   }
-  public boolean atAndInDirection(String word, String[][] puzzle, int row, int col, int rowAdds, int colAdds){
-    int rowCoor = row + (rowAdds * 1);
-    int colCoor = col + (colAdds * i);
-    for (int i = 0; i < word.length(); i++){
-      
-      if (inBounds(rowCoor, colCoor, puzzle) && puzzle[rowCoor][colCoor].equals(word.substring(i, i+1))){
+
+  public boolean atAndInDirection(
+    String word,
+    String[][] puzzle,
+    int row,
+    int col,
+    int rowAdds,
+    int colAdds
+  ) {
+    int rowCoor = 0;
+    int colCoor = 0;
+    for (int i = 0; i < word.length(); i++) {
+      rowCoor = row + (rowAdds * i);
+      colCoor = col + (colAdds * i);
+      if (
+        inBounds(rowCoor, colCoor, puzzle) &&
+        puzzle[rowCoor][colCoor].equals(word.substring(i, i + 1))
+      ) {
         return true;
       }
     }
     return false;
-    
   }
 
   public boolean startingAt(String word, String[][] puzzle, int row, int col) {
