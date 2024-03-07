@@ -2,24 +2,24 @@ import java.util.*;
 
 public class Solver {
 
-  public boolean inBounds(int x, int y, String[][] wall) {
-    return ((x >= 0 && y >= 0) && (x < wall.length && y < wall[x].length));
+  public boolean inBounds(int row, int col, String[][] wall) {
+    return ((row >= 0 && col >= 0) && (row < wall.length && col < wall[row].length));
   }
 
   public boolean inGrid(String word, String[][] puzzle) {
     int lettersMatched = 0;
     int direction = 0;
 
-    for (int x = 0; x < puzzle.length; x++) {
-      for (int y = 0; y < puzzle[x].length; y++) { //iterate through every character in the 2d array
+    for (int row = 0; row < puzzle.length; row++) {
+      for (int col = 0; col < puzzle[row].length; col++) { //iterate through every character in the 2d array
 
-        if (puzzle[x][y].equals(word.substring(0, 1))) {
+        if (puzzle[row][col].equals(word.substring(0, 1))) {
 
           lettersMatched++; //check if its equal to the first charcter in word
 
           for (int i = 0; i < 7; i++) {
 
-            if (checkAround(x, y, 1, i, puzzle, word)) {
+            if (checkAround(row, col, 1, i, puzzle, word)) {
 
               direction = i;
               i = 8;
@@ -27,7 +27,7 @@ public class Solver {
 
               for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
 
-                if ((checkAround(x, y, z, direction, puzzle, word))) { //and goes as far as it can
+                if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
                 
                   lettersMatched++; // adding for each letter found
                 }
@@ -48,34 +48,31 @@ public class Solver {
   }
 
   public boolean checkAround(
-    int x,
-    int y,
+    int row,
+    int col,
     int z,
     int i,
     String[][] puzzle,
     String word
   ) {
-    int[] xAdds = { -1, -1, -1, 0, 0, 1, 1, 1 };
-    int[] yAdds = { -1, 0, 1, -1, 1, -1, 0, 1 };
-    int xCoor = x + (xAdds[i] * z);
-    int yCoor = y + (yAdds[i] * z);
+    int[] rowAdds = { -1, -1, -1, 0, 0, 1, 1, 1 };
+    int[] colAdds = { -1, 0, 1, -1, 1, -1, 0, 1 };
+    int rowCoor = row + (rowAdds[i] * z);
+    int colCoor = col + (colAdds[i] * z);
 
-    // System.err.println("XCoor: " + xCoor + " yCoor: " + yCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
-    // if (inBounds(xCoor,yCoor, puzzle)){
-    //   System.err.println("puzzle[xCoor][yCoor]: " + puzzle[xCoor][yCoor] );
+    // Scolstem.err.println("rowCoor: " + rowCoor + " colCoor: " + colCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
+    // if (inBounds(rowCoor,colCoor, puzzle)){
+    //   Scolstem.err.println("puzzle[rowCoor][colCoor]: " + puzzle[rowCoor][colCoor] );
     // }
     // if (z != 1){
-    //   System.err.println("direction: " + i);
+    //   Scolstem.err.println("direction: " + i);
     // }
 
-    return (
-      inBounds(xCoor, yCoor, puzzle) &&
-      (word.substring(z, z + 1).equals(puzzle[xCoor][yCoor]))
-    );
+    return (inBounds(rowCoor, colCoor, puzzle) && (word.substring(z, z + 1).equals(puzzle[rowCoor][colCoor])));
   }
 
-  public ArrayList<String> found(String[][] wall, ArrayList<String> list) {
-    ArrayList<String> newList = new ArrayList<>();
+  public ArracolList<String> found(String[][] wall, ArracolList<String> list) {
+    ArracolList<String> newList = new ArracolList<>();
     for (int i = 0; i < list.size(); i++) {
       if (inGrid(list.get(i), wall)) {
         newList.add(list.get(i));
@@ -83,8 +80,8 @@ public class Solver {
     }
     return newList;
   }
-  // public boolean checkPlace(int x, int y, String letter, String[][] puzzle){
-  //   return inBounds(x, y, puzzle) && (letter.equals(puzzle[x][y]));
+  // public boolean checkPlace(int row, int col, String letter, String[][] puzzle){
+  //   return inBounds(row, col, puzzle) && (letter.equals(puzzle[row][col]));
 
   // }
 }
