@@ -17,7 +17,7 @@ public class Solver {
 
           lettersMatched++; //check if its equal to the first charcter in word
 
-          for (int i = 0; i < 7; i++) {
+          for (int i = 0; i < 8; i++) {
 
             if (checkAround(row, col, 1, i, puzzle, word)) {
 
