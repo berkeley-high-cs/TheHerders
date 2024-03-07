@@ -71,8 +71,8 @@ public class Solver {
     return (inBounds(rowCoor, colCoor, puzzle) && (word.substring(z, z + 1).equals(puzzle[rowCoor][colCoor])));
   }
 
-  public ArracolList<String> found(String[][] wall, ArracolList<String> list) {
-    ArracolList<String> newList = new ArracolList<>();
+  public ArrayList<String> found(String[][] wall, ArrayList<String> list) {
+    ArrayList<String> newList = new ArrayList<>();
     for (int i = 0; i < list.size(); i++) {
       if (inGrid(list.get(i), wall)) {
         newList.add(list.get(i));
