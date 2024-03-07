@@ -11,16 +11,18 @@ public class Solver {
   public boolean atAndInDirection(String word, String[][] puzzle, int row, int col, int rowChange, int colChange) {
     int rowCoor = 0;
     int colCoor = 0;
+    int lettersMatched = 0;
     for (int i = 0; i < word.length(); i++) {
 
       rowCoor = row + (rowChange * i);
       colCoor = col + (colChange * i);
 
       if (inBounds(rowCoor, colCoor, puzzle) && !(rowChange == 0 && colChange == 0) && puzzle[rowCoor][colCoor].equals(word.substring(i, i + 1))) {
-        return true;
+        lettersMatched++;
       }
     }
-    return false;
+    return lettersMatched == word.length();
+ 
   }
 
   public boolean startingAt(String word, String[][] puzzle, int row, int col) {
