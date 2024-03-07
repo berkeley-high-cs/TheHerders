@@ -7,7 +7,7 @@ public class Solver {
       (row >= 0 && col >= 0) && (row < wall.length && col < wall[row].length)
     );
   }
-  public boolean atAndInDirection(String word, String[][] int row, int col, int rowAdds, int colAdds){
+  public boolean atAndInDirection(String word, String[][] puzzle, int row, int col, int rowAdds, int colAdds){
     return true;
   }
 
