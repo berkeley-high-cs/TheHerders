@@ -8,7 +8,16 @@ public class Solver {
     );
   }
   public boolean atAndInDirection(String word, String[][] puzzle, int row, int col, int rowAdds, int colAdds){
-    return true;
+    int rowCoor = row + (rowAdds * 1);
+    int colCoor = col + (colAdds * i);
+    for (int i = 0; i < word.length(); i++){
+      
+      if (inBounds(rowCoor, colCoor, puzzle) && puzzle[rowCoor][colCoor].equals(word.substring(i, i+1))){
+        return true;
+      }
+    }
+    return false;
+    
   }
 
   public boolean startingAt(String word, String[][] puzzle, int row, int col) {
