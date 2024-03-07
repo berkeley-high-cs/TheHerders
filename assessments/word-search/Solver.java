@@ -39,7 +39,7 @@ public class Solver {
             return true; //we did it
           } else {
              
-             System.err.println(" word.substring(z,z + 1): " + word.substring(z,z + 1));
+             System.err.println(" word: " + word);
              
              System.err.println("puzzle[rowCoor][row]: " + puzzle[row][col] );
             
