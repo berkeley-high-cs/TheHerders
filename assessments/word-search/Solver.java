@@ -7,6 +7,7 @@ public class Solver {
   }
 
   public boolean inGrid(String word, String[][] puzzle) {
+    
     int lettersMatched = 0;
     int direction = 0;
 
@@ -38,7 +39,8 @@ public class Solver {
           if (lettersMatched == word.length()) { // if the letters found equal the word length
             return true; //we did it
           } else {
-             
+             System.err.println("////////////////////////////////////////////////////////////////////////////");
+             System.err.println("////////////////////////////////////////////////////////////////////////////");
              System.err.println(" word: " + word);
              
              System.err.println("puzzle[rowCoor][row]: " + puzzle[row][col] );
