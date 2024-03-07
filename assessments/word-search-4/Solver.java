@@ -18,12 +18,10 @@ public class Solver {
   ) {
     int rowCoor = 0;
     int colCoor = 0;
-    for (int i = 0; i < word.length(); i++) {
+    for (int i = 1; i < word.length(); i++) {
       rowCoor = row + (rowAdds * i);
-      colCoor = col + (colAdds * i);
-      if (
-        inBounds(rowCoor, colCoor, puzzle) &&
-        puzzle[rowCoor][colCoor].equals(word.substring(i, i + 1))
+    colCoor = col + (colAdds * i);
+      if (inBounds(rowCoor, colCoor, puzzle) && puzzle[rowCoor][colCoor].equals(word.substring(i, i + 1))
       ) {
         return true;
       }
