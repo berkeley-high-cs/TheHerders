@@ -16,7 +16,7 @@ public class Solver {
       rowCoor = row + (rowAdds * i);
       colCoor = col + (colAdds * i);
 
-      if (inBounds(rowCoor, colCoor, puzzle) && (rowCoor != 0 && colCoor != 0) && puzzle[rowCoor][colCoor].equals(word.substring(i, i + 1))) {
+      if (inBounds(rowCoor, colCoor, puzzle) && !(rowCoor == 0 && colCoor == 0) && puzzle[rowCoor][colCoor].equals(word.substring(i, i + 1))) {
         return true;
       }
     }
