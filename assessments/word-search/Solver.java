@@ -19,8 +19,9 @@ public class Solver {
 
           lettersMatched++; //check if its equal to the first charcter in word
 
-          
-            if (secondLetterFound){
+          direction = secondLetterFound(row, col, word, puzzle);
+            if (direction != -1){
+              
             for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
                 if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
                   errorTestingCheckAround = true;
