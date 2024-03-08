@@ -27,10 +27,10 @@ public class Solver {
               direction = i;
               i = 8;
               lettersMatched++;
-              secondLetterFound = true
+              secondLetterFound = true;
             } else {
-              2ndLetterFound
-            }
+              secondLetterFound = false;
+            } 
           }
           
              for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
