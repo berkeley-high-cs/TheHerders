@@ -30,7 +30,7 @@ public class Solver {
               secondLetterFound = true;
             } else {
               secondLetterFound = false;
-            } 
+            }
             if (secondLetterFound){
             for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
                 if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
@@ -40,7 +40,8 @@ public class Solver {
                   errorTestingCheckAround = false;
                 }
               }
-          }
+          } 
+            
           }
           
              
