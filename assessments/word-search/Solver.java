@@ -42,16 +42,7 @@ public class Solver {
           if (lettersMatched == word.length()) { // if the letters found equal the word length
             return true; //we did it
           } else {
-             System.err.println("////////////////////////////////////////////////////////////////////////////");
-             System.err.println("////////////////////////////////////////////////////////////////////////////");
-             System.err.println(" word: " + word);
-             
-             System.err.println("puzzle[rowCoor][row]: " + puzzle[row][col] );
             
-            System.err.println("letters Matched: " + lettersMatched);
-             System.err.println("direction: " + direction);
-            System.err.println("errorTestingCheckAround" + errorTestingCheckAround);
-          
             lettersMatched = 0; //else we try again
           }
         }
@@ -83,6 +74,16 @@ public class Solver {
     //   System.err.println("direction: " + i);
     // }
     // }
+     System.err.println("////////////////////////////////////////////////////////////////////////////");
+             System.err.println("////////////////////////////////////////////////////////////////////////////");
+             System.err.println(" word: " + word);
+             
+             System.err.println("puzzle[rowCoor][row]: " + puzzle[row][col] );
+            
+            System.err.println("letters Matched: " + lettersMatched);
+             System.err.println("direction: " + direction);
+            System.err.println("errorTestingCheckAround" + errorTestingCheckAround);
+          
 
    
 
