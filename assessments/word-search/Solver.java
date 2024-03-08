@@ -41,6 +41,7 @@ public class Solver {
             lettersMatched = 0; //else we try again
           }
         }
+        direction = 0;
       }
     }
 
