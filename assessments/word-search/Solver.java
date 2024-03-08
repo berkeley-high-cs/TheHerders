@@ -62,7 +62,7 @@ public class Solver {
     for (int i = 0; i < 8; i++) {
 
             if (checkAround(row, col, 1, i, puzzle, word)) {
-              return direction;
+              return i;
               // direction = i;
               // lettersMatched++;
               // secondLetterFound = true;
