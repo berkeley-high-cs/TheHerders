@@ -81,9 +81,9 @@ public class Solver {
     if (inBounds(rowCoor,colCoor, puzzle)){
       System.err.println("puzzle[rowCoor][colCoor]: " + puzzle[rowCoor][colCoor] );
     }
-    if (z != 1){
+   
       System.err.println("direction: " + i);
-    }
+
     }
 
    
