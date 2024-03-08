@@ -19,16 +19,7 @@ public class Solver {
 
           lettersMatched++; //check if its equal to the first charcter in word
 
-          for (int i = 0; i < 8; i++) {
-
-            if (checkAround(row, col, 1, i, puzzle, word)) {
-
-              direction = i;
-              lettersMatched++;
-              secondLetterFound = true;
-            } else {
-              secondLetterFound = false;
-            }
+          
             if (secondLetterFound){
             for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
                 if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
@@ -41,7 +32,7 @@ public class Solver {
               }
           } 
           
-          }
+          
           
           
              
@@ -60,26 +51,24 @@ public class Solver {
     return false;
   }
 
-  public boolean checkAround(
-    int row,
-    int col,
-    int z,
-    int i,
-    String[][] puzzle,
-    String word
-  ) {
+  public boolean checkAround( int row, int col, int z, int i, String[][] puzzle, String word) {
     int[] rowAdds = { -1, -1, -1, 0, 0, 1, 1, 1 };
     int[] colAdds = { -1, 0, 1, -1, 1, -1, 0, 1 };
     int rowCoor = row + (rowAdds[i] * z);
     int colCoor = col + (colAdds[i] * z);
-    
-      //System.err.println("direction: " + i);
-
-    
-
-   
-
     return (inBounds(rowCoor, colCoor, puzzle) && (word.substring(z, z + 1).equals(puzzle[rowCoor][colCoor])));
+  }
+  public int secondLetterFound (){
+    for (int i = 0; i < 8; i++) {
+
+            if (checkAround(row, col, 1, i, puzzle, word)) {
+              return direction;
+              // direction = i;
+              // lettersMatched++;
+              // secondLetterFound = true;
+            } 
+            
+  }
   }
 
   public ArrayList<String> found(String[][] wall, ArrayList<String> list) {
@@ -92,6 +81,7 @@ public class Solver {
     return newList;
   }
 }
+
 
 // System.err.println("////////////////////////////////////////////////////////////////////////////");
 //  System.err.println("////////////////////////////////////////////////////////////////////////////");
