@@ -27,6 +27,7 @@ public class Solver {
                 errorTestingCheckAround = true;
                 lettersMatched++; // adding for each letter found
               } else {
+                z = word.length();
                 lettersMatched = 1;
                 errorTestingCheckAround = false;
               }
