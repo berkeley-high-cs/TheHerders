@@ -3,46 +3,41 @@ import java.util.*;
 public class Solver {
 
   public boolean inBounds(int row, int col, String[][] wall) {
-    return ((row >= 0 && col >= 0) && (row < wall.length && col < wall[row].length));
+    return (
+      (row >= 0 && col >= 0) && (row < wall.length && col < wall[row].length)
+    );
   }
 
   public boolean inGrid(String word, String[][] puzzle) {
     int lettersMatched = 0;
-    int direction = -1;
+    int direction = 0;
     boolean secondLetterDirection = false;
     boolean errorTestingCheckAround = false;
 
     for (int row = 0; row < puzzle.length; row++) {
       for (int col = 0; col < puzzle[row].length; col++) { //iterate through every character in the 2d array
-
         if (puzzle[row][col].equals(word.substring(0, 1))) {
-
           lettersMatched++; //check if its equal to the first charcter in word
-
-          direction = secondLetterDirection(row, col, word, puzzle);
-            if (direction != -1){
-              lettersMatched++;
+          while (direction != -1){
+               direction = secondLetterDirection(row, col, direction, word, puzzle);
+          if (direction != -1) {
+            lettersMatched++;
             for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
-                if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
-                  errorTestingCheckAround = true;
-                  lettersMatched++; // adding for each letter found
-                } else {
-                  lettersMatched = 1;
-                  errorTestingCheckAround = false;
-                }
+              if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
+                errorTestingCheckAround = true;
+                lettersMatched++; // adding for each letter found
+              } else {
+                lettersMatched = 1;
+                errorTestingCheckAround = false;
               }
-          } 
-          
-          
-          
-          
-             
-
+            }
+          }
+          }
+         
 
           if (lettersMatched == word.length()) { // if the letters found equal the word length
             return true; //we did it
           } else {
-            
             lettersMatched = 0; //else we try again
           }
         }
@@ -52,25 +47,40 @@ public class Solver {
     return false;
   }
 
-  public boolean checkAround( int row, int col, int z, int i, String[][] puzzle, String word) {
+  public boolean checkAround(
+    int row,
+    int col,
+    int z,
+    int i,
+    String[][] puzzle,
+    String word
+  ) {
     int[] rowAdds = { -1, -1, -1, 0, 0, 1, 1, 1 };
     int[] colAdds = { -1, 0, 1, -1, 1, -1, 0, 1 };
     int rowCoor = row + (rowAdds[i] * z);
     int colCoor = col + (colAdds[i] * z);
-    return (inBounds(rowCoor, colCoor, puzzle) && (word.substring(z, z + 1).equals(puzzle[rowCoor][colCoor])));
+    return (
+      inBounds(rowCoor, colCoor, puzzle) &&
+      (word.substring(z, z + 1).equals(puzzle[rowCoor][colCoor]))
+    );
   }
-  public int secondLetterDirection (int row, int col, String word, String[][] puzzle){
-    for (int i = 0; i < 8; i++) {
 
-            if (checkAround(row, col, 1, i, puzzle, word)) {
-              return i;
-              // direction = i;
-              // lettersMatched++;
-              // secondLetterDirection = true;
-            } 
-            
-  }
-  return -1;
+  public int secondLetterDirection(
+    int row,
+    int col,
+    String word,
+    String[][] puzzle,
+    int startingDirection
+  ) {
+    for (int i = startingDirection + 1; i < 8; i++) {
+      if (checkAround(row, col, 1, i, puzzle, word)) {
+        return i;
+        // direction = i;
+        // lettersMatched++;
+        // secondLetterDirection = true;
+      }
+    }
+    return -1;
   }
 
   public ArrayList<String> found(String[][] wall, ArrayList<String> list) {
@@ -83,20 +93,17 @@ public class Solver {
     return newList;
   }
 }
-
-
 // System.err.println("////////////////////////////////////////////////////////////////////////////");
 //  System.err.println("////////////////////////////////////////////////////////////////////////////");
 //  System.err.println(" word: " + word);
 //  System.err.println("puzzle[rowCoor][row]: " + puzzle[row][col] );
- // System.err.println("letters Matched: " + lettersMatched);
+// System.err.println("letters Matched: " + lettersMatched);
 //  System.err.println("direction: " + direction);
 // System.err.println("errorTestingCheckAround" + errorTestingCheckAround);
 //        System.err.println("////////////////////////////////////////////////////////////////////////////");
 //  System.err.println("////////////////////////////////////////////////////////////////////////////");
-//   System.err.println("word: " + word);       
+//   System.err.println("word: " + word);
 //   System.err.println("rowCoor: " + rowCoor + " colCoor: " + colCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
 // if (inBounds(rowCoor,colCoor, puzzle)){
 //   System.err.println("puzzle[rowCoor][colCoor]: " + puzzle[rowCoor][colCoor] );
 // }
-   
