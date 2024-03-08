@@ -69,7 +69,7 @@ public class Solver {
     int rowCoor = row + (rowAdds[i] * z);
     int colCoor = col + (colAdds[i] * z);
     
-      System.err.println("direction: " + i);
+      //System.err.println("direction: " + i);
 
     
 
