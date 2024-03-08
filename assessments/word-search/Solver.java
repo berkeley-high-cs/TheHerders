@@ -76,15 +76,14 @@ public class Solver {
      System.err.println("////////////////////////////////////////////////////////////////////////////");
      System.err.println("////////////////////////////////////////////////////////////////////////////");
       System.err.println("word: " + word);       
-    if (!(inBounds(rowCoor, colCoor, puzzle) && (word.substring(z, z + 1).equals(puzzle[rowCoor][colCoor])))){
-         System.err.println("rowCoor: " + rowCoor + " colCoor: " + colCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
+      System.err.println("rowCoor: " + rowCoor + " colCoor: " + colCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
     if (inBounds(rowCoor,colCoor, puzzle)){
       System.err.println("puzzle[rowCoor][colCoor]: " + puzzle[rowCoor][colCoor] );
     }
    
       System.err.println("direction: " + i);
 
-    }
+    
 
    
 
