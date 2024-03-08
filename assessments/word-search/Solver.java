@@ -13,10 +13,14 @@ public class Solver {
     int direction = 0;
     boolean secondLetterDirection = false;
     boolean errorTestingCheckAround = false;
-
+    System.err.println("///////////////////////////////////////");
+    System.err.println("Word: " + word);
+    System.err.println("///////////////////////////////////////");
+    
     for (int row = 0; row < puzzle.length; row++) {
       for (int col = 0; col < puzzle[row].length; col++) { //iterate through every character in the 2d array
         if (puzzle[row][col].equals(word.substring(0, 1))) {
+          
           lettersMatched++; //check if its equal to the first charcter in word
           while (direction != -1){
                direction = secondLetterDirection(row, col, word, puzzle, direction);
