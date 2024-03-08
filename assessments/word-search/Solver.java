@@ -58,7 +58,7 @@ public class Solver {
     int colCoor = col + (colAdds[i] * z);
     return (inBounds(rowCoor, colCoor, puzzle) && (word.substring(z, z + 1).equals(puzzle[rowCoor][colCoor])));
   }
-  public int secondLetterFound (){
+  public int secondLetterFound (int row, int col, String word, String[][] puzzle){
     for (int i = 0; i < 8; i++) {
 
             if (checkAround(row, col, 1, i, puzzle, word)) {
