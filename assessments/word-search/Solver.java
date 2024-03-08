@@ -26,7 +26,7 @@ public class Solver {
                direction = secondLetterDirection(row, col, word, puzzle, direction);
                
           if (direction != -1) {
-            System.err.println(direction);
+            System.err.println(direction + "Row: " + row + "Col:" + col);
             lettersMatched++;
             for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
               if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
@@ -38,15 +38,14 @@ public class Solver {
                 errorTestingCheckAround = false;
               }
             }
+            if (lettersMatched == word.length()) { // if the letters found equal the word length
+            return true; //we did it
+          } 
           }
           }
          
 
-          if (lettersMatched == word.length()) { // if the letters found equal the word length
-            return true; //we did it
-          } else {
-            lettersMatched = 0; //else we try again
-          }
+          
         }
         direction = 0;
       }
