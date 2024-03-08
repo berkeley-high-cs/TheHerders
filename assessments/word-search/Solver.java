@@ -25,13 +25,13 @@ public class Solver {
             if (checkAround(row, col, 1, i, puzzle, word)) {
 
               direction = i;
-              i = 8;
+              
               lettersMatched++;
               secondLetterFound = true;
             } else {
               secondLetterFound = false;
             }
-            if (secondLetterFound){
+             if (secondLetterFound){
             for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
                 if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
                   errorTestingCheckAround = true;
@@ -41,6 +41,7 @@ public class Solver {
                 }
               }
           } 
+           
             
           }
           
