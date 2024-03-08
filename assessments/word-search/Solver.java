@@ -20,8 +20,9 @@ public class Solver {
           lettersMatched++; //check if its equal to the first charcter in word
           while (direction != -1){
                direction = secondLetterDirection(row, col, word, puzzle, direction);
-               System.err.println(direction);
+               
           if (direction != -1) {
+            System.err.println(direction);
             lettersMatched++;
             for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
               if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
