@@ -16,36 +16,33 @@ public class Solver {
     System.err.println("///////////////////////////////////////");
     System.err.println("Word: " + word);
     System.err.println("///////////////////////////////////////");
-    
+
     for (int row = 0; row < puzzle.length; row++) {
       for (int col = 0; col < puzzle[row].length; col++) { //iterate through every character in the 2d array
         if (puzzle[row][col].equals(word.substring(0, 1))) {
-          
           lettersMatched++; //check if its equal to the first charcter in word
-          while (direction != -1){
-               direction = secondLetterDirection(row, col, word, puzzle, direction);
-               
-          if (direction != -1) {
-            System.err.println(direction + "Row: " + row + "Col:" + col);
-            lettersMatched++;
-            for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
-              if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
-                errorTestingCheckAround = true;
-                lettersMatched++; // adding for each letter found
-              } else {
-                z = word.length();
-                lettersMatched = 1;
-                errorTestingCheckAround = false;
+          while (direction != -1) {
+            direction =
+              secondLetterDirection(row, col, word, puzzle, direction);
+
+            if (direction != -1) {
+              System.err.println(direction + "Row: " + row + "Col:" + col);
+              lettersMatched++;
+              for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
+                if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
+                  errorTestingCheckAround = true;
+                  lettersMatched++; // adding for each letter found
+                  if (lettersMatched == word.length()) { // if the letters found equal the word length
+                    return true; //we did it
+                  }
+                } else {
+                  z = word.length();
+                  lettersMatched = 1;
+                  errorTestingCheckAround = false;
+                }
               }
             }
-            if (lettersMatched == word.length()) { // if the letters found equal the word length
-            return true; //we did it
-          } 
           }
-          }
-         
-
-          
         }
         direction = 0;
       }
@@ -89,7 +86,6 @@ public class Solver {
     }
     return -1;
   }
-
   // public ArrayList<String> found(String[][] wall, ArrayList<String> list) {
   //   ArrayList<String> newList = new ArrayList<>();
   //   for (int i = 0; i < list.size(); i++) {
@@ -100,6 +96,17 @@ public class Solver {
   //   return newList;
   // }
 }
+//0 is up left
+//1 is up
+//2 is up right
+//3 is left
+// 4 is right
+//5 is down left
+// 6 is down
+//7 is down right
+//3Row: 1Col:5
+//2Row: 7Col:4
+//4Row: 7Col:4
 // System.err.println("////////////////////////////////////////////////////////////////////////////");
 //  System.err.println("////////////////////////////////////////////////////////////////////////////");
 //  System.err.println(" word: " + word);
