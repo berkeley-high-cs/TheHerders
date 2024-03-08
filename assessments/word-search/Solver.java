@@ -21,6 +21,7 @@ public class Solver {
 
           direction = secondLetterDirection(row, col, word, puzzle);
             if (direction != -1){
+              letterMatched++;
             for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
                 if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
                   errorTestingCheckAround = true;
