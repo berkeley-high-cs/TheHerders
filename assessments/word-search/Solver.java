@@ -24,7 +24,6 @@ public class Solver {
             if (checkAround(row, col, 1, i, puzzle, word)) {
 
               direction = i;
-              i = 8;
               lettersMatched++;
               secondLetterFound = true;
             } else {
@@ -40,8 +39,8 @@ public class Solver {
                 }
               }
           } 
-            
           }
+          
           
              
 
