@@ -69,6 +69,7 @@ public class Solver {
             } 
             
   }
+  return -1;
   }
 
   public ArrayList<String> found(String[][] wall, ArrayList<String> list) {
