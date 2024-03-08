@@ -8,8 +8,8 @@ public class Solver {
 
   public boolean inGrid(String word, String[][] puzzle) {
     int lettersMatched = 0;
-    int direction = 0;
-    boolean secondLetterFound = false;
+    int direction = -1;
+    boolean secondLetterDirection = false;
     boolean errorTestingCheckAround = false;
 
     for (int row = 0; row < puzzle.length; row++) {
@@ -19,9 +19,8 @@ public class Solver {
 
           lettersMatched++; //check if its equal to the first charcter in word
 
-          direction = secondLetterFound(row, col, word, puzzle);
+          direction = secondLetterDirection(row, col, word, puzzle);
             if (direction != -1){
-              
             for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
                 if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
                   errorTestingCheckAround = true;
@@ -59,14 +58,14 @@ public class Solver {
     int colCoor = col + (colAdds[i] * z);
     return (inBounds(rowCoor, colCoor, puzzle) && (word.substring(z, z + 1).equals(puzzle[rowCoor][colCoor])));
   }
-  public int secondLetterFound (int row, int col, String word, String[][] puzzle){
+  public int secondLetterDirection (int row, int col, String word, String[][] puzzle){
     for (int i = 0; i < 8; i++) {
 
             if (checkAround(row, col, 1, i, puzzle, word)) {
               return i;
               // direction = i;
               // lettersMatched++;
-              // secondLetterFound = true;
+              // secondLetterDirection = true;
             } 
             
   }
