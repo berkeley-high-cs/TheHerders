@@ -32,8 +32,8 @@ public class Solver {
               secondLetterFound = false;
             } 
           }
-          
-             for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
+          if (secondLetterFound){
+            for (int z = 2; z < word.length(); z++) { //it then loops through checking if the second letter is around it a bunch
                 if ((checkAround(row, col, z, direction, puzzle, word))) { //and goes as far as it can
                   errorTestingCheckAround = true;
                   lettersMatched++; // adding for each letter found
@@ -41,6 +41,8 @@ public class Solver {
                   errorTestingCheckAround = false;
                 }
               }
+          }
+             
 
 
           if (lettersMatched == word.length()) { // if the letters found equal the word length
