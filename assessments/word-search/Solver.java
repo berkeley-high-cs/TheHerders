@@ -46,16 +46,7 @@ public class Solver {
           if (lettersMatched == word.length()) { // if the letters found equal the word length
             return true; //we did it
           } else {
-             System.err.println("////////////////////////////////////////////////////////////////////////////");
-             System.err.println("////////////////////////////////////////////////////////////////////////////");
-             System.err.println(" word: " + word);
-             
-             System.err.println("puzzle[rowCoor][row]: " + puzzle[row][col] );
             
-            System.err.println("letters Matched: " + lettersMatched);
-             System.err.println("direction: " + direction);
-            System.err.println("errorTestingCheckAround" + errorTestingCheckAround);
-          
             lettersMatched = 0; //else we try again
           }
         }
@@ -77,14 +68,7 @@ public class Solver {
     int[] colAdds = { -1, 0, 1, -1, 1, -1, 0, 1 };
     int rowCoor = row + (rowAdds[i] * z);
     int colCoor = col + (colAdds[i] * z);
-     System.err.println("////////////////////////////////////////////////////////////////////////////");
-     System.err.println("////////////////////////////////////////////////////////////////////////////");
-      System.err.println("word: " + word);       
-      System.err.println("rowCoor: " + rowCoor + " colCoor: " + colCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
-    if (inBounds(rowCoor,colCoor, puzzle)){
-      System.err.println("puzzle[rowCoor][colCoor]: " + puzzle[rowCoor][colCoor] );
-    }
-   
+    
       System.err.println("direction: " + i);
 
     
@@ -103,8 +87,20 @@ public class Solver {
     }
     return newList;
   }
-  // public boolean checkPlace(int row, int col, String letter, String[][] puzzle){
-  //   return inBounds(row, col, puzzle) && (letter.equals(puzzle[row][col]));
-
-  // }
 }
+
+// System.err.println("////////////////////////////////////////////////////////////////////////////");
+//  System.err.println("////////////////////////////////////////////////////////////////////////////");
+//  System.err.println(" word: " + word);
+//  System.err.println("puzzle[rowCoor][row]: " + puzzle[row][col] );
+ // System.err.println("letters Matched: " + lettersMatched);
+//  System.err.println("direction: " + direction);
+// System.err.println("errorTestingCheckAround" + errorTestingCheckAround);
+//        System.err.println("////////////////////////////////////////////////////////////////////////////");
+//  System.err.println("////////////////////////////////////////////////////////////////////////////");
+//   System.err.println("word: " + word);       
+//   System.err.println("rowCoor: " + rowCoor + " colCoor: " + colCoor + " word.substring(z,z + 1): " + word.substring(z,z + 1));
+// if (inBounds(rowCoor,colCoor, puzzle)){
+//   System.err.println("puzzle[rowCoor][colCoor]: " + puzzle[rowCoor][colCoor] );
+// }
+   
