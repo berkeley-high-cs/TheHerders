@@ -14,4 +14,12 @@ public class Strings3 {
     }
     return reversed;
   }
+  public String despace(String word){
+    String newWord = word;
+    while (newWord.indexOf(" ") != -1){
+      newWord = newWord.substring(0, newWord.indexOf(" ")) + newWord.substring(newWord.indexOf(" ") + 1);
+    }
+    return newWord;
+    
+  }
 }
