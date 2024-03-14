@@ -55,7 +55,7 @@ public class Strings3 {
     String listOfDigits = "0123456789";
     if(word.length() == 1){
       if (listOfDigits.indexOf(word) != -1){
-        true;
+        return true;
       }
     } 
     return false;
