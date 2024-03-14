@@ -84,7 +84,7 @@ public class Strings3 {
     String decoded = "";
     for (int i = 0; i < word.length(); i++){
       if (isDigit(word.substring(i, i + 1))){
-        for (int i = 0; i < Integer.parseInt(word.substring(i, i + 1)); i++){
+        for (int x = 0; x < Integer.parseInt(word.substring(i, i + 1)); x++){
           decoded = decoded + currentLetter;
         }
         currentLetter = "";
