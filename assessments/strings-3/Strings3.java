@@ -43,7 +43,7 @@ public class Strings3 {
     return true;
   }
   public ArrayList<String> allSubstrings(String word){
-    ArrayList<> list = new ArrayList<String>();
+    ArrayList<String> list = new ArrayList<>();
     return list;
   }
 }
