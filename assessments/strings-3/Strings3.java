@@ -36,7 +36,9 @@ public class Strings3 {
   }
   public boolean isSorted(String[] list){
     for (int i = 0; i < list.length; i++){
-
+      if (list[i].compareTo(list[i + 1]) < 0){
+        return false;
+      }
     }
     return true;
   }
