@@ -10,7 +10,7 @@ public class Strings3 {
   public String reverse(String word){
     String reversed = "";
     for (int i = word.length() - 1; i > 0; i--){
-      reversed = reversed + word.substring(i, i - 1);
+      reversed = reversed + word.substring(i, i + 1);
     }
     return reversed;
   }
