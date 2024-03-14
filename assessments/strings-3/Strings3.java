@@ -34,7 +34,7 @@ public class Strings3 {
     }
     return joint;
   }
-  public boolean isSorted(array[String] list){
+  public boolean isSorted(String[] list){
     for (int i = 0; i < list; i++){
 
     }
