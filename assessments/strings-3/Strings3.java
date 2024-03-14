@@ -46,7 +46,7 @@ public class Strings3 {
     ArrayList<String> list = new ArrayList<>();
     for (int i = 0; i < list.size(); i++){
       for (int x = i + 1; x < list.size(); x++){
-              list.add(word.subString(i, x));
+              list.add(word.substring(i, x));
       }    
     }
     return list;
