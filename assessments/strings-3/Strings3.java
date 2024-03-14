@@ -63,8 +63,19 @@ public class Strings3 {
   }
   public ArrayList<Integer> numbers(String word){
      ArrayList<Integer> list = new ArrayList<>();
-    String num = "69";
-    System.err.println(Integer.parseInt(num) + 2);
+     String currentNum = "";
+    for (int i = 0; i < word.length(); i++){
+      if (isDigit(word.substring(i, i+1))){
+        currentNum = currentNum + word.substring(i, i+1);
+      } else{
+        list.add(Integer.parseInt(currentNum));
+        currentNu = "";
+      }
+    }
     return list;
   }
 }
+
+
+    // String num = "69";
+    // System.err.println(Integer.parseInt(num) + 2);
