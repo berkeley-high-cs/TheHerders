@@ -72,6 +72,8 @@ public class Strings3 {
         currentNum = "";
       }
     }
+    list.add(Integer.parseInt(currentNum));
+
     return list;
   }
 }
