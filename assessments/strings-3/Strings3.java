@@ -45,7 +45,7 @@ public class Strings3 {
   public ArrayList<String> allSubstrings(String word){
     ArrayList<String> list = new ArrayList<>();
     for (int i = 0; i < word.length(); i++){
-      for (int x = i + 1; x < word.length(); x++){
+      for (int x = i + 1; x <= word.length(); x++){
               list.add(word.substring(i, x));
       }    
     }
