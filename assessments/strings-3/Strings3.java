@@ -22,4 +22,11 @@ public class Strings3 {
     return newWord;
     
   }
+  public String join (ArrayList<String> list, String delimiter){
+    String joint = "";
+    for (int i = 0; i < list.size(); i++){
+      joint = joint + list.get(i) + delimiter;
+    }
+    return joint;
+  }
 }
