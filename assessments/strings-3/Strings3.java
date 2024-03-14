@@ -42,4 +42,8 @@ public class Strings3 {
     }
     return true;
   }
+  public ArrayList<String> allSubstrings(String word){
+    ArrayList<> list = new ArrayList<String>();
+    return list;
+  }
 }
