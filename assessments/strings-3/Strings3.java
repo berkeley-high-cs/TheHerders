@@ -34,4 +34,10 @@ public class Strings3 {
     }
     return joint;
   }
+  public boolean isSorted(isSorted[String] list){
+    for (int i = 0; i < list; i++){
+
+    }
+    return true;
+  }
 }
