@@ -69,7 +69,7 @@ public class Strings3 {
         currentNum = currentNum + word.substring(i, i+1);
       } else{
         list.add(Integer.parseInt(currentNum));
-        currentNu = "";
+        currentNum = "";
       }
     }
     return list;
