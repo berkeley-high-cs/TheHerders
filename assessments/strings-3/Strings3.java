@@ -64,7 +64,7 @@ public class Strings3 {
   public ArrayList<Integer> numbers(String word){
      ArrayList<Integer> list = new ArrayList<>();
     String num = "69";
-    System.err.println(num(int) + 2);
+    System.err.println(num.toInt() + 2);
     return list;
   }
 }
