@@ -79,6 +79,21 @@ public class Strings3 {
 
     return list;
   }
+  public String runLengthDecode(String word){
+    String currentLetter = "";
+    String decoded = "";
+    for (int i = 0; i < word.length(); i++){
+      if (isDigit(word.substring(i, i + 1))){
+        for (int i = 0; i < Integer.parseInt(word.substring(i, i + 1)); i++){
+          decoded = decoded + currentLetter;
+        }
+        currentLetter = "";
+      } else {
+        currentLetter = word.substring(i, i + 1);
+      }
+    }
+    return decoded;
+  }
 }
 
 
