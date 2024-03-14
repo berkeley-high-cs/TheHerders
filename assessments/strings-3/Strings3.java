@@ -67,7 +67,7 @@ public class Strings3 {
     for (int i = 0; i < word.length(); i++){
       if (isDigit(word.substring(i, i+1))){
         currentNum = currentNum + word.substring(i, i+1);
-      } else{
+      } else if(!currentNum.equals("")){
         list.add(Integer.parseInt(currentNum));
         currentNum = "";
       }
