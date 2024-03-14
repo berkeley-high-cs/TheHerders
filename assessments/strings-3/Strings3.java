@@ -25,7 +25,7 @@ public class Strings3 {
   public String join (ArrayList<String> list, String delimiter){
     String joint = "";
     for (int i = 0; i < list.size(); i++){
-      if (i = list.size() - 1){
+      if (i == list.size() - 1){
         joint = joint + list.get(i);
       } else {
         joint = joint + list.get(i) + delimiter;
