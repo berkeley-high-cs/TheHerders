@@ -72,7 +72,10 @@ public class Strings3 {
         currentNum = "";
       }
     }
-    list.add(Integer.parseInt(currentNum));
+    if (!currentNum.equals("")){
+          list.add(Integer.parseInt(currentNum));
+    }
+
 
     return list;
   }
