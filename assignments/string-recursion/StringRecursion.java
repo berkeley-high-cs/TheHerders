@@ -5,7 +5,7 @@ public class StringRecursion {
       return 0;
     } else {
       String lessWord = word.substring(1);
-      return length(lessWord);
+      return length(lessWord) + 1;
     }
   }
 }
