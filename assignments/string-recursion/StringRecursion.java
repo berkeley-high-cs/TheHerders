@@ -11,11 +11,11 @@ public class StringRecursion {
     if (word.isEmpty()){
       return 0;
     } 
-    String letter = word.substring(0, 1);
-    if(letter.equals("x")){
+    String lessWord = word.substring(1);
+    if (lessWord.substring(0, 1).equals("x")){
       return 1;
     } else {
-      return countXs(word.substring(1, 2));
+      return countXs(lessWord);
     }
   }
 }
