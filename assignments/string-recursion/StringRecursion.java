@@ -4,8 +4,10 @@ public class StringRecursion {
     if (word.isEmpty()){
       return 0;
     } else {
-      String lessWord = word.substring(1);
-      return length(lessWord) + 1;
+      return length(word.substring(1)) + 1;
     }
+  }
+  public int countXs(String word){
+
   }
 }
