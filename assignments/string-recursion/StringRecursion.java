@@ -10,10 +10,10 @@ public class StringRecursion {
   public int countXs(String word){
     if (word.isEmpty()){
       return 0;
-    } else if(!word.contains("x")){
+    } else if(word.equals("x")){
       return 1;
     } else {
-      return countXs(word.substring(1)) + 1;
+      return countXs(word.substring(1));
     }
   }
 }
