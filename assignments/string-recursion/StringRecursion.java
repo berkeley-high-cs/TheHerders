@@ -15,7 +15,7 @@ public class StringRecursion {
     if (lessWord.substring(0, 1).equals("x")){
       return 1;
     } else {
-      return countXs(lessWord);
+      return countXs(lessWord) + 1;
     }
   }
 }
