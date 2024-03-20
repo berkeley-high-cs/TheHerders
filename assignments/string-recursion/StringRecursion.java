@@ -13,7 +13,7 @@ public class StringRecursion {
     } else if(word.equals("x")){
       return 1;
     } else {
-      return countXs(word.substring(1));
+      return countXs(word.substring(1)) + 1;
     }
   }
 }
