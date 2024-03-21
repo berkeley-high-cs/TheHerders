@@ -34,12 +34,10 @@ public class ListRecursion {
   public boolean allEven(ArrayList<Integer> list){
     if (list.size() == 0){
       return true;
+    } else{
+     return list.get(0) % 2 == 0;
     }
-    if(list.size() == 1){
-      return list.get(0) % 2 == 0;
-    } else {
-      return allEven(rest(list));
-    }
+  
   }
 
 }
