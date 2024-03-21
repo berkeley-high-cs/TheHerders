@@ -12,6 +12,9 @@ public class ListRecursion {
     return new ArrayList<>(list.subList(1, list.size()));
   }
   public int sum(ArrayList<Integer> list){
+    if (list.size() == 0){
+      return 0;
+    }
     if(list.size() == 1){
       return list.get(0);
     } else {
