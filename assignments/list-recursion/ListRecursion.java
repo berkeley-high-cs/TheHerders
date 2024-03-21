@@ -34,8 +34,9 @@ public class ListRecursion {
   public boolean allEven(ArrayList<Integer> list){
     if (list.size() == 0){
       return true;
-    } else{
-     return list.get(0) % 2 == 0;
+    } 
+    else if (list.get(0) % 2 == 0){
+     return allEven(rest(list));
     }
   
   }
