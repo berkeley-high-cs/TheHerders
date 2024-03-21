@@ -11,48 +11,40 @@ public class ListRecursion {
   private ArrayList<Integer> rest(ArrayList<Integer> list) {
     return new ArrayList<>(list.subList(1, list.size()));
   }
-  public int sum(ArrayList<Integer> list){
-    if (list.size() == 0){
+
+  public int sum(ArrayList<Integer> list) {
+    if (list.size() == 0) {
       return 0;
-    }
-    if(list.size() == 1){
-      return list.get(0);
     } else {
       return sum(rest(list)) + list.get(0);
     }
   }
-  public int product(ArrayList<Integer> list){
-    if (list.size() == 0){
+
+  public int product(ArrayList<Integer> list) {
+    if (list.size() == 0) {
       return 1;
-    }
-    if(list.size() == 1){
-      return list.get(0);
     } else {
       return product(rest(list)) * list.get(0);
     }
   }
-  public boolean allEven(ArrayList<Integer> list){
-    if (list.size() == 0){
+
+  public boolean allEven(ArrayList<Integer> list) {
+    if (list.size() == 0) {
       return true;
-    } 
-    else if (list.get(0) % 2 == 0){
-     return allEven(rest(list));
+    } else if (list.get(0) % 2 == 0) {
+      return allEven(rest(list));
     } else {
       return false;
     }
-  
   }
-  public boolean someEven(ArrayList<Integer> list){
-    if (list.size() == 0){
+
+  public boolean someEven(ArrayList<Integer> list) {
+    if (list.size() == 0) {
       return false;
-    } 
-    else if (list.get(0) % 2 == 0){
-     return true;
+    } else if (list.get(0) % 2 == 0) {
+      return true;
     } else {
       return someEven(rest(list));
     }
-  
   }
-
-
 }
