@@ -15,7 +15,7 @@ public class ListRecursion {
     if(list.size() == 1){
       return list.get(0);
     } else {
-      return sum(rest(list));
+      return sum(rest(list)) + list.get(0);
     }
   }
 
