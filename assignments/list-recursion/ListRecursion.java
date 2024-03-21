@@ -21,5 +21,15 @@ public class ListRecursion {
       return sum(rest(list)) + list.get(0);
     }
   }
+  public int product(ArrayList<Integer> list){
+    if (list.size() == 0){
+      return 0;
+    }
+    if(list.size() == 1){
+      return list.get(0);
+    } else {
+      return product(rest(list)) * list.get(0);
+    }
+  }
 
 }
