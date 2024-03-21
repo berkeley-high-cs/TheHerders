@@ -23,12 +23,22 @@ public class ListRecursion {
   }
   public int product(ArrayList<Integer> list){
     if (list.size() == 0){
-      return 0;
+      return 1;
     }
     if(list.size() == 1){
       return list.get(0);
     } else {
       return product(rest(list)) * list.get(0);
+    }
+  }
+  public boolean allEven(ArrayList<Integer> list){
+    if (list.size() == 0){
+      return true;
+    }
+    if(list.size() == 1){
+      return list.get(0) % 2 == 0;
+    } else {
+      return allEven(rest(list));
     }
   }
 
