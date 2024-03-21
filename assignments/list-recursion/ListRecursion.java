@@ -37,6 +37,8 @@ public class ListRecursion {
     } 
     else if (list.get(0) % 2 == 0){
      return allEven(rest(list));
+    } else {
+      return false;
     }
   
   }
