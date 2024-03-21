@@ -14,8 +14,10 @@ public class ListRecursion {
 
   public int sum(ArrayList<Integer> list) {
     if (list.size() == 0) {
+      System.err.println("running sum, returning 0");
       return 0;
     } else {
+      System.err.println("running sum again with value: " +  list.get(0));
       return sum(rest(list)) + list.get(0);
     }
   }
