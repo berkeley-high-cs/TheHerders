@@ -42,5 +42,17 @@ public class ListRecursion {
     }
   
   }
+  public boolean someEven(ArrayList<Integer> list){
+    if (list.size() == 0){
+      return false;
+    } 
+    else if (list.get(0) % 2 == 0){
+     return true;
+    } else {
+      return someEven(rest(list));
+    }
+  
+  }
+
 
 }
