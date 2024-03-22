@@ -16,7 +16,7 @@ public class RomanNumerals {
     }
     String lessNum = num.substring(1);
     String firstDigit = num.substring(0, 1);
-    if (fromRomanDigit(firstDigit) >= fromRomanDigit(lessNum.substring(0, 1))) {
+    if (fromRomanDigit(firstDigit) >= fromRomanDigit(num.substring(1, 2))) {
       return fromRomanDigit(firstDigit) + decode(lessNum);
     } else { 
       return decode(lessNum) - fromRomanDigit(firstDigit);
