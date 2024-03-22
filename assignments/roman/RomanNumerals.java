@@ -9,17 +9,15 @@ public class RomanNumerals {
   private int fromRomanDigit(String s) {
     return ROMAN_VALUES[ROMAN_DIGITS.indexOf(s)];
   }
-  public int decode(String num){
-    
-    if (num.isEmpty()){
+
+  public int decode(String num) {
+    if (num.isEmpty()) {
       return 0;
-    } 
-     String lessNum = num.substring(1);
-     String firstDigit = num.substring(0,1);
-     else if (fromRomanDigit(firstDigit) >= fromRomanDigit(lessNum.substring(0, 1))){
-     
+    }
+    String lessNum = num.substring(1);
+    String firstDigit = num.substring(0, 1);
+    if (fromRomanDigit(firstDigit) >= fromRomanDigit(lessNum.substring(0, 1))) {
       return fromRomanDigit(firstDigit) + decode(lessNum);
     }
   }
-
 }
