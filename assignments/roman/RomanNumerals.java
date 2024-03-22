@@ -11,7 +11,7 @@ public class RomanNumerals {
   }
   public int decode(String num){
      String lessNum = num.substring(1);
-     int firstDigit = num.substring(0,1);
+     String firstDigit = num.substring(0,1);
     if (num.isEmpty()){
       return 0;
     } else {
