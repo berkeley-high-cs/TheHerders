@@ -18,6 +18,8 @@ public class RomanNumerals {
     String firstDigit = num.substring(0, 1);
     if (fromRomanDigit(firstDigit) >= fromRomanDigit(lessNum.substring(0, 1))) {
       return fromRomanDigit(firstDigit) + decode(lessNum);
+    } else { 
+      return decode(lessNum) - fromRomanDigit(firstDigit);
     }
   }
 }
