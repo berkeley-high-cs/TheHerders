@@ -10,12 +10,13 @@ public class RomanNumerals {
     return ROMAN_VALUES[ROMAN_DIGITS.indexOf(s)];
   }
   public int decode(String num){
-    
+     String lessNum = num.substring(1);
+     int firstDigit = num.substring(0,1);
     if (num.isEmpty()){
       return 0;
     } else {
-      String lessNum = num.substring(1);
-      return fromRomanDigit(lessNum) + decode(lessNum);
+     
+      return fromRomanDigit(firstDigit) + decode(lessNum);
     }
   }
 
