@@ -9,5 +9,13 @@ public class RomanNumerals {
   private int fromRomanDigit(String s) {
     return ROMAN_VALUES[ROMAN_DIGITS.indexOf(s)];
   }
+  public int decode(String num){
+    String lessNum = num.substring(1);
+    if (num.isEmpty()){
+      return 0;
+    } else {
+      return fromRomanDigit(lessNum) + decode(lessNum);
+    }
+  }
 
 }
