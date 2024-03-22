@@ -13,9 +13,11 @@ public class RomanNumerals {
     
     if (num.isEmpty()){
       return 0;
-    } else {
-      String lessNum = num.substring(1);
+    } 
+     String lessNum = num.substring(1);
      String firstDigit = num.substring(0,1);
+     else if (fromRomanDigit(firstDigit) >= fromRomanDigit(lessNum.substring(0, 1))){
+     
       return fromRomanDigit(firstDigit) + decode(lessNum);
     }
   }
