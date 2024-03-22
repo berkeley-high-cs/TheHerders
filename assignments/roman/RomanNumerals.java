@@ -14,7 +14,7 @@ public class RomanNumerals {
     if (num.isEmpty()) {
       return 0;
     } else if (num.length() == 1){
-      return fromRomanDigit
+      return fromRomanDigit(num);
     }
     String lessNum = num.substring(1);
     String firstDigit = num.substring(0, 1);
