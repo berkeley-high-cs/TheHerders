@@ -7,6 +7,7 @@ public class Quicksort {
     }
     
     if (isSorted(list)){
+      System.err.println(isSorted(list));
       return list;
     }
     int pivot = list.get(0);
