@@ -27,10 +27,10 @@ public class Quicksort {
   public boolean isSorted(ArrayList<Integer> list){
     for (int i = 1; i < list.size(); i++){
       if (list.get(i) > list.get(i - 1)){
-        return false;
+        return true;
       }
     }
-    return true;
+    return false;
   }
 
 
