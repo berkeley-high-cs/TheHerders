@@ -21,10 +21,10 @@ public class Quicksort {
         smallList.add(list.get(i));
       }
     }
-    finalList.addAll(smallList);
+    finalList.addAll(quicksort(smallList));
     finalList.add(pivot);
-    finalList.addAll(bigList);
-    return quicksort(finalList);
+    finalList.addAll(quicksort(bigList));
+    return finalList;
   }
   public boolean isSorted(ArrayList<Integer> list){
     for (int i = 1; i < list.size(); i++){
