@@ -25,7 +25,7 @@ public class Quicksort {
     finalList.add(pivot);
     finalList.addAll(quicksort(bigList));
     return finalList;
-  // }
+  }
   // public boolean isSorted(ArrayList<Integer> list){
   //   for (int i = 1; i < list.size(); i++){
   //     if (!(list.get(i) > list.get(i - 1))){
