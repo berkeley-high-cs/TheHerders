@@ -2,9 +2,10 @@ import java.util.*;
 
 public class Quicksort {
   public ArrayList<Integer> quicksort(ArrayList<Integer> list){
-    if (list.size() == 0){
+    if (list.size() == 0 || list.size() == 1){
       return list;
     }
+    
     if (isSorted(list)){
       return list;
     }
