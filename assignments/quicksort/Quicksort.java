@@ -5,6 +5,9 @@ public class Quicksort {
     if (list.size() == 0){
       return list;
     }
+    if (isSorted(list)){
+      return list;
+    }
     int pivot = list.get(0);
     ArrayList<Integer> smallList = new ArrayList<>();
     ArrayList<Integer> bigList = new ArrayList<>();
@@ -19,7 +22,15 @@ public class Quicksort {
     finalList.addAll(smallList);
     finalList.add(pivot);
     finalList.addAll(bigList);
-    return finalList;
+    return quickSort(finalList);
+  }
+  public boolean isSorted(ArrayList<Integer> list){
+    for (int i = 1; i < list.size(); i++){
+      if (list.get(i) > list.get(i - 1)){
+        return false;
+      }
+    }
+    return true;
   }
 
 
