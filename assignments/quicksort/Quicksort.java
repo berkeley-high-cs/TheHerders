@@ -22,7 +22,7 @@ public class Quicksort {
     finalList.addAll(smallList);
     finalList.add(pivot);
     finalList.addAll(bigList);
-    return quickSort(finalList);
+    return quicksort(finalList);
   }
   public boolean isSorted(ArrayList<Integer> list){
     for (int i = 1; i < list.size(); i++){
