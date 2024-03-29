@@ -1,3 +1,3 @@
 [
-  "public Bank {\n  private int maxAccountNumber = 0;\n  public int getNextAccountNumber(){\n    addMaxAccount();\n    return \n  }\n  public void addMaxAccount(){\n    maxAccoutNumber += 1;\n  }\n  \n}\n\n  \n\n\n\n"
+  "import java.util.*;\n\npublic Bank {\n  public int maxAccountNumber = 0;\n  public ArrayList<Account> listOfAccounts = new ArrayList<>();\n  public int getNextAccountNumber(){\n    addMaxAccount();\n    return maxAccountNumber;\n  }\n  public void addMaxAccount(){\n    maxAccoutNumber += 1;\n  }\n  public void addAcount(Account account){\n    listOfAccount.add(account);\n  }\n  \n}\n\n  \n\n\n\n"
 ]
