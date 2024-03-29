@@ -1,0 +1,3 @@
+[
+  "public Bank {\n  private int maxAccountNumber = 0;\n  public int getNextAccountNumber(){\n    addMaxAccount();\n    return \n  }\n  public void addMaxAccount(){\n    maxAccoutNumber += 1;\n  }\n  \n}\n\n  \n\n\n\n"
+]
