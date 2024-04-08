@@ -7,7 +7,7 @@ public class TreeSize {
       return tree.size();
     } else {
       for (int i = 0; i < tree.children().size(); i++){
-        totalTree += tree.size() + recursive(tree.children().get(i));
+        totalTree += recursive(tree.children().get(i));
       }
    return totalTree;
    }
