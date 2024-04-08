@@ -8,6 +8,7 @@ public class TreeSize {
       for (int i = 0; i < tree.children().size(); i++){
         return recursive(tree.children().get(i));
       }
-    }
+   
+   return -1000000000; }
   }
 }
