@@ -19,9 +19,14 @@ public class TreeSize {
     if (tree.children().isEmpty()){
       return tree.size();
     }
+    
     for (int i = 0; i < tree.children().size(); i++){
       forest.add(tree.children().get(i));
+      if (!forest.get(i).isEmpty()){
+        forest.add(forest.get(i).children().get(i));
+      }
     }
+
     for (int x = 0; x < forest.size(); x++){
       totalTree += forest.get(x).size();
     }
