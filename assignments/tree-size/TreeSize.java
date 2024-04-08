@@ -13,4 +13,15 @@ public class TreeSize {
    }
 
   }
+  public int iterative(Tree tree){
+    ArrayList forest = new ArrayList<Tree>();
+    int totalTrees = 0;
+    for (int i = 0; i < tree.children(); i++){
+      forest.add(tree.children().get(i));
+    }
+    for (int x = 0; x < forest.size(); x++){
+      totalTree += forest.get(i);
+    }
+    return totalTree;
+  }
 }
