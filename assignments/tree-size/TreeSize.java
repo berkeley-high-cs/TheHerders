@@ -9,6 +9,6 @@ public class TreeSize {
         return recursive(tree.children().get(i));
       }
    
-   return -1000000000; }
+   return -2147483648; }
   }
 }
