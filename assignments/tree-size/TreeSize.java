@@ -9,5 +9,6 @@ public class TreeSize {
         return recursive(tree.children().get(i));
       }
     }
+    return tree.size();
   }
 }
