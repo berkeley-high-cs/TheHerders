@@ -11,6 +11,6 @@ public class TreeSize {
       }
    return totalTree;
    }
-    return -2147483648;
+
   }
 }
