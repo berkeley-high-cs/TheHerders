@@ -20,7 +20,7 @@ public class TreeSize {
       forest.add(tree.children().get(i));
     }
     for (int x = 0; x < forest.size(); x++){
-      totalTree += forest.get(i);
+      totalTree += forest.get(x);
     }
     return totalTree;
   }
