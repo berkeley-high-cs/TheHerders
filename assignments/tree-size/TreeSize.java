@@ -15,7 +15,7 @@ public class TreeSize {
   }
   public int iterative(Tree tree){
     ArrayList forest = new ArrayList<Tree>();
-    int totalTrees = 0;
+    int totalTree = 0;
     for (int i = 0; i < tree.children().size(); i++){
       forest.add(tree.children().get(i));
     }
