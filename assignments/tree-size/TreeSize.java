@@ -21,7 +21,7 @@ public class TreeSize {
     if (tree.children().isEmpty()) {
       return tree.size();
     }
-
+    forest.add(tree);
     for (int i = 0; i < tree.children().size(); i++) {
       forest.add(tree.children().get(i));
 
