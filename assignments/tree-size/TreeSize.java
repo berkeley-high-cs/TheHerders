@@ -24,12 +24,22 @@ public class TreeSize {
     for (int i = 0; i < tree.children().size(); i++) {
       forest.add(tree.children().get(i));
       while (!forest.get(forest.size() - 1).children().isEmpty()) {
-        for (int x = 0; x < forest.get(forest.size() - 1).children().size(); x++){
-                  forest.add(forest.size() - 2, forest.get(forest.size() - 1).children().get(x));
+        for (
+          int x = 0;
+          x < forest.get(forest.size() - 1).children().size();
+          x++
+        ) {
+          forest.add(
+            forest.size() - 2,
+            forest.get(forest.size() - 1).children().get(x)
+          );
         }
-
       }
     }
+    for (int x = 0; x < forest.size(); x++) {
+      totalTree += forest.get(x).size();
+    }
+    return totalTree;
   }
 }
 //
