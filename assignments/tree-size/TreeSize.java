@@ -40,7 +40,7 @@ public class TreeSize {
   }
    public void printArray(ArrayList<Tree> list){
       for (int i = 0; i < list.size(); i++){
-          System.out.println(list.get(i).size());
+          System.err.println(list.get(i).size());
       }
   }
 }
