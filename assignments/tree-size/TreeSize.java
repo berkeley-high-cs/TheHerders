@@ -23,18 +23,32 @@ public class TreeSize {
 
     for (int i = 0; i < tree.children().size(); i++) {
       forest.add(tree.children().get(i));
-      if (!forest.get(i).children().isEmpty()) {
-        while (!forest.get(forest.size() - 1).children().isEmpty()) {
-          for (int y = 0; y < forest.get(forest.size() - 1).children().size(); y++) {
-            forest.add(forest.get(forest.size() - 1).children().get(y));
-          }
+      while (!forest.get(forest.size() - 1).children().isEmpty()) {
+        for (int x = 0; x < forest.get(forest.get(forest.size() - 1)).children().size){
+                  forest.add(forest.size() - 2, forest.get(forest.size() - 1).children().get(x))
         }
+
       }
     }
-
-    for (int x = 0; x < forest.size(); x++) {
-      totalTree += forest.get(x).size();
-    }
-    return totalTree;
   }
 }
+//
+//   ArrayList<Tree> forest = new ArrayList<>();
+//     int totalTree = 0;
+//     if (tree.children().isEmpty()) {
+//       return tree.size();
+//     }
+//     for (int i = 0; i < tree.children().size(); i++) {
+//       forest.add(tree.children().get(i));
+//       if (!forest.get(i).children().isEmpty()) {
+//         while (!forest.get(forest.size() - 1).children().isEmpty()) {
+//           for (int y = 0; y < forest.get(forest.size() - 1).children().size(); y++) {
+//             forest.add(forest.get(forest.size() - 1).children().get(y));
+//           }
+//         }
+//       }
+//     }
+//     for (int x = 0; x < forest.size(); x++) {
+//       totalTree += forest.get(x).size();
+//     }
+//     return totalTree;
