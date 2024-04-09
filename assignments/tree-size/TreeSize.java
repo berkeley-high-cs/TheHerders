@@ -15,6 +15,7 @@ public class TreeSize {
   }
 
   public int iterative(Tree tree) {
+    System.err.println("/////////////////////////////////");
     ArrayList<Tree> forest = new ArrayList<>();
     int totalTree = 0;
     if (tree.children().isEmpty()) {
@@ -24,7 +25,7 @@ public class TreeSize {
     for (int i = 0; i < tree.children().size(); i++) {
       forest.add(tree.children().get(i));
       while (!forest.get(forest.size() - 1).children().isEmpty()) {
-        for (int x = 0;x < forest.get(forest.size() - 1).children().size();x++) {
+        for (int x = 0; x < forest.get(forest.size() - 1).children().size(); x++) {
           forest.add(forest.size(),forest.get(forest.size() - 1).children().get(x));
         }
       }
@@ -33,6 +34,11 @@ public class TreeSize {
       totalTree += forest.get(x).size();
     }
     return totalTree;
+  }
+   public void printArray(ArrayList<Tree> list){
+      for (int i = 0; i < list.size(); i++){
+          System.out.println(list.get(i).size());
+      }
   }
 }
 //
