@@ -27,7 +27,9 @@ public class TreeSize {
       while (!forest.get(forest.size() - 1).children().isEmpty()) {
         for (int x = 0; x < forest.get(forest.size() - 1).children().size(); x++) {
           forest.add(forest.size(),forest.get(forest.size() - 1).children().get(x));
+          
         }
+        printArray(forest);
       }
     }
     for (int x = 0; x < forest.size(); x++) {
