@@ -19,7 +19,7 @@ public class TreeSize {
     int totalTree = 0;
     forest.add(tree);
     while (forest.size() != 0){
-      forest.addAll(forest.get(0).children);
+      forest.addAll(forest.get(0).children());
       totalTree += forest.get(0).size();
       forest.remove(0);
     }
