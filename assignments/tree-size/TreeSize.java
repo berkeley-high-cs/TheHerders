@@ -22,7 +22,7 @@ public class TreeSize {
       return tree.size();
     }
     forest.add(tree);
-    for (int i = 0; i < tree.children().size(); i++) {
+    for (int i = 0; i < forest.get(i).children().size(); i++) {
       forest.add(tree.children().get(i));
 
       while (!forest.get(forest.size() - 1).children().isEmpty()) {
