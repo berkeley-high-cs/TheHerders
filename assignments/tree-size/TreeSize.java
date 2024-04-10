@@ -17,19 +17,12 @@ public class TreeSize {
   public int iterative(Tree tree) {
     ArrayList<Tree> forest = new ArrayList<>();
     int totalTree = 0;
-    if (tree.children().isEmpty()) {
-      return tree.size();
-    }
     forest.add(tree);
-    for (int i = 0; i < forest.size(); i++) {
-      for (int j = 0; j < forest.get(i).children().size(); j++) {
-        forest.add(tree.children().get(i));
-      }
+    while (forest.size() != 0){
+      forest.addAll(forest.get(0).children);
+      totalTree += forest.get(0).size();
+      forest.remove(0);
     }
-    for (int x = 0; x < forest.size(); x++) {
-      totalTree += forest.get(x).size();
-    }
-    return totalTree;
   }
 
   public void printArray(ArrayList<Tree> list) {
