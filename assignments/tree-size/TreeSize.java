@@ -23,6 +23,7 @@ public class TreeSize {
       totalTree += forest.get(0).size();
       forest.remove(0);
     }
+    return totalTree;
   }
 
   public void printArray(ArrayList<Tree> list) {
