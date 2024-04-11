@@ -1,4 +1,4 @@
 [
   "public int findFreeBlock(int period, int minutes){\n  int consecutiveFreeMinutes = 0;\n  for (int i = 0; i < 59 - minutes; i++){\n     if (isMinuteFree(period, minutes)){\n      consecutiveFreeMinutes++;\n    } \n    if (consecutiveFreeMinutes == minutes){\n      return i;\n    } else {\n      consecutiveFreeMinutes = 0;\n    }\n  }\n \n  return -1;\n}\n\n\n\n\n\n",
-  "public boolean makeAppointment(int startPeriod, int endPeriod, int duration){\n  for (int i = startPeriod; i < endPeriod; i++){\n    if (findFreeBlock(i, duration) != -1){\n      reserveBlock(i, duration);\n      return true\n    }\n  }\n  return false;\n} \n\n\n\n\n\n"
+  "public boolean makeAppointment(int startPeriod, int endPeriod, int duration){\n  for (int i = startPeriod; i < endPeriod; i++){\n    if (findFreeBlock(i, duration) != -1){\n      reserveBlock(i, findFreeBlock(i, duration), duration);\n      return true\n    }\n  }\n  return false;\n} \n\n\n\n\n\n"
 ]
