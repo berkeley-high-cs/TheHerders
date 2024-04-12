@@ -1,3 +1,3 @@
 [
-  "public class Sign {\n\n  String text;\n  int width;\n\n  public Sign(String text, int width) {\n    this.text = text;\n    this.width = width;\n  }\n  public int numberOfLines(){\n    return this.width % this.text.length();\n  }\n  \n  \n}\n"
+  "public class Sign {\n\n  String text;\n  int width;\n\n  public Sign(String text, int width) {\n    this.text = text;\n    this.width = width;\n  }\n  public int numberOfLines(){\n    return this.width % this.text.length();\n  }\n  public \n  \n}\n"
 ]
