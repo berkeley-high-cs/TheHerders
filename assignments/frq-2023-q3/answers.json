@@ -1,3 +1,3 @@
 [
-  "public void cleanData(double lowest, double highest){\n  for (int i = 0; i < temperatures.size(); i++){\n    if (temperatures.get(i) > highest || temperatures.get(i) < lowest){\n      temperatures.remove(i);\n    }\n  }\n}\n\n\n\n\n\n"
+  "public void cleanData(double lowest, double highest){\n  for (int i = 0; i < temperatures.size(); i++){\n    if (temperatures.get(i) > highest || temperatures.get(i) < lowest){\n      temperatures.remove(i);\n      i--;\n    }\n  }\n}\n\n\n\n\n\n"
 ]
