@@ -1,5 +1,5 @@
 [
-  "public Expression {\n  public int precedence;\n  public void Expression(int precendence){\n    this.precendence = precendence;\n  }\npublic double evaluate(){\n  return Double.NaN;\n}\npublic boolean higherPrecendanceThan(Expression expression){\n  return this.precedence > expression.precendence;\n}\n}\n\n\n\n\n\n",
+  "public Expression {\n  public int precedence;\n  public Expression(int precendence){\n    this.precendence = precendence;\n  }\npublic double evaluate(){\n  return Double.NaN;\n}\npublic boolean higherPrecendanceThan(Expression expression){\n  return this.precedence > expression.precendence;\n}\n}\n\n\n\n\n\n",
   "public Number extends Expression{\n  private double value;\n  public Number(double value){\n    super(1);\n    this.value = value;\n  }\n  public double evaluate(){\n    return value;\n  }\n  public String toString(){\n    return \"\" + value;\n  }\n}\n\n\n\n\n\n",
   "public BinaryOperator{\n  public BinaryOperator(){\n    \n  }\n}\n\n\n\n\n\n"
 ]
