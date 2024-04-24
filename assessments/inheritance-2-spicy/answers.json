@@ -1,0 +1,3 @@
+[
+  "public Expression {\n  int precedence;\n  public void Expression(int precendence){\n    this.precendence = precendence;\n  }\npublic double evaluate(){\n  return Double.NaN;\n}\npublic boolean higherPrecendanceThan()\n}\n\n\n\n\n\n"
+]
