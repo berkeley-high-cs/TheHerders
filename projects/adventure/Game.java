@@ -5,33 +5,46 @@ public class Game {
     public Game(){
         for (int y = 0; y < 3; y++){
             for (int x = 0; x < 3; x++){
-                map[y][x] = new Room("letter in the form of words together");
+                map[y][x] = new Room("You are in a grand hall way, with halls to each and every side");
             } 
         }
     }
     public static void main(String[] args){
-        Player player = new Player(map[1][1]);
         Game game = new Game();
-        System.out.println("submit choice as always being of the form VERB NOUN like, “TAKE SWORD”, “EAT FOOD”, etc.");
+        Player player = new Player(map[1][1]);
+        game.startShow();
         game.gameLoop(player);
     }
     public void gameLoop(Player player){
         player.getLocation().look();
+        getPlayerChoiceName(player);
         
     }
-    public String getPlayerChoice(){
+    public String getPlayerChoiceName(Player player){ // change for gui
         System.out.println("What do you want to do?");
+        System.out.println(" "); // for formatting
         Scanner scanner = new Scanner(System.in);
-        String choice = scanner.nextLine();
-        if (isUnderstood(choice)){
+        String choice = scanner.nextLine().toUpperCase();
+        if (isUnderstood(choice, player.getLocation())){
             return choice;
         } else {
             System.out.println("Sorry, I didnt understand that, please try again");
-            getPlayerChoice();
+            System.out.println(" "); // for formatting
+            getPlayerChoiceName(player);
         }
         return null; // should never be able to run this
     }
-    public boolean isUnderstood(String choice){
-        return false; //placeholder for future
+    public boolean isUnderstood(String choiceName, Room location){
+        if (location.hasChoice(choiceName)){
+            return true;
+        } else {
+            return false; 
+        }
+        //placeholder for future
+    }
+    public void startShow(){ //change for gui
+        System.out.print("\033[2J\033[1;1H");
+        System.out.println("submit choice as always being of the form VERB NOUN like, “TAKE SWORD”, “EAT FOOD”, etc.");
+        System.out.println(" "); // for formatting
     }
 }
