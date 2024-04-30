@@ -3,11 +3,10 @@ import java.util.Scanner;
 public class Game {
     public static Room[][] map = new Room[3][3];
     public Game(){
-        for (int y = 0; y < 3; y++){
-            for (int x = 0; x < 3; x++){
-                map[y][x] = new Room("You are in a grand hall way, with halls to each and every side");
-            } 
-        }
+       map[0][0] = new Room ("You see a butchering table, with assorted meat on top. You see a hallway to the east."); //choices take meat, then add description where key is below meat. move east
+       map[0][1] = new Room ("You see a locked chest in the middle of the room. You see a hallway to the west, with a foul smell coming from inside. You see a hallway south."); //try to open chest, or use key if they have it
+       map[0][2] = new Room(""); //no room
+       m
     }
     public static void main(String[] args){
         Game game = new Game();
