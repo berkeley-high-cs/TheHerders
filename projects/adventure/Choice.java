@@ -1,14 +1,15 @@
 public class Choice {
     private String choiceName;
-    private String consequence; //format should be add "item" to inventory, move player left, and consistent
-    public Choice(String choiceName, String consequence){
+    public Choice(String choiceName){
         this.choiceName = choiceName;
-        this.consequence = consequence;
     }
-    public String getConsequence(){
-        return consequence;
-    }
+
     public String getName(){
         return choiceName;
     }
+    public void callConsequence(Player player){
+        System.out.println("you arent really supposed to call me, callConsequence");
+        return; //just for other methods to change
+    }
+  
 }

@@ -17,22 +17,23 @@ public class Game {
     }
     public void gameLoop(Player player){
         player.getLocation().look();
-        getPlayerChoiceName(player);
+        player.getLocation().callChoiceConsequence(getPlayerChoiceName(player), player);
         
     }
     public String getPlayerChoiceName(Player player){ // change for gui
         System.out.println("What do you want to do?");
         System.out.println(" "); // for formatting
         Scanner scanner = new Scanner(System.in);
-        String choice = scanner.nextLine().toUpperCase();
-        if (isUnderstood(choice, player.getLocation())){
-            return choice;
+        String choiceName = scanner.nextLine().toLowerCase();
+        if (isUnderstood(choiceName, player.getLocation())){
+           return choiceName;
         } else {
+            System.out.println(" "); // for formatting
             System.out.println("Sorry, I didnt understand that, please try again");
             System.out.println(" "); // for formatting
             getPlayerChoiceName(player);
         }
-        return null; // should never be able to run this
+         return null;// should never be able to run this
     }
     public boolean isUnderstood(String choiceName, Room location){
         if (location.hasChoice(choiceName)){

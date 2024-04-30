@@ -5,6 +5,7 @@ public class Room {
     private ArrayList<Choice> choices = new ArrayList<Choice>();
     public Room(String description){
         this.description = description;
+        choices.add(new Look()); 
     }
     public void look(){
         System.out.println(description);
@@ -26,5 +27,15 @@ public class Room {
             }
         }
         return false;
+    }
+    public ArrayList<Choice> getChoices(){
+        return choices;
+    }
+    public void callChoiceConsequence(String choiceName, Player player){ //pre requisite, choice name must be in choices
+        for (int i = 0; i < choices.size(); i++){
+            if (choices.get(i).getName().equals(choiceName)){
+                choices.get(i).callConsequence(player);
+            }
+        }
     }
 }

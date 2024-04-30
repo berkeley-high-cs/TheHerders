@@ -5,19 +5,21 @@ public class Player {
     private Room location;
     public Player(Room startingRoom){
         this.location = startingRoom;
+
     }
     public ArrayList<String> getInventory(){ // for code
         return inventory;
     }
-    public void lookAtInventory(){ //for player
-        System.out.println("Your inventory includes: ");
-        for (int i = 0; i < inventory.size(); i++){
-            System.out.println(inventory.get(i));
-        }
-    }
-    public void look(){ // for player
-        System.out.println(location.getDescription());
-    }
+    // these are choices and should be added to room as basic always avalible actions
+    // public void lookAtInventory(){ //for player
+    //     System.out.println("Your inventory includes: ");
+    //     for (int i = 0; i < inventory.size(); i++){
+    //         System.out.println(inventory.get(i));
+    //     }
+    // } 
+    // public void look(){ // for player
+    //     System.out.println(location.getDescription());
+    // }
     public Room getLocation(){
         return location;
     }
