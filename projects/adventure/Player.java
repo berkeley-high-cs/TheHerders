@@ -33,4 +33,7 @@ public class Player {
             }
         }
     }
+    public void changeLocation(Room newLocation){
+        this.location = newLocation;
+    }
 }
