@@ -4,15 +4,25 @@ public class Game {
     private static boolean end = false;
     public static Room[][] map = new Room[3][3];
     public Game(){
-       map[0][0] = new Room ("You see a butchering table, with assorted meat on top. You see a hallway to the east."); //choices take meat, then add description where key is below meat. move east
-       map[0][1] = new Room ("You see a locked chest in the middle of the room. You see a hallway to the west, with a foul smell coming from inside. You see a hallway south."); //try to open chest, or use key if they have it
-       map[0][2] = new Room(""); //no room
-       map[1][0] = new Room("");  //no room
-       map[1][1] = new Room("You are in a grand hallway, with large arched door to the north, east, and south. The is an insricption on one of the doorways."); //just move and read
-       map[1][2] = new Room("You are in a throne room, long forgotten. The ground is dusty, and the throne has cobwebs on it. Not cozy. The only doorway is the one you came from."); //look throne will find the chest behind, or look behind
-       map[2][0] = new Room("You encounter a goblin! He hasn't noticed you yet because he is eating some miscellaneous meat. It smells dank in here. The only doorway is the one you came from.");
-       map[2][1] = new Room("You see a huge oaken door, with a large keyhole in the middle. It seems the only way to get out. There is a dank smell coming from the west door, and the only other doorway is the one you came from.");
-       map[2][2] = new Room(""); //no room
+       map[0][0] = new Room ("You see a butchering table, with assorted meat on top. You see a hallway to the east.", 0, 0); //choices take meat, then add description where key is below meat. move east
+       map[0][1] = new Room ("You see a locked chest in the middle of the room. You see a hallway to the west, with a foul smell coming from inside. You see a hallway south.", 0, 1); //try to open chest, or use key if they have it
+       map[0][2] = new Room("", 0, 2); //no room
+       map[1][0] = new Room("", 1, 0);  //no room
+       map[1][1] = new Room("You are in a grand hallway, with large arched door to the north, east, and south. The is an insricption on one of the doorways.", 1, 1); //just move and read
+       map[1][2] = new Room("You are in a throne room, long forgotten. The ground is dusty, and the throne has cobwebs on it. Not cozy. The only doorway is the one you came from.", 1, 2); //look throne will find the chest behind, or look behind
+       map[2][0] = new Room("You encounter a goblin! He hasn't noticed you yet because he is eating some miscellaneous meat. It smells dank in here. The only doorway is the one you came from.", 2, 0);
+       map[2][1] = new Room("You see a huge oaken door, with a large keyhole in the middle. It seems the only way to get out. There is a dank smell coming from the west door, and the only other doorway is the one you came from.", 2, 1);
+       map[2][2] = new Room("", 2, 2); //no room
+       map[0][0].addChoice(new Move("east"));
+       map[0][1].addChoice(new Move("west"));
+       map[0][1].addChoice(new Move("south"));
+       map[1][1].addChoice(new Move("north"));
+       map[1][1].addChoice(new Move("east"));
+       map[1][1].addChoice(new Move("south"));
+       map[1][2].addChoice(new Move("west"));
+       map[2][0].addChoice(new Move("east"));
+       map[2][1].addChoice(new Move("north"));
+       map[2][1].addChoice(new Move("west"));
     }
     public static void main(String[] args){
         Game game = new Game();
@@ -57,7 +67,7 @@ public class Game {
         System.out.println("submit choice as always being of the form VERB NOUN like, “TAKE SWORD”, “EAT FOOD”, etc.");
         System.out.println(" "); // for formatting
     }
-    public Room[][] getMap(){
+    public static Room[][] getMap(){
         return map;
     }
 }

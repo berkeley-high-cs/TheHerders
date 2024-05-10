@@ -3,9 +3,13 @@ import java.util.*;
 public class Room {
     private String description;
     private ArrayList<Choice> choices = new ArrayList<Choice>();
-    public Room(String description){
+    private int mapRow;
+    private int mapCol;
+    public Room(String description, int mapRow, int mapCol){
         this.description = description;
         choices.add(new Look()); 
+        this.mapRow = mapRow;
+        this.mapCol = mapCol;
     }
     public void look(){
         System.out.println(description);
@@ -37,5 +41,11 @@ public class Room {
                 choices.get(i).callConsequence(player);
             }
         }
+    }
+    public int getMapRow(){
+        return mapRow;
+    }
+    public int getMapCol(){
+        return mapCol;
     }
 }
