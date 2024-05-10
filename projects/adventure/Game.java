@@ -40,19 +40,20 @@ public class Game {
         
     }
     public String getPlayerChoiceName(Player player){ // change for gui
+        //Normalize normalize = new Normalize();
         System.out.println("What do you want to do?");
         System.out.println(" "); // for formatting
         Scanner scanner = new Scanner(System.in);
         String choiceName = scanner.nextLine().toLowerCase();
+        //choiceName = normalize.normalizeInput(choiceName);
         if (isUnderstood(choiceName, player.getLocation())){
            return choiceName;
         } else {
             System.out.println(" "); // for formatting
             System.out.println("Sorry, I didnt understand that, please try again");
             System.out.println(" "); // for formatting
-            getPlayerChoiceName(player);
+            return getPlayerChoiceName(player);
         }
-         return null;// should never be able to run this
     }
     public boolean isUnderstood(String choiceName, Room location){
         if (location.hasChoice(choiceName)){
@@ -70,4 +71,5 @@ public class Game {
     public static Room[][] getMap(){
         return map;
     }
+
 }

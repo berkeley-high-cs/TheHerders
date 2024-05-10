@@ -5,5 +5,6 @@ public class Look extends Choice {
     public void callConsequence(Player player){
         System.out.println(""); // for formatting
         System.out.println(player.getLocation().getDescription());
+        System.out.println(""); // for formatting
     }
 }
