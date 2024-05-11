@@ -8,7 +8,7 @@ public class Game {
        map[0][1] = new Room ("You see a locked chest in the middle of the room. You see a hallway to the west, with a foul smell coming from inside. You see a hallway south.", 0, 1); //try to open chest, or use key if they have it
        map[0][2] = new Room("", 0, 2); //no room
        map[1][0] = new Room("", 1, 0);  //no room
-       map[1][1] = new Room("You are in a grand hallway, with large arched door to the north, east, and south. The is an insricption on one of the doorways.", 1, 1); //just move and read
+       map[1][1] = new Room("You are in a grand hallway, with large arched door to the north, east, and south. The is an inscription on one of the doorways.", 1, 1); //just move and read
        map[1][2] = new Room("You are in a throne room, long forgotten. The ground is dusty, and the throne has cobwebs on it. Not cozy. The only doorway is the one you came from.", 1, 2); //look throne will find the chest behind, or look behind
        map[2][0] = new Room("You encounter a goblin! He hasn't noticed you yet because he is eating some miscellaneous meat. It smells dank in here. The only doorway is the one you came from.", 2, 0);
        map[2][1] = new Room("You see a huge oaken door, with a large keyhole in the middle. It seems the only way to get out. There is a dank smell coming from the west door, and the only other doorway is the one you came from.", 2, 1);
@@ -40,12 +40,12 @@ public class Game {
         
     }
     public String getPlayerChoiceName(Player player){ // change for gui
-        //Normalize normalize = new Normalize();
+        Normalize normalize = new Normalize();
         System.out.println("What do you want to do?");
         System.out.println(" "); // for formatting
         Scanner scanner = new Scanner(System.in);
         String choiceName = scanner.nextLine().toLowerCase();
-        //choiceName = normalize.normalizeInput(choiceName);
+        choiceName = normalize.normalizeInput(choiceName);
         if (isUnderstood(choiceName, player.getLocation())){
            return choiceName;
         } else {
