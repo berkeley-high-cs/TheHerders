@@ -13,6 +13,9 @@ equip x
 open x
 use x
 read inscription
+inspect
+
+make read into look closely, then have it work on the inscription, butchers table, throne, and goblin. (maybe big door, and chest, telling where the keys might come from) the text then says what is there, like the keys or chest, and then the player can use or grab whatever. This means they could just grab key immidiatley. (make goblin inspect/ look closley different than dead goblin)
 
 drawing of map
 

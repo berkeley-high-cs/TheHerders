@@ -4,7 +4,7 @@ public class Game {
     private static boolean end = false;
     public static Room[][] map = new Room[3][3];
     public Game(){
-       map[0][0] = new Room ("You see a butchering table, with assorted meat on top. You see a hallway to the east.", 0, 0); //choices take meat, then add description where key is below meat. move east
+       map[0][0] = new Room ("You see a butchers table, with assorted rotting meat on top. It doesnt look like any meat you recognize. You see a hallway to the east.", 0, 0); //choices take meat, then add description where key is below meat. move east
        map[0][1] = new Room ("You see a locked chest in the middle of the room. You see a hallway to the west, with a foul smell coming from inside. You see a hallway south.", 0, 1); //try to open chest, or use key if they have it
        map[0][2] = new Room("", 0, 2); //no room
        map[1][0] = new Room("", 1, 0);  //no room
@@ -23,10 +23,16 @@ public class Game {
        map[2][0].addChoice(new Move("east"));
        map[2][1].addChoice(new Move("north"));
        map[2][1].addChoice(new Move("west"));
-       map[1][1].addChoice(new Read("inscription", "The keys three you will need " + "\n" +
+       map[1][1].addChoice(new Inspect("inscription", "The text reads: " + "\n" +
+                                    "The keys three you will need " + "\n" +
                                     "from butchers table cleaned to chest " + "\n" +
                                     "the one that bleeds has another " + "\n" +
                                     "and behind the throne secrets smothered "));
+       map[0][0].addChoice(new Inspect("table", "You disgustingly look under the rotten weird meat. Under the piles of meat, and blood, and stench, you find a key on the table"));
+       map[0][1].addChoice(new Inspect("chest", "The chest looks relatively normal, albeit gross. The keyhole has bits of rotting meat in it. Gross."));
+       map[1][2].addChoice(new Inspect("throne", "The dusty throne has something large behind it. As you get close, it looks to be a large chest, that smells quite dank"));
+       map[2][0].addChoice(new Inspect("goblin", "He smells dank. His loincloth has pockets in it. Fancy"));
+       map[2][1].addChoice(new Inspect("door", "The keyhole is huge and dusty, and the door seems unbreakable"));
        
     }
     public static void main(String[] args){
@@ -70,7 +76,7 @@ public class Game {
     }
     public void startShow(){ //change for gui
         System.out.print("\033[2J\033[1;1H");
-        System.out.println("submit choice as always being of the form VERB NOUN like, “TAKE SWORD”, “EAT FOOD”, etc.");
+        System.out.println("submit choice as always being of the form VERB NOUN like, “inspect insription”, “move west”, etc.");
         System.out.println(" "); // for formatting
     }
     public static Room[][] getMap(){

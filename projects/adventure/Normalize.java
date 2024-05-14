@@ -51,8 +51,9 @@ public class Normalize {
     public String getSynonym(String input) { // find all recognized words, then find a bunch of synonyms for them
         String[] moveSynonyms = { "go", "leave", "run", "shimmy" };
         String[] lookSynonyms = { "see", "view", "gaze", "survey" };
-        String[] readSynonyms = {"check", "examine", "inspect", "study"};
+        String[] inspectSynonyms = {"check", "examine", "read", "study"};
         String[] inscriptionSynonyms = {"inscription", "text", "words", "poem"};
+        String[] tableSynonyms = {"butchering", "butchers", "desk", "butcher"}; //because they might say butchers table, and second word would then be butchers
         for (int i = 0; i < moveSynonyms.length; i++) {
             if (moveSynonyms[i].equals(input)) {
                 return "move";
@@ -60,11 +61,14 @@ public class Normalize {
             if (lookSynonyms[i].equals(input)) {
                 return "look";
             }
-            if (readSynonyms[i].equals(input)) {
-                return "read";
+            if (inspectSynonyms[i].equals(input)) {
+                return "inspect";
             }
             if (inscriptionSynonyms[i].equals(input)) {
                 return "inscription";
+            }
+            if (tableSynonyms[i].equals(input)) {
+                return "table";
             }
         }
         if (input.equals("up")) {
