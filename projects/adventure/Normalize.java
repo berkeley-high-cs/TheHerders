@@ -9,12 +9,12 @@ public class Normalize {
         firstWord = tempInput.substring(getFirstLetterIndex(tempInput), findNextEndOfWord(tempInput));
         if (firstWord.length() < tempInput.length()) {
             tempInput = tempInput.substring(findNextEndOfWord(tempInput));
-            System.out.println("temp input is: " + tempInput);
+            //System.out.println("temp input is: " + tempInput);
             secondWord = tempInput.substring(getFirstLetterIndex(tempInput), findNextEndOfWord(tempInput));
             firstWord = getSynonym(firstWord);
             secondWord = getSynonym(secondWord);
-            System.out.println("firstWord is: |" + firstWord + "|");
-            System.out.println("secondWord is: |" + secondWord + "|");
+           // System.out.println("firstWord is: |" + firstWord + "|");
+            //System.out.println("secondWord is: |" + secondWord + "|");
             if (secondWord.equals("") || secondWord.equals(" ")){
                 return firstWord;
             }
