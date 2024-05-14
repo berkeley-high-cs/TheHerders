@@ -9,12 +9,11 @@ public class Normalize {
         firstWord = tempInput.substring(getFirstLetterIndex(tempInput), findNextEndOfWord(tempInput));
         if (firstWord.length() < tempInput.length()) {
             tempInput = tempInput.substring(findNextEndOfWord(tempInput));
-            System.out.println("temp input is: " + tempInput);
+
             secondWord = tempInput.substring(getFirstLetterIndex(tempInput), findNextEndOfWord(tempInput));
             firstWord = getSynonym(firstWord);
             secondWord = getSynonym(secondWord);
-            System.out.println("firstWord is: |" + firstWord + "|");
-            System.out.println("secondWord is: |" + secondWord + "|");
+
             if (secondWord.equals("") || secondWord.equals(" ")){
                 return firstWord;
             }
@@ -38,7 +37,7 @@ public class Normalize {
                 return i;
             }
         }
-        //System.out.println("get First letter index all spaces");
+
         return 0;
     }
 
@@ -83,7 +82,6 @@ public class Normalize {
 
     public int findNextEndOfWord(String input) {
         if (input.equals("") || input == null) {
-            //System.out.println("WEE WOO WEE WOO, find end of next word input got shittaroonied on");
             return 0;
         }
         if (input.substring(getFirstLetterIndex(input)).indexOf(" ") == -1) { //at least one space after a word
