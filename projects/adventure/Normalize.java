@@ -9,19 +9,25 @@ public class Normalize {
         firstWord = tempInput.substring(getFirstLetterIndex(tempInput), findNextEndOfWord(tempInput));
         if (firstWord.length() < tempInput.length()) {
             tempInput = tempInput.substring(findNextEndOfWord(tempInput));
-
+            System.out.println("tempInput is: " + tempInput);
+            System.out.println("first word is: |" + firstWord + "|");
             secondWord = tempInput.substring(getFirstLetterIndex(tempInput), findNextEndOfWord(tempInput));
+            System.out.println("second word is: |" + secondWord + "|");
             firstWord = getSynonym(firstWord);
             secondWord = getSynonym(secondWord);
 
-            if (secondWord.equals("") || secondWord.equals(" ")){
+            if (secondWord.equals("") || !checkForLetters(secondWord)){
+             
                 return firstWord;
+            } else {
+                return firstWord + " " + secondWord;
             }
-            return firstWord + " " + secondWord;
+           
 
         } else {
             firstWord = getSynonym(firstWord);
-            System.out.println("firstWord is: |" + firstWord + "|");
+            System.out.println("tempInput is: " + tempInput);
+            System.out.println("first word is: |" + firstWord + "|");
             return firstWord;
         }
 
@@ -44,12 +50,20 @@ public class Normalize {
     public String getSynonym(String input) { // find all recognized words, then find a bunch of synonyms for them
         String[] moveSynonyms = { "go", "leave", "run", "shimmy" };
         String[] lookSynonyms = { "see", "view", "gaze", "survey" };
+        String[] readSynonyms = {"check", "examine", "inspect", "study"};
+        String[] inscriptionRemoveSynonyms = {"inscription", "text", "words", "poem"};
         for (int i = 0; i < moveSynonyms.length; i++) {
             if (moveSynonyms[i].equals(input)) {
                 return "move";
             }
             if (lookSynonyms[i].equals(input)) {
-                return input;
+                return "look";
+            }
+            if (readSynonyms[i].equals(input)) {
+                return "read";
+            }
+            if (inscriptionRemoveSynonyms[i].equals(input)) {
+                return "";
             }
         }
         if (input.equals("up")) {

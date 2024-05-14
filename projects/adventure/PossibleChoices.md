@@ -1,17 +1,18 @@
-look
+look - DONE
 pickup x
 drop x
 look at inventory (maybe part of player?)
-move north
-south
-east
-west
+move north - DONE
+south - DONE
+east - DONE
+west - DONE
 attack x
 eat x
 hold x
 equip x
 open x
 use x
+read inscription
 
 drawing of map
 
