@@ -17,9 +17,10 @@ public class Normalize {
             secondWord = getSynonym(secondWord);
 
             if (secondWord.equals("") || !checkForLetters(secondWord)){
-             
+                
                 return firstWord;
             } else {
+
                 return firstWord + " " + secondWord;
             }
            
@@ -51,7 +52,7 @@ public class Normalize {
         String[] moveSynonyms = { "go", "leave", "run", "shimmy" };
         String[] lookSynonyms = { "see", "view", "gaze", "survey" };
         String[] readSynonyms = {"check", "examine", "inspect", "study"};
-        String[] inscriptionRemoveSynonyms = {"inscription", "text", "words", "poem"};
+        String[] inscriptionSynonyms = {"inscription", "text", "words", "poem"};
         for (int i = 0; i < moveSynonyms.length; i++) {
             if (moveSynonyms[i].equals(input)) {
                 return "move";
@@ -62,8 +63,8 @@ public class Normalize {
             if (readSynonyms[i].equals(input)) {
                 return "read";
             }
-            if (inscriptionRemoveSynonyms[i].equals(input)) {
-                return "";
+            if (inscriptionSynonyms[i].equals(input)) {
+                return "inscription";
             }
         }
         if (input.equals("up")) {

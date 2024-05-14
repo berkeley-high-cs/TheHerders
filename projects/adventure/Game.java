@@ -23,7 +23,7 @@ public class Game {
        map[2][0].addChoice(new Move("east"));
        map[2][1].addChoice(new Move("north"));
        map[2][1].addChoice(new Move("west"));
-       map[1][1].addChoice(new Read("The keys three you will need " + "\n" +
+       map[1][1].addChoice(new Read("inscription", "The keys three you will need " + "\n" +
                                     "from butchers table cleaned to chest " + "\n" +
                                     "the one that bleeds has another " + "\n" +
                                     "and behind the throne secrets smothered "));

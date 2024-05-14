@@ -1,7 +1,9 @@
 public class Read extends Choice {
+    private String textName;
     private String text;
-    public Read(String text){
-        super("read");
+    public Read(String textName, String text){
+        super("read " + textName);
+        this.textName = textName;
         this.text = text;
     }
     public void callConsequence(Player player){
