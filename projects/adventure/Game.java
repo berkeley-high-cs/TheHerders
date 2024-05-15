@@ -13,26 +13,26 @@ public class Game {
        map[2][0] = new Room("You encounter a goblin! He hasn't noticed you yet because he is eating some miscellaneous meat. It smells dank in here. The only doorway is the one you came from.", 2, 0);
        map[2][1] = new Room("You see a huge oaken door, with a large keyhole in the middle. It seems the only way to get out. There is a dank smell coming from the west door, and the only other doorway is the one you came from.", 2, 1);
        map[2][2] = new Room("", 2, 2); //no room
-       map[0][0].addChoice(new Move("east"));
-       map[0][1].addChoice(new Move("west"));
-       map[0][1].addChoice(new Move("south"));
-       map[1][1].addChoice(new Move("north"));
-       map[1][1].addChoice(new Move("east"));
-       map[1][1].addChoice(new Move("south"));
-       map[1][2].addChoice(new Move("west"));
-       map[2][0].addChoice(new Move("east"));
-       map[2][1].addChoice(new Move("north"));
-       map[2][1].addChoice(new Move("west"));
-       map[1][1].addChoice(new Inspect("inscription", "The text reads: " + "\n" +
+       map[0][0].addChoice(new Choice.Move("east"));
+       map[0][1].addChoice(new Choice.Move("west"));
+       map[0][1].addChoice(new Choice.Move("south"));
+       map[1][1].addChoice(new Choice.Move("north"));
+       map[1][1].addChoice(new Choice.Move("east"));
+       map[1][1].addChoice(new Choice.Move("south"));
+       map[1][2].addChoice(new Choice.Move("west"));
+       map[2][0].addChoice(new Choice.Move("east"));
+       map[2][1].addChoice(new Choice.Move("north"));
+       map[2][1].addChoice(new Choice.Move("west"));
+       map[1][1].addChoice(new Choice.Inspect("inscription", "The text reads: " + "\n" +
                                     "The keys three you will need " + "\n" +
                                     "from butchers table cleaned to chest " + "\n" +
                                     "the one that bleeds has another " + "\n" +
                                     "and behind the throne secrets smothered "));
-       map[0][0].addChoice(new Inspect("table", "You disgustingly look under the rotten weird meat. Under the piles of meat, and blood, and stench, you find a key on the table"));
-       map[0][1].addChoice(new Inspect("chest", "The chest looks relatively normal, albeit gross. The keyhole has bits of rotting meat in it. Gross."));
-       map[1][2].addChoice(new Inspect("throne", "The dusty throne has something large behind it. As you get close, it looks to be a large chest, that smells quite dank"));
-       map[2][0].addChoice(new Inspect("goblin", "He smells dank. His loincloth has pockets in it. Fancy"));
-       map[2][1].addChoice(new Inspect("door", "The keyhole is huge and dusty, and the door seems unbreakable"));
+       map[0][0].addChoice(new Choice.Inspect("table", "You disgustingly look under the rotten weird meat. Under the piles of meat, and blood, and stench, you find a key on the table"));
+       map[0][1].addChoice(new Choice.Inspect("chest", "The chest looks relatively normal, albeit gross. The keyhole has bits of rotting meat in it. Gross."));
+       map[1][2].addChoice(new Choice.Inspect("throne", "The dusty throne has something large behind it. As you get close, it looks to be a large chest, that smells quite dank"));
+       map[2][0].addChoice(new Choice.Inspect("goblin", "He smells dank. His loincloth has pockets in it. Fancy"));
+       map[2][1].addChoice(new Choice.Inspect("door", "The keyhole is huge and dusty, and the door seems unbreakable"));
        
     }
     public static void main(String[] args){

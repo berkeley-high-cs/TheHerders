@@ -7,7 +7,7 @@ public class Room {
     private int mapCol;
     public Room(String description, int mapRow, int mapCol){
         this.description = description;
-        choices.add(new Look()); 
+        choices.add(new Choice.Look()); 
         this.mapRow = mapRow;
         this.mapCol = mapCol;
     }

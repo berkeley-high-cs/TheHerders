@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class Normalize {
     public String normalizeInput(String input) {
         // should take player input, seperate it into words, check if there are
@@ -49,41 +51,33 @@ public class Normalize {
     }
 
     public String getSynonym(String input) { // find all recognized words, then find a bunch of synonyms for them
-        String[] moveSynonyms = { "go", "leave", "run", "shimmy" };
-        String[] lookSynonyms = { "see", "view", "gaze", "survey" };
-        String[] inspectSynonyms = {"check", "examine", "read", "study"};
-        String[] inscriptionSynonyms = {"inscription", "text", "words", "poem"};
-        String[] tableSynonyms = {"butchering", "butchers", "desk", "butcher"}; //because they might say butchers table, and second word would then be butchers
-        for (int i = 0; i < moveSynonyms.length; i++) {
-            if (moveSynonyms[i].equals(input)) {
-                return "move";
-            }
-            if (lookSynonyms[i].equals(input)) {
-                return "look";
-            }
-            if (inspectSynonyms[i].equals(input)) {
-                return "inspect";
-            }
-            if (inscriptionSynonyms[i].equals(input)) {
-                return "inscription";
-            }
-            if (tableSynonyms[i].equals(input)) {
-                return "table";
-            }
-        }
-        if (input.equals("up")) {
-            return "north";
-        }
-        if (input.equals("right")) {
-            return "east";
-        }
-        if (input.equals("down")) {
-            return "south";
-        }
-        if (input.equals("left")) {
-            return "west";
-        }
+       HashMap<String, String> synonyms = new HashMap<String, String>();
+       synonyms.put("go","move");
+       synonyms.put("leave","move");
+       synonyms.put("run","move");
+       synonyms.put("shimmy","move");
+       synonyms.put("see","look");
+       synonyms.put("view","look");
+       synonyms.put("gaze","look");
+       synonyms.put("ponder","look");
+       synonyms.put("l","look");
+       synonyms.put("check","inspect");
+       synonyms.put("examine","inspect");
+       synonyms.put("read","inspect");
+       synonyms.put("study","inspect");
+       synonyms.put("butchers","table");
+       synonyms.put("butchering","table");
+       synonyms.put("butcher","table");
+       synonyms.put("desk","table");
+       synonyms.put("up","north");
+       synonyms.put("left","east");
+       synonyms.put("right","west");
+       synonyms.put("down","south");
+       if(synonyms.get(input) == null){
         return input;
+       } else {
+        return synonyms.get(input);
+       }
 
     }
 
@@ -113,3 +107,40 @@ public class Normalize {
     }
 
 }
+
+
+// String[] moveSynonyms = { "go", "leave", "run", "shimmy" };
+// String[] lookSynonyms = { "see", "view", "gaze", "survey" };
+// String[] inspectSynonyms = {"check", "examine", "read", "study"};
+// String[] inscriptionSynonyms = {"inscription", "text", "words", "poem"};
+// String[] tableSynonyms = {"butchering", "butchers", "desk", "butcher"}; //because they might say butchers table, and second word would then be butchers
+// for (int i = 0; i < moveSynonyms.length; i++) {
+//     if (moveSynonyms[i].equals(input)) {
+//         return "move";
+//     }
+//     if (lookSynonyms[i].equals(input)) {
+//         return "look";
+//     }
+//     if (inspectSynonyms[i].equals(input)) {
+//         return "inspect";
+//     }
+//     if (inscriptionSynonyms[i].equals(input)) {
+//         return "inscription";
+//     }
+//     if (tableSynonyms[i].equals(input)) {
+//         return "table";
+//     }
+// }
+// if (input.equals("up")) {
+//     return "north";
+// }
+// if (input.equals("right")) {
+//     return "east";
+// }
+// if (input.equals("down")) {
+//     return "south";
+// }
+// if (input.equals("left")) {
+//     return "west";
+// }
+// return input;
