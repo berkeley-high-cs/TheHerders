@@ -1,13 +1,13 @@
 import java.util.*;
 
 public class Player {
-    private ArrayList<String> inventory = new ArrayList<String>();
+    private ArrayList<Item> inventory = new ArrayList<Item>();
     private Room location;
     public Player(Room startingRoom){
         this.location = startingRoom;
 
     }
-    public ArrayList<String> getInventory(){ // for code
+    public ArrayList<Item> getInventory(){ // for code
         return inventory;
     }
     // these are choices and should be added to room as basic always avalible actions
@@ -23,7 +23,7 @@ public class Player {
     public Room getLocation(){
         return location;
     }
-    public void addToInventory(String item){
+    public void addToInventory(Item item){
         inventory.add(item);
     }
     public void removeFromInventory(String item){

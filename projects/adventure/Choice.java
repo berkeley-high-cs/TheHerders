@@ -17,7 +17,7 @@ public class Choice {
         }
         public void callConsequence(Player player){
             System.out.println(""); // for formatting
-            System.out.println(player.getLocation().getDescription());
+            player.getLocation().look();
             System.out.println(""); // for formatting
         }
     }
@@ -70,6 +70,27 @@ public class Choice {
         }
         public void showPlayerLocation(Player player){ //change for gui
             player.getLocation().callChoiceConsequence("look", player); //print out what the room they are in looks like
+        }
+    }
+    public static class Take extends Choice{
+        private Item item;
+        public Take(Item item){
+            super("take " + item);
+            this.item = item;
+        }
+        public void callConsequence(Player player){
+            if (player.getLocation().hasItem(item)){
+                player.addToInventory(item);
+                player.getLocation().removeItem(item);
+                System.out.println(""); //formatting
+                System.out.println("You take the " + item.getItemName());
+                System.out.println(""); //formatting
+            } else {
+                System.out.println(""); //formatting
+                System.out.println("There is no " + item);
+                System.out.println(""); //formatting
+            }
+            
         }
     }
     

@@ -11,12 +11,12 @@ public class Normalize {
         firstWord = tempInput.substring(getFirstLetterIndex(tempInput), findNextEndOfWord(tempInput));
         if (firstWord.length() < tempInput.length()) {
             tempInput = tempInput.substring(findNextEndOfWord(tempInput));
-            System.out.println("tempInput is: " + tempInput);
-            System.out.println("first word is: |" + firstWord + "|");
             secondWord = tempInput.substring(getFirstLetterIndex(tempInput), findNextEndOfWord(tempInput));
-            System.out.println("second word is: |" + secondWord + "|");
             firstWord = getSynonym(firstWord);
             secondWord = getSynonym(secondWord);
+            System.out.println("tempInput is: " + tempInput);
+            System.out.println("first word is: |" + firstWord + "|");
+            System.out.println("second word is: |" + secondWord + "|");
 
             if (secondWord.equals("") || !checkForLetters(secondWord)){
                 
@@ -70,8 +70,8 @@ public class Normalize {
        synonyms.put("butcher","table");
        synonyms.put("desk","table");
        synonyms.put("up","north");
-       synonyms.put("left","east");
-       synonyms.put("right","west");
+       synonyms.put("left","west");
+       synonyms.put("right","east");
        synonyms.put("down","south");
        if(synonyms.get(input) == null){
         return input;
