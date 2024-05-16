@@ -75,7 +75,7 @@ public class Choice {
     public static class Take extends Choice{
         private Item item;
         public Take(Item item){
-            super("take " + item);
+            super("take " + item.getItemName());
             this.item = item;
         }
         public void callConsequence(Player player){

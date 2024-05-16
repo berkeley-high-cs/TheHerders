@@ -30,3 +30,5 @@ inscription: The keys three you will need
 
             goal of game leave out grand exit door
             neccesary route, grab key from butcher table, grab sword from locked chest, kill goblin and loot it to get key to throne chest which has a fat large key to open grand exit
+
+Mr seibel says : make it so every item in a room has its own inspect method that returns the string when it needs to, and have something to change those descriptions. allows for more freedom.

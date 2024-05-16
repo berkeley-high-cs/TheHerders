@@ -17,12 +17,14 @@ public class Room {
     }
     public void removeItem(Item item){
         for (int i = 0; i < items.size(); i++){
-            if (items.get(i).getItemType() == item.getItemType()){
+            if (items.get(i).getItemType().equals(item.getItemType())){
                 items.remove(i);
                 i = items.size(); //only want to remove one item, first one
+            } else if (i == items.size()){
+                System.out.println("you tried to remove an item that doesnt exist");
             }
         }
-        System.out.println("you tried to remove an item that doesnt exist");
+        
     }
     public boolean hasItem(Item item){
         for (int i = 0; i < items.size(); i++){
@@ -52,6 +54,10 @@ public class Room {
         choices.add(choice);
     }
     public boolean hasChoice(String choiceName){
+        removeInspects();
+        createInspects();
+        removeTakes();
+        createTakes();
         for (int i = 0; i < choices.size(); i++){
             if (choices.get(i).getName().equals(choiceName)){
                 return true;
@@ -74,5 +80,45 @@ public class Room {
     }
     public int getMapCol(){
         return mapCol;
+    }
+    public int findKeyWordInRoom(String keyWord){
+        for (int i = 0; i < description.size(); i++){
+            if (description.get(i).indexOf(keyWord) != -1){
+                return i;
+            }
+        }
+        System.out.println("no keyword found");
+        return -1;
+    }
+    public void createInspects(){
+        for (int i = 0; i < items.size(); i++){
+            addChoice(new Choice.Inspect(items.get(i).getItemName(), items.get(i).getDescriptionAsString()));
+        }
+    }
+    public void removeInspects(){
+        for (int i = 0; i < choices.size(); i++){
+            if (choices.get(i).getName().indexOf("inspect") != -1){
+                choices.remove(i);
+                i--;
+            }
+        }
+    }
+    public void createTakes(){
+        for (int i = 0; i < items.size(); i++){
+            if (items.get(i).getItemType().indexOf("immovable") != -1){
+                //maybe add something to say you cant take that later
+            } else {
+                addChoice(new Choice.Take(items.get(i)));
+            }
+            
+        }
+    }
+    public void removeTakes(){
+        for (int i = 0; i < choices.size(); i++){
+            if (choices.get(i).getName().indexOf("take") != -1){
+                choices.remove(i);
+                i--;
+            }
+        }
     }
 }

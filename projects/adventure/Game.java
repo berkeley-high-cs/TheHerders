@@ -28,14 +28,33 @@ public class Game {
                                     "from butchers table cleaned to chest " + "\n" +
                                     "the one that bleeds has another " + "\n" +
                                     "and behind the throne secrets smothered "));
-       map[0][0].addChoice(new Choice.Inspect("table", "You disgustingly look under the rotten weird meat. Under the piles of meat, and blood, and stench, you find a key on the table"));
-       map[0][1].addChoice(new Choice.Inspect("chest", "The chest looks relatively normal, albeit gross. The keyhole has bits of rotting meat in it. Gross."));
-       map[1][2].addChoice(new Choice.Inspect("throne", "The dusty throne has something large behind it. As you get close, it looks to be a large chest, that smells quite dank"));
-       map[2][0].addChoice(new Choice.Inspect("goblin", "He smells dank. His loincloth has pockets in it. Fancy"));
-       map[2][1].addChoice(new Choice.Inspect("door", "The keyhole is huge and dusty, and the door seems unbreakable"));
-       Item meatKey = new Item("key", "meatKey");
+
+       Item meatTable = new Item("table", "immovableTable", "You disgustingly look under the rotten weird meat. Under the piles of meat, blood, and stench, ");
+       meatTable.addDescription("you find a key. ");
+       map[0][0].addItem(meatTable);
+       Item meat = new Item("meat", "food", "The meat looks gross and disgusting. Nobody should ever eat it. ");
+       meat.addDescription("Under the meat, you find a key. ");
+       map[0][0].addItem(meat);
+       Item meatKey = new Item("key", "meatKey", "The key is covered in rotting meat. Gross. ");
        map[0][0].addItem(meatKey);
-       map[0][0].addChoice(new Choice.Take(meatKey));
+
+       Item meatChest = new Item("chest", "immovableChest", "The chest looks relatively normal, albeit gross. The keyhole has bits of rotting meat in it. Gross. ");
+       meatChest.addDescription("The chest is securely shut.");
+       map[0][1].addItem(meatChest); //add sword once meat key is used on meat chest
+       
+       Item throne = new Item("throne", "immovableThrone", "The dusty throne has something large behind it. As you get close, it looks to be a large chest, that is also quite dusty. ");
+       Item chest = new Item("chest", "dustyChest", "The chest is very dusty, with cobwebs all around it. It looks like it hasnt been touched in ages. ");
+       chest.addDescription("The chest is securely shut. ");
+       map[1][2].addItem(throne);
+       map[1][2].addItem(chest);
+
+       //this one is differet, deal with later
+       map[2][0].addChoice(new Choice.Inspect("goblin", "He smells dank. His loincloth has pockets in it. Fancy"));
+
+       Item grandDoor = new Item("door", "immovableDoor", "The keyhole is huge and dusty, and the door seems unbreakable. ");
+       grandDoor.addDescription("The door is securely shut. ");
+       map[2][1].addItem(grandDoor);
+       
        
     }
     public static void main(String[] args){
@@ -80,5 +99,6 @@ public class Game {
     public static Room[][] getMap(){
         return map;
     }
+    
 
 }
