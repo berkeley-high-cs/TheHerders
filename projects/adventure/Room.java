@@ -105,11 +105,8 @@ public class Room {
     }
     public void createTakes(){
         for (int i = 0; i < items.size(); i++){
-            if (items.get(i).getItemType().indexOf("immovable") != -1){
-                //maybe add something to say you cant take that later
-            } else {
+            
                 addChoice(new Choice.Take(items.get(i)));
-            }
             
         }
     }

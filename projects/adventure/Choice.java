@@ -101,17 +101,21 @@ public class Choice {
         public void callConsequence(Player player){
             if (player.getLocation().hasItem(item)){
                 if (item.getItemType().indexOf("immovable") != -1){
+                    System.out.println(""); //formatting
+                    System.out.println("You can't take the " + item.getItemName() + ", it's immovable");
+                    System.out.println(""); //formatting
                     //maybe add something to say you cant take that later
-                }
-                player.addToInventory(item);
-                player.getLocation().removeItem(item);
-                System.out.println(""); //formatting
-                System.out.println("You take the " + item.getItemName());
-                System.out.println(""); //formatting
-                if(item.getItemType().equals("meatKey")){
-                    changeRefrencedItemDescription(item, "MeatTable", "key", "you find more meat. ");
-                    changeRefrencedItemDescription(item, "foodMeat", "key", "you find more meat. ");
-                    item.findItemRefrenced("MeatTable").removeItemRefrenced("meatKey");
+                } else {
+                    player.addToInventory(item);
+                    player.getLocation().removeItem(item);
+                    System.out.println(""); //formatting
+                    System.out.println("You take the " + item.getItemName());
+                    System.out.println(""); //formatting
+                    if(item.getItemType().equals("meatKey")){
+                        changeRefrencedItemDescription(item, "MeatTable", "key", "you find more meat. ");
+                        changeRefrencedItemDescription(item, "foodMeat", "key", "you find more meat. ");
+                        item.removeItemRefrenced("MeatTable");
+                    }
                 }
             }else
 
