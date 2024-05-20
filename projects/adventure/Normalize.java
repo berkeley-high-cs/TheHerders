@@ -14,9 +14,9 @@ public class Normalize {
             secondWord = tempInput.substring(getFirstLetterIndex(tempInput), findNextEndOfWord(tempInput));
             firstWord = getSynonym(firstWord);
             secondWord = getSynonym(secondWord);
-            System.out.println("tempInput is: " + tempInput);
-            System.out.println("first word is: |" + firstWord + "|");
-            System.out.println("second word is: |" + secondWord + "|");
+            System.out.println("tempInput is: " + tempInput); //remove in final
+            System.out.println("first word is: |" + firstWord + "|"); //remove in final
+            System.out.println("second word is: |" + secondWord + "|"); //remove in final
 
             if (secondWord.equals("") || !checkForLetters(secondWord)){
                 

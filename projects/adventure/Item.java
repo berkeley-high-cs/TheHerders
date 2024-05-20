@@ -4,6 +4,7 @@ public class Item {
     private String itemName;
     private String itemType; //currently just sword or key. Maybe just make it item name, sword, meat key, dusty large key, dank key
     //changing, item type now could have food, or immovable, or something else like that
+    private ArrayList<Item> itemsRefrenced = new ArrayList<Item>();
     private ArrayList<String> description = new ArrayList<String>();
     public Item(String itemName, String itemType, String description){
         this.itemName = itemName;
@@ -25,6 +26,7 @@ public class Item {
     public int findKeyWordInDescription(String keyWord){
         for (int i = 0; i < description.size(); i++){
             if (description.get(i).indexOf(keyWord) != -1){
+                System.out.println("we found " + keyWord + " at: " + i);
                 return i;
             }
         }
@@ -41,5 +43,32 @@ public class Item {
     public void addDescription(String newDescription){
         description.add(newDescription);
     }
+    public void addItemRefrenced(Item item){
+        itemsRefrenced.add(item);
+        item.getItemsRefrenced().add(this);
+    }
+    public ArrayList<Item> getItemsRefrenced(){
+        return itemsRefrenced;
+    }
+    public Item findItemRefrenced(String itemType){
+        for (int i = 0; i < itemsRefrenced.size(); i++){
+            if (itemsRefrenced.get(i).getItemType().indexOf(itemType) != -1){
+                return itemsRefrenced.get(i);
+            }
+        }
+        System.out.println("item type not found in refrences"); //remove in final
+        return null;
+    }
+    public void removeItemRefrenced(String itemType){
+        for (int i = 0; i < itemsRefrenced.size(); i++){
+            if (itemsRefrenced.get(i).getItemType().indexOf(itemType) != -1){
+                itemsRefrenced.get(i).removeItemRefrenced(this.itemType);
+                itemsRefrenced.remove(i);
+                
+                i = itemsRefrenced.size();
+            }
+        }
+    }
+
     
 }

@@ -29,14 +29,18 @@ public class Game {
                                     "the one that bleeds has another " + "\n" +
                                     "and behind the throne secrets smothered "));
 
-       Item meatTable = new Item("table", "immovableTable", "You disgustingly look under the rotten weird meat. Under the piles of meat, blood, and stench, ");
+       Item meatTable = new Item("table", "immovableMeatTable", "You disgustingly look under the rotten weird meat. Under the piles of meat, blood, and stench, ");
        meatTable.addDescription("you find a key. ");
+       
        map[0][0].addItem(meatTable);
-       Item meat = new Item("meat", "food", "The meat looks gross and disgusting. Nobody should ever eat it. ");
+       Item meat = new Item("meat", "foodMeat", "The meat looks gross and disgusting. Nobody should ever eat it. ");
        meat.addDescription("Under the meat, you find a key. ");
        map[0][0].addItem(meat);
        Item meatKey = new Item("key", "meatKey", "The key is covered in rotting meat. Gross. ");
        map[0][0].addItem(meatKey);
+       meatTable.addItemRefrenced(meatKey); //two way street
+       meat.addItemRefrenced(meatKey); //two way street
+        
 
        Item meatChest = new Item("chest", "immovableChest", "The chest looks relatively normal, albeit gross. The keyhole has bits of rotting meat in it. Gross. ");
        meatChest.addDescription("The chest is securely shut.");
