@@ -23,11 +23,7 @@ public class Game {
        map[2][0].addChoice(new Choice.Move("east"));
        map[2][1].addChoice(new Choice.Move("north"));
        map[2][1].addChoice(new Choice.Move("west"));
-       map[1][1].addChoice(new Choice.Inspect("inscription", "The text reads: " + "\n" +
-                                    "The keys three you will need " + "\n" +
-                                    "from butchers table cleaned to chest " + "\n" +
-                                    "the one that bleeds has another " + "\n" +
-                                    "and behind the throne secrets smothered "));
+
 
        Item meatTable = new Item("table", "immovableMeatTable", "You disgustingly look under the rotten weird meat. Under the piles of meat, blood, and stench, ");
        meatTable.addDescription("you find a key. ");
@@ -47,6 +43,12 @@ public class Game {
        meatChest.addItemRefrenced(meatKey);
        map[0][1].addItem(meatChest); //add sword once meat key is used on meat chest
        map[0][1].addChoice(new Choice.Use(meatKey));
+
+       map[1][1].addItem(new Item("inscription", "immovableInsciption",  "The text reads: " + "\n" +
+                                                                                            "The keys three you will need " + "\n" +
+                                                                                            "from butchers table cleaned to chest " + "\n" +
+                                                                                            "the one that bleeds has another " + "\n" +
+                                                                                            "and behind the throne secrets smothered "));
 
        Item throne = new Item("throne", "immovableThrone", "The dusty throne has something large behind it. As you get close, it looks to be a large chest, that is also quite dusty. ");
        Item chest = new Item("chest", "immovableDustyChest", "The chest is very dusty, with cobwebs all around it. It looks like it hasnt been touched in ages. ");
@@ -85,6 +87,9 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         String choiceName = scanner.nextLine().toLowerCase();
         choiceName = normalize.normalizeInput(choiceName);
+        if (choiceName.equals("inspect") && player.getLocation().isAt(1,1)){
+            choiceName += " inscription";
+        }
         if (isUnderstood(choiceName, player.getLocation())){
            return choiceName;
         } else {

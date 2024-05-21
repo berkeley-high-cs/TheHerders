@@ -73,6 +73,7 @@ public class Normalize {
        synonyms.put("left","west");
        synonyms.put("right","east");
        synonyms.put("down","south");
+       synonyms.put("text", "inscription");
        if(synonyms.get(input) == null){
         return input;
        } else {
