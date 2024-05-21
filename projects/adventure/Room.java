@@ -118,4 +118,7 @@ public class Room {
             }
         }
     }
+    public boolean isAt(int row, int col){
+        return getMapRow() == row && getMapCol() == col;
+    }
 }

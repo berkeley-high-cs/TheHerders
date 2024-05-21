@@ -26,7 +26,7 @@ public class Item {
     public int findKeyWordInDescription(String keyWord){
         for (int i = 0; i < description.size(); i++){
             if (description.get(i).indexOf(keyWord) != -1){
-                System.out.println("we found " + keyWord + " at: " + i);
+                //System.out.println("we found " + keyWord + " at: " + i);
                 return i;
             }
         }
@@ -52,7 +52,7 @@ public class Item {
     }
     public Item findItemRefrenced(String itemType){
         for (int i = 0; i < itemsRefrenced.size(); i++){
-            if (itemsRefrenced.get(i).getItemType().indexOf(itemType) != -1){
+            if (itemsRefrenced.get(i).getItemType().toLowerCase().indexOf(itemType.toLowerCase()) != -1){
                 return itemsRefrenced.get(i);
             }
         }
@@ -62,12 +62,24 @@ public class Item {
     public void removeItemRefrenced(String itemType){
         for (int i = 0; i < itemsRefrenced.size(); i++){
             if (itemsRefrenced.get(i).getItemType().indexOf(itemType) != -1){
-                itemsRefrenced.get(i).removeItemRefrenced(this.itemType);
+                itemsRefrenced.get(i).removeOneItemRefrenced(this.getItemType());
                 itemsRefrenced.remove(i);
                 
+
                 i = itemsRefrenced.size();
             }
         }
+    }
+    public void removeOneItemRefrenced(String itemType){
+        for (int i = 0; i < itemsRefrenced.size(); i++){
+            if (itemsRefrenced.get(i).getItemType().indexOf(itemType) != -1){
+                itemsRefrenced.remove(i);
+                i = itemsRefrenced.size();
+            }
+        }
+    }
+    public boolean isType(String type){
+        return itemType.toLowerCase().indexOf(type.toLowerCase()) != -1;
     }
 
     

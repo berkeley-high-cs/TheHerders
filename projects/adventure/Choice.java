@@ -86,7 +86,8 @@ public class Choice {
         }
 
         public void showPlayerLocation(Player player) { // change for gui
-            player.getLocation().callChoiceConsequence("look", player); // print out what the room they are in looks like
+            player.getLocation().callChoiceConsequence("look", player); // print out what the room they are in looks
+                                                                        // like
         }
     }
 
@@ -98,44 +99,96 @@ public class Choice {
             this.item = item;
         }
 
-        public void callConsequence(Player player){
-            if (player.getLocation().hasItem(item)){
-                if (item.getItemType().indexOf("immovable") != -1){
-                    System.out.println(""); //formatting
+        public void callConsequence(Player player) {
+            if (player.getLocation().hasItem(item)) {
+                if (item.isType("immovable")) {
+                    System.out.println(""); // formatting
                     System.out.println("You can't take the " + item.getItemName() + ", it's immovable");
-                    System.out.println(""); //formatting
-                    //maybe add something to say you cant take that later
+                    System.out.println(""); // formatting
+                    // maybe add something to say you cant take that later
                 } else {
                     player.addToInventory(item);
                     player.getLocation().removeItem(item);
-                    System.out.println(""); //formatting
+                    System.out.println(""); // formatting
                     System.out.println("You take the " + item.getItemName());
-                    System.out.println(""); //formatting
-                    if(item.getItemType().equals("meatKey")){
+                    System.out.println(""); // formatting
+                    if (item.isType("meatKey")) {
                         changeRefrencedItemDescription(item, "MeatTable", "key", "you find more meat. ");
-                        changeRefrencedItemDescription(item, "foodMeat", "key", "you find more meat. ");
+                        changeRefrencedItemDescription(item, "foodMeat", "key", "");
                         item.removeItemRefrenced("MeatTable");
+                        item.removeItemRefrenced("Meat");
+                    } 
+                    if (item.isType("sword")){
+                        changeRefrencedItemDescription(item, "MeatChest", "sword", "");
                     }
                 }
-            }else
+            } else
 
-        {
-            System.out.println(""); // formatting
-            System.out.println("There is no " + item);
-            System.out.println(""); // formatting
+            {
+                System.out.println(""); // formatting
+                System.out.println("There is no " + item);
+                System.out.println(""); // formatting
+            }
+
         }
-        
 
-    }
-    public void changeRefrencedItemDescription(Item item, String wantedItemType, String keyword, String newDescription){
-        if (item.findItemRefrenced(wantedItemType) != null){
-            if (item.findItemRefrenced(wantedItemType).findKeyWordInDescription(keyword) != -1){
-                System.out.println("we found it");
-                item.findItemRefrenced(wantedItemType).changeDescription(item.findItemRefrenced(wantedItemType).findKeyWordInDescription(keyword), newDescription);
+        public void changeRefrencedItemDescription(Item item, String wantedItemType, String keyword,
+                String newDescription) {
+            if (item.findItemRefrenced(wantedItemType) != null) {
+                if (item.findItemRefrenced(wantedItemType).findKeyWordInDescription(keyword) != -1) {
+                    // System.out.println("we found it");
+                    item.findItemRefrenced(wantedItemType).changeDescription(
+                            item.findItemRefrenced(wantedItemType).findKeyWordInDescription(keyword), newDescription);
 
+                }
             }
         }
     }
-}
+
+    public static class Use extends Choice {
+
+        private Item itemUsed;
+
+        public Use(Item itemUsed){
+            super("use " + itemUsed.getItemName());
+            this.itemUsed = itemUsed;
+     }
+     public void callConsequence(Player player){ //only key into chest for now
+        if (player.getInventory().contains(itemUsed)){
+            if (itemUsed.isType("key")){
+                if (itemUsed.isType("meat") || player.getLocation().isAt(0, 1)){
+                    if (player.getLocation().isAt(0, 1)){
+                        System.out.println(""); //for formatting
+                        System.out.println("You insert the key with meat on it into the hole. It's a perfect fit. As it opens you see the faint glow of a great blade. "); 
+                        System.out.println(""); //for formatting
+                        Item sword = new Item("sword", "sword", "It glows faintly blue. It looks sharp");
+                        sword.addItemRefrenced(itemUsed.findItemRefrenced("MeatChest"));
+                        player.getLocation().addItem(sword);
+                        changeRefrencedItemDescription(itemUsed, "MeatChest", "shut", "The chest is open. ");
+                        itemUsed.findItemRefrenced("MeatChest").addDescription("There is a sword inside. It glows faintly. ");
+                        player.getInventory().remove(itemUsed);
+                        
+                    }
+                }
+            }
+        } else {
+            System.out.println(""); //for formatting
+            System.out.println("You dont have that. "); 
+            System.out.println(""); //for formatting
+        }
+      
+     }
+     public void changeRefrencedItemDescription(Item item, String wantedItemType, String keyword,
+                String newDescription) {
+            if (item.findItemRefrenced(wantedItemType) != null) {
+                if (item.findItemRefrenced(wantedItemType).findKeyWordInDescription(keyword) != -1) {
+                    // System.out.println("we found it");
+                    item.findItemRefrenced(wantedItemType).changeDescription(
+                            item.findItemRefrenced(wantedItemType).findKeyWordInDescription(keyword), newDescription);
+
+                }
+            }
+        }
+    }
 
 }

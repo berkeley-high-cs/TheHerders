@@ -42,12 +42,14 @@ public class Game {
        meat.addItemRefrenced(meatKey); //two way street
         
 
-       Item meatChest = new Item("chest", "immovableChest", "The chest looks relatively normal, albeit gross. The keyhole has bits of rotting meat in it. Gross. ");
+       Item meatChest = new Item("chest", "immovableMeatChest", "The chest looks relatively normal, albeit gross. The keyhole has bits of rotting meat in it. Gross. ");
        meatChest.addDescription("The chest is securely shut.");
+       meatChest.addItemRefrenced(meatKey);
        map[0][1].addItem(meatChest); //add sword once meat key is used on meat chest
-       
+       map[0][1].addChoice(new Choice.Use(meatKey));
+
        Item throne = new Item("throne", "immovableThrone", "The dusty throne has something large behind it. As you get close, it looks to be a large chest, that is also quite dusty. ");
-       Item chest = new Item("chest", "dustyChest", "The chest is very dusty, with cobwebs all around it. It looks like it hasnt been touched in ages. ");
+       Item chest = new Item("chest", "immovableDustyChest", "The chest is very dusty, with cobwebs all around it. It looks like it hasnt been touched in ages. ");
        chest.addDescription("The chest is securely shut. ");
        map[1][2].addItem(throne);
        map[1][2].addItem(chest);
