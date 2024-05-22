@@ -36,4 +36,12 @@ public class Player {
     public void changeLocation(Room newLocation){
         this.location = newLocation;
     }
+    public boolean hasItem(String itemType){
+        for (int i = 0; i < inventory.size(); i++){
+            if (inventory.get(i).getItemType().toLowerCase().indexOf(itemType.toLowerCase()) != -1){
+                return true;
+            }
+        }
+        return false;
+    }
 }

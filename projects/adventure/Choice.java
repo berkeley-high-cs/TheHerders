@@ -203,5 +203,35 @@ public class Choice {
             }
         }
     }
+    public static class Attack extends Choice {
+        private Item monster;
+        public Attack(Item monster){
+            super("attack " + monster.getItemName());
+            this.monster = monster;
+        }
+        public void callConsequence(Player player){
+            System.out.println(""); //for formatting
+            if (monster.isType("monster")){
+                if (monster.isType("goblin")){
+                    if(player.hasItem("sword")){
+                        System.out.println("You attack the " + monster.getItemName() + ". It tries to dodge but it's barely within your reach. You lop off its head and it falls to the floor. Thud. Blood splatters all over your shirt. ");
+                    } else {
+                        System.out.println("You swing at the " + monster.getItemName() +  ", it dodges just barely out of the way. It's angry now. It comes and shanks you 5 times. You go down biting and scratching. You die.");
+                        Game.end();
+                    }
+                    
+                }
+            } else {
+                
+                if (player.hasItem("sword")){
+                    System.out.println("Okay? You bite and punch and scratch the " + monster.getItemName() + ". It gets pretty scratched up and so does your sword. ");
+                } else {
+                    System.out.println("Okay? You bite and punch and scratch the " + monster.getItemName() + ". It gets pretty scratched up and so do your teeth. Ouch. ");
+                }
+                
+            }
+            System.out.println(""); //for formatting
+        }
+    }
 
 }

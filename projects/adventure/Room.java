@@ -58,6 +58,8 @@ public class Room {
         createInspects();
         removeTakes();
         createTakes();
+        removeAttacks();
+        createAttacks();
         for (int i = 0; i < choices.size(); i++){
             if (choices.get(i).getName().equals(choiceName)){
                 return true;
@@ -113,6 +115,19 @@ public class Room {
     public void removeTakes(){
         for (int i = 0; i < choices.size(); i++){
             if (choices.get(i).getName().indexOf("take") != -1){
+                choices.remove(i);
+                i--;
+            }
+        }
+    }
+    public void createAttacks(){
+        for (int i = 0; i < items.size(); i++){
+            addChoice(new Choice.Attack(items.get(i)));
+        }
+    }
+    public void removeAttacks(){
+        for (int i = 0; i < choices.size(); i++){
+            if (choices.get(i).getName().indexOf("attack") != -1){
                 choices.remove(i);
                 i--;
             }

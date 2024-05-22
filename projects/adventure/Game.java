@@ -64,7 +64,8 @@ public class Game {
         //add attack? or say use sword
         //is goblin item or new class
        //this one is differet, deal with later
-       map[2][0].addChoice(new Choice.Inspect("goblin", "He smells dank. His loincloth has pockets in it. Fancy"));
+       Item goblin = new Item("goblin", "immovableMonsterGoblin", "He smells dank. His loincloth has pockets in it. Fancy");
+       map[2][0].addItem(goblin);
 
        Item grandDoor = new Item("door", "immovableDoor", "The keyhole is huge and dusty, and the door seems unbreakable. ");
        grandDoor.addDescription("The door is securely shut. ");
@@ -118,6 +119,9 @@ public class Game {
     }
     public static Room[][] getMap(){
         return map;
+    }
+    public static void end(){
+        end = true;
     }
     
 
