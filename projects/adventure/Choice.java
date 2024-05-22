@@ -113,13 +113,23 @@ public class Choice {
                     System.out.println("You take the " + item.getItemName());
                     System.out.println(""); // formatting
                     if (item.isType("meatKey")) {
-                        changeRefrencedItemDescription(item, "MeatTable", "key", "you find more meat. ");
+                        if (item.findItemRefrenced("meat") == null){ //having meat on table or not changes description
+                            changeRefrencedItemDescription(item, "MeatTable", "key", "you find more meat. ");
+                        } else {
+                            changeRefrencedItemDescription(item, "MeatTable", "key", "you find a blood stained marble slab. ");
+                        }
+                        
                         changeRefrencedItemDescription(item, "foodMeat", "key", "");
                         item.removeItemRefrenced("MeatTable");
                         item.removeItemRefrenced("Meat");
                     } 
                     if (item.isType("sword")){
                         changeRefrencedItemDescription(item, "MeatChest", "sword", "");
+                    }
+                    if (item.isType("Meat")){
+                        changeRefrencedItemDescription(item, "MeatTable", "meat", "On the bloody table ");
+                        item.removeItemRefrenced("MeatTable");
+                        item.removeItemRefrenced("meatKey");
                     }
                 }
             } else
@@ -134,11 +144,14 @@ public class Choice {
 
         public void changeRefrencedItemDescription(Item item, String wantedItemType, String keyword,
                 String newDescription) {
-            if (item.findItemRefrenced(wantedItemType) != null) {
-                if (item.findItemRefrenced(wantedItemType).findKeyWordInDescription(keyword) != -1) {
-                    // System.out.println("we found it");
-                    item.findItemRefrenced(wantedItemType).changeDescription(
-                            item.findItemRefrenced(wantedItemType).findKeyWordInDescription(keyword), newDescription);
+                    Item itemRefrenced = item.findItemRefrenced(wantedItemType);
+            if (itemRefrenced != null) {
+                if (itemRefrenced.findKeyWordInDescription(keyword) != -1) {
+                    if (Game.debug){
+                        System.out.println("Find item refrenced worked");
+                    }
+                    
+                    itemRefrenced.changeDescription(itemRefrenced.findKeyWordInDescription(keyword), newDescription);
 
                 }
             }

@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class Game {
+
+    public final static boolean debug = true;
+
     private static boolean end = false;
     public static Room[][] map = new Room[3][3];
     public Game(){
@@ -36,6 +39,7 @@ public class Game {
        map[0][0].addItem(meatKey);
        meatTable.addItemRefrenced(meatKey); //two way street
        meat.addItemRefrenced(meatKey); //two way street
+       meatTable.addItemRefrenced(meat);
         
 
        Item meatChest = new Item("chest", "immovableMeatChest", "The chest looks relatively normal, albeit gross. The keyhole has bits of rotting meat in it. Gross. ");
@@ -55,7 +59,10 @@ public class Game {
        chest.addDescription("The chest is securely shut. ");
        map[1][2].addItem(throne);
        map[1][2].addItem(chest);
-
+        //TODO: add combat, then once they inspect alive goblin just say you cant, hes agressive. 
+        //once they attack with sword, have goblin just die? but if the attack without then you die and restart
+        //add attack? or say use sword
+        //is goblin item or new class
        //this one is differet, deal with later
        map[2][0].addChoice(new Choice.Inspect("goblin", "He smells dank. His loincloth has pockets in it. Fancy"));
 
@@ -87,9 +94,11 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         String choiceName = scanner.nextLine().toLowerCase();
         choiceName = normalize.normalizeInput(choiceName);
+        //special case that need player info
         if (choiceName.equals("inspect") && player.getLocation().isAt(1,1)){
             choiceName += " inscription";
         }
+        //end of special case
         if (isUnderstood(choiceName, player.getLocation())){
            return choiceName;
         } else {
