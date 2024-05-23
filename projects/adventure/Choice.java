@@ -233,9 +233,9 @@ public class Choice {
                         player.getLocation().removeItem(monster);
                         Item deadGoblin = new Item("goblin", "foodGoblin", "Its a dead goblin. He's wearing a now bloody loincloth. Inside of the loincloths pockets, you find a key.");
                         player.getLocation().addItem(deadGoblin);
-                        Item dustyKey = new Item("key", "dustyKey", "The key is very dusty. It's also a little bloody. eww. ");
                         
-                        player.getLocation().addItem(dustyKey);
+                        monster.findItemRefrenced("dustyChest").addItemRefrenced(monster.findItemRefrenced("dustyKey"));
+                        player.getLocation().addItem(monster.findItemRefrenced("dustyKey"));
                     } else {
                         System.out.println("You swing at the " + monster.getItemName() +  ", it dodges just barely out of the way. It's angry now. It comes and shanks you 5 times. You go down biting and scratching. You die.");
                         Game.end();

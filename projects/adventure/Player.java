@@ -3,9 +3,10 @@ import java.util.*;
 public class Player {
     private ArrayList<Item> inventory = new ArrayList<Item>();
     private Room location;
+   
     public Player(Room startingRoom){
         this.location = startingRoom;
-
+       
     }
     public ArrayList<Item> getInventory(){ // for code
         return inventory;

@@ -6,6 +6,7 @@ public class Game {
 
     private static boolean end = false;
     public static Room[][] map = new Room[3][3];
+    
     public Game(){
        map[0][0] = new Room ("You see a butchers table, with assorted rotting meat on top. It doesnt look like any meat you recognize. You see a hallway to the east. ", 0, 0); //choices take meat, then add description where key is below meat. move east
        map[0][1] = new Room ("You see a locked chest in the middle of the room. ", 0, 1);
@@ -59,6 +60,7 @@ public class Game {
        dustyChest.addDescription("The chest is securely shut. ");
        map[1][2].addItem(throne);
        map[1][2].addItem(dustyChest);
+       
         //TODO: add combat, then once they inspect alive goblin just say you cant, hes agressive. 
         //once they attack with sword, have goblin just die? but if the attack without then you die and restart
         //add attack? or say use sword
@@ -66,12 +68,17 @@ public class Game {
        //this one is differet, deal with later
        map[2][0].addDescription("It smells dank in here. The only doorway is the one you came from. ");
        Item goblin = new Item("goblin", "immovableMonsterGoblin", "He smells dank. His loincloth has pockets in it. Fancy");
+       Item dustyKey = new Item("key", "dustyKey", "The key is dusty. It also has some blood on it. eww. ");
+       goblin.addItemRefrenced(dustyKey);
        map[2][0].addItem(goblin);
 
        Item grandDoor = new Item("door", "immovableDoor", "The keyhole is huge and dusty, and the door seems unbreakable. ");
        grandDoor.addDescription("The door is securely shut. ");
        map[2][1].addItem(grandDoor);
-       
+        
+       map[1][2].addChoice(new Choice.Use(dustyKey));
+
+      
        
     }
     public static void main(String[] args){
@@ -123,6 +130,9 @@ public class Game {
     }
     public static void end(){
         end = true;
+    }
+    public Room getRoom(int row, int col){
+        return map[row][col];
     }
     
 
