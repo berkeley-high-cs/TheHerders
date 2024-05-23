@@ -236,6 +236,7 @@ public class Choice {
                         
                         monster.findItemRefrenced("dustyChest").addItemRefrenced(monster.findItemRefrenced("dustyKey"));
                         player.getLocation().addItem(monster.findItemRefrenced("dustyKey"));
+                        player.getLocation().changeDescription("There is a dead goblin on the floor. His head is about two feet from his body. ", player.getLocation().findKeyWordInRoom("goblin"));
                     } else {
                         System.out.println("You swing at the " + monster.getItemName() +  ", it dodges just barely out of the way. It's angry now. It comes and shanks you 5 times. You go down biting and scratching. You die.");
                         Game.end();
@@ -245,7 +246,7 @@ public class Choice {
             } else {
                 
                 if (player.hasItem("sword")){
-                    System.out.println("Okay? You bite and punch and scratch the " + monster.getItemName() + ". It gets pretty scratched up and so does your sword. ");
+                    System.out.println("Okay? You slice and scratch the " + monster.getItemName() + ". It gets pretty scratched up and so does your sword. ");
                 } else {
                     System.out.println("Okay? You bite and punch and scratch the " + monster.getItemName() + ". It gets pretty scratched up and so do your teeth. Ouch. ");
                 }
