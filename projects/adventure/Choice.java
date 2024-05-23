@@ -124,6 +124,7 @@ public class Choice {
                         item.removeItemRefrenced("Meat");
                     } 
                     if (item.isType("sword")){
+                        player.getLocation().changeDescription("You see an open chest. ", player.getLocation().findKeyWordInRoom("chest"));
                         changeRefrencedItemDescription(item, "MeatChest", "sword", "");
                     }
                     if (item.isType("Meat")){
@@ -169,7 +170,7 @@ public class Choice {
      public void callConsequence(Player player){ //only key into chest for now
         if (player.getInventory().contains(itemUsed)){
             if (itemUsed.isType("key")){
-                if (itemUsed.isType("meat") || player.getLocation().isAt(0, 1)){
+                if (itemUsed.isType("meat")){
                     if (player.getLocation().isAt(0, 1)){
                         System.out.println(""); //for formatting
                         System.out.println("You insert the key with meat on it into the hole. It's a perfect fit. As it opens you see the faint glow of a great blade. "); 
@@ -180,7 +181,21 @@ public class Choice {
                         changeRefrencedItemDescription(itemUsed, "MeatChest", "shut", "The chest is open. ");
                         itemUsed.findItemRefrenced("MeatChest").addDescription("There is a sword inside. It glows faintly. ");
                         player.getInventory().remove(itemUsed);
+                        player.getLocation().changeDescription("You see an open chest with a sword inside. ", player.getLocation().findKeyWordInRoom("chest"));
                         
+                    }
+                }
+                if (itemUsed.isType("dusty")){
+                    if (player.getLocation().isAt(1,2)){
+                        System.out.println(""); //for formatting
+                        System.out.println("You insert the dusty key into the chest behind the throne. It's a perfect fit. As it opens you see a massive key. "); 
+                        System.out.println(""); //for formatting
+                        Item giantKey = new Item("key", "giantKey", "Its a massive key.");
+                        giantKey.addItemRefrenced(itemUsed.findItemRefrenced("dustyChest"));
+                        player.getLocation().addItem(giantKey);
+                        changeRefrencedItemDescription(itemUsed, "dustyChest", "shut", "The chest is open. ");
+                        itemUsed.findItemRefrenced("dustyChest").addDescription("There is a massive key inside. ");
+                        player.getInventory().remove(itemUsed);
                     }
                 }
             }
@@ -215,6 +230,12 @@ public class Choice {
                 if (monster.isType("goblin")){
                     if(player.hasItem("sword")){
                         System.out.println("You attack the " + monster.getItemName() + ". It tries to dodge but it's barely within your reach. You lop off its head and it falls to the floor. Thud. Blood splatters all over your shirt. ");
+                        player.getLocation().removeItem(monster);
+                        Item deadGoblin = new Item("goblin", "foodGoblin", "Its a dead goblin. He's wearing a now bloody loincloth. Inside of the loincloths pockets, you find a key.");
+                        player.getLocation().addItem(deadGoblin);
+                        Item dustyKey = new Item("key", "dustyKey", "The key is very dusty. It's also a little bloody. eww. ");
+                        
+                        player.getLocation().addItem(dustyKey);
                     } else {
                         System.out.println("You swing at the " + monster.getItemName() +  ", it dodges just barely out of the way. It's angry now. It comes and shanks you 5 times. You go down biting and scratching. You die.");
                         Game.end();

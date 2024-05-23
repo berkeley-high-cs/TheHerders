@@ -13,7 +13,7 @@ public class Normalize {
             tempInput = tempInput.substring(findNextEndOfWord(tempInput));
             secondWord = tempInput.substring(getFirstLetterIndex(tempInput), findNextEndOfWord(tempInput));
                //special cases
-               if (firstWord.equals("unlock") && (secondWord.equals("chest") || secondWord.equals("door"))){
+               if ((firstWord.equals("unlock") || (firstWord.equals("open"))) && (secondWord.equals("chest") || secondWord.equals("door"))){
                 firstWord = "use";
                 secondWord = "key";
                }
@@ -83,6 +83,8 @@ public class Normalize {
         synonyms.put("right", "east");
         synonyms.put("down", "south");
         synonyms.put("text", "inscription");
+        synonyms.put("blade","sword");
+        synonyms.put("grab", "take");
         if (synonyms.get(input) == null) {
             return input;
         } else {

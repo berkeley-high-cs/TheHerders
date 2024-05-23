@@ -7,14 +7,14 @@ public class Game {
     private static boolean end = false;
     public static Room[][] map = new Room[3][3];
     public Game(){
-       map[0][0] = new Room ("You see a butchers table, with assorted rotting meat on top. It doesnt look like any meat you recognize. You see a hallway to the east.", 0, 0); //choices take meat, then add description where key is below meat. move east
-       map[0][1] = new Room ("You see a locked chest in the middle of the room. You see a hallway to the west, with a foul smell coming from inside. You see a hallway south.", 0, 1); //try to open chest, or use key if they have it
+       map[0][0] = new Room ("You see a butchers table, with assorted rotting meat on top. It doesnt look like any meat you recognize. You see a hallway to the east. ", 0, 0); //choices take meat, then add description where key is below meat. move east
+       map[0][1] = new Room ("You see a locked chest in the middle of the room. ", 0, 1);
        map[0][2] = new Room("", 0, 2); //no room
        map[1][0] = new Room("", 1, 0);  //no room
-       map[1][1] = new Room("You are in a grand hallway, with large arched door to the north, east, and south. There is an inscription on one of the doorways.", 1, 1); //just move and read
-       map[1][2] = new Room("You are in a throne room, long forgotten. The ground is dusty, and the throne has cobwebs on it. Not cozy. The only doorway is the one you came from.", 1, 2); //look throne will find the chest behind, or look behind
-       map[2][0] = new Room("You encounter a goblin! He hasn't noticed you yet because he is eating some miscellaneous meat. It smells dank in here. The only doorway is the one you came from.", 2, 0);
-       map[2][1] = new Room("You see a huge oaken door, with a large keyhole in the middle. It seems the only way to get out. There is a dank smell coming from the west door, and the only other doorway is the one you came from.", 2, 1);
+       map[1][1] = new Room("You are in a grand hallway, with large arched door to the north, east, and south. There is an inscription on one of the doorways. ", 1, 1); //just move and read
+       map[1][2] = new Room("You are in a throne room, long forgotten. The ground is dusty, and the throne has cobwebs on it. Not cozy. The only doorway is the one you came from. ", 1, 2); //look throne will find the chest behind, or look behind
+       map[2][0] = new Room("You encounter a goblin! He hasn't noticed you yet because he is eating some miscellaneous meat. ", 2, 0);
+       map[2][1] = new Room("You see a huge oaken door, with a large keyhole in the middle. It seems the only way to get out. There is a dank smell coming from the west door. The only other door is the one to the grand hall. ", 2, 1);
        map[2][2] = new Room("", 2, 2); //no room
        map[0][0].addChoice(new Choice.Move("east"));
        map[0][1].addChoice(new Choice.Move("west"));
@@ -41,7 +41,7 @@ public class Game {
        meat.addItemRefrenced(meatKey); //two way street
        meatTable.addItemRefrenced(meat);
         
-
+       map[0][1].addDescription("You see a hallway to the west, with a foul smell coming from inside. You see a hallway south. "); 
        Item meatChest = new Item("chest", "immovableMeatChest", "The chest looks relatively normal, albeit gross. The keyhole has bits of rotting meat in it. Gross. ");
        meatChest.addDescription("The chest is securely shut.");
        meatChest.addItemRefrenced(meatKey);
@@ -55,15 +55,16 @@ public class Game {
                                                                                             "and behind the throne secrets smothered "));
 
        Item throne = new Item("throne", "immovableThrone", "The dusty throne has something large behind it. As you get close, it looks to be a large chest, that is also quite dusty. ");
-       Item chest = new Item("chest", "immovableDustyChest", "The chest is very dusty, with cobwebs all around it. It looks like it hasnt been touched in ages. ");
-       chest.addDescription("The chest is securely shut. ");
+       Item dustyChest = new Item("chest", "immovableDustyChest", "The chest is very dusty, with cobwebs all around it. It looks like it hasnt been touched in ages. ");
+       dustyChest.addDescription("The chest is securely shut. ");
        map[1][2].addItem(throne);
-       map[1][2].addItem(chest);
+       map[1][2].addItem(dustyChest);
         //TODO: add combat, then once they inspect alive goblin just say you cant, hes agressive. 
         //once they attack with sword, have goblin just die? but if the attack without then you die and restart
         //add attack? or say use sword
         //is goblin item or new class
        //this one is differet, deal with later
+       map[2][0].addDescription("It smells dank in here. The only doorway is the one you came from. ");
        Item goblin = new Item("goblin", "immovableMonsterGoblin", "He smells dank. His loincloth has pockets in it. Fancy");
        map[2][0].addItem(goblin);
 
