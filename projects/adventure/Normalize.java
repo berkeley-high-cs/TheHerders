@@ -38,8 +38,12 @@ public class Normalize {
 
         } else {
             firstWord = getSynonym(firstWord);
-            System.out.println("tempInput is: " + tempInput);
-            System.out.println("first word is: |" + firstWord + "|");
+            
+            if(Game.debug){
+                System.out.println("tempInput is: " + tempInput);
+                System.out.println("first word is: |" + firstWord + "|");
+            }
+        
             return firstWord;
         }
 
@@ -85,6 +89,8 @@ public class Normalize {
         synonyms.put("text", "inscription");
         synonyms.put("blade","sword");
         synonyms.put("grab", "take");
+        synonyms.put("slash", "attack");
+        synonyms.put("stab", "attack");
         if (synonyms.get(input) == null) {
             return input;
         } else {

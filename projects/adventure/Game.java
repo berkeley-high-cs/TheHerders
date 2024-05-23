@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class Game {
 
-    public final static boolean debug = true;
+    public final static boolean debug = false;
 
     private static boolean end = false;
     public static Room[][] map = new Room[3][3];
     
     public Game(){
-       map[0][0] = new Room ("You see a butchers table, with assorted rotting meat on top. It doesnt look like any meat you recognize. You see a hallway to the east. ", 0, 0); //choices take meat, then add description where key is below meat. move east
+       map[0][0] = new Room ("You see a butchers table, with assorted rotting meat on top. It doesnt look like any meat you recognize. ", 0, 0); //choices take meat, then add description where key is below meat. move east
        map[0][1] = new Room ("You see a locked chest in the middle of the room. ", 0, 1);
        map[0][2] = new Room("", 0, 2); //no room
        map[1][0] = new Room("", 1, 0);  //no room
@@ -32,6 +32,7 @@ public class Game {
        Item meatTable = new Item("table", "immovableMeatTable", "You disgustingly look under the rotten weird meat. Under the piles of meat, blood, and stench, ");
        meatTable.addDescription("you find a key. ");
        
+       map[0][0].addDescription("You see a hallway to the east. ");
        map[0][0].addItem(meatTable);
        Item meat = new Item("meat", "foodMeat", "The meat looks gross and disgusting. Nobody should ever eat it. ");
        meat.addDescription("Under the meat, you find a key. ");
@@ -77,9 +78,11 @@ public class Game {
 
        Item grandDoor = new Item("door", "immovableDoor", "The keyhole is huge and dusty, and the door seems unbreakable. ");
        grandDoor.addDescription("The door is securely shut. ");
+       grandDoor.addItemRefrenced(grandDoor);
        map[2][1].addItem(grandDoor);
         
        map[1][2].addChoice(new Choice.Use(dustyKey));
+       map[2][1].addChoice(new Choice.Use(giantKey));
 
        
     }

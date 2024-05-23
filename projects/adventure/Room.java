@@ -20,7 +20,7 @@ public class Room {
             if (items.get(i).getItemType().equals(item.getItemType())){
                 items.remove(i);
                 i = items.size(); //only want to remove one item, first one
-            } else if (i == items.size()){
+            } else if (i == items.size() && Game.debug){
                 System.out.println("you tried to remove an item that doesnt exist");
             }
         }
@@ -89,7 +89,9 @@ public class Room {
                 return i;
             }
         }
-        System.out.println("no keyword found");
+        if (Game.debug){
+            System.out.println("no keyword found");
+        }
         return -1;
     }
     public void createInspects(){

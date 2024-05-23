@@ -127,10 +127,22 @@ public class Choice {
                         player.getLocation().changeDescription("You see an open chest. ", player.getLocation().findKeyWordInRoom("chest"));
                         changeRefrencedItemDescription(item, "MeatChest", "sword", "");
                     }
-                    if (item.isType("Meat")){
+                    if (item.isType("Meat") && !item.isType("key")){
+                        if (item.findItemRefrenced("meatKey") != null){ //if the key is there difference
+                            System.out.println("Under the meat, you see a key.");
+                            System.out.println("");//formatting
+                            player.getLocation().changeDescription("You see a butchers table. On the bloody marble slab you see a key. ", player.getLocation().findKeyWordInRoom("meat"));
+                        } else {
+                            player.getLocation().changeDescription("You see a butchers table. ", Math.max(0, player.getLocation().findKeyWordInRoom("meat")));
+                        }
+                       
                         changeRefrencedItemDescription(item, "MeatTable", "meat", "On the bloody table ");
                         item.removeItemRefrenced("MeatTable");
                         item.removeItemRefrenced("meatKey");
+                    }
+                    if (item.isType("giantKey")){
+                        item.findItemRefrenced("dustyChest").changeDescription(item.findItemRefrenced("dustyChest").findKeyWordInDescription("ages"), "The chest is very dusty, with cobwebs everywhere you didnt clean them off. You see your fingerprints on the top. ");
+                        item.findItemRefrenced("dustyChest").changeDescription(item.findItemRefrenced("dustyChest").findKeyWordInDescription("key"), "");
                     }
                 }
             } else
@@ -198,6 +210,15 @@ public class Choice {
                         player.getInventory().remove(itemUsed);
                     }
                 }
+                if (itemUsed.isType("giant")){
+                    if(player.getLocation().isAt(1, 2)){
+                        System.out.println(""); //for formatting
+                        System.out.println("You heave the giant key into the giant keyhole. You push it and get it to turn. The doors slightly open as you see daylight for the first time in years. You win."); 
+                        System.out.println(""); //for formatting
+                        System.out.println("You got the normal ending.");
+                        Game.end();
+                    }
+                }
             }
         } else {
             System.out.println(""); //for formatting
@@ -239,6 +260,8 @@ public class Choice {
                         player.getLocation().changeDescription("There is a dead goblin on the floor. His head is about two feet from his body. ", player.getLocation().findKeyWordInRoom("goblin"));
                     } else {
                         System.out.println("You swing at the " + monster.getItemName() +  ", it dodges just barely out of the way. It's angry now. It comes and shanks you 5 times. You go down biting and scratching. You die.");
+                        System.out.println(""); //formating
+                        System.out.println("You got the bad ending.");
                         Game.end();
                     }
                     
