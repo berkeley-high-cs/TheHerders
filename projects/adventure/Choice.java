@@ -253,6 +253,31 @@ public class Choice {
             }
             System.out.println(""); //for formatting
         }
-    }
 
+    }
+  
 }
+
+
+
+
+//possible debug class choice
+  // public static class Hack extends Choice {
+    //     private Item itemHacked;
+    //     public Hack(Item itemHacked){
+    //         super("hack " + itemHacked.getItemName());
+    //         this.itemHacked = itemHacked;
+    //     }
+    //     public void callConsequence(Player player){
+    //         if (Game.debug){
+    //             player.addToInventory(itemHacked);
+    //             System.out.println(""); //formatiing
+    //             System.out.println(itemHacked + " hacked, be careful");
+    //             System.out.println(""); //formatiing
+    //         } else {
+    //             System.out.println(""); //formatiing
+    //             System.out.println("Your not in debug mode!");
+    //             System.out.println(""); //formatiing
+    //         }
+    //     }
+    // }

@@ -69,6 +69,7 @@ public class Game {
        map[2][0].addDescription("It smells dank in here. The only doorway is the one you came from. ");
        Item goblin = new Item("goblin", "immovableMonsterGoblin", "He smells dank. His loincloth has pockets in it. Fancy");
        Item dustyKey = new Item("key", "dustyKey", "The key is dusty. It also has some blood on it. eww. ");
+       goblin.addItemRefrenced(dustyChest);
        goblin.addItemRefrenced(dustyKey);
        map[2][0].addItem(goblin);
 
@@ -78,7 +79,6 @@ public class Game {
         
        map[1][2].addChoice(new Choice.Use(dustyKey));
 
-      
        
     }
     public static void main(String[] args){
