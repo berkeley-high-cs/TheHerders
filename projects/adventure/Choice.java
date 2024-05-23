@@ -190,9 +190,9 @@ public class Choice {
                         System.out.println(""); //for formatting
                         System.out.println("You insert the dusty key into the chest behind the throne. It's a perfect fit. As it opens you see a massive key. "); 
                         System.out.println(""); //for formatting
-                        Item giantKey = new Item("key", "giantKey", "Its a massive key.");
-                        giantKey.addItemRefrenced(itemUsed.findItemRefrenced("dustyChest"));
-                        player.getLocation().addItem(giantKey);
+                        Item tempGiantKey = itemUsed.findItemRefrenced("dustyChest").findItemRefrenced("giantKey");
+                        tempGiantKey.addItemRefrenced(itemUsed.findItemRefrenced("dustyChest"));
+                        player.getLocation().addItem(tempGiantKey);
                         changeRefrencedItemDescription(itemUsed, "dustyChest", "shut", "The chest is open. ");
                         itemUsed.findItemRefrenced("dustyChest").addDescription("There is a massive key inside. ");
                         player.getInventory().remove(itemUsed);

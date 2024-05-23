@@ -54,10 +54,12 @@ public class Game {
                                                                                             "from butchers table cleaned to chest " + "\n" +
                                                                                             "the one that bleeds has another " + "\n" +
                                                                                             "and behind the throne secrets smothered "));
-
+                         
+       Item giantKey = new Item("key", "giantKey", "Its a massive key.");
        Item throne = new Item("throne", "immovableThrone", "The dusty throne has something large behind it. As you get close, it looks to be a large chest, that is also quite dusty. ");
        Item dustyChest = new Item("chest", "immovableDustyChest", "The chest is very dusty, with cobwebs all around it. It looks like it hasnt been touched in ages. ");
        dustyChest.addDescription("The chest is securely shut. ");
+       dustyChest.addItemRefrenced(giantKey);
        map[1][2].addItem(throne);
        map[1][2].addItem(dustyChest);
        
