@@ -211,7 +211,7 @@ public class Choice {
                     }
                 }
                 if (itemUsed.isType("giant")){
-                    if(player.getLocation().isAt(1, 2)){
+                    if(player.getLocation().isAt(2, 1)){
                         System.out.println(""); //for formatting
                         System.out.println("You heave the giant key into the giant keyhole. You push it and get it to turn. The doors slightly open as you see daylight for the first time in years. You win."); 
                         System.out.println(""); //for formatting
