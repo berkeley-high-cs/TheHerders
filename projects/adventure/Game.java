@@ -13,7 +13,7 @@ public class Game {
        map[0][2] = new Room("", 0, 2); //no room
        map[1][0] = new Room("", 1, 0);  //no room
        map[1][1] = new Room("You are in a grand hallway, with large arched door to the north, east, and south. There is an inscription on one of the doorways. ", 1, 1); //just move and read
-       map[1][2] = new Room("You are in a throne room, long forgotten. The ground is dusty, and the throne has cobwebs on it. Not cozy. The only doorway is the one you came from. ", 1, 2); //look throne will find the chest behind, or look behind
+       map[1][2] = new Room("You are in a throne room, long forgotten. The ground is dusty, and the throne has cobwebs on it. Not cozy. The only doorway is to the east. ", 1, 2); //look throne will find the chest behind, or look behind
        map[2][0] = new Room("You encounter a goblin! He hasn't noticed you yet because he is eating some miscellaneous meat. ", 2, 0);
        map[2][1] = new Room("You see a huge oaken door, with a large keyhole in the middle. It seems the only way to get out. There is a dank smell coming from the west door. The only other door is the one to the grand hall. ", 2, 1);
        map[2][2] = new Room("", 2, 2); //no room

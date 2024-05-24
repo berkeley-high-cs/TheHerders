@@ -121,7 +121,7 @@ public class Choice {
                         
                         changeRefrencedItemDescription(item, "foodMeat", "key", "");
                         item.removeItemRefrenced("MeatTable");
-                        item.removeItemRefrenced("Meat");
+                        item.removeSpecificItemRefrenced("Meat");
                     } 
                     if (item.isType("sword")){
                         player.getLocation().changeDescription("You see an open chest. ", player.getLocation().findKeyWordInRoom("chest"));

@@ -87,6 +87,14 @@ public class Item {
     public boolean isType(String type){
         return itemType.toLowerCase().indexOf(type.toLowerCase()) != -1;
     }
+    public void removeSpecificItemRefrenced(String itemType){
+        for (int i = 0; i < itemsRefrenced.size(); i++){
+            if (itemsRefrenced.get(i).getItemType().toLowerCase().equals(itemType.toLowerCase())){
+                itemsRefrenced.remove(i);
+                i = itemsRefrenced.size();
+            }
+        }
+    }
 
     
 }
