@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Game {
 
-    public final static boolean debug = false;
+    public final static boolean debug = true;
 
     private static boolean end = false;
     public static Room[][] map = new Room[3][3];

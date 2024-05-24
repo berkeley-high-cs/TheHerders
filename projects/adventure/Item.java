@@ -95,6 +95,21 @@ public class Item {
             }
         }
     }
+    public Item findSpecificItemRefrenced(String itemType){
+        for (int i = 0; i < itemsRefrenced.size(); i++){
+            if (Game.debug){
+                System.out.println("Item refrenced.get(i).get(itemType).toLowerCase() : " + itemsRefrenced.get(i).getItemType().toLowerCase());
+                System.out.println("index Of itemType.toLowerCase : " + itemsRefrenced.get(i).getItemType().toLowerCase().equals(itemType.toLowerCase()));
+            }
+            if (itemsRefrenced.get(i).getItemType().toLowerCase().equals(itemType.toLowerCase())){
+                return itemsRefrenced.get(i);
+            }
+        }
+        if (Game.debug){
+            System.out.println("item type not found in refrences"); //remove in final
+        }
+        return null;
+    }
 
     
 }
