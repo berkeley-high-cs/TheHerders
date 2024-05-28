@@ -114,9 +114,9 @@ public class Choice {
                     System.out.println(""); // formatting
                     if (item.isType("meatKey")) {
                         if (Game.debug){
-                            System.out.println("MEATT DEBUGGING");
-                            System.out.println("item.findItemRefrenced(meat): " + item.findItemRefrenced("meat"));
-                            System.out.println("MEATT DEBUGGING");
+                            System.out.println("MEATT DEBUGGING x x xx x xx xxx. xx. xx. xx x. x x x ");
+                            System.out.println("item.findItemRefrenced(meat): " + item.findSpecificItemRefrenced("foodMeat"));
+                            System.out.println("MEATT DEBUGGINGx. xx x x x.  xx. xx. xx. xx. x x xx ");
                         }
                         if (item.findSpecificItemRefrenced("foodMeat") != null){ //having meat on table or not changes description
                             changeRefrencedItemDescription(item, "MeatTable", "key", "you find more meat. ");
@@ -127,22 +127,30 @@ public class Choice {
                         
                         changeRefrencedItemDescription(item, "foodMeat", "key", "");
                         item.removeItemRefrenced("MeatTable");
-                        item.removeSpecificItemRefrenced("Meat");
+                        item.removeSpecificItemRefrenced("foodMeat");
                     } 
                     if (item.isType("sword")){
                         player.getLocation().changeDescription("You see an open chest. ", player.getLocation().findKeyWordInRoom("chest"));
                         changeRefrencedItemDescription(item, "MeatChest", "sword", "");
+                        item.removeItemRefrenced("MeatChest");
                     }
-                    if (item.isType("Meat") && !item.isType("key")){
+                    if (item.isType("Meat") && !item.isType("key")){ 
+
+                        changeRefrencedItemDescription(item, "MeatTable", "meat", "On the bloody table ");
+                        
                         if (item.findSpecificItemRefrenced("meatKey") != null){ //if the key is there difference
                             System.out.println("Under the meat, you see a key.");
                             System.out.println("");//formatting
                             player.getLocation().changeDescription("You see a butchers table. On the bloody marble slab you see a key. ", player.getLocation().findKeyWordInRoom("meat"));
                         } else {
-                            player.getLocation().changeDescription("You see a butchers table. ", Math.max(0, player.getLocation().findKeyWordInRoom("key")));
+                            player.getLocation().changeDescription("You see a butchers table. Its top is a bloody marble slab. ", Math.max(0, player.getLocation().findKeyWordInRoom("key")));
+                        }
+                        if (item.findSpecificItemRefrenced("meatKey") != null){ //having key on table or not changes description
+                            changeRefrencedItemDescription(item, "MeatTable", "on", "On the bloody marble slab ");
+                        } else {
+                           changeRefrencedItemDescription(item, "MeatTable", "meat", "you find a blood stained marble slab. ");
                         }
                        
-                        changeRefrencedItemDescription(item, "MeatTable", "meat", "On the bloody table ");
                         item.removeItemRefrenced("MeatTable");
                         item.removeItemRefrenced("meatKey");
                     }

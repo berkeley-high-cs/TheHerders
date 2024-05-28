@@ -67,7 +67,7 @@ public class Item {
     }
     public void removeItemRefrenced(String itemType){
         for (int i = 0; i < itemsRefrenced.size(); i++){
-            if (itemsRefrenced.get(i).getItemType().indexOf(itemType) != -1){
+            if (itemsRefrenced.get(i).getItemType().toLowerCase().indexOf(itemType.toLowerCase()) != -1){
                 itemsRefrenced.get(i).removeOneItemRefrenced(this.getItemType());
                 itemsRefrenced.remove(i);
                 
@@ -90,6 +90,15 @@ public class Item {
     public void removeSpecificItemRefrenced(String itemType){
         for (int i = 0; i < itemsRefrenced.size(); i++){
             if (itemsRefrenced.get(i).getItemType().toLowerCase().equals(itemType.toLowerCase())){
+                itemsRefrenced.get(i).removeOneSpecificItemRefrenced(this.getItemType());
+                itemsRefrenced.remove(i);
+                i = itemsRefrenced.size();
+            }
+        }
+    }
+    public void removeOneSpecificItemRefrenced(String itemType){
+        for (int i = 0; i < itemsRefrenced.size(); i++){
+            if (itemsRefrenced.get(i).getItemType().equals(itemType)){
                 itemsRefrenced.remove(i);
                 i = itemsRefrenced.size();
             }

@@ -91,6 +91,7 @@ public class Normalize {
         synonyms.put("grab", "take");
         synonyms.put("slash", "attack");
         synonyms.put("stab", "attack");
+        synonyms.put("tbale", "table");
         if (synonyms.get(input) == null) {
             return input;
         } else {
