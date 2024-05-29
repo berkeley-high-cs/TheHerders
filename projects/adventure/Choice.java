@@ -216,7 +216,10 @@ public class Choice {
                         player.getInventory().remove(itemUsed);
                         player.getLocation().changeDescription("You see an open chest with a sword inside. ", player.getLocation().findKeyWordInRoom("chest"));
                         
+                    } else if (Game.debug){
+                        System.out.println("wrong key used prolly");
                     }
+
                 }
                 if (itemUsed.isType("dusty")){
                     if (player.getLocation().isAt(1,2)){
@@ -233,11 +236,20 @@ public class Choice {
                 }
                 if (itemUsed.isType("giant")){
                     if(player.getLocation().isAt(2, 1)){
+                        if (Game.goodEnding){
+                            System.out.println(""); //for formatting
+                            System.out.println("You heave the giant key into the giant keyhole. You push it and get it to turn. The doors slightly open as you see daylight for the first time in years. You leave with the good thoughts of the goblin in your head. You win. "); 
+                            System.out.println(""); //for formatting
+                            System.out.println("You got the good ending.");
+                            Game.end();
+                        } else {
                         System.out.println(""); //for formatting
-                        System.out.println("You heave the giant key into the giant keyhole. You push it and get it to turn. The doors slightly open as you see daylight for the first time in years. You win."); 
+                        System.out.println("You heave the giant key into the giant keyhole. You push it and get it to turn. The doors slightly open as you see daylight for the first time in years. You leave with blood on your hands, a bloody sword, and a bloody conscience. Have you really won?"); 
                         System.out.println(""); //for formatting
                         System.out.println("You got the normal ending.");
                         Game.end();
+                        }
+                        
                     }
                 }
             }
@@ -386,6 +398,31 @@ public class Choice {
         }
     }
 }
+    }
+    public static class Give extends Choice {
+        private Item itemGiven;
+
+        public Give(Item itemGiven){
+            super("give " + itemGiven.getItemName());
+                this.itemGiven = itemGiven;
+            
+        }
+        public void callConsequence(Player player){
+            if (itemGiven.isType("meat") && !itemGiven.isType("key")){
+                if (player.getLocation().isAt(2, 0) && player.getLocation().hasItem(itemGiven.findItemRefrenced("goblin")) && player.hasItem(itemGiven.getItemType())){
+                    System.out.println("");//formatting
+                    System.out.println("You gently wake up the goblin, and with the smell of the meat he so loves, it brings tears to his eyes. He gives you his key, takes the meat, and promptly vanishes because i dont want to code more. ");
+                   
+                   
+                    System.out.println("");//formatting
+                    player.addToInventory(itemGiven.findItemRefrenced("goblin").findItemRefrenced("dustyKey"));
+                    player.removeFromInventory("meat");
+                    player.getLocation().changeDescription("You realize the only trace left of the goblin in the room is his tears, from your good deed. ", player.getLocation().findKeyWordInRoom("goblin"));
+                    Game.goodEnding();
+                }
+            }
+            
+        }
     }
   
 }
