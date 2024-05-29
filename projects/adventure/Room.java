@@ -92,7 +92,7 @@ public class Room {
         if (Game.debug){
             System.out.println("no keyword found");
         }
-        return -1;
+        return 0;
     }
     public void createInspects(){
         for (int i = 0; i < items.size(); i++){
@@ -137,5 +137,10 @@ public class Room {
     }
     public boolean isAt(int row, int col){
         return getMapRow() == row && getMapCol() == col;
+    }
+    public void createPlayerInventoryEats(Player player){
+        for (int i = 0; i < player.getInventory().size(); i++){
+            addChoice(new Choice.Eat(player.getInventory().get(i)));
+        }
     }
 }

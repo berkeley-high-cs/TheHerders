@@ -14,7 +14,7 @@ public class Game {
        map[1][0] = new Room("", 1, 0);  //no room
        map[1][1] = new Room("You are in a grand hallway, with large arched door to the north, east, and south. There is an inscription on one of the doorways. ", 1, 1); //just move and read
        map[1][2] = new Room("You are in a throne room, long forgotten. The ground is dusty, and the throne has cobwebs on it. Not cozy. The only doorway is to the east. ", 1, 2); //look throne will find the chest behind, or look behind
-       map[2][0] = new Room("You encounter a goblin! He hasn't noticed you yet because he is eating some miscellaneous meat. ", 2, 0);
+       map[2][0] = new Room("You encounter a goblin! He hasn't noticed you yet because he is sleeping. ", 2, 0);
        map[2][1] = new Room("You see a huge oaken door, with a large keyhole in the middle. It seems the only way to get out. There is a dank smell coming from the west door. The only other door is the one to the grand hall. ", 2, 1);
        map[2][2] = new Room("", 2, 2); //no room
        map[0][0].addChoice(new Choice.Move("east"));
@@ -42,6 +42,8 @@ public class Game {
        meatTable.addItemRefrenced(meatKey); //two way street
        meat.addItemRefrenced(meatKey); //two way street
        meatTable.addItemRefrenced(meat);
+       map[0][0].addChoice(new Choice.Eat(meat));
+       
         
        map[0][1].addDescription("You see a hallway to the west, with a foul smell coming from inside. You see a hallway south. "); 
        Item meatChest = new Item("chest", "immovableMeatChest", "The chest looks relatively normal, albeit gross. The keyhole has bits of rotting meat in it. Gross. ");
@@ -111,6 +113,9 @@ public class Game {
         //special case that need player info
         if (choiceName.equals("inspect") && player.getLocation().isAt(1,1)){
             choiceName += " inscription";
+        }
+        if (choiceName.indexOf("eat") != -1){
+            player.getLocation().createPlayerInventoryEats(player);
         }
         //end of special case
         if (isUnderstood(choiceName, player.getLocation())){

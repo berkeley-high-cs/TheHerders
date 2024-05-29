@@ -129,11 +129,13 @@ public class Choice {
                         item.removeItemRefrenced("MeatTable");
                         item.removeSpecificItemRefrenced("foodMeat");
                     } 
+
                     if (item.isType("sword")){
                         player.getLocation().changeDescription("You see an open chest. ", player.getLocation().findKeyWordInRoom("chest"));
                         changeRefrencedItemDescription(item, "MeatChest", "sword", "");
                         item.removeItemRefrenced("MeatChest");
                     }
+
                     if (item.isType("Meat") && !item.isType("key")){ 
 
                         changeRefrencedItemDescription(item, "MeatTable", "meat", "On the bloody table ");
@@ -154,9 +156,14 @@ public class Choice {
                         item.removeItemRefrenced("MeatTable");
                         item.removeItemRefrenced("meatKey");
                     }
+
                     if (item.isType("giantKey")){
                         item.findItemRefrenced("dustyChest").changeDescription(item.findItemRefrenced("dustyChest").findKeyWordInDescription("ages"), "The chest is very dusty, with cobwebs everywhere you didnt clean them off. You see your fingerprints on the top. ");
                         item.findItemRefrenced("dustyChest").changeDescription(item.findItemRefrenced("dustyChest").findKeyWordInDescription("key"), "");
+                    }
+
+                    if(item.isType("goblin")){
+                        player.getLocation().changeDescription("", player.getLocation().findKeyWordInRoom("goblin"));
                     }
                 }
             } else
@@ -264,16 +271,18 @@ public class Choice {
             if (monster.isType("monster")){
                 if (monster.isType("goblin")){
                     if(player.hasItem("sword")){
-                        System.out.println("You attack the " + monster.getItemName() + ". It tries to dodge but it's barely within your reach. You lop off its head and it falls to the floor. Thud. Blood splatters all over your shirt. ");
+                        System.out.println("You attack the " + monster.getItemName() + ". It tries to wake up to dodge but it's barely too late. You lop off its head and it falls to the floor. Thud. Blood splatters all over your shirt. ");
                         player.getLocation().removeItem(monster);
                         Item deadGoblin = new Item("goblin", "foodGoblin", "Its a dead goblin. He's wearing a now bloody loincloth. Inside of the loincloths pockets, you find a key.");
                         player.getLocation().addItem(deadGoblin);
+                        deadGoblin.addItemRefrenced(monster.findItemRefrenced("dustyKey"));
                         
                         monster.findItemRefrenced("dustyChest").addItemRefrenced(monster.findItemRefrenced("dustyKey"));
                         player.getLocation().addItem(monster.findItemRefrenced("dustyKey"));
                         player.getLocation().changeDescription("There is a dead goblin on the floor. His head is about two feet from his body. ", player.getLocation().findKeyWordInRoom("goblin"));
+                        player.getLocation().addChoice(new Choice.Eat(deadGoblin));
                     } else {
-                        System.out.println("You swing at the " + monster.getItemName() +  ", it dodges just barely out of the way. It's angry now. It comes and shanks you 5 times. You go down biting and scratching. You die.");
+                        System.out.println("You swing at the " + monster.getItemName() +  ", it wakes up and dodges just barely out of the way. It's angry now. It comes and shanks you 5 times. You go down biting and scratching. You die.");
                         System.out.println(""); //formating
                         System.out.println("You got the bad ending.");
                         Game.end();
@@ -293,8 +302,94 @@ public class Choice {
         }
 
     }
+    public static class Eat extends Choice {
+        private Item itemAte;
+        public Eat(Item itemAte){
+            super("eat " + itemAte.getItemName());
+            this.itemAte = itemAte;
+        }
+        public void callConsequence(Player player){
+            System.out.println(""); //formatting
+            if (itemAte.isType("food")){
+                
+                    if (itemAte.isType("goblin")){
+                        if (player.hasItem(itemAte.getItemType())){
+                            if (itemAte.findItemRefrenced("dustyKey") != null){
+                            System.out.println("You eat the dead goblin. ewww. As you bite down on its leg you find something hard. Its a key.");
+                            if (player.getLocation().isAt(2,0)){
+                                player.getLocation().changeDescription("The only thing left of the goblin is his tunic and his key. You have devoured him. ", player.getLocation().findKeyWordInRoom("goblin"));
+                            }
+                            } else {
+                            System.out.println("You eat the dead goblin. ewww. Theres is blood and guts all over your tunic. ");
+                            if (player.getLocation().isAt(2,0) ){
+                                player.getLocation().changeDescription("The only thing left of the goblin is his tunic and his blood. You have devoured him. ", player.getLocation().findKeyWordInRoom("goblin"));
+                            }
+                            }
+                            
+                           
+                            player.removeFromInventory(itemAte.getItemType());
+                        }  else if (player.getLocation().isAt(2, 0) && player.getLocation().hasItem(itemAte)){ //for goblin on floor
+                            if (itemAte.findItemRefrenced("dustyKey") != null){
+                                System.out.println("You eat the dead goblin. ewww. As you bite down on its leg you find something hard. Its a key.");
+                                player.getLocation().changeDescription("The only thing left of the goblin is his tunic and his key. You have devoured him. ", player.getLocation().findKeyWordInRoom("goblin"));
+                                } else {
+                                System.out.println("You eat the dead goblin. ewww. Theres is blood and guts all over your tunic. ");
+                               
+                                player.getLocation().changeDescription("The only thing left of the goblin is his tunic and his blood. You have devoured him. ", player.getLocation().findKeyWordInRoom("goblin"));
+                                }
+                                
+                                player.getLocation().removeItem(itemAte);
+                        }
+                
+                }
+                if (itemAte.isType("meat")){
+                    if (player.hasItem(itemAte.getItemType())){
+                        System.out.println("You eat the rotting meat. ewww. As you bite down on the gushy meat, you almost vomit. ");
+                        player.removeFromInventory(itemAte.getItemType());
+
+                    }  else if (player.getLocation().isAt(0, 0) && player.getLocation().hasItem(itemAte)){ //for meat on table
+                        if (itemAte.findItemRefrenced("meatKey") != null){
+                            System.out.println("You eat the rotting meat. ewww. As you bite down on the gushy meat, you bite something hard. Its a key.");
+                            player.getLocation().changeDescription("You see a butchers table. On the bloody marble slab you see a key. ", player.getLocation().findKeyWordInRoom("meat"));
+                            itemAte.removeItemRefrenced("meatKey");
+                            } else {
+                            System.out.println("You eat the rotting meat. ewww. As you bite down on the gushy meat, you almost vomit. ");
+                            player.getLocation().changeDescription("You see a butchers table. Its top is a bloody marble slab. ", Math.max(0, player.getLocation().findKeyWordInRoom("key")));
+                            
+                            }
+                            if (itemAte.findSpecificItemRefrenced("meatKey") != null){ //having key on table or not changes description
+                                changeRefrencedItemDescription(itemAte, "MeatTable", "on", "On the bloody marble slab ");
+                            } else {
+                               changeRefrencedItemDescription(itemAte, "MeatTable", "meat", "you find a blood stained marble slab. ");
+                            }
+                            itemAte.removeItemRefrenced("MeatTable");
+                            player.getLocation().removeItem(itemAte);
+                    }
+
+                    
+                    
+                }
+               
+            } else {
+
+            }
+            System.out.println(""); //formatting
+        }
+        public void changeRefrencedItemDescription(Item item, String wantedItemType, String keyword,
+        String newDescription) {
+    if (item.findItemRefrenced(wantedItemType) != null) {
+        if (item.findItemRefrenced(wantedItemType).findKeyWordInDescription(keyword) != -1) {
+            // System.out.println("we found it");
+            item.findItemRefrenced(wantedItemType).changeDescription(
+                    item.findItemRefrenced(wantedItemType).findKeyWordInDescription(keyword), newDescription);
+
+        }
+    }
+}
+    }
   
 }
+
 
 
 

@@ -27,10 +27,11 @@ public class Player {
     public void addToInventory(Item item){
         inventory.add(item);
     }
-    public void removeFromInventory(String item){
+    public void removeFromInventory(String itemType){
         for (int i = 0; i < inventory.size(); i++){
-            if (item.equals(inventory.get(i))){
+            if (inventory.get(i).getItemType().toLowerCase().equals(itemType.toLowerCase())){
                 inventory.remove(i);
+                i = inventory.size();
             }
         }
     }
